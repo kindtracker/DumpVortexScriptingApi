@@ -1,11 +1,19 @@
 -- DumpTable function is made by @yeno_why (Discord) but i renamed variables (I love PamelCase)
 
 local GenerateCheatsheet = true
+
 local Cheatsheet =
 	"# Vortex Cheatsheet\n\nThis cheatsheet is generated from https://github.com/kindtracker/DumpVortexScriptingApi\n"
 
-local ServerScriptService = game:GetService("ServerScriptService")
-local Classes = require(ServerScriptService:WaitForChild("RobloxApiDump.lua"))
+local IgnoredProperties = {
+	shap = true,
+	shape = true,
+}
+
+task.wait(0.1)
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Classes = require(ReplicatedStorage:WaitForChild("RobloxApiDump.lua"))
 
 function DumpTable(Table, Seen, Indent)
 	Seen = Seen or {}
@@ -17,6 +25,10 @@ function DumpTable(Table, Seen, Indent)
 	local Prefix = string.rep("\t", Indent)
 
 	for Index, Value in Table do
+		if type(Index) == "string" and string.sub(Index, 1, 1) == "_" then
+			continue
+		end
+
 		if type(Value) == "table" then
 			if table.find(Seen, Value) then
 				String =
@@ -24,8 +36,6 @@ function DumpTable(Table, Seen, Indent)
 
 				continue
 			end
-
-			table.insert(Seen, Value)
 
 			String = string.format(
 				"%s\n%s[%s] = (%s) %s%s",
@@ -44,42 +54,44 @@ function DumpTable(Table, Seen, Indent)
 	return String
 end
 
-function HasTag(Class, Tag)
-	for _, ClassTag in Class.Tags or {} do
-		if ClassTag == Tag then
-			return true
-		end
-	end
-
-	return false
+function PropertyIsIgnored(Property)
+	return IgnoredProperties[string.lower(Property)] == true
 end
 
-function GetProperty(Class, PropertyName)
-	for _, Member in Class.Members or {} do
-		if Member.MemberType == "Property" and Member.Name == PropertyName then
-			return Member
+function GetInheritedProperties(ClassDump)
+	local InheritedProperties = {}
+	local SuperclassName = ClassDump.Superclass
+
+	while SuperclassName and SuperclassName ~= "<<<ROOT>>>" do
+		local Superclass = Classes[SuperclassName]
+
+		if not Superclass then
+			break
 		end
+
+		for Property, PropertyType in Superclass.Properties or {} do
+			if not PropertyIsIgnored(Property) and not InheritedProperties[Property] then
+				InheritedProperties[Property] = {
+					Type = PropertyType,
+					Class = SuperclassName,
+				}
+			end
+		end
+
+		SuperclassName = Superclass.Superclass
 	end
 
-	return nil
+	return InheritedProperties
 end
 
-function GetTags(Class)
-	local Tags = {}
-
-	for _, Tag in Class.Tags or {} do
-		if type(Tag) == "string" then
-			table.insert(Tags, Tag)
-		end
-	end
-
-	return Tags
+function GeneratePropertyLine(Property, PropertyType)
+	return string.format("- [%s](#%s): `%s`", Property, string.lower(Property):gsub(" ", "-"), PropertyType)
 end
 
 function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
-	Cheatsheet = Cheatsheet .. string.format("\n## Classes\n\n### %s\n\n", ClassName)
+	Cheatsheet = Cheatsheet .. string.format("\n### %s\n\n", ClassName)
 
-	if RobloxClassDump.Superclass then
+	if RobloxClassDump.Superclass and RobloxClassDump.Superclass ~= "<<<ROOT>>>" then
 		Cheatsheet = Cheatsheet
 			.. string.format(
 				"Inherited from: [%s](#%s)\n\n",
@@ -88,11 +100,9 @@ function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 			)
 	end
 
-	local Tags = GetTags(RobloxClassDump)
-
 	Cheatsheet = Cheatsheet .. "Tags: "
 
-	for Index, Tag in Tags do
+	for Index, Tag in RobloxClassDump.Tags or {} do
 		if Index > 1 then
 			Cheatsheet = Cheatsheet .. ", "
 		end
@@ -102,32 +112,57 @@ function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 
 	Cheatsheet = Cheatsheet .. "\n\n"
 
-	local Properties = {}
-
-	for _, Member in RobloxClassDump.Members or {} do
-		if Member.MemberType == "Property" then
-			table.insert(Properties, Member)
-		end
-	end
-
 	Cheatsheet = Cheatsheet .. "Properties:\n"
 
-	for _, Property in Properties do
-		local ValueType = Property.ValueType and Property.ValueType.Name or "unknown"
+	for Property, PropertyType in RobloxClassDump.Properties or {} do
+		if not PropertyIsIgnored(Property) then
+			local PropertyExists = false
 
-		Cheatsheet = Cheatsheet
-			.. string.format(
-				"- [%s](#%s): `%s`\n",
-				Property.Name,
-				string.lower(Property.Name):gsub(" ", "-"),
-				ValueType
-			)
+			if Class then
+				local Success, Value = pcall(function()
+					return Class[Property]
+				end)
+
+				PropertyExists = Success and Value ~= nil
+			end
+
+			if PropertyExists then
+				Cheatsheet = Cheatsheet .. GeneratePropertyLine(Property, PropertyType) .. "\n"
+			end
+		end
 	end
 
 	Cheatsheet = Cheatsheet .. "\n"
 
+	local InheritedProperties = GetInheritedProperties(RobloxClassDump)
+
+	if next(InheritedProperties) then
+		Cheatsheet = Cheatsheet .. "Inherited properties:\n"
+
+		for Property, PropertyInfo in InheritedProperties do
+			local PropertyExists = false
+
+			if Class then
+				local Success, Value = pcall(function()
+					return Class[Property]
+				end)
+
+				PropertyExists = Success and Value ~= nil
+			end
+
+			if PropertyExists then
+				Cheatsheet = Cheatsheet
+					.. GeneratePropertyLine(Property, PropertyInfo.Type)
+					.. string.format(" *(from %s)*", PropertyInfo.Class)
+					.. "\n"
+			end
+		end
+
+		Cheatsheet = Cheatsheet .. "\n"
+	end
+
 	if Class then
-		Cheatsheet = Cheatsheet .. "Dump:\n\n```text\n"
+		Cheatsheet = Cheatsheet .. "Dump:\n\n```text"
 		Cheatsheet = Cheatsheet .. DumpTable(Class)
 		Cheatsheet = Cheatsheet .. "\n```\n"
 	end
@@ -141,43 +176,20 @@ function DumpClasses()
 	for ClassName, RobloxClassDump in pairs(Classes) do
 		local Success, Class = pcall(Instance.new, ClassName)
 
-		if GenerateCheatsheet then
-			GenerateClassCheatsheet(ClassName, RobloxClassDump, Success and Class or nil)
-		elseif Success then
-			print(DumpTable(Class))
-		end
+		if Success and Class ~= nil then
+			task.wait(0.15)
 
-		if Success then
+			if GenerateCheatsheet then
+				GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
+				print("Generated cheatsheet for " .. ClassName)
+			else
+				print(DumpTable(Class))
+			end
+
 			Class:Destroy()
 		end
 
-		task.wait(0)
-	end
-end
-
-function DumpServices()
-	if GenerateCheatsheet then
-		Cheatsheet = Cheatsheet .. "\n## Services\n"
-	end
-
-	for ServiceName, RobloxServiceDump in pairs(Classes) do
-		if RobloxServiceDump.Tags and RobloxServiceDump.Tags.Service then
-			local Success, Service = pcall(game.GetService, game, ServiceName)
-
-			if Success then
-				if GenerateCheatsheet then
-					Cheatsheet = Cheatsheet .. string.format("\n### %s\n\n", ServiceName)
-
-					Cheatsheet = Cheatsheet .. "Dump:\n\n```text\n"
-					Cheatsheet = Cheatsheet .. DumpTable(Service)
-					Cheatsheet = Cheatsheet .. "\n```\n"
-				else
-					print(DumpTable(Service))
-				end
-			end
-
-			task.wait(0)
-		end
+		task.wait()
 	end
 end
 
@@ -186,9 +198,6 @@ print(DumpTable(_G))
 
 print("Dumping classes")
 DumpClasses()
-
-print("Dumping services")
-DumpServices()
 
 if GenerateCheatsheet then
 	print(Cheatsheet)
