@@ -1,9 +1,9 @@
--- Dump function is made by @yeno_why (Discord) but i renamed variables (I love PamelCase)
+-- DumpTable function is made by @yeno_why (Discord) but i renamed variables (I love PamelCase)
 
-local ServerScriptService = game:GetService("ServerScriptService"):WaitForChild("Classes.lua")
-local Classes = require()
+local ServerScriptService = game:GetService("ServerScriptService")
+local Classes = require(ServerScriptService:WaitForChild("Classes.lua"))
 
-function Dump(Table, Seen, Indent)
+function DumpTable(Table, Seen, Indent)
 	Seen = Seen or {}
 	Indent = Indent or 0
 
@@ -30,7 +30,7 @@ function Dump(Table, Seen, Indent)
 				Index,
 				type(Value),
 				tostring(Value),
-				Dump(Value, Seen, Indent + 1)
+				DumpTable(Value, Seen, Indent + 1)
 			)
 		else
 			String = string.format("%s\n%s[%s] = (%s) %s", String, Prefix, Index, type(Value), tostring(Value))
@@ -40,4 +40,21 @@ function Dump(Table, Seen, Indent)
 	return String
 end
 
-print(Dump(_G))
+function DumpClasses()
+	for ClassName in Classes do
+		local Success, Result = pcall(Instance.new, ClassName)
+
+		if Success then
+			print(string.format("[SUCCESS] %s", ClassName))
+			Result:Destroy()
+		else
+			print(string.format("[FAILED] %s: %s", ClassName, Result))
+		end
+	end
+end
+
+print("Dumping environment")
+print(DumpTable(_G))
+
+print("Dumping classes")
+DumpClasses()
