@@ -131,7 +131,7 @@ function GetRootClasses()
 	local Roots = {}
 
 	for ClassName, Superclass in VortexAllClasses do
-		if not Superclass or Superclass == "<<<ROOT>>>" then
+		if not Superclass or Superclass == "<<<ROOT>>>" or not VortexAllClasses[Superclass] then
 			table.insert(Roots, ClassName)
 		end
 	end
@@ -165,16 +165,9 @@ function GenerateInheritanceTree(ClassName)
 	local Chain = {}
 	local CurrentClass = ClassName
 
-	while CurrentClass do
+	while CurrentClass and CurrentClass ~= "<<<ROOT>>>" do
 		table.insert(Chain, 1, CurrentClass)
-
-		local Superclass = VortexAllClasses[CurrentClass]
-
-		if not Superclass or Superclass == "<<<ROOT>>>" then
-			break
-		end
-
-		CurrentClass = Superclass
+		CurrentClass = VortexAllClasses[CurrentClass]
 	end
 
 	local Tree = ""
@@ -259,9 +252,16 @@ function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 			end
 
 			if PropertyExists then
+				local FixedClass = PropertyInfo.Class
+				if FixedClass == "BasePart" then
+					FixedClass = "Part"
+				elseif FixedClass == "Object" then
+					FixedClass = "Instance"
+				end
+
 				Cheatsheet = Cheatsheet
 					.. GeneratePropertyLine(Property, PropertyInfo.Type)
-					.. string.format(" *(from %s)*", PropertyInfo.Class)
+					.. string.format(" *(from [%s](#%s))*", PropertyInfo.Class, FixedClass)
 					.. "\n"
 			end
 		end
@@ -272,7 +272,11 @@ function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 	if Class then
 		Cheatsheet = Cheatsheet .. "Dump:\n\n```text"
 		local Dump = DumpTable(Class)
-		RawDump = RawDump .. Dump
+		if #Dump == 0 then
+			Dump = "\nDump is unavailable"
+		else
+			RawDump = RawDump .. Dump
+		end
 		Cheatsheet = Cheatsheet .. Dump
 		Cheatsheet = Cheatsheet .. "\n```\n"
 	end

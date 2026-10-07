@@ -21,13 +21,14 @@ Properties:
 - [Force](#force): `Vector3`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
-- [Color](#color): `BrickColor` *(from Constraint)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
+- [Color](#color): `BrickColor` *(from [Constraint](#Constraint))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### BindableEvent
@@ -46,12 +47,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### BindableFunction
@@ -70,13 +72,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
-[Invoke] = (function) function: 0x00007f749c1dcdf8
+[Invoke] = (function) function: 0x00007f61d473e328
 ```
 
 ### StringValue
@@ -96,12 +98,13 @@ Properties:
 - [Value](#value): `string`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### LocalScript
@@ -120,12 +123,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### RemoteEvent
@@ -144,12 +148,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### Torque
@@ -169,13 +174,14 @@ Properties:
 - [Torque](#torque): `Vector3`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
-- [Color](#color): `BrickColor` *(from Constraint)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
+- [Color](#color): `BrickColor` *(from [Constraint](#Constraint))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### PointLight
@@ -194,13 +200,14 @@ Tags:
 Properties:
 
 Inherited properties:
-- [Color](#color): `Color3` *(from Light)*
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [Color](#color): `Color3` *(from [Light](#Light))*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### SpotLight
@@ -219,13 +226,14 @@ Tags:
 Properties:
 
 Inherited properties:
-- [Color](#color): `Color3` *(from Light)*
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [Color](#color): `Color3` *(from [Light](#Light))*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### Script
@@ -244,12 +252,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### Folder
@@ -268,12 +277,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### RemoteFunction
@@ -292,14 +302,14 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
-[InvokeServer] = (function) function: 0x00007f749acfa5a8
-[InvokeClient] = (function) function: 0x00007f749acfa558
+[InvokeServer] = (function) function: 0x00007f61d3c2c4d8
+[InvokeClient] = (function) function: 0x00007f61d3c2c488
 ```
 
 ### IntValue
@@ -319,12 +329,13 @@ Properties:
 - [Value](#value): `int64`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### Model
@@ -343,12 +354,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### BodyAngularVelocity
@@ -370,12 +382,13 @@ Properties:
 - [AngularVelocity](#angularvelocity): `Vector3`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### Part
@@ -394,26 +407,27 @@ Tags:
 Properties:
 
 Inherited properties:
-- [Velocity](#velocity): `Vector3` *(from BasePart)*
-- [Mass](#mass): `float` *(from BasePart)*
-- [Color](#color): `Color3` *(from BasePart)*
-- [Material](#material): `Material` *(from BasePart)*
-- [Size](#size): `Vector3` *(from BasePart)*
-- [Rotation](#rotation): `Vector3` *(from BasePart)*
-- [Name](#name): `string` *(from Instance)*
-- [CastShadow](#castshadow): `bool` *(from BasePart)*
-- [Anchored](#anchored): `bool` *(from BasePart)*
-- [CanCollide](#cancollide): `bool` *(from BasePart)*
-- [ClassName](#classname): `string` *(from Object)*
-- [Orientation](#orientation): `Vector3` *(from BasePart)*
-- [CFrame](#cframe): `CFrame` *(from BasePart)*
-- [Position](#position): `Vector3` *(from BasePart)*
-- [CenterOfMass](#centerofmass): `Vector3` *(from BasePart)*
-- [Transparency](#transparency): `float` *(from BasePart)*
+- [Velocity](#velocity): `Vector3` *(from [BasePart](#Part))*
+- [Mass](#mass): `float` *(from [BasePart](#Part))*
+- [Color](#color): `Color3` *(from [BasePart](#Part))*
+- [Material](#material): `Material` *(from [BasePart](#Part))*
+- [Size](#size): `Vector3` *(from [BasePart](#Part))*
+- [Rotation](#rotation): `Vector3` *(from [BasePart](#Part))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
+- [CastShadow](#castshadow): `bool` *(from [BasePart](#Part))*
+- [Anchored](#anchored): `bool` *(from [BasePart](#Part))*
+- [CanCollide](#cancollide): `bool` *(from [BasePart](#Part))*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Orientation](#orientation): `Vector3` *(from [BasePart](#Part))*
+- [CFrame](#cframe): `CFrame` *(from [BasePart](#Part))*
+- [Position](#position): `Vector3` *(from [BasePart](#Part))*
+- [CenterOfMass](#centerofmass): `Vector3` *(from [BasePart](#Part))*
+- [Transparency](#transparency): `float` *(from [BasePart](#Part))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### BodyPosition
@@ -436,12 +450,13 @@ Properties:
 - [Position](#position): `Vector3`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### ModuleScript
@@ -460,12 +475,13 @@ Tags:
 Properties:
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 
 ### BodyVelocity
@@ -487,123 +503,143 @@ Properties:
 - [Velocity](#velocity): `Vector3`
 
 Inherited properties:
-- [ClassName](#classname): `string` *(from Object)*
-- [Name](#name): `string` *(from Instance)*
+- [ClassName](#classname): `string` *(from [Object](#Instance))*
+- [Name](#name): `string` *(from [Instance](#Instance))*
 
 Dump:
 
 ```text
+Dump is unavailable
 ```
 ## Class Tree
 
 ```text
+BindableEvent
+BindableFunction
+BodyAngularVelocity
+BodyPosition
+BodyVelocity
+Folder
+IntValue
+Model
+ModuleScript
+Part
+PointLight
+RemoteEvent
+RemoteFunction
+Script
+LocalScript
+SpotLight
+StringValue
+Torque
+VectorForce
 ```
 
 
 ## Raw Dump
 ```
-[string] = (table) table: 0x00007f749c2e8808
-	[split] = (function) function: 0x00007f749c2e8568
-	[match] = (function) function: 0x00007f749c2e8658
-	[gmatch] = (function) function: 0x00007f749c2e8718
-	[upper] = (function) function: 0x00007f749c2e8598
-	[gsub] = (function) function: 0x00007f749c2e86e8
-	[format] = (function) function: 0x00007f749c2e8748
-	[lower] = (function) function: 0x00007f749c2e8688
-	[sub] = (function) function: 0x00007f749c2e85c8
-	[pack] = (function) function: 0x00007f749c2e8538
-	[find] = (function) function: 0x00007f749c2e8778
-	[char] = (function) function: 0x00007f749c2e87a8
-	[packsize] = (function) function: 0x00007f749c2e8508
-	[reverse] = (function) function: 0x00007f749c2e85f8
-	[byte] = (function) function: 0x00007f749c2e87d8
-	[unpack] = (function) function: 0x00007f749c2e84d8
-	[rep] = (function) function: 0x00007f749c2e8628
-	[len] = (function) function: 0x00007f749c2e86b8
-[xpcall] = (function) function: 0x00007f749c2e9fa8
-[warn] = (function) function: 0x00007f749c182038
-[tostring] = (function) function: 0x00007f749c2ea0c8
-[typeof] = (function) function: 0x00007f749c2ea068
-[TweenInfo] = (table) table: 0x00007f749c2e9df8
-	[new] = (function) function: 0x00007f749a80b868
-[task] = (table) table: 0x00007f749c2e6738
-	[defer] = (function) function: 0x00007f749a80bae8
-	[spawn] = (function) function: 0x00007f749c2e69d8
-	[delay] = (function) function: 0x00007f749c181db8
-	[wait] = (function) function: 0x00007f749a80bb08
-[print] = (function) function: 0x00007f749c182078
-[require] = (function) function: 0x00007f749c180ab8
-[setmetatable] = (function) function: 0x00007f749c2ea128
-[next] = (function) function: 0x00007f749c2ea2d8
-[Instance] = (table) table: 0x00007f749ad37718
-	[new] = (function) function: 0x00007f749c180af8
-[assert] = (function) function: 0x00007f749c2ea3c8
-[rawlen] = (function) function: 0x00007f749c2ea1b8
-[tonumber] = (function) function: 0x00007f749c2ea0f8
-[game] = (table) table: 0x00007f749c2e7578
-	[Players] = (table) table: 0x00007f749c2e7338
-		[GetPlayerByUserId] = (function) function: 0x00007f749c180bb8
+[string] = (table) table: 0x00007f61d98f1928
+	[split] = (function) function: 0x00007f61d98f1688
+	[match] = (function) function: 0x00007f61d98f1778
+	[gmatch] = (function) function: 0x00007f61d98f1838
+	[upper] = (function) function: 0x00007f61d98f16b8
+	[gsub] = (function) function: 0x00007f61d98f1808
+	[format] = (function) function: 0x00007f61d98f1868
+	[lower] = (function) function: 0x00007f61d98f17a8
+	[sub] = (function) function: 0x00007f61d98f16e8
+	[pack] = (function) function: 0x00007f61d98f1658
+	[find] = (function) function: 0x00007f61d98f1898
+	[char] = (function) function: 0x00007f61d98f18c8
+	[packsize] = (function) function: 0x00007f61d98f1628
+	[reverse] = (function) function: 0x00007f61d98f1718
+	[byte] = (function) function: 0x00007f61d98f18f8
+	[unpack] = (function) function: 0x00007f61d98f15f8
+	[rep] = (function) function: 0x00007f61d98f1748
+	[len] = (function) function: 0x00007f61d98f17d8
+[xpcall] = (function) function: 0x00007f61d98f30c8
+[warn] = (function) function: 0x00007f61d3c06e38
+[tostring] = (function) function: 0x00007f61d98f31e8
+[typeof] = (function) function: 0x00007f61d98f3188
+[TweenInfo] = (table) table: 0x00007f61d98f2f18
+	[new] = (function) function: 0x00007f61d98fdcd8
+[task] = (table) table: 0x00007f61d98ef858
+	[defer] = (function) function: 0x00007f61d98fdf58
+	[spawn] = (function) function: 0x00007f61d98efaf8
+	[delay] = (function) function: 0x00007f61d3c06bb8
+	[wait] = (function) function: 0x00007f61d98fdf78
+[print] = (function) function: 0x00007f61d3c06e78
+[require] = (function) function: 0x00007f61d3c058b8
+[setmetatable] = (function) function: 0x00007f61d98f3248
+[next] = (function) function: 0x00007f61d98f33f8
+[Instance] = (table) table: 0x00007f61d40c5878
+	[new] = (function) function: 0x00007f61d3c058f8
+[assert] = (function) function: 0x00007f61d98f34e8
+[rawlen] = (function) function: 0x00007f61d98f32d8
+[tonumber] = (function) function: 0x00007f61d98f3218
+[game] = (table) table: 0x00007f61d98f0698
+	[Players] = (table) table: 0x00007f61d98f0458
+		[GetPlayerByUserId] = (function) function: 0x00007f61d3c059b8
 		[Name] = (string) Players
 		[ClassName] = (string) Players
-		[GetPlayerFromCharacter] = (function) function: 0x00007f749c180b78
-		[GetPlayers] = (function) function: 0x00007f749c180bf8
-	[Workspace] = (table) table: 0x00007f749ae0adf8
-		[Spherecast] = (function) function: 0x00007f749c180db8
-		[Raycast] = (function) function: 0x00007f749c180df8
-		[Clone] = (function) function: 0x00007f749c180c78
-		[Destroy] = (function) function: 0x00007f749c180cb8
-		[Blockcast] = (function) function: 0x00007f749c180d78
-		[GetServerTimeNow] = (function) function: 0x00007f749c180e38
-	[GetService] = (function) function: 0x00007f749c180b38
-[rawequal] = (function) function: 0x00007f749c2ea248
-[getCurrency] = (function) function: 0x00007f749c181ff8
-[Debris] = (table) table: 0x00007f749c2e6708
-	[AddItem] = (function) function: 0x00007f749a80ba68
-	[SetMaxItems] = (function) function: 0x00007f749a80ba48
-[getmetatable] = (function) function: 0x00007f749c2ea308
-[Enum] = (table) table: 0x00007f749c2e9948
+		[GetPlayerFromCharacter] = (function) function: 0x00007f61d3c05978
+		[GetPlayers] = (function) function: 0x00007f61d3c059f8
+	[Workspace] = (table) table: 0x00007f61d3f8e548
+		[Spherecast] = (function) function: 0x00007f61d3c05bb8
+		[Raycast] = (function) function: 0x00007f61d3c05bf8
+		[Clone] = (function) function: 0x00007f61d3c05a78
+		[Destroy] = (function) function: 0x00007f61d3c05ab8
+		[Blockcast] = (function) function: 0x00007f61d3c05b78
+		[GetServerTimeNow] = (function) function: 0x00007f61d3c05c38
+	[GetService] = (function) function: 0x00007f61d3c05938
+[rawequal] = (function) function: 0x00007f61d98f3368
+[getCurrency] = (function) function: 0x00007f61d3c06df8
+[Debris] = (table) table: 0x00007f61d98ef828
+	[AddItem] = (function) function: 0x00007f61d98fded8
+	[SetMaxItems] = (function) function: 0x00007f61d98fdeb8
+[getmetatable] = (function) function: 0x00007f61d98f3428
+[Enum] = (table) table: 0x00007f61d98f2a68
 	[PlaybackState] = (table) Enum.PlaybackState
 		[Name] = (string) PlaybackState
-		[FromName] = (function) function: 0x00007f749ad37ec8
-		[GetEnumItems] = (function) function: 0x00007f749ad37ef8
-		[FromValue] = (function) function: 0x00007f749ad37e98
+		[FromName] = (function) function: 0x00007f61d40c6028
+		[GetEnumItems] = (function) function: 0x00007f61d40c6058
+		[FromValue] = (function) function: 0x00007f61d40c5ff8
 	[HumanoidStateType] = (table) Enum.HumanoidStateType
 		[Name] = (string) HumanoidStateType
-		[FromName] = (function) function: 0x00007f749ad390c8
-		[GetEnumItems] = (function) function: 0x00007f749ad390f8
-		[FromValue] = (function) function: 0x00007f749ad39098
+		[FromName] = (function) function: 0x00007f61d40c7228
+		[GetEnumItems] = (function) function: 0x00007f61d40c7258
+		[FromValue] = (function) function: 0x00007f61d40c71f8
 	[UserInputType] = (table) Enum.UserInputType
 		[Name] = (string) UserInputType
-		[FromName] = (function) function: 0x00007f749ad38b58
-		[GetEnumItems] = (function) function: 0x00007f749ad38b88
-		[FromValue] = (function) function: 0x00007f749ad38b28
+		[FromName] = (function) function: 0x00007f61d40c6cb8
+		[GetEnumItems] = (function) function: 0x00007f61d40c6ce8
+		[FromValue] = (function) function: 0x00007f61d40c6c88
 	[KeyCode] = (table) Enum.KeyCode
 		[Name] = (string) KeyCode
-		[FromName] = (function) function: 0x00007f749ad398d8
-		[GetEnumItems] = (function) function: 0x00007f749ad39908
-		[FromValue] = (function) function: 0x00007f749ad398a8
+		[FromName] = (function) function: 0x00007f61d40c7a38
+		[GetEnumItems] = (function) function: 0x00007f61d40c7a68
+		[FromValue] = (function) function: 0x00007f61d40c7a08
 	[Material] = (table) Enum.Material
 		[Name] = (string) Material
-		[FromName] = (function) function: 0x00007f749c2e9528
-		[GetEnumItems] = (function) function: 0x00007f749c2e9588
-		[FromValue] = (function) function: 0x00007f749c2e94f8
+		[FromName] = (function) function: 0x00007f61d98f2648
+		[GetEnumItems] = (function) function: 0x00007f61d98f26a8
+		[FromValue] = (function) function: 0x00007f61d98f2618
 	[NormalId] = (table) Enum.NormalId
 		[Name] = (string) NormalId
-		[FromName] = (function) function: 0x00007f749c2e76c8
-		[GetEnumItems] = (function) function: 0x00007f749c2e76f8
-		[FromValue] = (function) function: 0x00007f749c2e7698
+		[FromName] = (function) function: 0x00007f61d98f07e8
+		[GetEnumItems] = (function) function: 0x00007f61d98f0818
+		[FromValue] = (function) function: 0x00007f61d98f07b8
 	[EasingStyle] = (table) Enum.EasingStyle
 		[Name] = (string) EasingStyle
-		[FromName] = (function) function: 0x00007f749ad38588
-		[GetEnumItems] = (function) function: 0x00007f749ad385b8
-		[FromValue] = (function) function: 0x00007f749ad38558
+		[FromName] = (function) function: 0x00007f61d40c66e8
+		[GetEnumItems] = (function) function: 0x00007f61d40c6718
+		[FromValue] = (function) function: 0x00007f61d40c66b8
 	[EasingDirection] = (table) Enum.EasingDirection
 		[Name] = (string) EasingDirection
-		[FromName] = (function) function: 0x00007f749ad382b8
-		[GetEnumItems] = (function) function: 0x00007f749ad382e8
-		[FromValue] = (function) function: 0x00007f749ad38288
-[CFrame] = (table) table: 0x00007f749c2e9a38
-	[ToWorldSpace] = (function) function: 0x00007f749a80a508
+		[FromName] = (function) function: 0x00007f61d40c6418
+		[GetEnumItems] = (function) function: 0x00007f61d40c6448
+		[FromValue] = (function) function: 0x00007f61d40c63e8
+[CFrame] = (table) table: 0x00007f61d98f2b58
+	[ToWorldSpace] = (function) function: 0x00007f61d98fc978
 	[identity] = (table) 0.000, 0.000, 0.000, 1.00000, 0.00000, 0.00000, 0.00000, 1.00000, 0.00000, 0.00000, 0.00000, 1.00000
 		[y] = (number) 0
 		[x] = (number) 0
@@ -612,39 +648,39 @@ Dump:
 		[qx] = (number) 0
 		[qw] = (number) 1
 		[qz] = (number) 0
-	[fromMatrix] = (function) function: 0x00007f749c181a38
-	[ToEulerAnglesXYZ] = (function) function: 0x00007f749c1818f8
-	[Lerp] = (function) function: 0x00007f749c181878
-	[ToOrientation] = (function) function: 0x00007f749c1818b8
-	[toEulerAnglesYXZ] = (function) function: 0x00007f749c1818b8
-	[VectorToObjectSpace] = (function) function: 0x00007f749acfcdf8
-	[lookAt] = (function) function: 0x00007f749a80a528
-	[VectorToWorldSpace] = (function) function: 0x00007f749acfce48
-	[fromEulerAnglesXYZ] = (function) function: 0x00007f749acfcfd8
-	[ToEulerAnglesYXZ] = (function) function: 0x00007f749c1818b8
-	[toEulerAnglesXYZ] = (function) function: 0x00007f749c1818f8
-	[components] = (function) function: 0x00007f749c181938
-	[GetComponents] = (function) function: 0x00007f749c181938
-	[PointToObjectSpace] = (function) function: 0x00007f749a80a4a8
-	[Angles] = (function) function: 0x00007f749acfcfd8
-	[fromEulerAnglesYXZ] = (function) function: 0x00007f749acfcf88
-	[PointToWorldSpace] = (function) function: 0x00007f749a80a4c8
-	[ToObjectSpace] = (function) function: 0x00007f749a80a4e8
-	[Inverse] = (function) function: 0x00007f749acfce98
-	[new] = (function) function: 0x00007f749c1819b8
-	[fromAxisAngle] = (function) function: 0x00007f749c1819f8
-	[fromOrientation] = (function) function: 0x00007f749acfcf88
-[Color3] = (table) table: 0x00007f749c2e9b88
-	[Lerp] = (function) function: 0x00007f749a80a628
-	[fromRGB] = (function) function: 0x00007f749a80a688
-	[new] = (function) function: 0x00007f749a80a6a8
-[Vector3] = (table) table: 0x00007f749c2e7ae8
-	[Dot] = (function) function: 0x00007f749a80a7a8
+	[fromMatrix] = (function) function: 0x00007f61d3c06838
+	[ToEulerAnglesXYZ] = (function) function: 0x00007f61d3c066f8
+	[Lerp] = (function) function: 0x00007f61d3c06678
+	[ToOrientation] = (function) function: 0x00007f61d3c066b8
+	[toEulerAnglesYXZ] = (function) function: 0x00007f61d3c066b8
+	[VectorToObjectSpace] = (function) function: 0x00007f61d3c2ee18
+	[lookAt] = (function) function: 0x00007f61d98fc998
+	[VectorToWorldSpace] = (function) function: 0x00007f61d3c2ee68
+	[fromEulerAnglesXYZ] = (function) function: 0x00007f61d3c2eff8
+	[ToEulerAnglesYXZ] = (function) function: 0x00007f61d3c066b8
+	[toEulerAnglesXYZ] = (function) function: 0x00007f61d3c066f8
+	[components] = (function) function: 0x00007f61d3c06738
+	[GetComponents] = (function) function: 0x00007f61d3c06738
+	[PointToObjectSpace] = (function) function: 0x00007f61d98fc918
+	[Angles] = (function) function: 0x00007f61d3c2eff8
+	[fromEulerAnglesYXZ] = (function) function: 0x00007f61d3c2efa8
+	[PointToWorldSpace] = (function) function: 0x00007f61d98fc938
+	[ToObjectSpace] = (function) function: 0x00007f61d98fc958
+	[Inverse] = (function) function: 0x00007f61d3c2eeb8
+	[new] = (function) function: 0x00007f61d3c067b8
+	[fromAxisAngle] = (function) function: 0x00007f61d3c067f8
+	[fromOrientation] = (function) function: 0x00007f61d3c2efa8
+[Color3] = (table) table: 0x00007f61d98f2ca8
+	[Lerp] = (function) function: 0x00007f61d98fca98
+	[fromRGB] = (function) function: 0x00007f61d98fcaf8
+	[new] = (function) function: 0x00007f61d98fcb18
+[Vector3] = (table) table: 0x00007f61d98f0c08
+	[Dot] = (function) function: 0x00007f61d98fcc18
 	[one] = (table) 1.000, 1.000, 1.000
 		[y] = (number) 1
 		[x] = (number) 1
 		[z] = (number) 1
-	[new] = (function) function: 0x00007f749a80a848
+	[new] = (function) function: 0x00007f61d98fccb8
 	[xAxis] = (table) 1.000, 0.000, 0.000
 		[y] = (number) 0
 		[x] = (number) 1
@@ -661,105 +697,105 @@ Dump:
 		[y] = (number) 1
 		[x] = (number) 0
 		[z] = (number) 0
-	[Cross] = (function) function: 0x00007f749a80a788
-	[Lerp] = (function) function: 0x00007f749a80a768
-[OnRemoteEvent] = (function) function: 0x00007f749c2e9bb8
-[wait] = (function) function: 0x00007f749a80bac8
-[rawset] = (function) function: 0x00007f749c2ea1e8
-[TweenService] = (table) table: 0x00007f749c2e9be8
-	[Create] = (function) function: 0x00007f749acfd078
-[RunService] = (table) table: 0x00007f749c2e6588
-	[Stepped] = (table) table: 0x00007f749ad3b018
-	[IsStudio] = (function) function: 0x00007f749c1809f8
-	[IsServer] = (function) function: 0x00007f749c180a78
-	[IsClient] = (function) function: 0x00007f749c180a38
-	[Heartbeat] = (table) table: 0x00007f749ad3b0d8
-	[RenderStepped] = (table) table: 0x00007f749ae090b8
-		[Once] = (function) function: 0x00007f749c180978
-		[Wait] = (function) function: 0x00007f749c180938
-		[Connect] = (function) function: 0x00007f749c1809b8
-[fireClient] = (function) function: 0x00007f749c181f78
-[delay] = (function) function: 0x00007f749a80ba88
-[workspace] = (table) <cycle> table: 0x00007f749ae0adf8
-[FireServer] = (function) function: 0x00007f749c2e6828
-[math] = (table) table: 0x00007f749c2e83e8
-	[log] = (function) function: 0x00007f749c2e80e8
-	[ldexp] = (function) function: 0x00007f749c2e8148
-	[deg] = (function) function: 0x00007f749c2e8238
-	[cosh] = (function) function: 0x00007f749c2e8298
-	[round] = (function) function: 0x00007f749c2e7de8
-	[random] = (function) function: 0x00007f749c2e7fc8
-	[frexp] = (function) function: 0x00007f749c2e8178
-	[tanh] = (function) function: 0x00007f749c2e7ed8
-	[floor] = (function) function: 0x00007f749c2e81d8
-	[max] = (function) function: 0x00007f749c2e80b8
-	[sqrt] = (function) function: 0x00007f749c2e7f08
-	[modf] = (function) function: 0x00007f749c2e8058
+	[Cross] = (function) function: 0x00007f61d98fcbf8
+	[Lerp] = (function) function: 0x00007f61d98fcbd8
+[OnRemoteEvent] = (function) function: 0x00007f61d98f2cd8
+[wait] = (function) function: 0x00007f61d98fdf38
+[rawset] = (function) function: 0x00007f61d98f3308
+[TweenService] = (table) table: 0x00007f61d98f2d08
+	[Create] = (function) function: 0x00007f61d3c2f098
+[RunService] = (table) table: 0x00007f61d98ef6a8
+	[Stepped] = (table) table: 0x00007f61d40c9178
+	[IsStudio] = (function) function: 0x00007f61d3c057f8
+	[IsServer] = (function) function: 0x00007f61d3c05878
+	[IsClient] = (function) function: 0x00007f61d3c05838
+	[Heartbeat] = (table) table: 0x00007f61d40c9238
+	[RenderStepped] = (table) table: 0x00007f61d3f8c808
+		[Once] = (function) function: 0x00007f61d3c05778
+		[Wait] = (function) function: 0x00007f61d3c05738
+		[Connect] = (function) function: 0x00007f61d3c057b8
+[fireClient] = (function) function: 0x00007f61d3c06d78
+[delay] = (function) function: 0x00007f61d98fdef8
+[workspace] = (table) <cycle> table: 0x00007f61d3f8e548
+[FireServer] = (function) function: 0x00007f61d98ef948
+[math] = (table) table: 0x00007f61d98f1508
+	[log] = (function) function: 0x00007f61d98f1208
+	[ldexp] = (function) function: 0x00007f61d98f1268
+	[deg] = (function) function: 0x00007f61d98f1358
+	[cosh] = (function) function: 0x00007f61d98f13b8
+	[round] = (function) function: 0x00007f61d98f0f08
+	[random] = (function) function: 0x00007f61d98f10e8
+	[frexp] = (function) function: 0x00007f61d98f1298
+	[tanh] = (function) function: 0x00007f61d98f0ff8
+	[floor] = (function) function: 0x00007f61d98f12f8
+	[max] = (function) function: 0x00007f61d98f11d8
+	[sqrt] = (function) function: 0x00007f61d98f1028
+	[modf] = (function) function: 0x00007f61d98f1178
 	[huge] = (number) inf
-	[pow] = (function) function: 0x00007f749c2e8028
-	[acos] = (function) function: 0x00007f749c2e8388
-	[tan] = (function) function: 0x00007f749c2e7ea8
-	[cos] = (function) function: 0x00007f749c2e8268
+	[pow] = (function) function: 0x00007f61d98f1148
+	[acos] = (function) function: 0x00007f61d98f14a8
+	[tan] = (function) function: 0x00007f61d98f0fc8
+	[cos] = (function) function: 0x00007f61d98f1388
 	[pi] = (number) 3.141592653589793
-	[atan] = (function) function: 0x00007f749c2e82f8
-	[map] = (function) function: 0x00007f749c2e7db8
-	[sign] = (function) function: 0x00007f749c2e7e18
-	[ceil] = (function) function: 0x00007f749c2e82c8
-	[clamp] = (function) function: 0x00007f749c2e7e48
-	[noise] = (function) function: 0x00007f749c2e7e78
-	[abs] = (function) function: 0x00007f749c2e83b8
-	[exp] = (function) function: 0x00007f749c2e8208
-	[sinh] = (function) function: 0x00007f749c2e7f68
-	[asin] = (function) function: 0x00007f749c2e8358
-	[min] = (function) function: 0x00007f749c2e8088
-	[randomseed] = (function) function: 0x00007f749c2e7f98
-	[fmod] = (function) function: 0x00007f749c2e81a8
-	[rad] = (function) function: 0x00007f749c2e7ff8
-	[atan2] = (function) function: 0x00007f749c2e8328
-	[log10] = (function) function: 0x00007f749c2e8118
-	[sin] = (function) function: 0x00007f749c2e7f38
-	[lerp] = (function) function: 0x00007f749c2e7d88
-[pcall] = (function) function: 0x00007f749c2e9fd8
-[fireAllClients] = (function) function: 0x00007f749c181f38
-[addCurrency] = (function) function: 0x00007f749c181fb8
-[type] = (function) function: 0x00007f749c2ea098
-[script] = (table) table: 0x00007f749ad37358
-[gcinfo] = (function) function: 0x00007f749c2ea368
-[select] = (function) function: 0x00007f749c2ea188
-[pairs] = (function) function: 0x00007f749c1820b8
-[rawget] = (function) function: 0x00007f749c2ea218
-[unpack] = (function) function: 0x00007f749c2e88c8
-[table] = (table) table: 0x00007f749c2e8c28
-	[getn] = (function) function: 0x00007f749c2e8b68
-	[foreachi] = (function) function: 0x00007f749c2e8b98
-	[foreach] = (function) function: 0x00007f749c2e8bc8
-	[sort] = (function) function: 0x00007f749c2e8aa8
-	[unpack] = (function) function: 0x00007f749c2e8a48
-	[freeze] = (function) function: 0x00007f749c2e8958
-	[clear] = (function) function: 0x00007f749c2e8988
-	[pack] = (function) function: 0x00007f749c2e8a78
-	[move] = (function) function: 0x00007f749c2e8a18
-	[insert] = (function) function: 0x00007f749c2e8b08
-	[create] = (function) function: 0x00007f749c2e89e8
-	[maxn] = (function) function: 0x00007f749c2e8b38
-	[isfrozen] = (function) function: 0x00007f749c2e8928
-	[concat] = (function) function: 0x00007f749c2e8bf8
-	[clone] = (function) function: 0x00007f749c2e88f8
-	[find] = (function) function: 0x00007f749c2e89b8
-	[remove] = (function) function: 0x00007f749c2e8ad8
-[coroutine] = (table) table: 0x00007f749c2e8e68
-	[resume] = (function) function: 0x00007f749c2e8ce8
-	[running] = (function) function: 0x00007f749c2e8e08
-	[yield] = (function) function: 0x00007f749c2e8d78
-	[close] = (function) function: 0x00007f749c2e8d18
-	[status] = (function) function: 0x00007f749c2e8dd8
-	[wrap] = (function) function: 0x00007f749c2e8da8
-	[create] = (function) function: 0x00007f749c2e8e38
-	[isyieldable] = (function) function: 0x00007f749c2e8d48
-[ipairs] = (function) function: 0x00007f749c1820f8
-[error] = (function) function: 0x00007f749c2ea398
-[spawn] = (function) function: 0x00007f749a80baa8
-[Invoke] = (function) function: 0x00007f749c1dcdf8
-[InvokeServer] = (function) function: 0x00007f749acfa5a8
-[InvokeClient] = (function) function: 0x00007f749acfa558
+	[atan] = (function) function: 0x00007f61d98f1418
+	[map] = (function) function: 0x00007f61d98f0ed8
+	[sign] = (function) function: 0x00007f61d98f0f38
+	[ceil] = (function) function: 0x00007f61d98f13e8
+	[clamp] = (function) function: 0x00007f61d98f0f68
+	[noise] = (function) function: 0x00007f61d98f0f98
+	[abs] = (function) function: 0x00007f61d98f14d8
+	[exp] = (function) function: 0x00007f61d98f1328
+	[sinh] = (function) function: 0x00007f61d98f1088
+	[asin] = (function) function: 0x00007f61d98f1478
+	[min] = (function) function: 0x00007f61d98f11a8
+	[randomseed] = (function) function: 0x00007f61d98f10b8
+	[fmod] = (function) function: 0x00007f61d98f12c8
+	[rad] = (function) function: 0x00007f61d98f1118
+	[atan2] = (function) function: 0x00007f61d98f1448
+	[log10] = (function) function: 0x00007f61d98f1238
+	[sin] = (function) function: 0x00007f61d98f1058
+	[lerp] = (function) function: 0x00007f61d98f0ea8
+[pcall] = (function) function: 0x00007f61d98f30f8
+[fireAllClients] = (function) function: 0x00007f61d3c06d38
+[addCurrency] = (function) function: 0x00007f61d3c06db8
+[type] = (function) function: 0x00007f61d98f31b8
+[script] = (table) table: 0x00007f61d40c54b8
+[gcinfo] = (function) function: 0x00007f61d98f3488
+[select] = (function) function: 0x00007f61d98f32a8
+[pairs] = (function) function: 0x00007f61d3c06eb8
+[rawget] = (function) function: 0x00007f61d98f3338
+[unpack] = (function) function: 0x00007f61d98f19e8
+[table] = (table) table: 0x00007f61d98f1d48
+	[getn] = (function) function: 0x00007f61d98f1c88
+	[foreachi] = (function) function: 0x00007f61d98f1cb8
+	[foreach] = (function) function: 0x00007f61d98f1ce8
+	[sort] = (function) function: 0x00007f61d98f1bc8
+	[unpack] = (function) function: 0x00007f61d98f1b68
+	[freeze] = (function) function: 0x00007f61d98f1a78
+	[clear] = (function) function: 0x00007f61d98f1aa8
+	[pack] = (function) function: 0x00007f61d98f1b98
+	[move] = (function) function: 0x00007f61d98f1b38
+	[insert] = (function) function: 0x00007f61d98f1c28
+	[create] = (function) function: 0x00007f61d98f1b08
+	[maxn] = (function) function: 0x00007f61d98f1c58
+	[isfrozen] = (function) function: 0x00007f61d98f1a48
+	[concat] = (function) function: 0x00007f61d98f1d18
+	[clone] = (function) function: 0x00007f61d98f1a18
+	[find] = (function) function: 0x00007f61d98f1ad8
+	[remove] = (function) function: 0x00007f61d98f1bf8
+[coroutine] = (table) table: 0x00007f61d98f1f88
+	[resume] = (function) function: 0x00007f61d98f1e08
+	[running] = (function) function: 0x00007f61d98f1f28
+	[yield] = (function) function: 0x00007f61d98f1e98
+	[close] = (function) function: 0x00007f61d98f1e38
+	[status] = (function) function: 0x00007f61d98f1ef8
+	[wrap] = (function) function: 0x00007f61d98f1ec8
+	[create] = (function) function: 0x00007f61d98f1f58
+	[isyieldable] = (function) function: 0x00007f61d98f1e68
+[ipairs] = (function) function: 0x00007f61d3c06ef8
+[error] = (function) function: 0x00007f61d98f34b8
+[spawn] = (function) function: 0x00007f61d98fdf18
+[Invoke] = (function) function: 0x00007f61d473e328
+[InvokeServer] = (function) function: 0x00007f61d3c2c4d8
+[InvokeClient] = (function) function: 0x00007f61d3c2c488
 ```
