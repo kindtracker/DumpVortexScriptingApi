@@ -1,6 +1,6 @@
 local Json = require("json")
 
-local Input = "FullApiDump.json"
+local Input = "RobloxApiDump.json"
 local Output = "ServerScriptService/Classes.lua"
 
 local File = assert(io.open(Input, "r"))

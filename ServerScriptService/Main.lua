@@ -45,11 +45,25 @@ function DumpClasses()
 		local Success, Result = pcall(Instance.new, ClassName)
 
 		if Success then
-			DumpTable(Result)
+			print(DumpTable(Result))
 			Result:Destroy()
 		end
 
 		task.wait(0)
+	end
+end
+
+function DumpServices()
+	for ClassName in Classes do
+		if ClassName:find("Service") then
+			local Success, Result = pcall(game.GetService, game, ClassName)
+
+			if Success then
+				print(DumpTable(Result))
+			end
+
+			task.wait(0)
+		end
 	end
 end
 
@@ -58,3 +72,6 @@ print(DumpTable(_G))
 
 print("Dumping classes")
 DumpClasses()
+
+print("Dumping services")
+DumpServices()
