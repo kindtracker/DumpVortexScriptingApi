@@ -43,12 +43,11 @@ function DumpTable(Table, Seen, Indent)
 end
 
 function DumpClasses()
-	for ClassName in Classes do
-		local Success, Result = pcall(Instance.new, ClassName)
+	for ClassName, RobloxClassDump in pairs(Classes) do
+		local Success, Class = pcall(Instance.new, ClassName)
 
 		if Success then
-			print(DumpTable(Result))
-			Result:Destroy()
+			print(DumpTable(Class))
 		end
 
 		task.wait(0)
@@ -56,12 +55,12 @@ function DumpClasses()
 end
 
 function DumpServices()
-	for ClassName in Classes do
-		if ClassName:find("Service") then
-			local Success, Result = pcall(game.GetService, game, ClassName)
+	for ServiceName, RobloxServiceDump in pairs(Classes) do
+		if RobloxServiceDump.Tags.Service then
+			local Success, Service = pcall(game.GetService, game, ServiceName)
 
 			if Success then
-				print(DumpTable(Result))
+				print(DumpTable(Service))
 			end
 
 			task.wait(0)
