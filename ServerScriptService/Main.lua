@@ -1,7 +1,9 @@
 -- DumpTable function is made by @yeno_why (Discord) but i renamed variables (I love PamelCase)
 
+local GenerateCheatsheet = true
+
 local ServerScriptService = game:GetService("ServerScriptService")
-local Classes = require(ServerScriptService:WaitForChild("Classes.lua"))
+local Classes = require(ServerScriptService:WaitForChild("RobloxApiDump.lua"))
 
 function DumpTable(Table, Seen, Indent)
 	Seen = Seen or {}
