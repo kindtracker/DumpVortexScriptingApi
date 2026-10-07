@@ -45,11 +45,11 @@ function DumpClasses()
 		local Success, Result = pcall(Instance.new, ClassName)
 
 		if Success then
-			print(string.format("[SUCCESS] %s", ClassName))
+			DumpTable(Result)
 			Result:Destroy()
-		else
-			print(string.format("[FAILED] %s: %s", ClassName, Result))
 		end
+
+		task.wait(0)
 	end
 end
 
