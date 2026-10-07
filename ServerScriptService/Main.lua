@@ -1,7 +1,5 @@
 -- DumpTable function is made by @yeno_why (Discord) but i renamed variables (I love PamelCase)
 
-local GenerateCheatsheet = true
-
 local Cheatsheet =
 	"# Vortex Cheatsheet\n\nThis cheatsheet is generated from https://github.com/kindtracker/DumpVortexScriptingApi\n"
 
@@ -163,28 +161,24 @@ function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 
 	if Class then
 		Cheatsheet = Cheatsheet .. "Dump:\n\n```text"
-		Cheatsheet = Cheatsheet .. DumpTable(Class)
+		local Dump = DumpTable(Class)
+		RawDump = RawDump .. Dump
+		Cheatsheet = Cheatsheet .. Dump
 		Cheatsheet = Cheatsheet .. "\n```\n"
 	end
 end
 
 function DumpClasses()
-	if GenerateCheatsheet then
-		Cheatsheet = Cheatsheet .. "\n## Classes\n"
-	end
+	Cheatsheet = Cheatsheet .. "\n## Classes\n"
 
 	for ClassName, RobloxClassDump in pairs(Classes) do
 		local Success, Class = pcall(Instance.new, ClassName)
 
 		if Success and Class ~= nil then
-			task.wait(0.15)
+			task.wait(0.10)
 
-			if GenerateCheatsheet then
-				GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
-				print("Generated cheatsheet for " .. ClassName)
-			else
-				print(DumpTable(Class))
-			end
+			GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
+			print("Generated cheatsheet for " .. ClassName)
 
 			Class:Destroy()
 		end
@@ -193,12 +187,19 @@ function DumpClasses()
 	end
 end
 
+function DumpEnvironment()
+	local Environment = DumpTable("_G")
+end
+
 print("Dumping environment")
-print(DumpTable(_G))
+local EnvDump = DumpTable(_G)
+RawDump = RawDump .. EnvDump
 
 print("Dumping classes")
 DumpClasses()
 
-if GenerateCheatsheet then
-	print(Cheatsheet)
-end
+Cheatsheet = Cheatsheet .. "\n## Raw Dump\n```"
+Cheatsheet = Cheatsheet .. RawDump
+Cheatsheet = "\n```"
+
+print(Cheatsheet)
