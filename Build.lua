@@ -26,6 +26,7 @@ for _, Class in ipairs(ApiDump.Classes) do
 			OutputFile:write(string.format("\t\t\t[%q] = %q,\n", Member.Name, ValueType.Name))
 		end
 	end
+	OutputFile:write("\t\t},\n")
 
 	OutputFile:write("\t\tTags = {\n")
 
@@ -34,8 +35,8 @@ for _, Class in ipairs(ApiDump.Classes) do
 			OutputFile:write(string.format("\t\t\t[%q] = %q,\n", Index, Tag))
 		end
 	end
-
 	OutputFile:write("\t\t},\n")
+
 	OutputFile:write("\t},\n")
 end
 

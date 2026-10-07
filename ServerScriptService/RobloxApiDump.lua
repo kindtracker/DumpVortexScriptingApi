@@ -4,6 +4,7 @@ return {
 		Properties = {
 			["ClassName"] = "string",
 			["className"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -15,6 +16,7 @@ return {
 			["Duration"] = "float",
 			["FrameCount"] = "int",
 			["TrackName"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -23,6 +25,7 @@ return {
 	["AnimationNode"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -37,6 +40,7 @@ return {
 			["LocalId"] = "string",
 			["SourcePlaceId"] = "int64",
 			["SourceUniverseId"] = "int64",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -45,6 +49,7 @@ return {
 	["ScreenshotCapture"] = {
 		Superclass = "Capture",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -55,6 +60,7 @@ return {
 		Properties = {
 			["FilePath"] = "string",
 			["TimeLength"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -65,6 +71,7 @@ return {
 		Properties = {
 			["Error"] = "ConfigSnapshotErrorState",
 			["Outdated"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -73,6 +80,7 @@ return {
 	["DataModelDiff"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -84,6 +92,7 @@ return {
 			["ImageHolder"] = "NetAssetRef",
 			["IsReplicatedCopy"] = "bool",
 			["Size"] = "Vector2",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -95,6 +104,7 @@ return {
 			["FixedSize"] = "bool",
 			["IsReplicatedCopy"] = "bool",
 			["MeshData"] = "SharedString",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -102,6 +112,7 @@ return {
 	["ExecutedRemoteCommand"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -131,6 +142,7 @@ return {
 			["UniqueId"] = "UniqueId",
 			["archivable"] = "bool",
 			["numExpectedDirectChildren"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -148,12 +160,14 @@ return {
 			["Puffiness"] = "float",
 			["Rotation"] = "Vector3",
 			["Scale"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["AccountService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -169,6 +183,7 @@ return {
 			["AttachmentRight"] = "Vector3",
 			["AttachmentUp"] = "Vector3",
 			["BackendAccoutrementState"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -176,12 +191,14 @@ return {
 		Superclass = "Accoutrement",
 		Properties = {
 			["AccessoryType"] = "AccessoryType",
+		},
 		Tags = {
 		},
 	},
 	["Hat"] = {
 		Superclass = "Accoutrement",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -189,6 +206,7 @@ return {
 	["AchievementService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -198,6 +216,7 @@ return {
 	["ActivityHistoryEventService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -213,6 +232,7 @@ return {
 			["RewardImageContent"] = "Content",
 			["RewardName"] = "string",
 			["Visible"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -222,12 +242,14 @@ return {
 			["PortalInvalidReason"] = "string",
 			["PortalVersion"] = "int64",
 			["Status"] = "AdUnitStatus",
+		},
 		Tags = {
 		},
 	},
 	["AdService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -236,6 +258,7 @@ return {
 	["AdvancedDragger"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -243,6 +266,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ApiKey"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -252,6 +276,7 @@ return {
 	["AnimatedImageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -262,6 +287,7 @@ return {
 		Properties = {
 			["AnimationContent"] = "Content",
 			["AnimationId"] = "ContentId",
+		},
 		Tags = {
 		},
 	},
@@ -273,6 +299,7 @@ return {
 			["Length"] = "float",
 			["Loop"] = "bool",
 			["Priority"] = "AnimationPriority",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -280,12 +307,14 @@ return {
 	["AnimationGraphDefinition"] = {
 		Superclass = "AnimationClip",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["CurveAnimation"] = {
 		Superclass = "AnimationClip",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -293,12 +322,14 @@ return {
 		Superclass = "AnimationClip",
 		Properties = {
 			["AuthoredHipHeight"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["AnimationClipProvider"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -308,12 +339,14 @@ return {
 	["AnimationController"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["AnimationFromVideoCreatorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -322,6 +355,7 @@ return {
 	["AnimationFromVideoCreatorStudioService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -334,6 +368,7 @@ return {
 			["InputPinData"] = "BinaryString",
 			["NodeId"] = "string",
 			["NodeType"] = "AnimationNodeType",
+		},
 		Tags = {
 		},
 	},
@@ -347,6 +382,7 @@ return {
 			["postTransform"] = "BinaryString",
 			["preTransform"] = "BinaryString",
 			["transform"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
@@ -359,6 +395,7 @@ return {
 			["Priority"] = "AnimationPriority",
 			["WeightCurrent"] = "float",
 			["WeightTarget"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -376,6 +413,7 @@ return {
 			["TimePosition"] = "float",
 			["WeightCurrent"] = "float",
 			["WeightTarget"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -385,12 +423,14 @@ return {
 		Properties = {
 			["NodeId"] = "string",
 			["NodeType"] = "AnimationValueNodeType",
+		},
 		Tags = {
 		},
 	},
 	["AnimationValueOutputDefinition"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -466,6 +506,7 @@ return {
 			["PreferLodEnabled"] = "bool",
 			["RootMotion"] = "CFrame",
 			["RootMotionWeight"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -483,6 +524,7 @@ return {
 			["ReplyCount"] = "int64",
 			["Resolved"] = "bool",
 			["TaggedUsers"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -491,6 +533,7 @@ return {
 		Properties = {
 			["Adornee"] = "PVInstance",
 			["AdorneeOffset"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -503,6 +546,7 @@ return {
 			["Mode"] = "AnnotationEditingMode",
 			["ResolvedLoadingStatus"] = "AnnotationRequestStatus",
 			["Selected"] = "Annotation",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -511,6 +555,7 @@ return {
 	["AppAgeSignalsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -520,6 +565,7 @@ return {
 	["AppLifecycleObserverService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -529,6 +575,7 @@ return {
 	["AppRatingPromptService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -538,6 +585,7 @@ return {
 	["AppUpdateService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -547,6 +595,7 @@ return {
 	["AssetCounterService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -559,6 +608,7 @@ return {
 			["Interface"] = "string",
 			["Port"] = "int",
 			["StartServer"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -568,6 +618,7 @@ return {
 	["AssetImportService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -577,6 +628,7 @@ return {
 	["AssetManagerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -589,6 +641,7 @@ return {
 			["ContentId"] = "string",
 			["OutputPath"] = "string",
 			["PatchId"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -597,6 +650,7 @@ return {
 	["AssetQualityService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -607,6 +661,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["AllowInsertFreeAssets"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -621,6 +676,7 @@ return {
 			["Glare"] = "float",
 			["Haze"] = "float",
 			["Offset"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -640,6 +696,7 @@ return {
 			["WorldPosition"] = "Vector3",
 			["WorldRotation"] = "Vector3",
 			["WorldSecondaryAxis"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -649,6 +706,7 @@ return {
 			["Transform"] = "CFrame",
 			["TransformedCFrame"] = "CFrame",
 			["TransformedWorldCFrame"] = "CFrame",
+		},
 		Tags = {
 		},
 	},
@@ -659,6 +717,7 @@ return {
 			["RmsLevel"] = "float",
 			["SpectrumEnabled"] = "bool",
 			["WindowSize"] = "AudioWindowSize",
+		},
 		Tags = {
 		},
 	},
@@ -666,6 +725,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Layout"] = "AudioChannelLayout",
+		},
 		Tags = {
 		},
 	},
@@ -673,6 +733,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Layout"] = "AudioChannelLayout",
+		},
 		Tags = {
 		},
 	},
@@ -683,6 +744,7 @@ return {
 			["Depth"] = "float",
 			["Mix"] = "float",
 			["Rate"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -696,6 +758,7 @@ return {
 			["Ratio"] = "float",
 			["Release"] = "float",
 			["Threshold"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -714,6 +777,7 @@ return {
 			["NoiseSuppression"] = "bool",
 			["Player"] = "Player",
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -721,6 +785,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Player"] = "Player",
+		},
 		Tags = {
 		},
 	},
@@ -729,6 +794,7 @@ return {
 		Properties = {
 			["Bypass"] = "bool",
 			["Level"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -741,6 +807,7 @@ return {
 			["Feedback"] = "float",
 			["RampTime"] = "float",
 			["WetLevel"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -759,6 +826,7 @@ return {
 			["PositionType"] = "EmitterPositionType",
 			["ReverbEnabled"] = "SimulationMode",
 			["SimulationFidelity"] = "AudioSimulationFidelity",
+		},
 		Tags = {
 		},
 	},
@@ -771,6 +839,7 @@ return {
 			["LowGain"] = "float",
 			["MidGain"] = "float",
 			["MidRange"] = "NumberRange",
+		},
 		Tags = {
 		},
 	},
@@ -779,6 +848,7 @@ return {
 		Properties = {
 			["Bypass"] = "bool",
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -791,6 +861,7 @@ return {
 			["Frequency"] = "float",
 			["Gain"] = "float",
 			["Q"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -801,12 +872,14 @@ return {
 			["Depth"] = "float",
 			["Mix"] = "float",
 			["Rate"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["AudioFocusService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -820,6 +893,7 @@ return {
 			["Bypass"] = "bool",
 			["Release"] = "float",
 			["Threshold"] = "NumberRange",
+		},
 		Tags = {
 		},
 	},
@@ -830,6 +904,7 @@ return {
 			["Editor"] = "bool",
 			["MaxLevel"] = "float",
 			["Release"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -846,6 +921,7 @@ return {
 			["PositionType"] = "ListenerPositionType",
 			["ReverbEnabled"] = "SimulationMode",
 			["SimulationFidelity"] = "AudioSimulationFidelity",
+		},
 		Tags = {
 		},
 	},
@@ -855,6 +931,7 @@ return {
 			["Bypass"] = "bool",
 			["Pitch"] = "float",
 			["WindowSize"] = "AudioWindowSize",
+		},
 		Tags = {
 		},
 	},
@@ -876,6 +953,7 @@ return {
 			["TimeLength"] = "double",
 			["TimePosition"] = "double",
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -884,6 +962,7 @@ return {
 		Properties = {
 			["IsRecording"] = "bool",
 			["TimeLength"] = "double",
+		},
 		Tags = {
 			[1] = "NotBrowsable",
 		},
@@ -904,6 +983,7 @@ return {
 			["LowShelfGain"] = "float",
 			["ReferenceFrequency"] = "float",
 			["WetLevel"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -919,6 +999,7 @@ return {
 			["SearchKeyword"] = "string",
 			["Tag"] = "string",
 			["Title"] = "string",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -934,6 +1015,7 @@ return {
 			["Text"] = "string",
 			["VoiceDetected"] = "bool",
 			["VoiceDetectedOverride"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -952,6 +1034,7 @@ return {
 			["TimePosition"] = "double",
 			["VoiceId"] = "string",
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -965,6 +1048,7 @@ return {
 			["Shape"] = "float",
 			["Skew"] = "float",
 			["Square"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -976,6 +1060,7 @@ return {
 			["PositionType"] = "AudioPositionType",
 			["Profile"] = "WindSoundProfile",
 			["Volume"] = "float",
+		},
 		Tags = {
 			[1] = "NotBrowsable",
 		},
@@ -989,6 +1074,7 @@ return {
 			["LODLevel"] = "int",
 			["MaxFrequency"] = "int",
 			["PriorFrameInvoked"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Deprecated",
@@ -997,6 +1083,7 @@ return {
 	["AuroraScriptService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1015,6 +1102,7 @@ return {
 			["RCCHeartbeatFPS"] = "double",
 			["RollbackOffset"] = "int",
 			["TooOldInputCount"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1037,6 +1125,7 @@ return {
 			["EnableSprinting"] = "bool",
 			["EnableSwimming"] = "bool",
 			["EnableTurning"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -1066,6 +1155,7 @@ return {
 			["EnableVFX"] = "bool",
 			["LimitBounds"] = "Vector3",
 			["LimitMethod"] = "AvatarSettingsAccessoryLimitMethod",
+		},
 		Tags = {
 		},
 	},
@@ -1094,6 +1184,7 @@ return {
 			["CustomSwimIdleAnimationId"] = "int64",
 			["CustomWalkAnimationEnabled"] = "bool",
 			["CustomWalkAnimationId"] = "int64",
+		},
 		Tags = {
 		},
 	},
@@ -1132,6 +1223,7 @@ return {
 			["CustomWidthScale"] = "NumberRange",
 			["KeepPlayerHead"] = "bool",
 			["ScaleMode"] = "AvatarSettingsScaleMode",
+		},
 		Tags = {
 		},
 	},
@@ -1141,6 +1233,7 @@ return {
 			["ClientFeatures"] = "int",
 			["ClientFeaturesInitialized"] = "bool",
 			["ServerFeatures"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1176,6 +1269,7 @@ return {
 			["CustomTShirtAccessoryEnabled"] = "bool",
 			["CustomTShirtAccessoryId"] = "int64",
 			["LimitBounds"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -1186,12 +1280,14 @@ return {
 			["HitAndTouchDetectionMode"] = "AvatarSettingsHitAndTouchDetectionMode",
 			["LegacyCollisionMode"] = "AvatarSettingsLegacyCollisionMode",
 			["SingleColliderSize"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["AvatarCreationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1200,6 +1296,7 @@ return {
 	["AvatarEditorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1208,6 +1305,7 @@ return {
 	["AvatarImportService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1218,6 +1316,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["AvatarType"] = "GameAvatarType",
+		},
 		Tags = {
 		},
 	},
@@ -1225,6 +1324,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Loaded"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1233,6 +1333,7 @@ return {
 	["BackendReplicatedStorage"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1241,6 +1342,7 @@ return {
 	["BackendServerScriptService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1250,6 +1352,7 @@ return {
 	["BackendServerStorage"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1259,12 +1362,14 @@ return {
 	["Backpack"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["BadgeService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1274,6 +1379,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Enabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1283,6 +1389,7 @@ return {
 		Superclass = "BaseCoreGuiConfiguration",
 		Properties = {
 			["Open"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1292,6 +1399,7 @@ return {
 		Superclass = "BaseCoreGuiConfiguration",
 		Properties = {
 			["Open"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1301,6 +1409,7 @@ return {
 		Superclass = "BaseCoreGuiConfiguration",
 		Properties = {
 			["Open"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1312,6 +1421,7 @@ return {
 			["Id"] = "string",
 			["ImportName"] = "string",
 			["ShouldImport"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1322,6 +1432,7 @@ return {
 		Properties = {
 			["ForceNewVersion"] = "bool",
 			["VersionedAssetId"] = "int64",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1330,6 +1441,7 @@ return {
 	["FacsImportData"] = {
 		Superclass = "BaseImportData",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1341,6 +1453,7 @@ return {
 			["Anchored"] = "bool",
 			["ImportAsModelAsset"] = "bool",
 			["InsertInWorkspace"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1349,6 +1462,7 @@ return {
 	["JointImportData"] = {
 		Superclass = "BaseImportData",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1368,6 +1482,7 @@ return {
 			["NormalVersionedAssetId"] = "int64",
 			["RoughnessFilePath"] = "string",
 			["RoughnessVersionedAssetId"] = "int64",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1397,6 +1512,7 @@ return {
 			["PolygonCount"] = "float",
 			["UseImportedPivot"] = "bool",
 			["VersionedAssetId"] = "int64",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1431,6 +1547,7 @@ return {
 			["VersionedAssetId"] = "int64",
 			["WorldForward"] = "NormalId",
 			["WorldUp"] = "NormalId",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -1439,6 +1556,7 @@ return {
 	["BasePlayerGui"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -1448,6 +1566,7 @@ return {
 		Properties = {
 			["SelectionImageObject"] = "GuiObject",
 			["Version"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1461,6 +1580,7 @@ return {
 			["InputBindingMappingsRaw"] = "BinaryString",
 			["ScreenOrientation"] = "ScreenOrientation",
 			["SelectionImageObject"] = "GuiObject",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "PlayerReplicated",
@@ -1478,6 +1598,7 @@ return {
 			["StudioDefaultStyleSheet"] = "StyleSheet",
 			["StudioInsertWidgetLayerCollectorAutoLinkStyleSheet"] = "StyleSheet",
 			["VirtualCursorMode"] = "VirtualCursorMode",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1486,6 +1607,7 @@ return {
 	["BaseRemoteEvent"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -1493,12 +1615,14 @@ return {
 	["RemoteEvent"] = {
 		Superclass = "BaseRemoteEvent",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["UnreliableRemoteEvent"] = {
 		Superclass = "BaseRemoteEvent",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -1518,6 +1642,7 @@ return {
 			["ImportOriginWorld"] = "CFrame",
 			["TemporaryCageMeshContent"] = "Content",
 			["TemporaryCageMeshId"] = "ContentId",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -1525,6 +1650,7 @@ return {
 	["WrapDeformer"] = {
 		Superclass = "BaseWrap",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -1547,6 +1673,7 @@ return {
 			["ShrinkFactor"] = "float",
 			["TemporaryReferenceId"] = "ContentId",
 			["TemporaryReferenceMeshContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
@@ -1556,6 +1683,7 @@ return {
 			["Color"] = "Color3",
 			["DebugMode"] = "WrapTargetDebugMode",
 			["Stiffness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -1583,24 +1711,28 @@ return {
 			["Width0"] = "float",
 			["Width1"] = "float",
 			["ZOffset"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["BindableEvent"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["BindableFunction"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["BodyMover"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Deprecated",
@@ -1614,6 +1746,7 @@ return {
 			["P"] = "float",
 			["angularvelocity"] = "Vector3",
 			["maxTorque"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1623,6 +1756,7 @@ return {
 		Properties = {
 			["Force"] = "Vector3",
 			["force"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1636,6 +1770,7 @@ return {
 			["P"] = "float",
 			["cframe"] = "CFrame",
 			["maxTorque"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1649,6 +1784,7 @@ return {
 			["Position"] = "Vector3",
 			["maxForce"] = "Vector3",
 			["position"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1660,6 +1796,7 @@ return {
 			["Location"] = "Vector3",
 			["force"] = "Vector3",
 			["location"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1672,6 +1809,7 @@ return {
 			["Velocity"] = "Vector3",
 			["maxForce"] = "Vector3",
 			["velocity"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1691,6 +1829,7 @@ return {
 			["ThrustP"] = "float",
 			["TurnD"] = "float",
 			["TurnP"] = "float",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1703,12 +1842,14 @@ return {
 			["Color"] = "Color3",
 			["HeadShape"] = "string",
 			["Instance"] = "Instance",
+		},
 		Tags = {
 		},
 	},
 	["BranchService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1728,6 +1869,7 @@ return {
 			["Script"] = "string",
 			["Valid"] = "bool",
 			["Verified"] = "bool",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -1735,6 +1877,7 @@ return {
 	["BrowserService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1744,6 +1887,7 @@ return {
 	["BugReporterService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1753,6 +1897,7 @@ return {
 	["BulkImportService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1762,6 +1907,7 @@ return {
 	["CacheableContentProvider"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1771,6 +1917,7 @@ return {
 	["HSRDataContentProvider"] = {
 		Superclass = "CacheableContentProvider",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1780,6 +1927,7 @@ return {
 	["MeshContentProvider"] = {
 		Superclass = "CacheableContentProvider",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1789,6 +1937,7 @@ return {
 	["SlimContentProvider"] = {
 		Superclass = "CacheableContentProvider",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1797,6 +1946,7 @@ return {
 	["SolidModelContentProvider"] = {
 		Superclass = "CacheableContentProvider",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1806,6 +1956,7 @@ return {
 	["WrapContentProvider"] = {
 		Superclass = "CacheableContentProvider",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1815,6 +1966,7 @@ return {
 	["CallingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1824,6 +1976,7 @@ return {
 	["CalloutService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1833,6 +1986,7 @@ return {
 	["CaptureService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1841,6 +1995,7 @@ return {
 	["ChangeHistoryService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1849,6 +2004,7 @@ return {
 	["ChangeHistoryStreamingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1857,6 +2013,7 @@ return {
 	["CharacterAppearance"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -1876,6 +2033,7 @@ return {
 			["RightLegColor3"] = "Color3",
 			["TorsoColor"] = "BrickColor",
 			["TorsoColor3"] = "Color3",
+		},
 		Tags = {
 		},
 	},
@@ -1889,6 +2047,7 @@ return {
 			["MeshId"] = "int64",
 			["OverlayTextureContent"] = "Content",
 			["OverlayTextureId"] = "int64",
+		},
 		Tags = {
 		},
 	},
@@ -1900,6 +2059,7 @@ return {
 			["Outfit1Content"] = "Content",
 			["Outfit2"] = "ContentId",
 			["Outfit2Content"] = "Content",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -1909,6 +2069,7 @@ return {
 		Properties = {
 			["PantsTemplate"] = "ContentId",
 			["PantsTemplateContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
@@ -1917,6 +2078,7 @@ return {
 		Properties = {
 			["ShirtTemplate"] = "ContentId",
 			["ShirtTemplateContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
@@ -1926,6 +2088,7 @@ return {
 			["Color3"] = "Color3",
 			["Graphic"] = "ContentId",
 			["TextureContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
@@ -1933,6 +2096,7 @@ return {
 		Superclass = "CharacterAppearance",
 		Properties = {
 			["SkinColor"] = "BrickColor",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -1944,6 +2108,7 @@ return {
 			["IsAutoMigrated"] = "bool",
 			["LoadDefaultChat"] = "bool",
 			["ModerationMode"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -1956,6 +2121,7 @@ return {
 			["CursorIcon"] = "ContentId",
 			["CursorIconContent"] = "Content",
 			["MaxActivationDistance"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -1993,12 +2159,14 @@ return {
 			["VRSwitchKeyCode"] = "KeyCode",
 			["WorldAxis"] = "Vector3",
 			["WorldSecondaryAxis"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["ClientStorageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2008,6 +2176,7 @@ return {
 	["CloudCRUDService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2017,6 +2186,7 @@ return {
 	["CloudExecutionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2030,12 +2200,14 @@ return {
 			["Cover"] = "float",
 			["Density"] = "float",
 			["Enabled"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["ClusterPacketCache"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2054,6 +2226,7 @@ return {
 			["Status"] = "CollaboratorStatus",
 			["UserId"] = "int64",
 			["Username"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2061,6 +2234,7 @@ return {
 	["CollaboratorsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2069,6 +2243,7 @@ return {
 	["CollectionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2077,6 +2252,7 @@ return {
 	["CommerceService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2086,12 +2262,14 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["CurveType"] = "CompositeValueCurveType",
+		},
 		Tags = {
 		},
 	},
 	["ConfigService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2101,12 +2279,14 @@ return {
 	["Configuration"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ConfigureServerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2116,6 +2296,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["NetworkStatus"] = "NetworkStatus",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2131,6 +2312,7 @@ return {
 			["Color"] = "BrickColor",
 			["Enabled"] = "bool",
 			["Visible"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2150,6 +2332,7 @@ return {
 			["Responsiveness"] = "float",
 			["RigidityEnabled"] = "bool",
 			["SecondaryAxis"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -2167,6 +2350,7 @@ return {
 			["ReactionForceEnabled"] = "bool",
 			["Responsiveness"] = "float",
 			["RigidityEnabled"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -2177,6 +2361,7 @@ return {
 			["MaxTorque"] = "float",
 			["ReactionTorqueEnabled"] = "bool",
 			["RelativeTo"] = "ActuatorRelativeTo",
+		},
 		Tags = {
 		},
 	},
@@ -2196,6 +2381,7 @@ return {
 			["Part0"] = "BasePart",
 			["Part1"] = "BasePart",
 			["Transform"] = "CFrame",
+		},
 		Tags = {
 		},
 	},
@@ -2212,6 +2398,7 @@ return {
 			["TwistLowerAngle"] = "float",
 			["TwistUpperAngle"] = "float",
 			["UpperAngle"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2233,6 +2420,7 @@ return {
 			["SoftlockServoUponReachingTarget"] = "bool",
 			["TargetAngle"] = "float",
 			["UpperAngle"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2244,6 +2432,7 @@ return {
 			["Magnitude"] = "float",
 			["MaxForce"] = "float",
 			["ReactionForceEnabled"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -2264,18 +2453,21 @@ return {
 			["SecondaryTangentAxis"] = "Vector3",
 			["VectorVelocity"] = "Vector3",
 			["VelocityConstraintMode"] = "VelocityConstraintMode",
+		},
 		Tags = {
 		},
 	},
 	["PlaneConstraint"] = {
 		Superclass = "Constraint",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["Plane"] = {
 		Superclass = "PlaneConstraint",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -2284,6 +2476,7 @@ return {
 		Superclass = "Constraint",
 		Properties = {
 			["EnableSkinning"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -2296,6 +2489,7 @@ return {
 			["LimitAngle1"] = "float",
 			["LimitsEnabled"] = "bool",
 			["Thickness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2311,6 +2505,7 @@ return {
 			["WinchResponsiveness"] = "float",
 			["WinchSpeed"] = "float",
 			["WinchTarget"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2332,6 +2527,7 @@ return {
 			["TargetPosition"] = "float",
 			["UpperLimit"] = "float",
 			["Velocity"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2356,12 +2552,14 @@ return {
 			["TargetAngle"] = "float",
 			["UpperAngle"] = "float",
 			["WorldRotationAxis"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["PrismaticConstraint"] = {
 		Superclass = "SlidingBallConstraint",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -2379,6 +2577,7 @@ return {
 			["Radius"] = "float",
 			["Stiffness"] = "float",
 			["Thickness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2387,6 +2586,7 @@ return {
 		Properties = {
 			["RelativeTo"] = "ActuatorRelativeTo",
 			["Torque"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -2403,6 +2603,7 @@ return {
 			["Radius"] = "float",
 			["Restitution"] = "float",
 			["Stiffness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2413,6 +2614,7 @@ return {
 			["MaxAngle"] = "float",
 			["Radius"] = "float",
 			["Restitution"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2422,6 +2624,7 @@ return {
 			["ApplyAtCenterOfMass"] = "bool",
 			["Force"] = "Vector3",
 			["RelativeTo"] = "ActuatorRelativeTo",
+		},
 		Tags = {
 		},
 	},
@@ -2430,6 +2633,7 @@ return {
 		Properties = {
 			["BaseUrl"] = "string",
 			["RequestQueueSize"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2439,6 +2643,7 @@ return {
 	["ContextActionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2449,12 +2654,14 @@ return {
 		Properties = {
 			["Owner"] = "Player",
 			["StateSchema"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["Controller"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2462,6 +2669,7 @@ return {
 	["HumanoidController"] = {
 		Superclass = "Controller",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -2470,12 +2678,14 @@ return {
 		Properties = {
 			["Steer"] = "float",
 			["Throttle"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["VehicleController"] = {
 		Superclass = "Controller",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -2485,6 +2695,7 @@ return {
 			["Active"] = "bool",
 			["BalanceRigidityEnabled"] = "bool",
 			["MoveSpeedFactor"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2500,6 +2711,7 @@ return {
 			["MoveMaxForce"] = "float",
 			["TurnMaxTorque"] = "float",
 			["TurnSpeedFactor"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2510,6 +2722,7 @@ return {
 			["BalanceMaxTorque"] = "float",
 			["BalanceSpeed"] = "float",
 			["MoveMaxForce"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2527,6 +2740,7 @@ return {
 			["StandForce"] = "float",
 			["StandSpeed"] = "float",
 			["TurnSpeedFactor"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2538,6 +2752,7 @@ return {
 			["PitchSpeedFactor"] = "float",
 			["RollMaxTorque"] = "float",
 			["RollSpeedFactor"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -2553,12 +2768,14 @@ return {
 			["MovingDirection"] = "Vector3",
 			["RootPart"] = "BasePart",
 			["UpDirection"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["ControllerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2568,6 +2785,7 @@ return {
 	["CookiesService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2579,6 +2797,7 @@ return {
 			["CapturesViewConfiguration"] = "CapturesViewConfiguration",
 			["PlayerListConfiguration"] = "PlayerListConfiguration",
 			["SelfViewConfiguration"] = "SelfViewConfiguration",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2588,6 +2807,7 @@ return {
 	["CorePackages"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2597,6 +2817,7 @@ return {
 	["CoreScriptDebuggingManagerHelper"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2605,6 +2826,7 @@ return {
 	["CoreScriptSyncService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2614,6 +2836,7 @@ return {
 	["CreationDBService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2623,6 +2846,7 @@ return {
 	["CreatorStoreService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2631,6 +2855,7 @@ return {
 	["CrossDMScriptChangeListener"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2641,6 +2866,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["PersistedCurrentValue"] = "float",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -2649,6 +2875,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Source"] = "Instance",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -2656,6 +2883,7 @@ return {
 	["CustomLog"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -2666,6 +2894,7 @@ return {
 			["Offset"] = "Vector3",
 			["Scale"] = "Vector3",
 			["VertexColor"] = "Vector3",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -2677,6 +2906,7 @@ return {
 			["Bevel"] = "float",
 			["Bevel Roundness"] = "float",
 			["Bulge"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -2686,12 +2916,14 @@ return {
 	["BlockMesh"] = {
 		Superclass = "BevelMesh",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["CylinderMesh"] = {
 		Superclass = "BevelMesh",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -2703,6 +2935,7 @@ return {
 			["MeshId"] = "ContentId",
 			["TextureContent"] = "Content",
 			["TextureId"] = "ContentId",
+		},
 		Tags = {
 		},
 	},
@@ -2710,6 +2943,7 @@ return {
 		Superclass = "FileMesh",
 		Properties = {
 			["MeshType"] = "MeshType",
+		},
 		Tags = {
 		},
 	},
@@ -2718,6 +2952,7 @@ return {
 		Properties = {
 			["CurrentDataModelType"] = "StudioDataModelType",
 			["SessionId"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2726,6 +2961,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["UseCache"] = "bool",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -2733,6 +2969,7 @@ return {
 	["DataStoreIncrementOptions"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -2743,6 +2980,7 @@ return {
 			["CreatedTime"] = "int64",
 			["DataStoreName"] = "string",
 			["UpdatedTime"] = "int64",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2752,6 +2990,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["KeyName"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2763,6 +3002,7 @@ return {
 			["CreatedTime"] = "int64",
 			["UpdatedTime"] = "int64",
 			["Version"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2774,6 +3014,7 @@ return {
 			["CreatedTime"] = "int64",
 			["IsDeleted"] = "bool",
 			["Version"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2783,6 +3024,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["AllScopes"] = "bool",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -2792,6 +3034,7 @@ return {
 		Properties = {
 			["AutomaticRetry"] = "bool",
 			["LegacyNamingScheme"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2801,6 +3044,7 @@ return {
 	["DataStoreSetOptions"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -2809,6 +3053,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["MaxItems"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2825,6 +3070,7 @@ return {
 			["ReportSoundWarnings"] = "bool",
 			["RobloxVersion"] = "string",
 			["TickCountPreciseOverride"] = "TickCountSampleMethod",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2835,6 +3081,7 @@ return {
 	["DebuggablePluginWatcher"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2851,6 +3098,7 @@ return {
 			["LogExpression"] = "string",
 			["isContextDependentBreakpoint"] = "bool",
 			["line"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -2862,6 +3110,7 @@ return {
 			["HasError"] = "bool",
 			["Id"] = "int",
 			["IsPaused"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2870,6 +3119,7 @@ return {
 	["LocalDebuggerConnection"] = {
 		Superclass = "DebuggerConnection",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2879,6 +3129,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Timeout"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2893,6 +3144,7 @@ return {
 			["Message"] = "string",
 			["RequestId"] = "int",
 			["Status"] = "DebuggerStatus",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2902,6 +3154,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["DebuggingEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2911,6 +3164,7 @@ return {
 	["DebuggerUIService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2926,6 +3180,7 @@ return {
 			["Value"] = "string",
 			["VariableId"] = "int",
 			["VariablesCount"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -2935,6 +3190,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Expression"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -2944,6 +3200,7 @@ return {
 			["JoiningPlaceId"] = "int64",
 			["JoiningUniverseId"] = "int64",
 			["PregameLoadingScreenOnly"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2953,6 +3210,7 @@ return {
 	["DesignFoundationsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2962,6 +3220,7 @@ return {
 	["DeviceDisplayService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2971,6 +3230,7 @@ return {
 	["DeviceIdService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -2990,6 +3250,7 @@ return {
 			["Tone"] = "DialogTone",
 			["TriggerDistance"] = "float",
 			["TriggerOffset"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -3000,6 +3261,7 @@ return {
 			["GoodbyeDialog"] = "string",
 			["ResponseDialog"] = "string",
 			["UserDialog"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -3047,12 +3309,14 @@ return {
 			["Thumb3TposeAdjustment"] = "CFrame",
 			["ThumbRange"] = "Vector3",
 			["ThumbSize"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["DisplayWakeLock"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3061,6 +3325,7 @@ return {
 	["DraftsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3070,6 +3335,7 @@ return {
 	["Dragger"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -3095,6 +3361,7 @@ return {
 			["ShowHover"] = "bool",
 			["ShowPivotIndicator"] = "bool",
 			["UseBoundingBoxes"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3105,6 +3372,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["EditableStatus"] = "EditableStatus",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3113,6 +3381,7 @@ return {
 	["EditorSourceService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3122,6 +3391,7 @@ return {
 	["EncodingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3132,12 +3402,14 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["RotationOrder"] = "RotationOrder",
+		},
 		Tags = {
 		},
 	},
 	["EventIngestService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3146,6 +3418,7 @@ return {
 	["ExampleV2Service"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3155,6 +3428,7 @@ return {
 	["ExperienceAuthService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3167,6 +3441,7 @@ return {
 			["InviteUser"] = "int64",
 			["LaunchData"] = "string",
 			["PromptMessage"] = "string",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -3174,6 +3449,7 @@ return {
 	["ExperienceNotificationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3183,6 +3459,7 @@ return {
 	["ExperienceService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3196,6 +3473,7 @@ return {
 			["IsInBackground"] = "bool",
 			["IsInCaptureMode"] = "bool",
 			["SelectionMode"] = "ExperienceStateCaptureSelectionMode",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3206,6 +3484,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["IsServerDataModelRecorderActive"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3214,6 +3493,7 @@ return {
 	["ExplorerFilter"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -3223,6 +3503,7 @@ return {
 		Properties = {
 			["ReplaceRange"] = "Vector2",
 			["RequiresOutsideContext"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3231,6 +3512,7 @@ return {
 	["ExplorerServiceVisibilityService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3248,12 +3530,14 @@ return {
 			["Position"] = "Vector3",
 			["TimeScale"] = "float",
 			["Visible"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["ExternalIdentityService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3267,6 +3551,7 @@ return {
 			["FaceTrackingStatusEnum"] = "TrackerFaceTrackingStatus",
 			["FlipHeadOrientation"] = "bool",
 			["VideoAnimationEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3327,6 +3612,7 @@ return {
 			["TongueOut"] = "float",
 			["TongueUp"] = "float",
 			["UpperLipSuck"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -3334,6 +3620,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Face"] = "NormalId",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -3369,6 +3656,7 @@ return {
 			["UVOffset"] = "Vector2",
 			["UVScale"] = "Vector2",
 			["ZIndex"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -3379,12 +3667,14 @@ return {
 			["OffsetStudsV"] = "float",
 			["StudsPerTileU"] = "float",
 			["StudsPerTileV"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["FacialAgeEstimationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3395,6 +3685,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["BiometricDataConsent"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3404,6 +3695,7 @@ return {
 	["FacialAnimationStreamingServiceStats"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3413,6 +3705,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ServiceState"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3421,6 +3714,7 @@ return {
 	["FacialAnimationStreamingSubsessionStats"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3433,6 +3727,7 @@ return {
 			["InOut"] = "InOut",
 			["LeftRight"] = "LeftRight",
 			["TopBottom"] = "TopBottom",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -3440,6 +3735,7 @@ return {
 	["Hole"] = {
 		Superclass = "Feature",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -3447,6 +3743,7 @@ return {
 	["MotorFeature"] = {
 		Superclass = "Feature",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -3454,6 +3751,7 @@ return {
 	["FeatureRestrictionManager"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3463,6 +3761,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Size"] = "int64",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3471,6 +3770,7 @@ return {
 	["FileManagerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3480,6 +3780,7 @@ return {
 	["FileSyncReplicationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3498,12 +3799,14 @@ return {
 			["heat_xml"] = "float",
 			["size"] = "float",
 			["size_xml"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["FlagStandService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3514,12 +3817,14 @@ return {
 		Properties = {
 			["Length"] = "int",
 			["ValuesAndTimes"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["FlyweightService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Service",
 		},
@@ -3527,6 +3832,7 @@ return {
 	["CSGDictionaryService"] = {
 		Superclass = "FlyweightService",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Service",
 		},
@@ -3534,6 +3840,7 @@ return {
 	["NonReplicatedCSGDictionaryService"] = {
 		Superclass = "FlyweightService",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Service",
 		},
@@ -3543,12 +3850,14 @@ return {
 		Properties = {
 			["IconTint"] = "Color3",
 			["ReplicatedGuiInsertionOrder"] = "int",
+		},
 		Tags = {
 		},
 	},
 	["GeneratedFolder"] = {
 		Superclass = "Folder",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -3556,12 +3865,14 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Visible"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["FriendService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3577,6 +3888,7 @@ return {
 			["IsDeafened"] = "bool",
 			["Phase"] = "FriendsCallingPhase",
 			["Volume"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3592,6 +3904,7 @@ return {
 			["Status"] = "FriendsCallingParticipantStatus",
 			["UserId"] = "int64",
 			["Volume"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3606,6 +3919,7 @@ return {
 			["Is30FpsThrottleEnabled"] = "bool",
 			["PhysicsEnvironmentalThrottle"] = "bool",
 			["Timeout"] = "double",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -3613,6 +3927,7 @@ return {
 	["GamePassService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3622,6 +3937,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["VideoCaptureEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3633,6 +3949,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["GamepadCursorEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3642,6 +3959,7 @@ return {
 	["GenerationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3650,6 +3968,7 @@ return {
 	["GenericChallengeService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3658,6 +3977,7 @@ return {
 	["Geometry"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3666,6 +3986,7 @@ return {
 	["GeometryService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3679,6 +4000,7 @@ return {
 			["Size"] = "float",
 			["Text"] = "string",
 			["Width"] = "float",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -3686,6 +4008,7 @@ return {
 	["GlobalDataStore"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3694,6 +4017,7 @@ return {
 	["DataStore"] = {
 		Superclass = "GlobalDataStore",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3702,6 +4026,7 @@ return {
 	["OrderedDataStore"] = {
 		Superclass = "GlobalDataStore",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -3710,6 +4035,7 @@ return {
 	["GongService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3718,6 +4044,7 @@ return {
 	["GroupService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -3727,6 +4054,7 @@ return {
 	["GuiBase"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -3736,6 +4064,7 @@ return {
 		Properties = {
 			["Content"] = "Content",
 			["PlaybackSpeed"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -3760,6 +4089,7 @@ return {
 			["SelectionBehaviorUp"] = "SelectionBehavior",
 			["SelectionGroup"] = "bool",
 			["TotalGroupScale"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -3807,6 +4137,7 @@ return {
 			["Transparency"] = "float",
 			["Visible"] = "bool",
 			["ZIndex"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -3818,6 +4149,7 @@ return {
 			["GroupColor3"] = "Color3",
 			["GroupTransparency"] = "float",
 			["ResolutionScale"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -3825,6 +4157,7 @@ return {
 		Superclass = "GuiObject",
 		Properties = {
 			["Style"] = "FrameStyle",
+		},
 		Tags = {
 		},
 	},
@@ -3843,6 +4176,7 @@ return {
 			["PressHapticEffect"] = "HapticEffect",
 			["Selected"] = "bool",
 			["Style"] = "ButtonStyle",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -3869,6 +4203,7 @@ return {
 			["SliceCenter"] = "Rect",
 			["SliceScale"] = "float",
 			["TileSize"] = "UDim2",
+		},
 		Tags = {
 		},
 	},
@@ -3904,12 +4239,14 @@ return {
 			["TextWrapped"] = "bool",
 			["TextXAlignment"] = "TextXAlignment",
 			["TextYAlignment"] = "TextYAlignment",
+		},
 		Tags = {
 		},
 	},
 	["GuiLabel"] = {
 		Superclass = "GuiObject",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -3931,6 +4268,7 @@ return {
 			["SliceCenter"] = "Rect",
 			["SliceScale"] = "float",
 			["TileSize"] = "UDim2",
+		},
 		Tags = {
 		},
 	},
@@ -3966,6 +4304,7 @@ return {
 			["TextWrapped"] = "bool",
 			["TextXAlignment"] = "TextXAlignment",
 			["TextYAlignment"] = "TextYAlignment",
+		},
 		Tags = {
 		},
 	},
@@ -3984,12 +4323,14 @@ return {
 			["TextWrapped"] = "bool",
 			["TextXAlignment"] = "TextXAlignment",
 			["TextYAlignment"] = "TextYAlignment",
+		},
 		Tags = {
 		},
 	},
 	["RelativeGui"] = {
 		Superclass = "GuiObject",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -4024,6 +4365,7 @@ return {
 			["VerticalBarRect"] = "Rect",
 			["VerticalScrollBarInset"] = "ScrollBarInset",
 			["VerticalScrollBarPosition"] = "VerticalScrollBarPosition",
+		},
 		Tags = {
 		},
 	},
@@ -4075,6 +4417,7 @@ return {
 			["TextWrapped"] = "bool",
 			["TextXAlignment"] = "TextXAlignment",
 			["TextYAlignment"] = "TextYAlignment",
+		},
 		Tags = {
 		},
 	},
@@ -4085,6 +4428,7 @@ return {
 			["IsRendering"] = "bool",
 			["Target"] = "TextChannel",
 			["UseDefaultFont"] = "bool",
+		},
 		Tags = {
 			[1] = "NotBrowsable",
 		},
@@ -4099,6 +4443,7 @@ return {
 			["VideoRectOffset"] = "Vector2",
 			["VideoRectSize"] = "Vector2",
 			["VideoTransparency"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4121,6 +4466,7 @@ return {
 			["Video"] = "ContentId",
 			["VideoContent"] = "Content",
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4136,6 +4482,7 @@ return {
 			["IsMirrored"] = "bool",
 			["LightColor"] = "Color3",
 			["LightDirection"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -4146,6 +4493,7 @@ return {
 			["ResetOnSpawn"] = "bool",
 			["TabKeyboardNavigation"] = "bool",
 			["ZIndexBehavior"] = "ZIndexBehavior",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -4172,6 +4520,7 @@ return {
 			["SizeOffset"] = "Vector2",
 			["StudsOffset"] = "Vector3",
 			["StudsOffsetWorldSpace"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -4180,6 +4529,7 @@ return {
 		Properties = {
 			["Plugin"] = "Plugin",
 			["Title"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -4189,6 +4539,7 @@ return {
 		Superclass = "PluginGui",
 		Properties = {
 			["HostWidgetWasRestored"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -4197,6 +4548,7 @@ return {
 	["QWidgetPluginGui"] = {
 		Superclass = "PluginGui",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -4212,12 +4564,14 @@ return {
 			["OnTopOfCoreBlur"] = "bool",
 			["SafeAreaCompatibility"] = "SafeAreaCompatibility",
 			["ScreenInsets"] = "ScreenInsets",
+		},
 		Tags = {
 		},
 	},
 	["GuiMain"] = {
 		Superclass = "ScreenGui",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -4228,6 +4582,7 @@ return {
 			["Active"] = "bool",
 			["Adornee"] = "Instance",
 			["Face"] = "NormalId",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4240,6 +4595,7 @@ return {
 			["FallbackImage"] = "ContentId",
 			["FallbackImageContent"] = "Content",
 			["Status"] = "AdUnitStatus",
+		},
 		Tags = {
 		},
 	},
@@ -4258,6 +4614,7 @@ return {
 			["SizingMode"] = "SurfaceGuiSizingMode",
 			["ToolPunchThroughDistance"] = "float",
 			["ZOffset"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4268,6 +4625,7 @@ return {
 			["Color3"] = "Color3",
 			["Transparency"] = "float",
 			["Visible"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4283,6 +4641,7 @@ return {
 			["To"] = "BasePart",
 			["Velocity"] = "float",
 			["WireRadius"] = "float",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -4291,6 +4650,7 @@ return {
 		Superclass = "GuiBase3d",
 		Properties = {
 			["Adornee"] = "Instance",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4303,6 +4663,7 @@ return {
 			["SurfaceColor"] = "BrickColor",
 			["SurfaceColor3"] = "Color3",
 			["SurfaceTransparency"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4310,6 +4671,7 @@ return {
 		Superclass = "GuiBase3d",
 		Properties = {
 			["Adornee"] = "PVInstance",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4323,6 +4685,7 @@ return {
 			["GizmoReference"] = "Instance",
 			["SizeRelativeOffset"] = "Vector3",
 			["ZIndex"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4332,6 +4695,7 @@ return {
 		Properties = {
 			["Shading"] = "AdornShading",
 			["Size"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -4342,6 +4706,7 @@ return {
 			["Hollow"] = "bool",
 			["Radius"] = "float",
 			["Shading"] = "AdornShading",
+		},
 		Tags = {
 		},
 	},
@@ -4353,6 +4718,7 @@ return {
 			["InnerRadius"] = "float",
 			["Radius"] = "float",
 			["Shading"] = "AdornShading",
+		},
 		Tags = {
 		},
 	},
@@ -4362,6 +4728,7 @@ return {
 			["Image"] = "ContentId",
 			["ImageContent"] = "Content",
 			["Size"] = "Vector2",
+		},
 		Tags = {
 		},
 	},
@@ -4370,6 +4737,7 @@ return {
 		Properties = {
 			["Length"] = "float",
 			["Thickness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4380,6 +4748,7 @@ return {
 			["Shading"] = "AdornShading",
 			["Sides"] = "int",
 			["Size"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4388,6 +4757,7 @@ return {
 		Properties = {
 			["Radius"] = "float",
 			["Shading"] = "AdornShading",
+		},
 		Tags = {
 		},
 	},
@@ -4396,6 +4766,7 @@ return {
 		Properties = {
 			["Scale"] = "Vector3",
 			["Thickness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4407,6 +4778,7 @@ return {
 			["C"] = "float",
 			["Range"] = "float",
 			["Thickness"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4416,6 +4788,7 @@ return {
 			["SurfaceColor"] = "BrickColor",
 			["SurfaceColor3"] = "Color3",
 			["SurfaceTransparency"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4423,6 +4796,7 @@ return {
 		Superclass = "GuiBase3d",
 		Properties = {
 			["Adornee"] = "BasePart",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4430,6 +4804,7 @@ return {
 	["HandlesBase"] = {
 		Superclass = "PartAdornment",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4443,6 +4818,7 @@ return {
 			["MouseDragConnectionCount"] = "int",
 			["MouseEnterConnectionCount"] = "int",
 			["MouseLeaveConnectionCount"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -4456,6 +4832,7 @@ return {
 			["MouseEnterConnectionCount"] = "int",
 			["MouseLeaveConnectionCount"] = "int",
 			["Style"] = "HandlesStyle",
+		},
 		Tags = {
 		},
 	},
@@ -4463,6 +4840,7 @@ return {
 		Superclass = "PartAdornment",
 		Properties = {
 			["TargetSurface"] = "NormalId",
+		},
 		Tags = {
 		},
 	},
@@ -4470,6 +4848,7 @@ return {
 		Superclass = "GuiBase3d",
 		Properties = {
 			["Humanoid"] = "Humanoid",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4478,6 +4857,7 @@ return {
 		Superclass = "SelectionLasso",
 		Properties = {
 			["Part"] = "BasePart",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -4486,6 +4866,7 @@ return {
 		Superclass = "SelectionLasso",
 		Properties = {
 			["Point"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -4502,6 +4883,7 @@ return {
 			["Transparency"] = "float",
 			["Visible"] = "bool",
 			["ZIndex"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -4526,6 +4908,7 @@ return {
 			["TouchControlsEnabled"] = "bool",
 			["ViewportDisplaySize"] = "DisplaySize",
 			["ViewportSizeInMM"] = "Vector2",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4535,6 +4918,7 @@ return {
 	["GuidRegistryService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4548,12 +4932,14 @@ return {
 			["Radius"] = "float",
 			["Type"] = "HapticEffectType",
 			["WaveformData"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["HapticService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4563,6 +4949,7 @@ return {
 	["HarmonyService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4572,6 +4959,7 @@ return {
 	["HeapProfilerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4580,6 +4968,7 @@ return {
 	["HeatmapQueryService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4588,6 +4977,7 @@ return {
 	["HeatmapService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4596,6 +4986,7 @@ return {
 	["HeightmapImporterService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Service",
 			[2] = "NotReplicated",
@@ -4606,6 +4997,7 @@ return {
 		Properties = {
 			["HSRData"] = "BinaryString",
 			["HSRMeshIdData"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
@@ -4621,12 +5013,14 @@ return {
 			["OutlineColor"] = "Color3",
 			["OutlineTransparency"] = "float",
 			["ReservedId"] = "ReservedHighlightId",
+		},
 		Tags = {
 		},
 	},
 	["Hopper"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4636,6 +5030,7 @@ return {
 	["HttpRbxApiService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4644,6 +5039,7 @@ return {
 	["HttpRequest"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -4652,6 +5048,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["HttpEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4716,6 +5113,7 @@ return {
 			["WalkToPart"] = "BasePart",
 			["WalkToPoint"] = "Vector3",
 			["maxHealth"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4767,6 +5165,7 @@ return {
 			["WaistAccessory"] = "string",
 			["WalkAnimation"] = "int64",
 			["WidthScale"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -4884,6 +5283,7 @@ return {
 			["WaistRangeMin"] = "Vector3",
 			["WaistSize"] = "float",
 			["WaistTposeAdjustment"] = "CFrame",
+		},
 		Tags = {
 		},
 	},
@@ -4901,12 +5301,14 @@ return {
 			["Target"] = "Instance",
 			["Type"] = "IKControlType",
 			["Weight"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["ILegacyStudioBridge"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4915,6 +5317,7 @@ return {
 	["LegacyStudioBridge"] = {
 		Superclass = "ILegacyStudioBridge",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4924,6 +5327,7 @@ return {
 	["IXPService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4933,6 +5337,7 @@ return {
 	["ImageScreenCaptureService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4942,6 +5347,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["UploadSource"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -4950,6 +5356,7 @@ return {
 	["AssetImportSession"] = {
 		Superclass = "ImportSession",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -4964,6 +5371,7 @@ return {
 			["SerializePatch"] = "bool",
 			["UseFileLevelCompressionInsteadOfChunk"] = "bool",
 			["ZstdCompression"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -4982,6 +5390,7 @@ return {
 			["PreferredBinding"] = "InputBinding",
 			["Type"] = "InputActionType",
 			["ViewportPositionState"] = "Vector2",
+		},
 		Tags = {
 		},
 	},
@@ -5010,6 +5419,7 @@ return {
 			["Up"] = "KeyCode",
 			["Vector2Scale"] = "Vector2",
 			["Vector3Scale"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -5019,6 +5429,7 @@ return {
 			["Enabled"] = "bool",
 			["Priority"] = "int",
 			["Sink"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -5030,6 +5441,7 @@ return {
 			["Position"] = "Vector3",
 			["UserInputState"] = "UserInputState",
 			["UserInputType"] = "UserInputType",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5038,6 +5450,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["AllowInsertFreeModels"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5046,6 +5459,7 @@ return {
 	["InstanceExtensionsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5054,6 +5468,7 @@ return {
 	["InstanceFileSyncService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5063,6 +5478,7 @@ return {
 	["IntentService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5072,6 +5488,7 @@ return {
 	["InternalMessagingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5081,6 +5498,7 @@ return {
 	["InternalMessagingServiceVerifier"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5094,6 +5512,7 @@ return {
 			["Enabled"] = "bool",
 			["Path"] = "string",
 			["Target"] = "Instance",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -5101,6 +5520,7 @@ return {
 	["InternalSyncService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5117,6 +5537,7 @@ return {
 			["Part0"] = "BasePart",
 			["Part1"] = "BasePart",
 			["part1"] = "BasePart",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5125,6 +5546,7 @@ return {
 		Superclass = "JointInstance",
 		Properties = {
 			["BaseAngle"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5132,6 +5554,7 @@ return {
 	["RotateP"] = {
 		Superclass = "DynamicRotate",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5139,6 +5562,7 @@ return {
 	["RotateV"] = {
 		Superclass = "DynamicRotate",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5150,6 +5574,7 @@ return {
 			["F1"] = "Vector3",
 			["F2"] = "Vector3",
 			["F3"] = "Vector3",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5157,6 +5582,7 @@ return {
 	["ManualSurfaceJointInstance"] = {
 		Superclass = "JointInstance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Deprecated",
@@ -5165,6 +5591,7 @@ return {
 	["ManualGlue"] = {
 		Superclass = "ManualSurfaceJointInstance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5172,6 +5599,7 @@ return {
 	["ManualWeld"] = {
 		Superclass = "ManualSurfaceJointInstance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5183,6 +5611,7 @@ return {
 			["DesiredAngle"] = "float",
 			["MaxVelocity"] = "float",
 			["ReplicateCurrentAngle"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -5195,12 +5624,14 @@ return {
 			["ReplicateCurrentAngle6D"] = "Vector3",
 			["ReplicateCurrentOffset6D"] = "Vector3",
 			["Transform"] = "CFrame",
+		},
 		Tags = {
 		},
 	},
 	["Rotate"] = {
 		Superclass = "JointInstance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5208,6 +5639,7 @@ return {
 	["Snap"] = {
 		Superclass = "JointInstance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5219,6 +5651,7 @@ return {
 			["DesiredAngle"] = "float",
 			["Hole"] = "Hole",
 			["MaxVelocity"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -5226,12 +5659,14 @@ return {
 		Superclass = "JointInstance",
 		Properties = {
 			["EnableSkinning"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["JointsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5241,6 +5676,7 @@ return {
 	["KeyboardService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5250,6 +5686,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Time"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -5257,12 +5694,14 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Value"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["KeyframeSequenceProvider"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5272,6 +5711,7 @@ return {
 	["LanguageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5285,6 +5725,7 @@ return {
 			["Color"] = "Color3",
 			["Enabled"] = "bool",
 			["Shadows"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5293,6 +5734,7 @@ return {
 		Superclass = "Light",
 		Properties = {
 			["Range"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -5302,6 +5744,7 @@ return {
 			["Angle"] = "float",
 			["Face"] = "NormalId",
 			["Range"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -5311,6 +5754,7 @@ return {
 			["Angle"] = "float",
 			["Face"] = "NormalId",
 			["Range"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -5339,6 +5783,7 @@ return {
 			["ShadowSoftness"] = "float",
 			["Technology"] = "Technology",
 			["TimeOfDay"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5347,6 +5792,7 @@ return {
 	["LinkingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5357,6 +5803,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ServerLiveEditingMode"] = "ServerLiveEditingMode",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5366,6 +5813,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["HasSyncedInstances"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5375,6 +5823,7 @@ return {
 	["LocalStorageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5384,6 +5833,7 @@ return {
 	["AppStorageService"] = {
 		Superclass = "LocalStorageService",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5393,6 +5843,7 @@ return {
 	["UserStorageService"] = {
 		Superclass = "LocalStorageService",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5414,6 +5865,7 @@ return {
 			["ShouldUseCloudTable"] = "bool",
 			["ShouldUseImageLocalizationTable"] = "bool",
 			["SystemLocaleId"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5428,12 +5880,14 @@ return {
 			["IsExemptFromUGCAnalytics"] = "bool",
 			["Root"] = "Instance",
 			["SourceLocaleId"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["CloudLocalizationTable"] = {
 		Superclass = "LocalizationTable",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5454,6 +5908,7 @@ return {
 			["SlimReplicationTimestampSec"] = "double",
 			["TranscoderFailureReason"] = "string",
 			["TranscoderStatus"] = "SlimTranscoderStatus",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5461,6 +5916,7 @@ return {
 	["LodDataService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5470,6 +5926,7 @@ return {
 	["LogReporterService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5479,6 +5936,7 @@ return {
 	["LogService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5487,6 +5945,7 @@ return {
 	["LoginService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5495,6 +5954,7 @@ return {
 	["LuaSettings"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5511,6 +5971,7 @@ return {
 			["SandboxedSource"] = "ProtectedString",
 			["ScriptGuid"] = "string",
 			["isPlayerScript"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -5525,6 +5986,7 @@ return {
 			["LODCriticality"] = "int",
 			["Priority"] = "int",
 			["Source"] = "ProtectedString",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5536,6 +5998,7 @@ return {
 			["Enabled"] = "bool",
 			["LinkedSource"] = "ContentId",
 			["RunContext"] = "RunContext",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5543,6 +6006,7 @@ return {
 	["CoreScript"] = {
 		Superclass = "BaseScript",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5552,12 +6016,14 @@ return {
 		Superclass = "BaseScript",
 		Properties = {
 			["Source"] = "ProtectedString",
+		},
 		Tags = {
 		},
 	},
 	["LocalScript"] = {
 		Superclass = "Script",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -5568,12 +6034,14 @@ return {
 			["LinkedSource"] = "ContentId",
 			["Source"] = "ProtectedString",
 			["UnrestrictedRequireAllowed"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["LuaWebService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5582,6 +6050,7 @@ return {
 	["LuauExpressionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5591,6 +6060,7 @@ return {
 	["LuauScriptAnalyzerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5600,6 +6070,7 @@ return {
 	["MLModelDeliveryService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5608,6 +6079,7 @@ return {
 	["MLService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5621,6 +6093,7 @@ return {
 			["Instance"] = "Instance",
 			["MakeupType"] = "MakeupType",
 			["Order"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -5629,12 +6102,14 @@ return {
 		Properties = {
 			["Length"] = "int",
 			["ValuesAndTimes"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["MarketplaceService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5643,6 +6118,7 @@ return {
 	["MatchmakingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5652,6 +6128,7 @@ return {
 	["MaterialGenerationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5703,6 +6180,7 @@ return {
 			["Use2022MaterialsXml"] = "bool",
 			["WoodName"] = "string",
 			["WoodPlanksName"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5731,12 +6209,14 @@ return {
 			["StudsPerTile"] = "float",
 			["TexturePack"] = "ContentId",
 			["TexturePackContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
 	["MemStorageConnection"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5745,6 +6225,7 @@ return {
 	["MemStorageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5754,6 +6235,7 @@ return {
 	["MemoryStoreDistributedCounter"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5762,6 +6244,7 @@ return {
 	["MemoryStoreHashMap"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5770,6 +6253,7 @@ return {
 	["MemoryStoreQueue"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5778,6 +6262,7 @@ return {
 	["MemoryStoreService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Service",
 		},
@@ -5785,6 +6270,7 @@ return {
 	["MemoryStoreSortedMap"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5794,6 +6280,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Text"] = "string",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5801,6 +6288,7 @@ return {
 	["Hint"] = {
 		Superclass = "Message",
 		Properties = {
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -5808,6 +6296,7 @@ return {
 	["MessageBusConnection"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5816,6 +6305,7 @@ return {
 	["MessageBusService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5825,6 +6315,7 @@ return {
 	["MessagingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5844,6 +6335,7 @@ return {
 			["RemoveOnHit"] = "bool",
 			["Script"] = "string",
 			["Valid"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5853,6 +6345,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ContextDataInternal"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5861,6 +6354,7 @@ return {
 	["MetaBreakpointManager"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5871,6 +6365,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ContextLabel"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5880,6 +6375,7 @@ return {
 	["ModerationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5889,6 +6385,7 @@ return {
 	["MomentsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5911,6 +6408,7 @@ return {
 			["Y"] = "int",
 			["hit"] = "CFrame",
 			["target"] = "BasePart",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5918,6 +6416,7 @@ return {
 	["PlayerMouse"] = {
 		Superclass = "Mouse",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5925,6 +6424,7 @@ return {
 	["PluginMouse"] = {
 		Superclass = "Mouse",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -5932,6 +6432,7 @@ return {
 	["MouseService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5942,6 +6443,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["FocusedDataModelSession"] = "DataModelSession",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5950,6 +6452,7 @@ return {
 	["NetworkMarker"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -5958,6 +6461,7 @@ return {
 	["NetworkPeer"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -5966,6 +6470,7 @@ return {
 	["NetworkClient"] = {
 		Superclass = "NetworkPeer",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5975,6 +6480,7 @@ return {
 	["NetworkServer"] = {
 		Superclass = "NetworkPeer",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -5984,6 +6490,7 @@ return {
 	["NetworkReplicator"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -5992,6 +6499,7 @@ return {
 	["ClientReplicator"] = {
 		Superclass = "NetworkReplicator",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6000,6 +6508,7 @@ return {
 	["ServerReplicator"] = {
 		Superclass = "NetworkReplicator",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6026,6 +6535,7 @@ return {
 			["RandomizeJoinInstanceOrder"] = "bool",
 			["RenderStreamedRegions"] = "bool",
 			["ShowActiveAnimationAsset"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6039,6 +6549,7 @@ return {
 			["Enabled"] = "bool",
 			["Part0"] = "BasePart",
 			["Part1"] = "BasePart",
+		},
 		Tags = {
 		},
 	},
@@ -6047,6 +6558,7 @@ return {
 		Properties = {
 			["NoiseType"] = "NoiseType",
 			["Seed"] = "int",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -6058,6 +6570,7 @@ return {
 			["IsLuaChatEnabled"] = "bool",
 			["IsLuaGameDetailsEnabled"] = "bool",
 			["SelectedTheme"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6066,6 +6579,7 @@ return {
 	["OmniRecommendationsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6075,6 +6589,7 @@ return {
 	["OpenCloudApiV1"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6084,6 +6599,7 @@ return {
 	["OpenCloudService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6094,6 +6610,7 @@ return {
 	["OperationGraph"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6102,6 +6619,7 @@ return {
 		Properties = {
 			["Origin"] = "CFrame",
 			["Pivot Offset"] = "CFrame",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -6191,6 +6709,7 @@ return {
 			["brickColor"] = "BrickColor",
 			["siz"] = "Vector3",
 			["size"] = "Vector3",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -6199,6 +6718,7 @@ return {
 	["CornerWedgePart"] = {
 		Superclass = "BasePart",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6208,6 +6728,7 @@ return {
 			["FormFactor"] = "FormFactor",
 			["formFactor"] = "FormFactor",
 			["formFactorRaw"] = "FormFactor",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -6218,6 +6739,7 @@ return {
 			["Shape"] = "PartType",
 			["shap"] = "PartType",
 			["shape"] = "PartType",
+		},
 		Tags = {
 		},
 	},
@@ -6225,6 +6747,7 @@ return {
 		Superclass = "Part",
 		Properties = {
 			["TeamColor"] = "BrickColor",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -6232,6 +6755,7 @@ return {
 	["Platform"] = {
 		Superclass = "Part",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -6241,6 +6765,7 @@ return {
 		Properties = {
 			["Disabled"] = "bool",
 			["Occupant"] = "Humanoid",
+		},
 		Tags = {
 		},
 	},
@@ -6253,6 +6778,7 @@ return {
 			["Steer"] = "int",
 			["StickyWheels"] = "bool",
 			["Throttle"] = "int",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -6265,12 +6791,14 @@ return {
 			["Enabled"] = "bool",
 			["Neutral"] = "bool",
 			["TeamColor"] = "BrickColor",
+		},
 		Tags = {
 		},
 	},
 	["WedgePart"] = {
 		Superclass = "FormFactorPart",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6298,6 +6826,7 @@ return {
 			["WaterTransparency"] = "float",
 			["WaterWaveSize"] = "float",
 			["WaterWaveSpeed"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -6319,6 +6848,7 @@ return {
 			["UnscaledVolInertiaDiags"] = "Vector3",
 			["UnscaledVolInertiaOffDiags"] = "Vector3",
 			["UnscaledVolume"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -6343,6 +6873,7 @@ return {
 			["TextureContent"] = "Content",
 			["TextureID"] = "ContentId",
 			["VertexCount"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -6367,12 +6898,14 @@ return {
 			["SolidMeshHolder"] = "NetAssetRef",
 			["TriangleCount"] = "int",
 			["UsePartColor"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["IntersectOperation"] = {
 		Superclass = "PartOperation",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6380,12 +6913,14 @@ return {
 		Superclass = "PartOperation",
 		Properties = {
 			["PreviousOperation"] = "NegateOperationHiddenHistory",
+		},
 		Tags = {
 		},
 	},
 	["UnionOperation"] = {
 		Superclass = "PartOperation",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6394,6 +6929,7 @@ return {
 		Properties = {
 			["Style"] = "Style",
 			["style"] = "Style",
+		},
 		Tags = {
 		},
 	},
@@ -6411,6 +6947,7 @@ return {
 			["ThrottleFloat"] = "float",
 			["Torque"] = "float",
 			["TurnSpeed"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -6432,6 +6969,7 @@ return {
 			["VRTiltAndRollEnabled"] = "bool",
 			["ViewportSize"] = "Vector2",
 			["focus"] = "CFrame",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -6439,6 +6977,7 @@ return {
 	["ViewportCamera"] = {
 		Superclass = "Camera",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6459,12 +6998,14 @@ return {
 			["SlimHash"] = "SharedString",
 			["WorldPivot"] = "CFrame",
 			["WorldPivotData"] = "OptionalCoordinateFrame",
+		},
 		Tags = {
 		},
 	},
 	["Actor"] = {
 		Superclass = "Model",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6473,6 +7014,7 @@ return {
 		Properties = {
 			["TextureContent"] = "Content",
 			["TextureId"] = "ContentId",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -6484,6 +7026,7 @@ return {
 			["BinType"] = "BinType",
 			["Command"] = "string",
 			["TextureName"] = "string",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -6501,6 +7044,7 @@ return {
 			["ManualActivationOnly"] = "bool",
 			["RequiresHandle"] = "bool",
 			["ToolTip"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -6508,6 +7052,7 @@ return {
 		Superclass = "Tool",
 		Properties = {
 			["TeamColor"] = "BrickColor",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -6519,12 +7064,14 @@ return {
 			["GenerationError"] = "string",
 			["Generator"] = "ModuleScript",
 			["Size"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["Status"] = {
 		Superclass = "Model",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Deprecated",
@@ -6540,6 +7087,7 @@ return {
 			["SimulationRate"] = "float",
 			["Wind"] = "float",
 			["WindDirection"] = "Vector3",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -6614,6 +7162,7 @@ return {
 			["UseNewLuauTypeSolver"] = "RolloutState",
 			["ValidateEnabledProximityPrompt"] = "RolloutState",
 			["WatermarkHash"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6623,6 +7172,7 @@ return {
 		Superclass = "WorldRoot",
 		Properties = {
 			["UseWorkspaceCollisionGroups"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -6646,6 +7196,7 @@ return {
 			["VersionNumber"] = "int64",
 			["PermissionLevel"] = "PackagePermission",
 			["Status"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -6654,6 +7205,7 @@ return {
 	["PackageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6663,6 +7215,7 @@ return {
 	["PackageUIService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6675,6 +7228,7 @@ return {
 			["IsDehydrated"] = "bool",
 			["ShellPackagesCount"] = "int",
 			["SkippedInstancesCount"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6684,6 +7238,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["IsFinished"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6692,6 +7247,7 @@ return {
 	["AudioPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6700,6 +7256,7 @@ return {
 	["BanHistoryPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6708,6 +7265,7 @@ return {
 	["CapturesPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6716,6 +7274,7 @@ return {
 	["CatalogPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6725,6 +7284,7 @@ return {
 		Superclass = "Pages",
 		Properties = {
 			["Cursor"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6734,6 +7294,7 @@ return {
 		Superclass = "Pages",
 		Properties = {
 			["Cursor"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6742,6 +7303,7 @@ return {
 	["DataStorePages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6750,6 +7312,7 @@ return {
 	["DataStoreVersionPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6758,6 +7321,7 @@ return {
 	["FriendPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6766,6 +7330,7 @@ return {
 	["InventoryPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6774,6 +7339,7 @@ return {
 	["MemoryStoreHashMapPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6782,6 +7348,7 @@ return {
 	["OutfitPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6790,6 +7357,7 @@ return {
 	["RecommendationPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6798,6 +7366,7 @@ return {
 	["StandardPages"] = {
 		Superclass = "Pages",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6808,6 +7377,7 @@ return {
 		Properties = {
 			["ChildData"] = "BinaryString",
 			["MeshData"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
@@ -6853,12 +7423,14 @@ return {
 			["VelocitySpread"] = "float",
 			["WindAffectsDrag"] = "bool",
 			["ZOffset"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["PartyEmulatorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6868,6 +7440,7 @@ return {
 	["PatchBundlerFileWatch"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6880,6 +7453,7 @@ return {
 			["FlattenTree"] = "bool",
 			["PatchId"] = "string",
 			["TargetPath"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6889,6 +7463,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Status"] = "PathStatus",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6897,6 +7472,7 @@ return {
 	["Path3D"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -6907,6 +7483,7 @@ return {
 			["Attachment1"] = "Attachment",
 			["IsBidirectional"] = "bool",
 			["Label"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -6915,6 +7492,7 @@ return {
 		Properties = {
 			["Label"] = "string",
 			["PassThrough"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -6922,6 +7500,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["EmptyCutoff"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6934,6 +7513,7 @@ return {
 			["AllThreadsPaused"] = "bool",
 			["Reason"] = "DebuggerPauseReason",
 			["ThreadId"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6943,6 +7523,7 @@ return {
 		Superclass = "PausedState",
 		Properties = {
 			["Breakpoint"] = "Breakpoint",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6952,6 +7533,7 @@ return {
 		Superclass = "PausedState",
 		Properties = {
 			["ExceptionText"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -6960,6 +7542,7 @@ return {
 	["PerformanceControlService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6969,6 +7552,7 @@ return {
 	["PermissionsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -6977,6 +7561,7 @@ return {
 	["PhysicsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7040,6 +7625,7 @@ return {
 			["ThrottleAdjustTime"] = "double",
 			["TorqueDrawScale"] = "float",
 			["UseCSGv2"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7049,6 +7635,7 @@ return {
 	["PinShortcutService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7058,6 +7645,7 @@ return {
 	["PlaceAssetIdsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7066,6 +7654,7 @@ return {
 	["PlaceStatsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7075,6 +7664,7 @@ return {
 	["PlacesService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7084,6 +7674,7 @@ return {
 	["PlatformCloudStorageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7093,6 +7684,7 @@ return {
 	["PlatformFriendsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7102,6 +7694,7 @@ return {
 	["PlatformLibraries"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7183,12 +7776,14 @@ return {
 			["VREnabled"] = "bool",
 			["VoiceChatVolume"] = "float",
 			["userId"] = "int64",
+		},
 		Tags = {
 		},
 	},
 	["PlayerData"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7208,6 +7803,7 @@ return {
 			["Readable"] = "bool",
 			["RecordName"] = "string",
 			["Writable"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7217,6 +7813,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["RecordName"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7226,6 +7823,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["LoadFailureBehavior"] = "PlayerDataLoadFailureBehavior",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7242,6 +7840,7 @@ return {
 			["PseudolocalizationEnabled"] = "bool",
 			["SerializedEmulatedPolicyInfo"] = "BinaryString",
 			["TextElongationFactor"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7251,6 +7850,7 @@ return {
 	["PlayerHydrationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7259,6 +7859,7 @@ return {
 	["PlayerScripts"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7267,6 +7868,7 @@ return {
 	["PlayerViewService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7292,6 +7894,7 @@ return {
 			["UseStrafingAnimations"] = "bool",
 			["localPlayer"] = "Player",
 			["numPlayers"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7308,6 +7911,7 @@ return {
 			["IsDebuggable"] = "bool",
 			["MultipleDocumentInterfaceInstance"] = "MultipleDocumentInterfaceInstance",
 			["UsesAssetInsertionDrag"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7323,6 +7927,7 @@ return {
 			["StatusTip"] = "string",
 			["Text"] = "string",
 			["Visible"] = "bool",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -7331,12 +7936,14 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Manifest"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["PluginConnectionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7346,6 +7953,7 @@ return {
 	["PluginDebugService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7359,6 +7967,7 @@ return {
 			["MimeType"] = "string",
 			["Position"] = "Vector2",
 			["Sender"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7367,6 +7976,7 @@ return {
 	["PluginGuiService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7376,6 +7986,7 @@ return {
 	["PluginManagementService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7385,6 +7996,7 @@ return {
 	["PluginManager"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7392,6 +8004,7 @@ return {
 	["PluginManagerInterface"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7403,6 +8016,7 @@ return {
 			["Icon"] = "string",
 			["Title"] = "string",
 			["Visible"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7411,6 +8025,7 @@ return {
 	["PluginPolicyService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7420,6 +8035,7 @@ return {
 	["PluginToolbar"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7431,6 +8047,7 @@ return {
 			["Enabled"] = "bool",
 			["Icon"] = "ContentId",
 			["IconContent"] = "Content",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7438,6 +8055,7 @@ return {
 	["PointsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7449,6 +8067,7 @@ return {
 		Properties = {
 			["IsLuobuServer"] = "TriStateBoolean",
 			["LuobuWhitelisted"] = "TriStateBoolean",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7458,6 +8077,7 @@ return {
 	["PopLatencyService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7470,6 +8090,7 @@ return {
 			["EasingDirection"] = "PoseEasingDirection",
 			["EasingStyle"] = "PoseEasingStyle",
 			["Weight"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7478,6 +8099,7 @@ return {
 		Superclass = "PoseBase",
 		Properties = {
 			["Value"] = "double",
+		},
 		Tags = {
 		},
 	},
@@ -7486,6 +8108,7 @@ return {
 		Properties = {
 			["CFrame"] = "CFrame",
 			["MaskWeight"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -7493,6 +8116,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Enabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7503,6 +8127,7 @@ return {
 			["Intensity"] = "float",
 			["Size"] = "float",
 			["Threshold"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -7510,6 +8135,7 @@ return {
 		Superclass = "PostEffect",
 		Properties = {
 			["Size"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -7520,6 +8146,7 @@ return {
 			["Contrast"] = "float",
 			["Saturation"] = "float",
 			["TintColor"] = "Color3",
+		},
 		Tags = {
 		},
 	},
@@ -7527,6 +8154,7 @@ return {
 		Superclass = "PostEffect",
 		Properties = {
 			["TonemapperPreset"] = "TonemapperPreset",
+		},
 		Tags = {
 		},
 	},
@@ -7537,6 +8165,7 @@ return {
 			["FocusDistance"] = "float",
 			["InFocusRadius"] = "float",
 			["NearIntensity"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -7545,12 +8174,14 @@ return {
 		Properties = {
 			["Intensity"] = "float",
 			["Spread"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["Preloaded"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7559,6 +8190,7 @@ return {
 	["ProceduralBehaviorSchedulerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7568,6 +8200,7 @@ return {
 	["ProcessInstancePhysicsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7577,6 +8210,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ContentMap"] = "NetAssetRef",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7600,6 +8234,7 @@ return {
 			["RootLocalizationTable"] = "LocalizationTable",
 			["Style"] = "ProximityPromptStyle",
 			["UIOffset"] = "Vector2",
+		},
 		Tags = {
 		},
 	},
@@ -7609,6 +8244,7 @@ return {
 			["Enabled"] = "bool",
 			["MaxIndicatorsVisible"] = "int",
 			["MaxPromptsVisible"] = "int",
+		},
 		Tags = {
 			[1] = "Service",
 			[2] = "NotBrowsable",
@@ -7617,6 +8253,7 @@ return {
 	["PublishService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7626,6 +8263,7 @@ return {
 	["QueueService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7640,6 +8278,7 @@ return {
 			["SessionName"] = "string",
 			["TrackerMode"] = "TrackerMode",
 			["TrackerType"] = "TrackerType",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -7647,6 +8286,7 @@ return {
 	["RbxAnalyticsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7658,12 +8298,14 @@ return {
 			["AudioInputActive"] = "bool",
 			["ForwardInput"] = "bool",
 			["IsConnected"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["RecommendationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7672,36 +8314,42 @@ return {
 	["ReflectionMetadata"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataCallbacks"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataClasses"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataEnums"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataEvents"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataFunctions"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -7724,6 +8372,7 @@ return {
 			["UIMaximum"] = "double",
 			["UIMinimum"] = "double",
 			["UINumTicks"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -7736,42 +8385,49 @@ return {
 			["Insertable"] = "bool",
 			["PreferredParent"] = "string",
 			["ServiceVisibility"] = "ServiceVisibility",
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataEnum"] = {
 		Superclass = "ReflectionMetadataItem",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataEnumItem"] = {
 		Superclass = "ReflectionMetadataItem",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataMember"] = {
 		Superclass = "ReflectionMetadataItem",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataProperties"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionMetadataYieldFunctions"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["ReflectionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7781,6 +8437,7 @@ return {
 	["RemoteCommandService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7789,6 +8446,7 @@ return {
 	["RemoteCursorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7797,6 +8455,7 @@ return {
 	["RemoteDebuggerServer"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7806,6 +8465,7 @@ return {
 	["RemoteFunction"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -7827,6 +8487,7 @@ return {
 			["RenderCSGTrianglesDebug"] = "bool",
 			["ShowBoundingBoxes"] = "bool",
 			["ViewMode"] = "ViewMode",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7852,12 +8513,14 @@ return {
 			["ShouldSkip"] = "bool",
 			["Ticket"] = "string",
 			["Timeout"] = "int",
+		},
 		Tags = {
 		},
 	},
 	["ReplicatedFirst"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7866,6 +8529,7 @@ return {
 	["ReplicatedStorage"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7874,6 +8538,7 @@ return {
 	["RequestOrchestratorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7883,6 +8548,7 @@ return {
 	["RibbonNotificationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7892,6 +8558,7 @@ return {
 	["RobloxPluginGuiService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7901,6 +8568,7 @@ return {
 	["RobloxReplicatedStorage"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7911,6 +8579,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Data"] = "BinaryString",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7919,6 +8588,7 @@ return {
 	["RobloxServerStorage"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7945,6 +8615,7 @@ return {
 			["ThirdBinaryString"] = "BinaryString",
 			["ThirdSharedExpectedValue"] = "string",
 			["ThirdSharedString"] = "SharedString",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -7953,6 +8624,7 @@ return {
 	["RolloutValidationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7962,6 +8634,7 @@ return {
 	["RomarkRbxAnalyticsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7970,6 +8643,7 @@ return {
 	["RomarkService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7980,12 +8654,14 @@ return {
 		Properties = {
 			["Length"] = "int",
 			["ValuesAndTimes"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["RtMessagingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -7998,6 +8674,7 @@ return {
 			["ClientGitHash"] = "string",
 			["FrameNumber"] = "int64",
 			["RunState"] = "RunState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8007,6 +8684,7 @@ return {
 	["RuntimeContentService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8015,6 +8693,7 @@ return {
 	["RuntimeScriptService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8025,6 +8704,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["IsCaptureModeForReport"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8033,6 +8713,7 @@ return {
 	["SceneAnalysisService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8053,6 +8734,7 @@ return {
 			["OverlayFont"] = "Font",
 			["UsernameOverlayEnabled"] = "bool",
 			["Visible"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8061,6 +8743,7 @@ return {
 	["ScriptBuilder"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8074,6 +8757,7 @@ return {
 			["DebugInfo"] = "bool",
 			["PackAsSource"] = "bool",
 			["RawBytecode"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8082,6 +8766,7 @@ return {
 	["ScriptChangeService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8091,6 +8776,7 @@ return {
 	["ScriptCloneWatcher"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8100,6 +8786,7 @@ return {
 	["ScriptCloneWatcherHelper"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8109,6 +8796,7 @@ return {
 	["ScriptCommitService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8119,6 +8807,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ScriptsDisabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8134,6 +8823,7 @@ return {
 			["IsPaused"] = "bool",
 			["Script"] = "Instance",
 			["ScriptGuid"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8141,6 +8831,7 @@ return {
 	["ScriptDebuggerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8150,6 +8841,7 @@ return {
 	["ScriptDocument"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8158,6 +8850,7 @@ return {
 	["ScriptEditorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8167,6 +8860,7 @@ return {
 	["ScriptProfilerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8175,6 +8869,7 @@ return {
 	["ScriptRegistrationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8184,6 +8879,7 @@ return {
 	["ScriptRuntime"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8192,6 +8888,7 @@ return {
 	["ScriptScannerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8200,6 +8897,7 @@ return {
 	["ScriptService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8214,6 +8912,7 @@ return {
 			["SelectionLineThickness"] = "int",
 			["SelectionThickness"] = "float",
 			["ShowActiveInstanceHighlight"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8222,6 +8921,7 @@ return {
 	["SelectionHighlightManager"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8231,6 +8931,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["UpdateType"] = "SensorUpdateType",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8240,6 +8941,7 @@ return {
 		Properties = {
 			["AirDensity"] = "float",
 			["RelativeWindVelocity"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -8248,12 +8950,14 @@ return {
 		Properties = {
 			["FullySubmerged"] = "bool",
 			["TouchingSurface"] = "bool",
+		},
 		Tags = {
 		},
 	},
 	["ControllerSensor"] = {
 		Superclass = "SensorBase",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8269,6 +8973,7 @@ return {
 			["SensedMaterial"] = "Material",
 			["SensedPart"] = "BasePart",
 			["SensorMode"] = "SensorMode",
+		},
 		Tags = {
 		},
 	},
@@ -8278,12 +8983,14 @@ return {
 			["CenterOfPressure"] = "Vector3",
 			["Force"] = "Vector3",
 			["Torque"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
 	["SerializationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8293,6 +9000,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["LoadStringEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8302,6 +9010,7 @@ return {
 	["ServerStorage"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8311,6 +9020,7 @@ return {
 	["ServiceProvider"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -8343,6 +9053,7 @@ return {
 			["RunService"] = "RunService",
 			["GameAvatarType"] = "GameAvatarType",
 			["R15CollisionType"] = "R15CollisionType",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8350,6 +9061,7 @@ return {
 	["GenericSettings"] = {
 		Superclass = "ServiceProvider",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8357,6 +9069,7 @@ return {
 	["GlobalSettings"] = {
 		Superclass = "GenericSettings",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -8365,6 +9078,7 @@ return {
 	["UserSettings"] = {
 		Superclass = "GenericSettings",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8374,6 +9088,7 @@ return {
 		Properties = {
 			["HiddenServices"] = "BinaryString",
 			["VisibleServices"] = "BinaryString",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8382,6 +9097,7 @@ return {
 	["SessionCheckService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8390,6 +9106,7 @@ return {
 	["SessionService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8398,6 +9115,7 @@ return {
 	["SharedTableRegistry"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8428,6 +9146,7 @@ return {
 			["SunAngularSize"] = "float",
 			["SunTextureContent"] = "Content",
 			["SunTextureId"] = "ContentId",
+		},
 		Tags = {
 		},
 	},
@@ -8443,6 +9162,7 @@ return {
 			["RootIndex"] = "int",
 			["SlimInstanceHashes"] = "BinaryString",
 			["SlimReplicationTimestampSec"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8450,6 +9170,7 @@ return {
 	["SlimAnimationReplicationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8458,6 +9179,7 @@ return {
 	["SlimDebugSettings"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8467,6 +9189,7 @@ return {
 	["SlimReplicationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8475,6 +9198,7 @@ return {
 	["SlimService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8494,12 +9218,14 @@ return {
 			["opacity_xml"] = "float",
 			["riseVelocity_xml"] = "float",
 			["size_xml"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["SmoothVoxelsUpgraderService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8509,6 +9235,7 @@ return {
 	["SocialService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8553,6 +9280,7 @@ return {
 			["isPlaying"] = "bool",
 			["xmlRead_MaxDistance_3"] = "float",
 			["xmlRead_MinDistance_3"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8561,6 +9289,7 @@ return {
 		Properties = {
 			["Enabled"] = "bool",
 			["Priority"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8571,6 +9300,7 @@ return {
 			["Depth"] = "float",
 			["Mix"] = "float",
 			["Rate"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8583,12 +9313,14 @@ return {
 			["Release"] = "float",
 			["SideChain"] = "Instance",
 			["Threshold"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["CustomSoundEffect"] = {
 		Superclass = "SoundEffect",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8596,6 +9328,7 @@ return {
 	["AssetSoundEffect"] = {
 		Superclass = "CustomSoundEffect",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8604,6 +9337,7 @@ return {
 		Superclass = "CustomSoundEffect",
 		Properties = {
 			["Channel"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8612,6 +9346,7 @@ return {
 		Superclass = "SoundEffect",
 		Properties = {
 			["Level"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8622,6 +9357,7 @@ return {
 			["DryLevel"] = "float",
 			["Feedback"] = "float",
 			["WetLevel"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8631,6 +9367,7 @@ return {
 			["HighGain"] = "float",
 			["LowGain"] = "float",
 			["MidGain"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8640,6 +9377,7 @@ return {
 			["Depth"] = "float",
 			["Mix"] = "float",
 			["Rate"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8647,6 +9385,7 @@ return {
 		Superclass = "SoundEffect",
 		Properties = {
 			["Octave"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8658,6 +9397,7 @@ return {
 			["Diffusion"] = "float",
 			["DryLevel"] = "float",
 			["WetLevel"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8667,6 +9407,7 @@ return {
 			["Depth"] = "float",
 			["Duty"] = "float",
 			["Frequency"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8674,6 +9415,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -8697,6 +9439,7 @@ return {
 			["ReverbEnabled"] = "bool",
 			["RolloffScale"] = "float",
 			["VolumetricAudio"] = "VolumetricAudio",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8705,6 +9448,7 @@ return {
 	["SoundShimService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8719,12 +9463,14 @@ return {
 			["LocalTransparencyModifier"] = "float",
 			["SparkleColor"] = "Color3",
 			["TimeScale"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["SpawnerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8742,6 +9488,7 @@ return {
 			["Populated"] = "bool",
 			["Script"] = "string",
 			["Upvalues"] = "DebuggerVariable",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8750,12 +9497,14 @@ return {
 	["StandalonePluginScripts"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["StandardQueue"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -8764,6 +9513,7 @@ return {
 	["StartPageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8773,12 +9523,14 @@ return {
 	["StarterGear"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
 	["StarterPack"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8820,6 +9572,7 @@ return {
 			["PlaceAvatarRules"] = "Instance",
 			["PlayerModuleStatus"] = "int",
 			["UserEmotesEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8828,6 +9581,7 @@ return {
 	["StarterPlayerScripts"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8835,6 +9589,7 @@ return {
 	["StarterCharacterScripts"] = {
 		Superclass = "StarterPlayerScripts",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8842,6 +9597,7 @@ return {
 	["StartupMessageService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8852,6 +9608,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["NodeId"] = "string",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -8863,6 +9620,7 @@ return {
 			["Priority"] = "int",
 			["To"] = "Instance",
 			["TransitionId"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -8893,6 +9651,7 @@ return {
 			["UI2DTriangleCount"] = "int",
 			["UI3DDrawcallCount"] = "int",
 			["UI3DTriangleCount"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -8902,6 +9661,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["DisplayName"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8909,6 +9669,7 @@ return {
 	["RunningAverageItemDouble"] = {
 		Superclass = "StatsItem",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8916,6 +9677,7 @@ return {
 	["RunningAverageItemInt"] = {
 		Superclass = "StatsItem",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8923,6 +9685,7 @@ return {
 	["RunningAverageTimeIntervalItem"] = {
 		Superclass = "StatsItem",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8930,6 +9693,7 @@ return {
 	["TotalCountTimeIntervalItem"] = {
 		Superclass = "StatsItem",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -8937,6 +9701,7 @@ return {
 	["StopWatchReporter"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9151,6 +9916,7 @@ return {
 			["\"local\" Color"] = "Color3",
 			["\"nil\" Color"] = "Color3",
 			["\"self\" Color"] = "Color3",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9160,6 +9926,7 @@ return {
 	["StudioAssetService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9174,6 +9941,7 @@ return {
 			["Offset"] = "Vector2",
 			["SourceAnchorPoint"] = "Vector2",
 			["TargetAnchorPoint"] = "Vector2",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -9187,6 +9955,7 @@ return {
 			["RowName"] = "string",
 			["Text"] = "string",
 			["Title"] = "string",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -9197,6 +9966,7 @@ return {
 			["FocusDistance"] = "float",
 			["LockCameraSpeed"] = "bool",
 			["LoggingEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9206,6 +9976,7 @@ return {
 	["StudioCaptureService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9216,6 +9987,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["EnableScriptCollabByDefaultOnLoad"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9224,6 +9996,7 @@ return {
 	["StudioDeviceEmulatorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9233,6 +10006,7 @@ return {
 	["StudioDeviceSimulatorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9242,6 +10016,7 @@ return {
 	["StudioObjectBase"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9250,6 +10025,7 @@ return {
 	["StudioWidget"] = {
 		Superclass = "StudioObjectBase",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9259,6 +10035,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["PublishLocked"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9274,6 +10051,7 @@ return {
 			["Position"] = "Vector2",
 			["Resolution"] = "Vector2",
 			["UICaptureMode"] = "UICaptureMode",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9282,6 +10060,7 @@ return {
 	["StudioScriptDebugEventListener"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9291,6 +10070,7 @@ return {
 	["StudioSdkService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9314,6 +10094,7 @@ return {
 			["ShowWeldDetails"] = "bool",
 			["StudioLocaleId"] = "string",
 			["UseLocalSpace"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9324,6 +10105,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["EditModeActive"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9333,6 +10115,7 @@ return {
 	["StudioTheme"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9342,6 +10125,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["IsLoggedIn"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9351,6 +10135,7 @@ return {
 	["StudioWidgetsService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9360,6 +10145,7 @@ return {
 	["StyleBase"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9373,12 +10159,14 @@ return {
 			["PropertyTransitionsSerialize"] = "BinaryString",
 			["Selector"] = "string",
 			["SelectorError"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["StyleSheet"] = {
 		Superclass = "StyleBase",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -9388,6 +10176,7 @@ return {
 			["Index"] = "int",
 			["Priority"] = "int",
 			["StyleSheet"] = "StyleSheet",
+		},
 		Tags = {
 		},
 	},
@@ -9395,6 +10184,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["StyleSheet"] = "StyleSheet",
+		},
 		Tags = {
 		},
 	},
@@ -9410,12 +10200,14 @@ return {
 			["PreferredTextSize"] = "PreferredTextSize",
 			["ReducedMotionEnabled"] = "bool",
 			["ViewportDisplaySize"] = "DisplaySize",
+		},
 		Tags = {
 		},
 	},
 	["StylingService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9441,12 +10233,14 @@ return {
 			["RoughnessMapContent"] = "Content",
 			["TexturePack"] = "ContentId",
 			["TexturePackContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
 	["SystemThemeService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9460,6 +10254,7 @@ return {
 			["SchedulerRate"] = "double",
 			["ThreadPoolConfig"] = "ThreadPoolConfig",
 			["ThreadPoolSize"] = "int",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9474,6 +10269,7 @@ return {
 			["ChildOrder"] = "int",
 			["Score"] = "int",
 			["TeamColor"] = "BrickColor",
+		},
 		Tags = {
 		},
 	},
@@ -9481,6 +10277,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["InitialCameraCFrame"] = "CFrame",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9489,6 +10286,7 @@ return {
 	["TeamCreatePublishService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9497,6 +10295,7 @@ return {
 	["TeamCreateService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9506,6 +10305,7 @@ return {
 	["Teams"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9514,6 +10314,7 @@ return {
 	["TelemetryService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9525,6 +10326,7 @@ return {
 		Properties = {
 			["PrivateServerId"] = "string",
 			["ReservedServerAccessCode"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9537,6 +10339,7 @@ return {
 			["ServerInstanceId"] = "string",
 			["ShouldReserveServer"] = "bool",
 			["VipServerId"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -9544,6 +10347,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["CustomizedTeleportUI"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9552,6 +10356,7 @@ return {
 	["TemporaryCageMeshProvider"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9561,6 +10366,7 @@ return {
 	["TemporaryScriptService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9586,6 +10392,7 @@ return {
 			["StudsPerTile"] = "float",
 			["TexturePack"] = "ContentId",
 			["TexturePackContent"] = "Content",
+		},
 		Tags = {
 		},
 	},
@@ -9598,12 +10405,14 @@ return {
 			["IsSmooth"] = "bool",
 			["SizeInCells"] = "Vector3",
 			["SmoothGrid"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["TestCase"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9625,6 +10434,7 @@ return {
 			["ThrottlePhysicsToRealtime"] = "bool",
 			["Timeout"] = "double",
 			["WarnCount"] = "int",
+		},
 		Tags = {
 			[1] = "Service",
 		},
@@ -9632,6 +10442,7 @@ return {
 	["TextBoxService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9643,6 +10454,7 @@ return {
 			["AddPlayersOnJoin"] = "bool",
 			["DirectChatRequester"] = "Player",
 			["IsDefaultTextChannel"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -9653,12 +10465,14 @@ return {
 			["Enabled"] = "bool",
 			["PrimaryAlias"] = "string",
 			["SecondaryAlias"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["TextChatConfigurations"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9683,6 +10497,7 @@ return {
 			["TextColor3"] = "Color3",
 			["TextSize"] = "int64",
 			["VerticalStudsOffset"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9702,6 +10517,7 @@ return {
 			["TextSize"] = "int64",
 			["TextStrokeColor3"] = "Color3",
 			["TextStrokeTransparency"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9728,6 +10544,7 @@ return {
 			["TextSize"] = "int64",
 			["TextStrokeColor3"] = "Color3",
 			["TextStrokeTransparency"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9752,6 +10569,7 @@ return {
 			["TextStrokeTransparency"] = "double",
 			["VerticalAlignment"] = "VerticalAlignment",
 			["WidthScale"] = "float",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9784,6 +10602,7 @@ return {
 			["TranslationInternal"] = "string",
 			["Verified"] = "bool",
 			["WasRewritten"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9794,6 +10613,7 @@ return {
 			["PrefixText"] = "string",
 			["Text"] = "string",
 			["Translation"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -9806,6 +10626,7 @@ return {
 			["TailVisible"] = "bool",
 			["TextColor3"] = "Color3",
 			["TextSize"] = "int64",
+		},
 		Tags = {
 		},
 	},
@@ -9818,6 +10639,7 @@ return {
 			["TextSize"] = "int",
 			["TextStrokeColor3"] = "Color3",
 			["TextStrokeTransparency"] = "double",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9834,6 +10656,7 @@ return {
 			["HasSeenDeprecationDialog"] = "bool",
 			["IsLegacyChatDisabled"] = "bool",
 			["PlatformIntegratedChat"] = "RolloutState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9843,6 +10666,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["TextContent"] = "Content",
+		},
 		Tags = {
 			[1] = "NotBrowsable",
 		},
@@ -9850,6 +10674,7 @@ return {
 	["TextFilterResult"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9860,6 +10685,7 @@ return {
 		Properties = {
 			["SourceLanguage"] = "string",
 			["SourceText"] = "TextFilterResult",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9872,12 +10698,14 @@ return {
 			["SystemPrompt"] = "string",
 			["Temperature"] = "float",
 			["TopP"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["TextService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9892,6 +10720,7 @@ return {
 			["UserId"] = "int64",
 			["UserIdReplicated"] = "int64",
 			["Username"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -9899,6 +10728,7 @@ return {
 	["TextureGenerationPartGroup"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9907,6 +10737,7 @@ return {
 	["TextureGenerationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9916,6 +10747,7 @@ return {
 	["TextureGenerationUnwrappingRequest"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9927,6 +10759,7 @@ return {
 			["FriendCommunicationRestrictionStatus"] = "ChatRestrictionStatus",
 			["HasActiveUser"] = "bool",
 			["VoiceChatRestrictionStatus"] = "ChatRestrictionStatus",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9940,6 +10773,7 @@ return {
 			["Populated"] = "bool",
 			["ThreadId"] = "int",
 			["ThreadName"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -9948,6 +10782,7 @@ return {
 	["TimerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9956,6 +10791,7 @@ return {
 	["ToastNotificationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9965,6 +10801,7 @@ return {
 	["TouchInputService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9973,6 +10810,7 @@ return {
 	["TouchTransmitter"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -9981,6 +10819,7 @@ return {
 	["TraceRouteService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -9989,6 +10828,7 @@ return {
 	["TracerService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10002,6 +10842,7 @@ return {
 			["VideoExtrapolationMode"] = "TrackerExtrapolationFlagMode",
 			["VideoLodMode"] = "TrackerLodValueMode",
 			["VideoMode"] = "TrackerLodFlagMode",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10010,6 +10851,7 @@ return {
 	["TrackerStreamAnimation"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -10035,6 +10877,7 @@ return {
 			["TextureMode"] = "TextureMode",
 			["Transparency"] = "NumberSequence",
 			["WidthScale"] = "NumberSequence",
+		},
 		Tags = {
 		},
 	},
@@ -10042,6 +10885,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["LocaleId"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10050,6 +10894,7 @@ return {
 	["TutorialService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10060,6 +10905,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["PlaybackState"] = "PlaybackState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -10070,12 +10916,14 @@ return {
 		Properties = {
 			["Instance"] = "Instance",
 			["TweenInfo"] = "TweenInfo",
+		},
 		Tags = {
 		},
 	},
 	["TweenService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10084,6 +10932,7 @@ return {
 	["UGCAvatarService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10092,6 +10941,7 @@ return {
 	["UGCValidationService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10101,6 +10951,7 @@ return {
 	["UIBase"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -10108,6 +10959,7 @@ return {
 	["UIComponent"] = {
 		Superclass = "UIBase",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -10115,6 +10967,7 @@ return {
 	["UIConstraint"] = {
 		Superclass = "UIComponent",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -10125,6 +10978,7 @@ return {
 			["AspectRatio"] = "float",
 			["AspectType"] = "AspectType",
 			["DominantAxis"] = "DominantAxis",
+		},
 		Tags = {
 		},
 	},
@@ -10133,6 +10987,7 @@ return {
 		Properties = {
 			["MaxSize"] = "Vector2",
 			["MinSize"] = "Vector2",
+		},
 		Tags = {
 		},
 	},
@@ -10141,6 +10996,7 @@ return {
 		Properties = {
 			["MaxTextSize"] = "int",
 			["MinTextSize"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -10152,6 +11008,7 @@ return {
 			["CornerRadius"] = "UDim",
 			["TopLeftRadius"] = "UDim",
 			["TopRightRadius"] = "UDim",
+		},
 		Tags = {
 		},
 	},
@@ -10180,6 +11037,7 @@ return {
 			["SelectionModeDragSpeed"] = "UDim2",
 			["SelectionModeRotateSpeed"] = "float",
 			["UIDragSpeedAxisMapping"] = "UIDragSpeedAxisMapping",
+		},
 		Tags = {
 		},
 	},
@@ -10190,6 +11048,7 @@ return {
 			["GrowRatio"] = "float",
 			["ItemLineAlignment"] = "ItemLineAlignment",
 			["ShrinkRatio"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -10204,12 +11063,14 @@ return {
 			["TileMode"] = "GradientTileMode",
 			["Transparency"] = "NumberSequence",
 			["Type"] = "GradientType",
+		},
 		Tags = {
 		},
 	},
 	["UILayout"] = {
 		Superclass = "UIComponent",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -10222,6 +11083,7 @@ return {
 			["HorizontalAlignment"] = "HorizontalAlignment",
 			["SortOrder"] = "SortOrder",
 			["VerticalAlignment"] = "VerticalAlignment",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotBrowsable",
@@ -10236,6 +11098,7 @@ return {
 			["CellSize"] = "UDim2",
 			["FillDirectionMaxCells"] = "int",
 			["StartCorner"] = "StartCorner",
+		},
 		Tags = {
 		},
 	},
@@ -10249,6 +11112,7 @@ return {
 			["VerticalFlex"] = "UIFlexAlignment",
 			["VerticalPadding"] = "UDim",
 			["Wraps"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -10265,6 +11129,7 @@ return {
 			["ScrollWheelInputEnabled"] = "bool",
 			["TouchInputEnabled"] = "bool",
 			["TweenTime"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -10275,6 +11140,7 @@ return {
 			["FillEmptySpaceRows"] = "bool",
 			["MajorAxis"] = "TableMajorAxis",
 			["Padding"] = "UDim2",
+		},
 		Tags = {
 		},
 	},
@@ -10285,6 +11151,7 @@ return {
 			["PaddingLeft"] = "UDim",
 			["PaddingRight"] = "UDim",
 			["PaddingTop"] = "UDim",
+		},
 		Tags = {
 		},
 	},
@@ -10292,6 +11159,7 @@ return {
 		Superclass = "UIComponent",
 		Properties = {
 			["Scale"] = "float",
+		},
 		Tags = {
 		},
 	},
@@ -10308,6 +11176,7 @@ return {
 			["Spread"] = "UDim2",
 			["Transparency"] = "float",
 			["ZIndex"] = "int",
+		},
 		Tags = {
 		},
 	},
@@ -10324,12 +11193,14 @@ return {
 			["Thickness"] = "float",
 			["Transparency"] = "float",
 			["ZIndex"] = "int",
+		},
 		Tags = {
 		},
 	},
 	["UIDragDetectorService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10339,6 +11210,7 @@ return {
 	["UniqueIdLookupService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10348,6 +11220,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["CachedData"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10432,6 +11305,7 @@ return {
 			["VignetteEnabledCustomOption"] = "bool",
 			["VoiceChatVolume"] = "float",
 			["gaID"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10467,6 +11341,7 @@ return {
 			["TouchScreenEnabled"] = "bool",
 			["UserHeadCFrame"] = "CFrame",
 			["VREnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10476,6 +11351,7 @@ return {
 	["UserService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10500,6 +11376,7 @@ return {
 			["VRDeviceName"] = "string",
 			["VREnabled"] = "bool",
 			["VRSessionState"] = "VRSessionState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10508,6 +11385,7 @@ return {
 	["VRStatusService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10516,6 +11394,7 @@ return {
 	["ValueBase"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -10524,6 +11403,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
@@ -10531,6 +11411,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "bool",
+		},
 		Tags = {
 		},
 	},
@@ -10538,6 +11419,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "BrickColor",
+		},
 		Tags = {
 		},
 	},
@@ -10545,6 +11427,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "CFrame",
+		},
 		Tags = {
 		},
 	},
@@ -10552,6 +11435,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "Color3",
+		},
 		Tags = {
 		},
 	},
@@ -10563,6 +11447,7 @@ return {
 			["MinValue"] = "double",
 			["Value"] = "double",
 			["value"] = "double",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -10575,6 +11460,7 @@ return {
 			["MinValue"] = "int64",
 			["Value"] = "int64",
 			["value"] = "int64",
+		},
 		Tags = {
 			[1] = "Deprecated",
 		},
@@ -10583,6 +11469,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "int64",
+		},
 		Tags = {
 		},
 	},
@@ -10590,6 +11477,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "double",
+		},
 		Tags = {
 		},
 	},
@@ -10597,6 +11485,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "Instance",
+		},
 		Tags = {
 		},
 	},
@@ -10604,6 +11493,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "Ray",
+		},
 		Tags = {
 		},
 	},
@@ -10611,6 +11501,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -10618,6 +11509,7 @@ return {
 		Superclass = "ValueBase",
 		Properties = {
 			["Value"] = "Vector3",
+		},
 		Tags = {
 		},
 	},
@@ -10627,12 +11519,14 @@ return {
 			["Length"] = "int",
 			["ValueType"] = "string",
 			["ValuesAndTimes"] = "BinaryString",
+		},
 		Tags = {
 		},
 	},
 	["Vector3Curve"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 		},
 	},
@@ -10641,6 +11535,7 @@ return {
 		Properties = {
 			["ScriptCollabEnabled"] = "bool",
 			["ScriptCollabVersionHistoryEnabled"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10651,6 +11546,7 @@ return {
 		Properties = {
 			["Active"] = "bool",
 			["CameraID"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10663,6 +11559,7 @@ return {
 			["CameraId"] = "string",
 			["CaptureQuality"] = "VideoDeviceCaptureQuality",
 			["IsReady"] = "bool",
+		},
 		Tags = {
 			[1] = "NotReplicated",
 		},
@@ -10684,12 +11581,14 @@ return {
 			["TimePosition"] = "double",
 			["VideoContent"] = "Content",
 			["Volume"] = "float",
+		},
 		Tags = {
 		},
 	},
 	["VideoScreenCaptureService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10698,6 +11597,7 @@ return {
 	["VideoService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10707,6 +11607,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["AdditionalLuaState"] = "string",
+		},
 		Tags = {
 			[1] = "Service",
 		},
@@ -10714,6 +11615,7 @@ return {
 	["VirtualUser"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10723,6 +11625,7 @@ return {
 	["VisibilityCheckDispatcher"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10731,6 +11634,7 @@ return {
 	["Visit"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10743,6 +11647,7 @@ return {
 			["Enabled"] = "bool",
 			["Title"] = "string",
 			["ToolTip"] = "string",
+		},
 		Tags = {
 		},
 	},
@@ -10751,12 +11656,14 @@ return {
 		Properties = {
 			["Enabled"] = "bool",
 			["Title"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["VisualizationModeService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10766,6 +11673,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["VoiceChatState"] = "VoiceChatState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10785,6 +11693,7 @@ return {
 			["UseStreamSwitching"] = "bool",
 			["VoiceChatEnabledForPlaceOnRcc"] = "bool",
 			["VoiceChatEnabledForUniverseOnRcc"] = "bool",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10794,6 +11703,7 @@ return {
 		Superclass = "Instance",
 		Properties = {
 			["ConnectionState"] = "WebSocketState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10802,6 +11712,7 @@ return {
 	["WebSocketService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10811,6 +11722,7 @@ return {
 	["WebViewService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10829,12 +11741,14 @@ return {
 			["Part1"] = "BasePart",
 			["Part1Internal"] = "BasePart",
 			["State"] = "int",
+		},
 		Tags = {
 		},
 	},
 	["WindowProtocolService"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10849,12 +11763,14 @@ return {
 			["SourceName"] = "string",
 			["TargetInstance"] = "Instance",
 			["TargetName"] = "string",
+		},
 		Tags = {
 		},
 	},
 	["WrapDeformMeshProvider"] = {
 		Superclass = "Instance",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "Service",
@@ -10867,6 +11783,7 @@ return {
 			["ReferenceCageMeshContent"] = "Content",
 			["UVMaxBound"] = "Vector2",
 			["UVMinBound"] = "Vector2",
+		},
 		Tags = {
 		},
 	},
@@ -10875,6 +11792,7 @@ return {
 		Properties = {
 			["FullPath"] = "string",
 			["Name"] = "string",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10883,6 +11801,7 @@ return {
 	["LuauExpression"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 		},
@@ -10890,6 +11809,7 @@ return {
 	["MLSession"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10898,6 +11818,7 @@ return {
 	["OutputLink"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10910,6 +11831,7 @@ return {
 			["GroupId"] = "string",
 			["TargetId"] = "string",
 			["Type"] = "PluginConnectionTargetType",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10921,6 +11843,7 @@ return {
 			["Enabled"] = "bool",
 			["Released"] = "bool",
 			["StudioAction"] = "StudioAction",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10929,6 +11852,7 @@ return {
 	["TerrainIterateOperation"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10937,6 +11861,7 @@ return {
 	["TerrainModifyOperation"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10945,6 +11870,7 @@ return {
 	["TerrainReadOperation"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10953,6 +11879,7 @@ return {
 	["TerrainWriteOperation"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10963,6 +11890,7 @@ return {
 		Properties = {
 			["TimeLength"] = "double",
 			["VideoContent"] = "Content",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10971,6 +11899,7 @@ return {
 	["VirtualInput"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10979,6 +11908,7 @@ return {
 	["VoxelBuffer"] = {
 		Superclass = "Object",
 		Properties = {
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
@@ -10988,6 +11918,7 @@ return {
 		Superclass = "Object",
 		Properties = {
 			["ConnectionState"] = "WebStreamClientState",
+		},
 		Tags = {
 			[1] = "NotCreatable",
 			[2] = "NotReplicated",
