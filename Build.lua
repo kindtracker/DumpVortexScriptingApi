@@ -47,7 +47,7 @@ OutputFile:write("return {")
 
 for _, Class in ipairs(ApiDump.Classes) do
 	OutputFile:write(string.format("[%q] = {", Class.Name))
-	OutputFile:write(string.format("tSuperclass = %q,", Class.Superclass))
+	OutputFile:write(string.format("Superclass = %q,", Class.Superclass))
 
 	OutputFile:write("Properties = {")
 
