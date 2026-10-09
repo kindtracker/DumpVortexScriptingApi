@@ -32,22 +32,15 @@ end
 
 local function GetType(Type)
 	if type(Type) == "table" then
+		if Type.Name == "bool" then
+			Type.Name = "boolean"
+		elseif Type.Name == "null" then
+			Type.Name = "nil"
+		end
 		return Type.Name or "unknown"
 	end
 
 	return tostring(Type or "unknown")
-end
-
-local function GetFullType(Type)
-	if type(Type) ~= "table" then
-		return tostring(Type or "unknown")
-	end
-
-	if Type.Category then
-		return Type.Category .. ": " .. GetType(Type)
-	end
-
-	return GetType(Type)
 end
 
 local function GetParameters(Parameters)
@@ -100,7 +93,7 @@ local function GetInheritedMembers(Class, MemberType)
 end
 
 local function GenerateClass(ClassName, Class)
-	Output[#Output + 1] = "## " .. ClassName
+	Output[#Output + 1] = "### " .. ClassName
 	Output[#Output + 1] = ""
 
 	if Class.Superclass and Class.Superclass ~= "<ROOT>" then
@@ -128,8 +121,6 @@ local function GenerateClass(ClassName, Class)
 			then
 				SeenProperties[Member.Name] = true
 
-				print("d")
-
 				Properties[#Properties + 1] = {
 					Name = Member.Name,
 					Type = Member.ValueType,
@@ -145,14 +136,14 @@ local function GenerateClass(ClassName, Class)
 		return A.Name < B.Name
 	end)
 
-	Output[#Output + 1] = "### Properties"
+	Output[#Output + 1] = "#### Properties"
 	Output[#Output + 1] = ""
 
 	if #Properties == 0 then
 		Output[#Output + 1] = "None."
 	else
 		for _, Property in ipairs(Properties) do
-			local Line = string.format("- `%s`: `%s`", Property.Name, GetFullType(Property.Type))
+			local Line = string.format("- `%s`: `%s`", Property.Name, GetType(Property.Type))
 
 			if Property.Owner ~= ClassName and Property.Owner ~= nil then
 				Line = Line .. " *(inherited from " .. Property.Owner .. ")*"
@@ -167,7 +158,7 @@ local function GenerateClass(ClassName, Class)
 		{ Name = "Events", Type = "Event" },
 	}) do
 		Output[#Output + 1] = ""
-		Output[#Output + 1] = "### " .. Section.Name
+		Output[#Output + 1] = "#### " .. Section.Name
 		Output[#Output + 1] = ""
 
 		local Members = GetInheritedMembers(Class, Section.Type)
@@ -181,7 +172,7 @@ local function GenerateClass(ClassName, Class)
 				local Line = string.format("- `%s(%s)`", Member.Name, GetParameters(Member.Parameters))
 
 				if Section.Type == "Function" and Member.ReturnType then
-					Line = Line .. " -> `" .. GetFullType(Member.ReturnType) .. "`"
+					Line = Line .. ": `" .. GetType(Member.ReturnType) .. "`"
 				end
 
 				if Entry.Owner ~= ClassName and Entry.Owner ~= nil then
@@ -195,6 +186,8 @@ local function GenerateClass(ClassName, Class)
 
 	Output[#Output + 1] = ""
 end
+
+Output[#Output + 1] = "## Classes\n"
 
 local ClassNames = {}
 
