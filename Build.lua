@@ -11,36 +11,36 @@ local ApiDump = Json.decode(Content)
 
 local OutputFile = assert(io.open(Output, "w"))
 
-OutputFile:write("return {\n")
+OutputFile:write("return {")
 
 for _, Class in ipairs(ApiDump.Classes) do
-	OutputFile:write(string.format("\t[%q] = {\n", Class.Name))
-	OutputFile:write(string.format("\t\tSuperclass = %q,\n", Class.Superclass))
+	OutputFile:write(string.format("[%q] = {", Class.Name))
+	OutputFile:write(string.format("tSuperclass = %q,", Class.Superclass))
 
-	OutputFile:write("\t\tProperties = {\n")
+	OutputFile:write("Properties = {")
 
 	for _, Member in ipairs(Class.Members or {}) do
 		if Member.MemberType == "Property" and not Member.Deprecated and not Member.Hidden then
 			local ValueType = Member.ValueType
 
-			OutputFile:write(string.format("\t\t\t[%q] = %q,\n", Member.Name, ValueType.Name))
+			OutputFile:write(string.format("[%q] = %q,", Member.Name, ValueType.Name))
 		end
 	end
-	OutputFile:write("\t\t},\n")
+	OutputFile:write("},")
 
-	OutputFile:write("\t\tTags = {\n")
+	OutputFile:write("Tags = {")
 
 	for Index, Tag in ipairs(Class.Tags or {}) do
 		if type(Tag) ~= "table" then
-			OutputFile:write(string.format("\t\t\t[%q] = %q,\n", Index, Tag))
+			OutputFile:write(string.format("[%q] = %q,", Index, Tag))
 		end
 	end
-	OutputFile:write("\t\t},\n")
+	OutputFile:write("},")
 
-	OutputFile:write("\t},\n")
+	OutputFile:write("},")
 end
 
-OutputFile:write("}\n")
+OutputFile:write("}")
 OutputFile:close()
 
 print("Generated " .. Output)

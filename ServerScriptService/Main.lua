@@ -11,7 +11,7 @@ local IgnoredProperties = {
 task.wait(0.1)
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Classes = require(ReplicatedStorage:WaitForChild("RobloxApiDump.lua"))
+local RobloxApiDumpTable = require(ReplicatedStorage:WaitForChild("RobloxApiDump.lua"))
 
 local VortexAllClasses = {}
 local RawDump = ""
@@ -64,7 +64,7 @@ function GetInheritedProperties(ClassDump)
 	local SuperclassName = ClassDump.Superclass
 
 	while SuperclassName and SuperclassName ~= "<<<ROOT>>>" do
-		local Superclass = Classes[SuperclassName]
+		local Superclass = RobloxApiDumpTable.Classes[SuperclassName]
 
 		if not Superclass then
 			break
@@ -161,28 +161,6 @@ function GeneratePropertyLine(Property, PropertyType)
 	return string.format("- [%s](#%s): `%s`", Property, string.lower(Property):gsub(" ", "-"), PropertyType)
 end
 
-function GenerateInheritanceTree(ClassName)
-	local Chain = {}
-	local CurrentClass = ClassName
-
-	while CurrentClass and CurrentClass ~= "<<<ROOT>>>" do
-		table.insert(Chain, 1, CurrentClass)
-		CurrentClass = VortexAllClasses[CurrentClass]
-	end
-
-	local Tree = ""
-
-	for Index, Class in Chain do
-		if Index == 1 then
-			Tree = Tree .. Class .. "\n"
-		else
-			Tree = Tree .. string.rep("    ", Index - 2) .. "└── " .. Class .. "\n"
-		end
-	end
-
-	return Tree
-end
-
 function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 	VortexAllClasses[ClassName] = RobloxClassDump.Superclass
 
@@ -197,18 +175,18 @@ function GenerateClassCheatsheet(ClassName, RobloxClassDump, Class)
 			)
 	end
 
-	Cheatsheet = Cheatsheet .. "## Inheritance tree\n\n```text\n"
-	Cheatsheet = Cheatsheet .. GenerateInheritanceTree(ClassName)
-	Cheatsheet = Cheatsheet .. "```\n\n"
+	if #(RobloxClassDump.Tags or {}) == 0 then
+		Cheatsheet = Cheatsheet .. "Tags: None"
+	else
+		Cheatsheet = Cheatsheet .. "Tags: "
 
-	Cheatsheet = Cheatsheet .. "Tags: "
+		for Index, Tag in RobloxClassDump.Tags or {} do
+			if Index > 1 then
+				Cheatsheet = Cheatsheet .. ", "
+			end
 
-	for Index, Tag in RobloxClassDump.Tags or {} do
-		if Index > 1 then
-			Cheatsheet = Cheatsheet .. ", "
+			Cheatsheet = Cheatsheet .. string.format("`%s`", Tag)
 		end
-
-		Cheatsheet = Cheatsheet .. string.format("`%s`", Tag)
 	end
 
 	Cheatsheet = Cheatsheet .. "\n\n"
@@ -285,7 +263,7 @@ end
 function DumpClasses()
 	Cheatsheet = Cheatsheet .. "\n## Classes\n"
 
-	for ClassName, RobloxClassDump in pairs(Classes) do
+	for ClassName, RobloxClassDump in pairs(RobloxApiDumpTable.Classes) do
 		local Success, Class = pcall(Instance.new, ClassName)
 
 		if Success and Class ~= nil then
@@ -300,6 +278,8 @@ function DumpClasses()
 		task.wait()
 	end
 end
+
+function DumpDatatypes() end
 
 function DumpEnvironment()
 	local Environment = DumpTable("_G")
