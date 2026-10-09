@@ -30,17 +30,32 @@ local function IsIgnored(Property)
 	return IgnoredProperties[string.lower(Property)] == true
 end
 
-local function GetType(Type)
-	if type(Type) == "table" then
-		if Type.Name == "bool" then
-			Type.Name = "boolean"
-		elseif Type.Name == "null" then
-			Type.Name = "nil"
-		end
-		return Type.Name or "unknown"
-	end
+local function GetHyprType(Type)
+	local Name = "Unknown"
 
-	return tostring(Type or "unknown")
+	if Type.Name == "bool" then
+		Type.Name = "boolean"
+	elseif Type.Name == "null" then
+		Type.Name = "nil"
+	end
+	Name = Type.Name or "Unknown"
+
+	local Link = "#" .. Name:lower()
+
+	local TypeLinks = {
+		string = "https://luau.org/library/#string-library",
+		number = "https://luau.org/library/#math-library",
+		table = "https://luau.org/library/#table-library",
+		boolean = "https://luau.org/types/basic-types/",
+		array = "https://luau.org/library/#table-library",
+		variant = "https://luau.org/types/basic-types/#any-type",
+		dictionary = "https://luau.org/library/#table-library",
+		["nil"] = "https://www.lua.org/pil/2.1.html",
+	}
+
+	Link = TypeLinks[Name:lower()] or Link
+
+	return string.format("[%s](%s)", Name, Link)
 end
 
 local function GetParameters(Parameters)
@@ -48,7 +63,7 @@ local function GetParameters(Parameters)
 
 	for _, Parameter in ipairs(Parameters or {}) do
 		local Name = Parameter.Name or "?"
-		local Type = GetType(Parameter.Type)
+		local Type = GetHyprType(Parameter.Type)
 
 		if Parameter.Default ~= nil then
 			Name = Name .. " = " .. tostring(Parameter.Default)
@@ -147,7 +162,7 @@ local function GenerateClass(ClassName, Class)
 		Output[#Output + 1] = "None."
 	else
 		for _, Property in ipairs(Properties) do
-			local Line = string.format("- `%s`: `%s`", Property.Name, GetType(Property.Type))
+			local Line = string.format("- `%s`: %s", Property.Name, GetHyprType(Property.Type))
 
 			if Property.Owner ~= ClassName and Property.Owner ~= nil then
 				Line = Line .. " *(inherited from " .. Property.Owner .. ")*"
@@ -178,7 +193,11 @@ local function GenerateClass(ClassName, Class)
 				local Line = string.format("- `%s(%s)`", Member.Name, GetParameters(Member.Parameters))
 
 				if Section.Type == "Function" and Member.ReturnType then
-					Line = Line .. ": `" .. GetType(Member.ReturnType) .. "`"
+					Line = Line .. ": " .. GetHyprType(Member.ReturnType)
+				end
+
+				if Section.Type == "Event" then
+					Line = Line .. ": [Signal](#signal)"
 				end
 
 				if Entry.Owner ~= ClassName and Entry.Owner ~= nil then
