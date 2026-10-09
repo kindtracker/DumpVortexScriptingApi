@@ -104,6 +104,9 @@ local function GenerateClass(ClassName, Class)
 	if #(Class.Tags or {}) > 0 then
 		Output[#Output + 1] = "**Tags:** " .. table.concat(Class.Tags, ", ")
 		Output[#Output + 1] = ""
+	else
+		Output[#Output + 1] = "**Tags:** None"
+		Output[#Output + 1] = ""
 	end
 
 	local Properties = {}
@@ -136,7 +139,8 @@ local function GenerateClass(ClassName, Class)
 		return A.Name < B.Name
 	end)
 
-	Output[#Output + 1] = "#### Properties"
+	Output[#Output + 1] = "<details>"
+	Output[#Output + 1] = "<summary>Properties</summary>"
 	Output[#Output + 1] = ""
 
 	if #Properties == 0 then
@@ -153,12 +157,14 @@ local function GenerateClass(ClassName, Class)
 		end
 	end
 
+	Output[#Output + 1] = "</details>"
+
 	for _, Section in ipairs({
 		{ Name = "Methods", Type = "Function" },
 		{ Name = "Events", Type = "Event" },
 	}) do
-		Output[#Output + 1] = ""
-		Output[#Output + 1] = "#### " .. Section.Name
+		Output[#Output + 1] = "<details>"
+		Output[#Output + 1] = "<summary>" .. Section.Name .. "</summary>"
 		Output[#Output + 1] = ""
 
 		local Members = GetInheritedMembers(Class, Section.Type)
@@ -181,13 +187,16 @@ local function GenerateClass(ClassName, Class)
 
 				Output[#Output + 1] = Line
 			end
+
+			Output[#Output + 1] = "</details>"
 		end
 	end
 
 	Output[#Output + 1] = ""
 end
 
-Output[#Output + 1] = "## Classes\n"
+Output[#Output + 1] = "## Classes"
+Output[#Output + 1] = ""
 
 local ClassNames = {}
 

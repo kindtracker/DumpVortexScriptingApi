@@ -8,7 +8,10 @@ Generated from RobloxApiDump.lua.
 
 **Superclass:** Accoutrement
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `AccessoryType`: `AccessoryType`
 - `Archivable`: `boolean`
@@ -21,8 +24,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -57,8 +61,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -69,12 +74,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AccessoryDescription
 
 **Superclass:** Instance
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `AccessoryType`: `AccessoryType`
 - `Archivable`: `boolean`
@@ -93,8 +102,9 @@ Generated from RobloxApiDump.lua.
 - `Sandboxed`: `boolean`
 - `Scale`: `Vector3`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -130,8 +140,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -142,6 +153,7 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AccountService
 
@@ -149,7 +161,8 @@ Generated from RobloxApiDump.lua.
 
 **Tags:** NotCreatable, Service, NotReplicated
 
-#### Properties
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -160,8 +173,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -203,8 +217,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -216,12 +231,16 @@ Generated from RobloxApiDump.lua.
 - `Destroying()`
 - `MagicLoginEvent(data: string)`
 - `StyledPropertiesChanged()`
+</details>
 
 ### Accoutrement
 
 **Superclass:** Instance
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `AttachmentPoint`: `CFrame`
@@ -233,8 +252,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -269,8 +289,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -281,6 +302,7 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AchievementService
 
@@ -288,7 +310,8 @@ Generated from RobloxApiDump.lua.
 
 **Tags:** NotCreatable, Service, NotReplicated
 
-#### Properties
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -299,8 +322,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -338,8 +362,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -350,6 +375,7 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### ActivityHistoryEventService
 
@@ -357,7 +383,8 @@ Generated from RobloxApiDump.lua.
 
 **Tags:** NotCreatable, Service
 
-#### Properties
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -368,8 +395,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -404,8 +432,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -417,12 +446,16 @@ Generated from RobloxApiDump.lua.
 - `Destroying()`
 - `StyledPropertiesChanged()`
 - `WriteActivityHistoryEventFromStudio(eventType: int, resourceId: int64, metadata: string)`
+</details>
 
 ### Actor
 
 **Superclass:** Model
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -440,8 +473,9 @@ Generated from RobloxApiDump.lua.
 - `Scale`: `float`
 - `UniqueId`: `UniqueId`
 - `WorldPivot`: `CFrame`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddPersistentPlayer(playerInstance: Player)`: `nil`
 - `AddTag(tag: string)`: `nil`
@@ -490,8 +524,9 @@ Generated from RobloxApiDump.lua.
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `TranslateBy(delta: Vector3)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -502,12 +537,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AdGui
 
 **Superclass:** SurfaceGuiBase
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `AbsolutePosition`: `Vector2`
 - `AbsoluteRotation`: `float`
@@ -539,8 +578,9 @@ Generated from RobloxApiDump.lua.
 - `Status`: `AdUnitStatus`
 - `UniqueId`: `UniqueId`
 - `ZIndexBehavior`: `ZIndexBehavior`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -579,8 +619,9 @@ Generated from RobloxApiDump.lua.
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
 - `forwardStateToLuaUI()`: `nil`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -593,12 +634,16 @@ Generated from RobloxApiDump.lua.
 - `SelectionChanged(amISelected: boolean, previousSelection: GuiObject, newSelection: GuiObject)`
 - `StyledPropertiesChanged()`
 - `adGuiStateChanged(adUIState: Variant)`
+</details>
 
 ### AdPlacement
 
 **Superclass:** Instance
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `ActivationInstance`: `Instance`
 - `AdFormat`: `AdFormat`
@@ -616,8 +661,9 @@ Generated from RobloxApiDump.lua.
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
 - `Visible`: `boolean`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -652,8 +698,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -664,12 +711,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AdPortal
 
 **Superclass:** Instance
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -682,8 +733,9 @@ Generated from RobloxApiDump.lua.
 - `Sandboxed`: `boolean`
 - `Status`: `AdUnitStatus`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -718,8 +770,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -730,6 +783,7 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AdService
 
@@ -737,7 +791,8 @@ Generated from RobloxApiDump.lua.
 
 **Tags:** NotCreatable, Service
 
-#### Properties
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -748,8 +803,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -804,8 +860,9 @@ Generated from RobloxApiDump.lua.
 - `SubmitAdNotification(universeId: int64, isShowAdSuccessful: boolean, earnedReward: boolean, rewardProductName: string, rewardProductImageAssetId: int64)`: `nil`
 - `UnregisterAdOpportunity(instance: Instance)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AdTeleportEnded()`
 - `AdTeleportInitiated()`
@@ -823,12 +880,16 @@ Generated from RobloxApiDump.lua.
 - `ShowReportAdPopup(adInfo: Dictionary)`
 - `StyledPropertiesChanged()`
 - `adGuiRegisterUI(adGui: Instance)`
+</details>
 
 ### AdvancedDragger
 
 **Superclass:** Instance
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -839,8 +900,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -875,8 +937,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -887,12 +950,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AirController
 
 **Superclass:** ControllerBase
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Active`: `boolean`
 - `Archivable`: `boolean`
@@ -913,8 +980,9 @@ Generated from RobloxApiDump.lua.
 - `TurnMaxTorque`: `float`
 - `TurnSpeedFactor`: `float`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -949,8 +1017,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -961,12 +1030,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AlignOrientation
 
 **Superclass:** Constraint
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Active`: `boolean`
 - `AlignType`: `AlignType`
@@ -995,8 +1068,9 @@ Generated from RobloxApiDump.lua.
 - `SecondaryAxis`: `Vector3`
 - `UniqueId`: `UniqueId`
 - `Visible`: `boolean`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -1031,8 +1105,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -1043,12 +1118,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AlignPosition
 
 **Superclass:** Constraint
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Active`: `boolean`
 - `ApplyAtCenterOfMass`: `boolean`
@@ -1076,8 +1155,9 @@ Generated from RobloxApiDump.lua.
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
 - `Visible`: `boolean`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -1112,8 +1192,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -1124,6 +1205,7 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AnalyticsService
 
@@ -1131,7 +1213,8 @@ Generated from RobloxApiDump.lua.
 
 **Tags:** NotCreatable, Service, NotReplicated
 
-#### Properties
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -1142,8 +1225,9 @@ Generated from RobloxApiDump.lua.
 - `PredictionMode`: `PredictionMode`
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -1189,8 +1273,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -1201,12 +1286,16 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AngularVelocity
 
 **Superclass:** Constraint
 
-#### Properties
+**Tags:** None
+
+<details>
+<summary>Properties</summary>
 
 - `Active`: `boolean`
 - `AngularVelocity`: `Vector3`
@@ -1227,8 +1316,9 @@ Generated from RobloxApiDump.lua.
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
 - `Visible`: `boolean`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -1263,8 +1353,9 @@ Generated from RobloxApiDump.lua.
 - `ResetPropertyToDefault(property: string)`: `nil`
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
+</details>
+<details>
+<summary>Events</summary>
 
 - `AncestryChanged(child: Instance, parent: Instance)`
 - `AttributeChanged(attribute: string)`
@@ -1275,6 +1366,7 @@ Generated from RobloxApiDump.lua.
 - `DescendantRemoving(descendant: Instance)`
 - `Destroying()`
 - `StyledPropertiesChanged()`
+</details>
 
 ### AnimatedImageService
 
@@ -1282,7 +1374,8 @@ Generated from RobloxApiDump.lua.
 
 **Tags:** NotCreatable, Service, NotReplicated
 
-#### Properties
+<details>
+<summary>Properties</summary>
 
 - `Archivable`: `boolean`
 - `Capabilities`: `SecurityCapabilities`
@@ -1294,8 +1387,9 @@ Generated from RobloxApiDump.lua.
 - `Sandboxed`: `boolean`
 - `UniqueId`: `UniqueId`
 - `UserCreatedTracks`: `BinaryString`
-
-#### Methods
+</details>
+<details>
+<summary>Methods</summary>
 
 - `AddTag(tag: string)`: `nil`
 - `ClearAllChildren()`: `nil`
@@ -1337,79 +1431,4 @@ Generated from RobloxApiDump.lua.
 - `SetAttribute(attribute: string, value: Variant)`: `nil`
 - `UnloadTracks(content: Content)`: `nil`
 - `WaitForChild(childName: string, timeOut: double)`: `Instance`
-
-#### Events
-
-- `AncestryChanged(child: Instance, parent: Instance)`
-- `AttributeChanged(attribute: string)`
-- `Changed(property: string)`
-- `ChildAdded(child: Instance)`
-- `ChildRemoved(child: Instance)`
-- `DescendantAdded(descendant: Instance)`
-- `DescendantRemoving(descendant: Instance)`
-- `Destroying()`
-- `StyledPropertiesChanged()`
-
-### AnimatedImageTrack
-
-**Superclass:** Object
-
-**Tags:** NotCreatable, NotReplicated
-
-#### Properties
-
-- `ClassName`: `string`
-
-#### Methods
-
-- `GetContent()`: `Content`
-- `GetFrameNames()`: `Array`
-- `GetPropertyChangedSignal(property: string)`: `RBXScriptSignal`
-- `IsA(className: string)`: `boolean`
-
-#### Events
-
-- `Changed(property: string)`
-
-### Animation
-
-**Superclass:** Instance
-
-#### Properties
-
-- `AnimationContent`: `Content`
-- `AnimationId`: `ContentId`
-- `Archivable`: `boolean`
-- `Capabilities`: `SecurityCapabilities`
-- `ClassName`: `string`
-- `IsInSandbox`: `boolean`
-- `Name`: `string`
-- `Parent`: `Instance`
-- `PredictionMode`: `PredictionMode`
-- `Sandboxed`: `boolean`
-- `UniqueId`: `UniqueId`
-
-#### Methods
-
-- `AddTag(tag: string)`: `nil`
-- `ClearAllChildren()`: `nil`
-- `Clone()`: `Instance`
-- `Destroy()`: `nil`
-- `FindFirstAncestor(name: string)`: `Instance`
-- `FindFirstAncestorOfClass(className: string)`: `Instance`
-- `FindFirstAncestorWhichIsA(className: string)`: `Instance`
-- `FindFirstChild(name: string, recursive: boolean)`: `Instance`
-- `FindFirstChildOfClass(className: string)`: `Instance`
-- `FindFirstChildWhichIsA(className: string, recursive: boolean)`: `Instance`
-- `FindFirstDescendant(name: string)`: `Instance`
-- `GetActor()`: `Actor`
-- `GetAttribute(attribute: string)`: `Variant`
-- `GetAttributeChangedSignal(attribute: string)`: `RBXScriptSignal`
-- `GetAttributes()`: `Dictionary`
-- `GetChildren()`: `Instances`
-- `GetDebugId(scopeLength: int)`: `string`
-- `GetDescendants()`: `Instances`
-- `GetFullName()`: `string`
-- `GetPropertyChangedSignal(property: string)`: `RBXScriptSignal`
-- `GetStyled(name: string, selector: string?)`: `Variant`
-- `GetStyledPropertyChangedSignal(property: string)`: `RBXScriptSigna
+</details>
