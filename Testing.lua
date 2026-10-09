@@ -46,11 +46,13 @@ local function GetHyprType(Type)
 		string = "https://luau.org/library/#string-library",
 		number = "https://luau.org/library/#math-library",
 		table = "https://luau.org/library/#table-library",
-		boolean = "https://luau.org/types/basic-types/",
+		boolean = "https://www.lua.org/pil/2.2.html",
 		array = "https://luau.org/library/#table-library",
 		variant = "https://luau.org/types/basic-types/#any-type",
 		dictionary = "https://luau.org/library/#table-library",
 		["nil"] = "https://www.lua.org/pil/2.1.html",
+		number = "https://www.lua.org/pil/2.3.html",
+		["function"] = "https://www.lua.org/pil/2.6.html",
 	}
 
 	Link = TypeLinks[Name:lower()] or Link
