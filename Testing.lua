@@ -8,9 +8,9 @@ local IgnoredProperties = {
 }
 
 local Output = {
-	"# Vortex Cheatsheet",
+	"# Roblox Cheatsheet",
 	"",
-	"Generated from RobloxApiDump.lua.",
+	"This cheatsheet is generated from https://github.com/kindtracker/DumpVortexScriptingApi",
 	"",
 }
 
@@ -114,7 +114,7 @@ local function GenerateClass(ClassName, Class)
 	Output[#Output + 1] = ""
 
 	if Class.Superclass and Class.Superclass ~= "<ROOT>" then
-		Output[#Output + 1] = "**Superclass:** " .. Class.Superclass
+		Output[#Output + 1] = "**Superclass:** " .. string.format("[%s](#%s)", Class.Superclass, Class.Superclass)
 		Output[#Output + 1] = ""
 	end
 

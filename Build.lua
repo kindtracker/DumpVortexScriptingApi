@@ -1,13 +1,21 @@
 local Json = require("json")
 
-local Input = "RobloxApiDump.json"
+local ApiDumpFile = "RobloxApiDump.json"
+local DataTypesFile = "RobloxDataTypes.json"
+
 local Output = "ReplicatedStorage/RobloxApiDump.lua"
 
-local File = assert(io.open(Input, "r"))
-local Content = File:read("*a")
-File:close()
+local ApiDumpFilePtr = assert(io.open(ApiDumpFile, "r"))
+local Content = ApiDumpFilePtr:read("*a")
+ApiDumpFilePtr:close()
 
 local ApiDump = Json.decode(Content)
+
+local DataTypesFilePtr = assert(io.open(DataTypesFile, "r"))
+local DataTypesContent = DataTypesFilePtr:read("*a")
+DataTypesFilePtr:close()
+
+local DataTypes = Json.decode(DataTypesContent)
 
 local OutputFile = assert(io.open(Output, "w"))
 
@@ -41,6 +49,42 @@ local function HasTag(Tags, Target)
 	end
 
 	return false
+end
+
+local function WriteValue(File, Value)
+	local ValueType = type(Value)
+
+	if ValueType == "nil" then
+		File:write("nil")
+	elseif ValueType == "string" then
+		File:write(string.format("%q", Value))
+	elseif ValueType == "number" or ValueType == "boolean" then
+		File:write(tostring(Value))
+	elseif ValueType == "table" then
+		File:write("{")
+
+		local First = true
+
+		for Key, Child in pairs(Value) do
+			if not First then
+				File:write(",")
+			end
+
+			First = false
+
+			if type(Key) == "string" then
+				File:write("[" .. string.format("%q", Key) .. "] = ")
+			else
+				File:write("[" .. tostring(Key) .. "] = ")
+			end
+
+			WriteValue(File, Child)
+		end
+
+		File:write("}")
+	else
+		error("Unsupported value type: " .. ValueType)
+	end
 end
 
 OutputFile:write("return {\nClasses = {")
@@ -92,7 +136,10 @@ for _, Class in ipairs(ApiDump.Classes) do
 	OutputFile:write("},")
 end
 
-OutputFile:write("}\n}")
+OutputFile:write("},\nDataTypes = ")
+WriteValue(OutputFile, DataTypes)
+OutputFile:write("\n}")
+
 OutputFile:close()
 
 print("Generated " .. Output)
