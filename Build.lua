@@ -43,23 +43,28 @@ local function HasTag(Tags, Target)
 	return false
 end
 
-OutputFile:write("return {")
+OutputFile:write("return {\nClasses = {")
 
 for _, Class in ipairs(ApiDump.Classes) do
 	OutputFile:write(string.format("[%q] = {", Class.Name))
 	OutputFile:write(string.format("Superclass = %q,", Class.Superclass))
 
-	OutputFile:write("Properties = {")
+	OutputFile:write("Members = {")
 
 	for _, Member in ipairs(Class.Members or {}) do
 		local Tags = Member.Tags or {}
 
 		if not HasTag(Tags, "Deprecated") and not HasTag(Tags, "Hidden") then
 			if Member.MemberType == "Property" then
-				OutputFile:write(string.format("[%q] = %q,\n", Member.Name, Member.ValueType.Name))
-			elseif Member.MemberType == "Event" or Member.MemberType == "Function" then
 				OutputFile:write(
-					string.format("[%q] = { MemberType = %q, Parameters = ", Member.Name, Member.MemberType)
+					string.format("{ MemberType = %q, Name = %q, ValueType = ", Member.MemberType, Member.Name)
+				)
+
+				WriteType(OutputFile, Member.ValueType)
+				OutputFile:write(" },\n")
+			elseif Member.MemberType == "Function" or Member.MemberType == "Event" then
+				OutputFile:write(
+					string.format("{ MemberType = %q, Name = %q, Parameters = ", Member.MemberType, Member.Name)
 				)
 
 				WriteParameters(OutputFile, Member.Parameters)
@@ -87,7 +92,7 @@ for _, Class in ipairs(ApiDump.Classes) do
 	OutputFile:write("},")
 end
 
-OutputFile:write("}")
+OutputFile:write("}\n}")
 OutputFile:close()
 
 print("Generated " .. Output)
