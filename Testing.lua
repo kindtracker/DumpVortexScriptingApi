@@ -15,6 +15,214 @@ local Output = {
 }
 
 local Classes = RobloxApiDump.Classes
+local DataTypes = RobloxApiDump.DataTypes.Constructors
+
+local Constructors = {
+	Instance = {
+		new = true,
+		fromExisting = true,
+	},
+
+	InstanceHandle = {
+		new = true,
+	},
+
+	Ray = {
+		new = true,
+	},
+
+	Axes = {
+		new = true,
+	},
+
+	Faces = {
+		new = true,
+	},
+
+	BrickColor = {
+		new = true,
+		Red = true,
+		Yellow = true,
+		Blue = true,
+		Gray = true,
+		DarkGray = true,
+		White = true,
+		Green = true,
+		Black = true,
+		Random = true,
+		random = true,
+		palette = true,
+	},
+
+	Vector2 = {
+		new = true,
+	},
+
+	Vector2int16 = {
+		new = true,
+	},
+
+	Vector3 = {
+		new = true,
+		fromNormalId = true,
+		fromAxis = true,
+	},
+
+	Vector3int16 = {
+		new = true,
+	},
+
+	Color3 = {
+		new = true,
+		fromRGB = true,
+		fromHSV = true,
+		fromHex = true,
+	},
+
+	CFrame = {
+		new = true,
+		Angles = true,
+		fromAxisAngle = true,
+		fromEulerAngles = true,
+		fromEulerAnglesXYZ = true,
+		fromEulerAnglesYXZ = true,
+		fromMatrix = true,
+		fromOrientation = true,
+		fromRotationBetweenVectors = true,
+		lookAt = true,
+		lookAlong = true,
+	},
+
+	UDim = {
+		new = true,
+	},
+
+	UDim2 = {
+		new = true,
+		fromScale = true,
+		fromOffset = true,
+	},
+
+	NumberRange = {
+		new = true,
+	},
+
+	NumberSequence = {
+		new = true,
+	},
+
+	NumberSequenceKeypoint = {
+		new = true,
+	},
+
+	ColorSequence = {
+		new = true,
+	},
+
+	ColorSequenceKeypoint = {
+		new = true,
+	},
+
+	PhysicalProperties = {
+		new = true,
+	},
+
+	Region3 = {
+		new = true,
+	},
+
+	Region3int16 = {
+		new = true,
+	},
+
+	Rect = {
+		new = true,
+	},
+
+	PathWaypoint = {
+		new = true,
+	},
+
+	Path2DControlPoint = {
+		new = true,
+	},
+
+	FloatCurveKey = {
+		new = true,
+	},
+
+	RotationCurveKey = {
+		new = true,
+	},
+
+	TweenInfo = {
+		new = true,
+	},
+
+	Random = {
+		new = true,
+	},
+
+	RaycastParams = {
+		new = true,
+	},
+
+	OverlapParams = {
+		new = true,
+	},
+
+	CatalogSearchParams = {
+		new = true,
+	},
+
+	DockWidgetPluginGuiInfo = {
+		new = true,
+	},
+
+	Content = {
+		fromUri = true,
+		fromObject = true,
+		fromAssetId = true,
+	},
+
+	Font = {
+		new = true,
+		fromName = true,
+		fromId = true,
+		fromEnum = true,
+	},
+
+	DateTime = {
+		now = true,
+		fromIsoDate = true,
+		fromUniversalTime = true,
+		fromLocalTime = true,
+		fromUnixTimestamp = true,
+		fromUnixTimestampMillis = true,
+	},
+
+	SecurityCapabilities = {
+		new = true,
+		fromCurrent = true,
+	},
+
+	User = {
+		fromId = true,
+		fromString = true,
+	},
+
+	SharedTable = {
+		new = true,
+		clone = true,
+		cloneAndFreeze = true,
+	},
+}
+
+local function CheckConstructor(DataType, Member)
+	local DataTypeConstructors = Constructors[DataType.Name]
+
+	return DataTypeConstructors ~= nil and DataTypeConstructors[Member.Name] == true
+end
 
 local function HasTag(Tags, Target)
 	for _, Tag in ipairs(Tags or {}) do
@@ -158,7 +366,6 @@ local function GenerateClass(ClassName, Class)
 
 	Output[#Output + 1] = "<details>"
 	Output[#Output + 1] = "<summary>Properties</summary>"
-	Output[#Output + 1] = ""
 
 	if #Properties == 0 then
 		Output[#Output + 1] = "None."
@@ -175,6 +382,7 @@ local function GenerateClass(ClassName, Class)
 	end
 
 	Output[#Output + 1] = "</details>"
+	Output[#Output + 1] = ""
 
 	for _, Section in ipairs({
 		{ Name = "Methods", Type = "Function" },
@@ -182,7 +390,6 @@ local function GenerateClass(ClassName, Class)
 	}) do
 		Output[#Output + 1] = "<details>"
 		Output[#Output + 1] = "<summary>" .. Section.Name .. "</summary>"
-		Output[#Output + 1] = ""
 
 		local Members = GetInheritedMembers(Class, Section.Type)
 
@@ -210,9 +417,96 @@ local function GenerateClass(ClassName, Class)
 			end
 
 			Output[#Output + 1] = "</details>"
+			Output[#Output + 1] = ""
 		end
 	end
 
+	Output[#Output + 1] = ""
+end
+
+local function GenerateDataType(DataType)
+	Output[#Output + 1] = "### " .. DataType.Name
+	Output[#Output + 1] = ""
+
+	local Members = {}
+
+	for _, Member in ipairs(DataType.Members or {}) do
+		if not HasTag(Member.Tags, "Deprecated") and not HasTag(Member.Tags, "Hidden") then
+			Members[#Members + 1] = Member
+		end
+	end
+
+	table.sort(Members, function(A, B)
+		if A.MemberType ~= B.MemberType then
+			return A.MemberType < B.MemberType
+		end
+
+		return A.Name < B.Name
+	end)
+
+	if #Members == 0 then
+		Output[#Output + 1] = "None."
+		Output[#Output + 1] = ""
+		return
+	end
+
+	for _, Section in ipairs({
+		{ Name = "Constructors", Predicate = IsConstructor },
+		{
+			Name = "Methods",
+			Predicate = function()
+				return false
+			end,
+		},
+	}) do
+		Output[#Output + 1] = "<details>"
+		Output[#Output + 1] = "<summary>" .. Section.Name .. "</summary>"
+
+		for _, Member in ipairs(Members) do
+			if Member.MemberType == "Function" then
+				local IsConstructor = CheckConstructor(DataType, Member)
+
+				if
+					(Section.Name == "Constructors" and IsConstructor)
+					or (Section.Name == "Methods" and not IsConstructor)
+				then
+					local Line = string.format("- `%s(%s)`", Member.Name, GetParameters(Member.Parameters))
+
+					if Member.ReturnType then
+						Line = Line .. ": " .. GetHyprType(Member.ReturnType)
+					elseif Member.TupleReturns then
+						local Returns = {}
+
+						for _, ReturnType in ipairs(Member.TupleReturns) do
+							Returns[#Returns + 1] = GetHyprType(ReturnType)
+						end
+
+						if #Returns > 0 then
+							Line = Line .. ": (" .. table.concat(Returns, ", ") .. ")"
+						end
+					end
+
+					Output[#Output + 1] = Line
+				end
+			end
+		end
+
+		Output[#Output + 1] = "</details>"
+		Output[#Output + 1] = ""
+	end
+
+	Output[#Output + 1] = "</details>"
+	Output[#Output + 1] = ""
+	Output[#Output + 1] = "<details>"
+	Output[#Output + 1] = "<summary>Properties</summary>"
+
+	for _, Member in ipairs(Members) do
+		if Member.MemberType == "Property" then
+			Output[#Output + 1] = string.format("- `%s`: %s", Member.Name, GetHyprType(Member.ValueType))
+		end
+	end
+
+	Output[#Output + 1] = "</details>"
 	Output[#Output + 1] = ""
 end
 
@@ -229,7 +523,25 @@ table.sort(ClassNames)
 
 for _, ClassName in ipairs(ClassNames) do
 	GenerateClass(ClassName, Classes[ClassName])
-	print("Generated: " .. ClassName)
+	print("Generated class: " .. ClassName)
+end
+
+Output[#Output + 1] = "## DataTypes"
+Output[#Output + 1] = ""
+
+local DataTypeNames = {}
+
+for _, DataType in ipairs(DataTypes or {}) do
+	DataTypeNames[#DataTypeNames + 1] = DataType
+end
+
+table.sort(DataTypeNames, function(A, B)
+	return A.Name < B.Name
+end)
+
+for _, DataType in ipairs(DataTypeNames) do
+	GenerateDataType(DataType)
+	print("Generated datatype: " .. DataType.Name)
 end
 
 local File = assert(io.open(OutputFile, "w"))
