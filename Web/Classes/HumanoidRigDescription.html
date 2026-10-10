@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -43,189 +119,1269 @@ p { overflow-wrap: anywhere; }
 <p>Tags: [
 ]</p>
 <h3>Properties (120)</h3>
-<li><code>Archivable</code>: <code>bool</code></li>
-<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
-<li><code>Chest</code>: <code>Instance</code></li>
-<li><code>ChestRangeMax</code>: <code>Vector3</code></li>
-<li><code>ChestRangeMin</code>: <code>Vector3</code></li>
-<li><code>ChestSize</code>: <code>float</code></li>
-<li><code>ChestTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>HeadBase</code>: <code>Instance</code></li>
-<li><code>HeadBaseRangeMax</code>: <code>Vector3</code></li>
-<li><code>HeadBaseRangeMin</code>: <code>Vector3</code></li>
-<li><code>HeadBaseSize</code>: <code>float</code></li>
-<li><code>HeadBaseTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>IsInSandbox</code>: <code>bool</code></li>
-<li><code>LeftAnkle</code>: <code>Instance</code></li>
-<li><code>LeftAnkleRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftAnkleRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftAnkleSize</code>: <code>float</code></li>
-<li><code>LeftAnkleTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftClavicle</code>: <code>Instance</code></li>
-<li><code>LeftClavicleRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftClavicleRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftClavicleSize</code>: <code>float</code></li>
-<li><code>LeftClavicleTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftElbow</code>: <code>Instance</code></li>
-<li><code>LeftElbowRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftElbowRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftElbowSize</code>: <code>float</code></li>
-<li><code>LeftElbowTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftHip</code>: <code>Instance</code></li>
-<li><code>LeftHipRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftHipRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftHipSize</code>: <code>float</code></li>
-<li><code>LeftHipTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftKnee</code>: <code>Instance</code></li>
-<li><code>LeftKneeRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftKneeRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftKneeSize</code>: <code>float</code></li>
-<li><code>LeftKneeTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftShoulder</code>: <code>Instance</code></li>
-<li><code>LeftShoulderRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftShoulderRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftShoulderSize</code>: <code>float</code></li>
-<li><code>LeftShoulderTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftToeBase</code>: <code>Instance</code></li>
-<li><code>LeftToeBaseRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftToeBaseRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftToeBaseSize</code>: <code>float</code></li>
-<li><code>LeftToeBaseTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>LeftWrist</code>: <code>Instance</code></li>
-<li><code>LeftWristRangeMax</code>: <code>Vector3</code></li>
-<li><code>LeftWristRangeMin</code>: <code>Vector3</code></li>
-<li><code>LeftWristSize</code>: <code>float</code></li>
-<li><code>LeftWristTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>Neck</code>: <code>Instance</code></li>
-<li><code>NeckRangeMax</code>: <code>Vector3</code></li>
-<li><code>NeckRangeMin</code>: <code>Vector3</code></li>
-<li><code>NeckSize</code>: <code>float</code></li>
-<li><code>NeckTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>OriginOffset</code>: <code>CFrame</code></li>
-<li><code>Parent</code>: <code>Instance</code></li>
-<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
-<li><code>RightAnkle</code>: <code>Instance</code></li>
-<li><code>RightAnkleRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightAnkleRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightAnkleSize</code>: <code>float</code></li>
-<li><code>RightAnkleTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightClavicle</code>: <code>Instance</code></li>
-<li><code>RightClavicleRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightClavicleRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightClavicleSize</code>: <code>float</code></li>
-<li><code>RightClavicleTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightElbow</code>: <code>Instance</code></li>
-<li><code>RightElbowRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightElbowRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightElbowSize</code>: <code>float</code></li>
-<li><code>RightElbowTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightHip</code>: <code>Instance</code></li>
-<li><code>RightHipRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightHipRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightHipSize</code>: <code>float</code></li>
-<li><code>RightHipTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightKnee</code>: <code>Instance</code></li>
-<li><code>RightKneeRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightKneeRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightKneeSize</code>: <code>float</code></li>
-<li><code>RightKneeTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightShoulder</code>: <code>Instance</code></li>
-<li><code>RightShoulderRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightShoulderRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightShoulderSize</code>: <code>float</code></li>
-<li><code>RightShoulderTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightToeBase</code>: <code>Instance</code></li>
-<li><code>RightToeBaseRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightToeBaseRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightToeBaseSize</code>: <code>float</code></li>
-<li><code>RightToeBaseTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>RightWrist</code>: <code>Instance</code></li>
-<li><code>RightWristRangeMax</code>: <code>Vector3</code></li>
-<li><code>RightWristRangeMin</code>: <code>Vector3</code></li>
-<li><code>RightWristSize</code>: <code>float</code></li>
-<li><code>RightWristTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>Root</code>: <code>Instance</code></li>
-<li><code>RootRangeMax</code>: <code>Vector3</code></li>
-<li><code>RootRangeMin</code>: <code>Vector3</code></li>
-<li><code>RootSize</code>: <code>float</code></li>
-<li><code>RootTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>Sandboxed</code>: <code>bool</code></li>
-<li><code>Spine</code>: <code>Instance</code></li>
-<li><code>SpineRangeMax</code>: <code>Vector3</code></li>
-<li><code>SpineRangeMin</code>: <code>Vector3</code></li>
-<li><code>SpineSize</code>: <code>float</code></li>
-<li><code>SpineTposeAdjustment</code>: <code>CFrame</code></li>
-<li><code>UniqueId</code>: <code>UniqueId</code></li>
-<li><code>Waist</code>: <code>Instance</code></li>
-<li><code>WaistRangeMax</code>: <code>Vector3</code></li>
-<li><code>WaistRangeMin</code>: <code>Vector3</code></li>
-<li><code>WaistSize</code>: <code>float</code></li>
-<li><code>WaistTposeAdjustment</code>: <code>CFrame</code></li>
+<section id="member-Archivable" class="set">
+<header><h3>Archivable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Capabilities" class="set">
+<header><h3>Capabilities</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SecurityCapabilities</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Chest" class="set">
+<header><h3>Chest</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ChestRangeMax" class="set">
+<header><h3>ChestRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ChestRangeMin" class="set">
+<header><h3>ChestRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ChestSize" class="set">
+<header><h3>ChestSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ChestTposeAdjustment" class="set">
+<header><h3>ChestTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-HeadBase" class="set">
+<header><h3>HeadBase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HeadBaseRangeMax" class="set">
+<header><h3>HeadBaseRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HeadBaseRangeMin" class="set">
+<header><h3>HeadBaseRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HeadBaseSize" class="set">
+<header><h3>HeadBaseSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HeadBaseTposeAdjustment" class="set">
+<header><h3>HeadBaseTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-IsInSandbox" class="set">
+<header><h3>IsInSandbox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftAnkle" class="set">
+<header><h3>LeftAnkle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftAnkleRangeMax" class="set">
+<header><h3>LeftAnkleRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftAnkleRangeMin" class="set">
+<header><h3>LeftAnkleRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftAnkleSize" class="set">
+<header><h3>LeftAnkleSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftAnkleTposeAdjustment" class="set">
+<header><h3>LeftAnkleTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftClavicle" class="set">
+<header><h3>LeftClavicle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftClavicleRangeMax" class="set">
+<header><h3>LeftClavicleRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftClavicleRangeMin" class="set">
+<header><h3>LeftClavicleRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftClavicleSize" class="set">
+<header><h3>LeftClavicleSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftClavicleTposeAdjustment" class="set">
+<header><h3>LeftClavicleTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftElbow" class="set">
+<header><h3>LeftElbow</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftElbowRangeMax" class="set">
+<header><h3>LeftElbowRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftElbowRangeMin" class="set">
+<header><h3>LeftElbowRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftElbowSize" class="set">
+<header><h3>LeftElbowSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftElbowTposeAdjustment" class="set">
+<header><h3>LeftElbowTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftHip" class="set">
+<header><h3>LeftHip</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftHipRangeMax" class="set">
+<header><h3>LeftHipRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftHipRangeMin" class="set">
+<header><h3>LeftHipRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftHipSize" class="set">
+<header><h3>LeftHipSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftHipTposeAdjustment" class="set">
+<header><h3>LeftHipTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftKnee" class="set">
+<header><h3>LeftKnee</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftKneeRangeMax" class="set">
+<header><h3>LeftKneeRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftKneeRangeMin" class="set">
+<header><h3>LeftKneeRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftKneeSize" class="set">
+<header><h3>LeftKneeSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftKneeTposeAdjustment" class="set">
+<header><h3>LeftKneeTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftShoulder" class="set">
+<header><h3>LeftShoulder</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftShoulderRangeMax" class="set">
+<header><h3>LeftShoulderRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftShoulderRangeMin" class="set">
+<header><h3>LeftShoulderRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftShoulderSize" class="set">
+<header><h3>LeftShoulderSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftShoulderTposeAdjustment" class="set">
+<header><h3>LeftShoulderTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftToeBase" class="set">
+<header><h3>LeftToeBase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftToeBaseRangeMax" class="set">
+<header><h3>LeftToeBaseRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftToeBaseRangeMin" class="set">
+<header><h3>LeftToeBaseRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftToeBaseSize" class="set">
+<header><h3>LeftToeBaseSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftToeBaseTposeAdjustment" class="set">
+<header><h3>LeftToeBaseTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftWrist" class="set">
+<header><h3>LeftWrist</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftWristRangeMax" class="set">
+<header><h3>LeftWristRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftWristRangeMin" class="set">
+<header><h3>LeftWristRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftWristSize" class="set">
+<header><h3>LeftWristSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LeftWristTposeAdjustment" class="set">
+<header><h3>LeftWristTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Name" class="set">
+<header><h3>Name</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Neck" class="set">
+<header><h3>Neck</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-NeckRangeMax" class="set">
+<header><h3>NeckRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-NeckRangeMin" class="set">
+<header><h3>NeckRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-NeckSize" class="set">
+<header><h3>NeckSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-NeckTposeAdjustment" class="set">
+<header><h3>NeckTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-OriginOffset" class="set">
+<header><h3>OriginOffset</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Parent" class="set">
+<header><h3>Parent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PredictionMode" class="set">
+<header><h3>PredictionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PredictionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightAnkle" class="set">
+<header><h3>RightAnkle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightAnkleRangeMax" class="set">
+<header><h3>RightAnkleRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightAnkleRangeMin" class="set">
+<header><h3>RightAnkleRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightAnkleSize" class="set">
+<header><h3>RightAnkleSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightAnkleTposeAdjustment" class="set">
+<header><h3>RightAnkleTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightClavicle" class="set">
+<header><h3>RightClavicle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightClavicleRangeMax" class="set">
+<header><h3>RightClavicleRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightClavicleRangeMin" class="set">
+<header><h3>RightClavicleRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightClavicleSize" class="set">
+<header><h3>RightClavicleSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightClavicleTposeAdjustment" class="set">
+<header><h3>RightClavicleTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightElbow" class="set">
+<header><h3>RightElbow</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightElbowRangeMax" class="set">
+<header><h3>RightElbowRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightElbowRangeMin" class="set">
+<header><h3>RightElbowRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightElbowSize" class="set">
+<header><h3>RightElbowSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightElbowTposeAdjustment" class="set">
+<header><h3>RightElbowTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightHip" class="set">
+<header><h3>RightHip</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightHipRangeMax" class="set">
+<header><h3>RightHipRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightHipRangeMin" class="set">
+<header><h3>RightHipRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightHipSize" class="set">
+<header><h3>RightHipSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightHipTposeAdjustment" class="set">
+<header><h3>RightHipTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightKnee" class="set">
+<header><h3>RightKnee</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightKneeRangeMax" class="set">
+<header><h3>RightKneeRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightKneeRangeMin" class="set">
+<header><h3>RightKneeRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightKneeSize" class="set">
+<header><h3>RightKneeSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightKneeTposeAdjustment" class="set">
+<header><h3>RightKneeTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightShoulder" class="set">
+<header><h3>RightShoulder</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightShoulderRangeMax" class="set">
+<header><h3>RightShoulderRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightShoulderRangeMin" class="set">
+<header><h3>RightShoulderRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightShoulderSize" class="set">
+<header><h3>RightShoulderSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightShoulderTposeAdjustment" class="set">
+<header><h3>RightShoulderTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightToeBase" class="set">
+<header><h3>RightToeBase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightToeBaseRangeMax" class="set">
+<header><h3>RightToeBaseRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightToeBaseRangeMin" class="set">
+<header><h3>RightToeBaseRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightToeBaseSize" class="set">
+<header><h3>RightToeBaseSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightToeBaseTposeAdjustment" class="set">
+<header><h3>RightToeBaseTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightWrist" class="set">
+<header><h3>RightWrist</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightWristRangeMax" class="set">
+<header><h3>RightWristRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightWristRangeMin" class="set">
+<header><h3>RightWristRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightWristSize" class="set">
+<header><h3>RightWristSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RightWristTposeAdjustment" class="set">
+<header><h3>RightWristTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Root" class="set">
+<header><h3>Root</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RootRangeMax" class="set">
+<header><h3>RootRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RootRangeMin" class="set">
+<header><h3>RootRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RootSize" class="set">
+<header><h3>RootSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RootTposeAdjustment" class="set">
+<header><h3>RootTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sandboxed" class="set">
+<header><h3>Sandboxed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Spine" class="set">
+<header><h3>Spine</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-SpineRangeMax" class="set">
+<header><h3>SpineRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-SpineRangeMin" class="set">
+<header><h3>SpineRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-SpineSize" class="set">
+<header><h3>SpineSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-SpineTposeAdjustment" class="set">
+<header><h3>SpineTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UniqueId" class="set">
+<header><h3>UniqueId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>UniqueId</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Waist" class="set">
+<header><h3>Waist</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WaistRangeMax" class="set">
+<header><h3>WaistRangeMax</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WaistRangeMin" class="set">
+<header><h3>WaistRangeMin</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WaistSize" class="set">
+<header><h3>WaistSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WaistTposeAdjustment" class="set">
+<header><h3>WaistTposeAdjustment</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CFrame</code></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (53)</h3>
-<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>AutoRig(<code>character</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>ClearAllChildren()</code>: <code>null</code></li>
-<li><code>Clone()</code>: <code>Instance</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetActor()</code>: <code>Actor</code></li>
-<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
-<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
-<li><code>GetChildren()</code>: <code>Instances</code></li>
-<li><code>GetContainedJointLabels(<code>bodyMeshPartName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Array</code></li>
-<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetDescendants()</code>: <code>Instances</code></li>
-<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetJoint(<code>label</code>: <code>RigLabel</code>)</code>: <code>Instance</code></li>
-<li><code>GetJointFromName(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetJointLabels()</code>: <code>Array</code></li>
-<li><code>GetJointNames()</code>: <code>Array</code></li>
-<li><code>GetJointRangeMax(<code>rigLabel</code>: <code>RigLabel</code>)</code>: <code>Vector3</code></li>
-<li><code>GetJointRangeMin(<code>rigLabel</code>: <code>RigLabel</code>)</code>: <code>Vector3</code></li>
-<li><code>GetJointSize(<code>label</code>: <code>RigLabel</code>)</code>: <code>float</code></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetR15JointLabels()</code>: <code>Array</code></li>
-<li><code>GetR15JointNames()</code>: <code>Array</code></li>
-<li><code>GetR6JointLabels()</code>: <code>Array</code></li>
-<li><code>GetR6JointNames()</code>: <code>Array</code></li>
-<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
-<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetTags()</code>: <code>Array</code></li>
-<li><code>GetTposeAdjustment(<code>label</code>: <code>RigLabel</code>)</code>: <code>CFrame</code></li>
-<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
-<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
-<li><code>SetJoint(<code>label</code>: <code>RigLabel</code>, <code>joint</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>SetJointRangeMax(<code>rigLabel</code>: <code>RigLabel</code>, <code>rangeMax</code>: <code>Vector3</code>)</code>: <code>null</code></li>
-<li><code>SetJointRangeMin(<code>rigLabel</code>: <code>RigLabel</code>, <code>rangeMin</code>: <code>Vector3</code>)</code>: <code>null</code></li>
-<li><code>SetJointSize(<code>label</code>: <code>RigLabel</code>, <code>size</code>: <code>float</code>)</code>: <code>null</code></li>
-<li><code>SetTposeAdjustment(<code>label</code>: <code>RigLabel</code>, <code>transform</code>: <code>CFrame</code>)</code>: <code>null</code></li>
-<li><code>ShowVolumes(<code>show</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>AutoRig(<code>character</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>Clone()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>GetContainedJointLabels(<code>bodyMeshPartName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
+<h3 style='font-size: 1.4em;'>GetJoint(<code>label</code>: <code>RigLabel</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetJointFromName(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetJointLabels()</code></h3>
+<h3 style='font-size: 1.4em;'>GetJointNames()</code></h3>
+<h3 style='font-size: 1.4em;'>GetJointRangeMax(<code>rigLabel</code>: <code>RigLabel</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetJointRangeMin(<code>rigLabel</code>: <code>RigLabel</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetJointSize(<code>label</code>: <code>RigLabel</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetR15JointLabels()</code></h3>
+<h3 style='font-size: 1.4em;'>GetR15JointNames()</code></h3>
+<h3 style='font-size: 1.4em;'>GetR6JointLabels()</code></h3>
+<h3 style='font-size: 1.4em;'>GetR6JointNames()</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
+<h3 style='font-size: 1.4em;'>GetTposeAdjustment(<code>label</code>: <code>RigLabel</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetJoint(<code>label</code>: <code>RigLabel</code>, <code>joint</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetJointRangeMax(<code>rigLabel</code>: <code>RigLabel</code>, <code>rangeMax</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetJointRangeMin(<code>rigLabel</code>: <code>RigLabel</code>, <code>rangeMin</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetJointSize(<code>label</code>: <code>RigLabel</code>, <code>size</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetTposeAdjustment(<code>label</code>: <code>RigLabel</code>, <code>transform</code>: <code>CFrame</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ShowVolumes(<code>show</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
 <h3>Events (9)</h3>
-<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Destroying()</code>: <code>Signal</code></li>
-<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
+<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
 </body>
 </html>

@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -46,257 +122,2111 @@ NotCreatable
 , NotReplicated
 ]</p>
 <h3>Properties (206)</h3>
-<li><code>&quot;TODO&quot; Color</code>: <code>Color3</code></li>
-<li><code>&quot;function&quot; Color</code>: <code>Color3</code></li>
-<li><code>&quot;local&quot; Color</code>: <code>Color3</code></li>
-<li><code>&quot;nil&quot; Color</code>: <code>Color3</code></li>
-<li><code>&quot;self&quot; Color</code>: <code>Color3</code></li>
-<li><code>ActionOnAutoResumeSync</code>: <code>ActionOnAutoResumeSync</code></li>
-<li><code>ActionOnStopSync</code>: <code>ActionOnStopSync</code></li>
-<li><code>Active Color</code>: <code>Color3</code></li>
-<li><code>Active Hover Over Color</code>: <code>Color3</code></li>
-<li><code>Always Save Script Changes</code>: <code>bool</code></li>
-<li><code>Animate Hover Over</code>: <code>bool</code></li>
-<li><code>Animation Skeleton Scale</code>: <code>float</code></li>
-<li><code>Animation Skeleton Transparency</code>: <code>float</code></li>
-<li><code>Archivable</code>: <code>bool</code></li>
-<li><code>Auto Clean Empty Line</code>: <code>bool</code></li>
-<li><code>Auto Closing Brackets</code>: <code>bool</code></li>
-<li><code>Auto Closing Quotes</code>: <code>bool</code></li>
-<li><code>Auto Delete Closing Brackets and Quotes</code>: <code>bool</code></li>
-<li><code>Auto Indent Rule</code>: <code>AutoIndentRule</code></li>
-<li><code>Auto-Recovery Enabled</code>: <code>bool</code></li>
-<li><code>Auto-Recovery Interval (Minutes)</code>: <code>int</code></li>
-<li><code>AutoResumeSyncOnPlaceOpen</code>: <code>bool</code></li>
-<li><code>AutoUpdateEnabled</code>: <code>bool</code></li>
-<li><code>AutocompleteAcceptanceBehavior</code>: <code>CompletionAcceptanceBehavior</code></li>
-<li><code>Automatically trigger AI Code Completion</code>: <code>bool</code></li>
-<li><code>Background Color</code>: <code>Color3</code></li>
-<li><code>Basic Objects Display Mode</code>: <code>ListDisplayMode</code></li>
-<li><code>Bool Color</code>: <code>Color3</code></li>
-<li><code>Bracket Color</code>: <code>Color3</code></li>
-<li><code>Built-in Function Color</code>: <code>Color3</code></li>
-<li><code>Camera Mouse Wheel Speed</code>: <code>float</code></li>
-<li><code>Camera Pan Speed</code>: <code>float</code></li>
-<li><code>Camera Shift Speed</code>: <code>float</code></li>
-<li><code>Camera Speed</code>: <code>float</code></li>
-<li><code>Camera Speed Adjust Binding</code>: <code>CameraSpeedAdjustBinding</code></li>
-<li><code>Camera Zoom to Mouse Position</code>: <code>bool</code></li>
-<li><code>CameraAltLeftMouseToRotate</code>: <code>bool</code></li>
-<li><code>CameraKeyMoveSmoothing</code>: <code>bool</code></li>
-<li><code>CameraMouseMultiplier</code>: <code>float</code></li>
-<li><code>CameraNavigationModel</code>: <code>CameraNavigationModel</code></li>
-<li><code>CameraRotateShiftFactor</code>: <code>float</code></li>
-<li><code>CameraShiftFactor</code>: <code>float</code></li>
-<li><code>CameraTweenFocus</code>: <code>bool</code></li>
-<li><code>CameraZoomToMousePosition</code>: <code>bool</code></li>
-<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>Clear Output On Start</code>: <code>bool</code></li>
-<li><code>CommandBarEnterExec</code>: <code>bool</code></li>
-<li><code>CommandBarFont</code>: <code>QFont</code></li>
-<li><code>CommandBarHistoryLen</code>: <code>int</code></li>
-<li><code>CommandBarLocalState</code>: <code>bool</code></li>
-<li><code>Comment Color</code>: <code>Color3</code></li>
-<li><code>Current Line Highlight Color</code>: <code>Color3</code></li>
-<li><code>Debugger Current Line Color</code>: <code>Color3</code></li>
-<li><code>Debugger Error Line Color</code>: <code>Color3</code></li>
-<li><code>DefaultInstancesDir</code>: <code>QDir</code></li>
-<li><code>DefaultScriptSyncFileType</code>: <code>DefaultScriptSyncFileType</code></li>
-<li><code>DeprecatedObjectsShown</code>: <code>bool</code></li>
-<li><code>DisplayLanguage</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>DraggerActiveColor</code>: <code>Color3</code></li>
-<li><code>DraggerLengthFactor</code>: <code>float</code></li>
-<li><code>DraggerMajorGridIncrement</code>: <code>int</code></li>
-<li><code>DraggerMaxSoftSnaps</code>: <code>int</code></li>
-<li><code>DraggerPassiveColor</code>: <code>Color3</code></li>
-<li><code>DraggerScaleFactor</code>: <code>float</code></li>
-<li><code>DraggerShowAxisTicks</code>: <code>bool</code></li>
-<li><code>DraggerShowDraggedPoint</code>: <code>bool</code></li>
-<li><code>DraggerShowHoverRuler</code>: <code>bool</code></li>
-<li><code>DraggerShowMeasurement</code>: <code>bool</code></li>
-<li><code>DraggerShowNegativeAxes</code>: <code>bool</code></li>
-<li><code>DraggerShowPlanes</code>: <code>bool</code></li>
-<li><code>DraggerShowTargetSnap</code>: <code>bool</code></li>
-<li><code>DraggerShowTrackball</code>: <code>bool</code></li>
-<li><code>DraggerShowWhileDragging</code>: <code>bool</code></li>
-<li><code>DraggerSoftSnapMarginFactor</code>: <code>float</code></li>
-<li><code>DraggerSummonMarginFactor</code>: <code>float</code></li>
-<li><code>DraggerTiltRotateDuration</code>: <code>float</code></li>
-<li><code>Enable Autocomplete</code>: <code>bool</code></li>
-<li><code>Enable Autocomplete Doc View</code>: <code>bool</code></li>
-<li><code>Enable Client/Server MDI</code>: <code>bool</code></li>
-<li><code>Enable CoreScript Debugger</code>: <code>bool</code></li>
-<li><code>Enable Http Sandboxing</code>: <code>bool</code></li>
-<li><code>Enable Internal Beta Features</code>: <code>bool</code></li>
-<li><code>Enable Internal Features</code>: <code>bool</code></li>
-<li><code>Enable Script Analysis</code>: <code>bool</code></li>
-<li><code>Enable Scrollbar Markers</code>: <code>bool</code></li>
-<li><code>Enable Signature Help</code>: <code>bool</code></li>
-<li><code>Enable Signature Help Doc View</code>: <code>bool</code></li>
-<li><code>Enable Temporary Tabs</code>: <code>bool</code></li>
-<li><code>Enable Temporary Tabs In Explorer</code>: <code>bool</code></li>
-<li><code>Enable Type Hover</code>: <code>bool</code></li>
-<li><code>EnableCodeAssist</code>: <code>bool</code></li>
-<li><code>EnableFindOnType</code>: <code>bool</code></li>
-<li><code>EnableIndentationRulers</code>: <code>bool</code></li>
-<li><code>EnableOvertypeMode</code>: <code>bool</code></li>
-<li><code>EnableSelectionTooltips</code>: <code>bool</code></li>
-<li><code>EnableStudioStreaming</code>: <code>bool</code></li>
-<li><code>Error Color</code>: <code>Color3</code></li>
-<li><code>ExternalEditorMode</code>: <code>ExternalEditorMode</code></li>
-<li><code>ExternalEditorSelection</code>: <code>QDir</code></li>
-<li><code>Find Selection Background Color</code>: <code>Color3</code></li>
-<li><code>Font</code>: <code>QFont</code></li>
-<li><code>Format On Paste</code>: <code>bool</code></li>
-<li><code>Format On Type</code>: <code>bool</code></li>
-<li><code>Function Name Color</code>: <code>Color3</code></li>
-<li><code>Highlight Current Line</code>: <code>bool</code></li>
-<li><code>Highlight Occurances</code>: <code>bool</code></li>
-<li><code>HintColor</code>: <code>Color3</code></li>
-<li><code>Hover Animate Speed</code>: <code>HoverAnimateSpeed</code></li>
-<li><code>Hover Box Thickness</code>: <code>float</code></li>
-<li><code>Hover Line Thickness</code>: <code>int</code></li>
-<li><code>Hover Over Color</code>: <code>Color3</code></li>
-<li><code>IconOverrideDir</code>: <code>QDir</code></li>
-<li><code>Indent Using Spaces</code>: <code>bool</code></li>
-<li><code>IndentationRulerColor</code>: <code>Color3</code></li>
-<li><code>InformationColor</code>: <code>Color3</code></li>
-<li><code>IsInSandbox</code>: <code>bool</code></li>
-<li><code>Keyword Color</code>: <code>Color3</code></li>
-<li><code>LargeFileLineCountThreshold</code>: <code>int</code></li>
-<li><code>LargeFileThreshold</code>: <code>int</code></li>
-<li><code>Line Thickness</code>: <code>float</code></li>
-<li><code>LoadAllBuiltinPluginsInRunModes</code>: <code>bool</code></li>
-<li><code>LoadInternalPlugins</code>: <code>bool</code></li>
-<li><code>LoadUserPluginsInRunModes</code>: <code>bool</code></li>
-<li><code>LocalAssetsFolder</code>: <code>QDir</code></li>
-<li><code>LuaDebuggerEnabled</code>: <code>bool</code></li>
-<li><code>Luau Keyword Color</code>: <code>Color3</code></li>
-<li><code>Main Volume</code>: <code>float</code></li>
-<li><code>Matching Word Background Color</code>: <code>Color3</code></li>
-<li><code>MaxFindReplaceAllResults</code>: <code>int</code></li>
-<li><code>Maximum Output Lines</code>: <code>int</code></li>
-<li><code>Menu Item Background Color</code>: <code>Color3</code></li>
-<li><code>Method Color</code>: <code>Color3</code></li>
-<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>Number Color</code>: <code>Color3</code></li>
-<li><code>Only Play Audio from Window in Focus</code>: <code>bool</code></li>
-<li><code>Operator Color</code>: <code>Color3</code></li>
-<li><code>Output Font</code>: <code>QFont</code></li>
-<li><code>Output Layout Mode</code>: <code>OutputLayoutMode</code></li>
-<li><code>Parent</code>: <code>Instance</code></li>
-<li><code>PermissionLevelShown</code>: <code>PermissionLevelShown</code></li>
-<li><code>Physical Draggers Select Scope By Default</code>: <code>bool</code></li>
-<li><code>Pivot Snap To Geometry Color</code>: <code>Color3</code></li>
-<li><code>PluginDebuggingEnabled</code>: <code>bool</code></li>
-<li><code>PluginsDir</code>: <code>QDir</code></li>
-<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
-<li><code>PreferredTextSize</code>: <code>PreferredTextSize</code></li>
-<li><code>Primary Text Color</code>: <code>Color3</code></li>
-<li><code>Property Color</code>: <code>Color3</code></li>
-<li><code>ReloadBuiltinPluginsOnChange</code>: <code>bool</code></li>
-<li><code>ReloadLocalPluginsOnChange</code>: <code>bool</code></li>
-<li><code>Respect Studio shortcuts when game has focus</code>: <code>bool</code></li>
-<li><code>Ruler Color</code>: <code>Color3</code></li>
-<li><code>Rulers</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>RuntimeUndoBehavior</code>: <code>RuntimeUndoBehavior</code></li>
-<li><code>Sandboxed</code>: <code>bool</code></li>
-<li><code>Script Editor Color Preset</code>: <code>StudioScriptEditorColorPresets</code></li>
-<li><code>Script Editor Scrollbar Background Color</code>: <code>Color3</code></li>
-<li><code>Script Editor Scrollbar Handle Color</code>: <code>Color3</code></li>
-<li><code>ScriptTimeoutLength</code>: <code>int</code></li>
-<li><code>Scroll Past Last Line</code>: <code>bool</code></li>
-<li><code>Secondary Text Color</code>: <code>Color3</code></li>
-<li><code>Select Color</code>: <code>Color3</code></li>
-<li><code>Select/Hover Color</code>: <code>Color3</code></li>
-<li><code>Selected Menu Item Background Color</code>: <code>Color3</code></li>
-<li><code>Selected Text Color</code>: <code>Color3</code></li>
-<li><code>Selection Background Color</code>: <code>Color3</code></li>
-<li><code>Selection Box Thickness</code>: <code>float</code></li>
-<li><code>Selection Color</code>: <code>Color3</code></li>
-<li><code>Selection Line Thickness</code>: <code>int</code></li>
-<li><code>Set Pivot of Imported Parts</code>: <code>bool</code></li>
-<li><code>Show Animation Skeleton</code>: <code>bool</code></li>
-<li><code>Show Animation Skeleton Attachments</code>: <code>bool</code></li>
-<li><code>Show Animation Skeleton Axes</code>: <code>bool</code></li>
-<li><code>Show Animation Skeleton Rotations</code>: <code>bool</code></li>
-<li><code>Show Animation Skeleton Text</code>: <code>bool</code></li>
-<li><code>Show Core GUI in Explorer while Playing</code>: <code>bool</code></li>
-<li><code>Show Diagnostics Bar</code>: <code>bool</code></li>
-<li><code>Show FileSyncService</code>: <code>bool</code></li>
-<li><code>Show Hidden Objects in Explorer</code>: <code>bool</code></li>
-<li><code>Show Hover Over</code>: <code>bool</code></li>
-<li><code>Show Light Guides</code>: <code>bool</code></li>
-<li><code>Show Navigation Labels</code>: <code>bool</code></li>
-<li><code>Show Navigation Mesh</code>: <code>bool</code></li>
-<li><code>Show Pathfinding Links</code>: <code>bool</code></li>
-<li><code>Show Plugin GUI Service in Explorer</code>: <code>bool</code></li>
-<li><code>Show Singly Selected Attachment Parent Frame</code>: <code>bool</code></li>
-<li><code>Show Whitespace</code>: <code>bool</code></li>
-<li><code>Show plus button on hover in Explorer</code>: <code>bool</code></li>
-<li><code>ShowCorePackagesInExplorer</code>: <code>bool</code></li>
-<li><code>Skip Closing Brackets and Quotes</code>: <code>bool</code></li>
-<li><code>String Color</code>: <code>Color3</code></li>
-<li><code>Tab Width</code>: <code>int</code></li>
-<li><code>Text Color</code>: <code>Color3</code></li>
-<li><code>Text Wrapping</code>: <code>bool</code></li>
-<li><code>Theme</code>: <code>Instance</code></li>
-<li><code>TypeColor</code>: <code>Color3</code></li>
-<li><code>UniqueId</code>: <code>UniqueId</code></li>
-<li><code>Use Bounding Box Move Handles</code>: <code>bool</code></li>
-<li><code>UseDefaultExternalEditor</code>: <code>bool</code></li>
-<li><code>VAxisColor</code>: <code>Color3</code></li>
-<li><code>Warning Color</code>: <code>Color3</code></li>
-<li><code>Whitespace Color</code>: <code>Color3</code></li>
-<li><code>XAxisColor</code>: <code>Color3</code></li>
-<li><code>YAxisColor</code>: <code>Color3</code></li>
-<li><code>ZAxisColor</code>: <code>Color3</code></li>
+<section id="member-&quot;TODO&quot; Color" class="set">
+<header><h3>&quot;TODO&quot; Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-&quot;function&quot; Color" class="set">
+<header><h3>&quot;function&quot; Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-&quot;local&quot; Color" class="set">
+<header><h3>&quot;local&quot; Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-&quot;nil&quot; Color" class="set">
+<header><h3>&quot;nil&quot; Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-&quot;self&quot; Color" class="set">
+<header><h3>&quot;self&quot; Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ActionOnAutoResumeSync" class="set">
+<header><h3>ActionOnAutoResumeSync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ActionOnAutoResumeSync</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ActionOnStopSync" class="set">
+<header><h3>ActionOnStopSync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ActionOnStopSync</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Active Color" class="set">
+<header><h3>Active Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Active Hover Over Color" class="set">
+<header><h3>Active Hover Over Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Always Save Script Changes" class="set">
+<header><h3>Always Save Script Changes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Animate Hover Over" class="set">
+<header><h3>Animate Hover Over</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Animation Skeleton Scale" class="set">
+<header><h3>Animation Skeleton Scale</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Animation Skeleton Transparency" class="set">
+<header><h3>Animation Skeleton Transparency</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Archivable" class="set">
+<header><h3>Archivable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto Clean Empty Line" class="set">
+<header><h3>Auto Clean Empty Line</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto Closing Brackets" class="set">
+<header><h3>Auto Closing Brackets</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto Closing Quotes" class="set">
+<header><h3>Auto Closing Quotes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto Delete Closing Brackets and Quotes" class="set">
+<header><h3>Auto Delete Closing Brackets and Quotes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto Indent Rule" class="set">
+<header><h3>Auto Indent Rule</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>AutoIndentRule</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto-Recovery Enabled" class="set">
+<header><h3>Auto-Recovery Enabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Auto-Recovery Interval (Minutes)" class="set">
+<header><h3>Auto-Recovery Interval (Minutes)</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutoResumeSyncOnPlaceOpen" class="set">
+<header><h3>AutoResumeSyncOnPlaceOpen</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutoUpdateEnabled" class="set">
+<header><h3>AutoUpdateEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutocompleteAcceptanceBehavior" class="set">
+<header><h3>AutocompleteAcceptanceBehavior</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CompletionAcceptanceBehavior</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Automatically trigger AI Code Completion" class="set">
+<header><h3>Automatically trigger AI Code Completion</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Background Color" class="set">
+<header><h3>Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Basic Objects Display Mode" class="set">
+<header><h3>Basic Objects Display Mode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ListDisplayMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Bool Color" class="set">
+<header><h3>Bool Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Bracket Color" class="set">
+<header><h3>Bracket Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Built-in Function Color" class="set">
+<header><h3>Built-in Function Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Camera Mouse Wheel Speed" class="set">
+<header><h3>Camera Mouse Wheel Speed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Camera Pan Speed" class="set">
+<header><h3>Camera Pan Speed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Camera Shift Speed" class="set">
+<header><h3>Camera Shift Speed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Camera Speed" class="set">
+<header><h3>Camera Speed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Camera Speed Adjust Binding" class="set">
+<header><h3>Camera Speed Adjust Binding</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CameraSpeedAdjustBinding</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Camera Zoom to Mouse Position" class="set">
+<header><h3>Camera Zoom to Mouse Position</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraAltLeftMouseToRotate" class="set">
+<header><h3>CameraAltLeftMouseToRotate</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraKeyMoveSmoothing" class="set">
+<header><h3>CameraKeyMoveSmoothing</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraMouseMultiplier" class="set">
+<header><h3>CameraMouseMultiplier</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraNavigationModel" class="set">
+<header><h3>CameraNavigationModel</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CameraNavigationModel</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraRotateShiftFactor" class="set">
+<header><h3>CameraRotateShiftFactor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraShiftFactor" class="set">
+<header><h3>CameraShiftFactor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraTweenFocus" class="set">
+<header><h3>CameraTweenFocus</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraZoomToMousePosition" class="set">
+<header><h3>CameraZoomToMousePosition</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Capabilities" class="set">
+<header><h3>Capabilities</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SecurityCapabilities</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Clear Output On Start" class="set">
+<header><h3>Clear Output On Start</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CommandBarEnterExec" class="set">
+<header><h3>CommandBarEnterExec</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CommandBarFont" class="set">
+<header><h3>CommandBarFont</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QFont</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CommandBarHistoryLen" class="set">
+<header><h3>CommandBarHistoryLen</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CommandBarLocalState" class="set">
+<header><h3>CommandBarLocalState</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Comment Color" class="set">
+<header><h3>Comment Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Current Line Highlight Color" class="set">
+<header><h3>Current Line Highlight Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Debugger Current Line Color" class="set">
+<header><h3>Debugger Current Line Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Debugger Error Line Color" class="set">
+<header><h3>Debugger Error Line Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DefaultInstancesDir" class="set">
+<header><h3>DefaultInstancesDir</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QDir</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DefaultScriptSyncFileType" class="set">
+<header><h3>DefaultScriptSyncFileType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>DefaultScriptSyncFileType</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DeprecatedObjectsShown" class="set">
+<header><h3>DeprecatedObjectsShown</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DisplayLanguage" class="set">
+<header><h3>DisplayLanguage</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerActiveColor" class="set">
+<header><h3>DraggerActiveColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerLengthFactor" class="set">
+<header><h3>DraggerLengthFactor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerMajorGridIncrement" class="set">
+<header><h3>DraggerMajorGridIncrement</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerMaxSoftSnaps" class="set">
+<header><h3>DraggerMaxSoftSnaps</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerPassiveColor" class="set">
+<header><h3>DraggerPassiveColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerScaleFactor" class="set">
+<header><h3>DraggerScaleFactor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowAxisTicks" class="set">
+<header><h3>DraggerShowAxisTicks</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowDraggedPoint" class="set">
+<header><h3>DraggerShowDraggedPoint</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowHoverRuler" class="set">
+<header><h3>DraggerShowHoverRuler</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowMeasurement" class="set">
+<header><h3>DraggerShowMeasurement</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowNegativeAxes" class="set">
+<header><h3>DraggerShowNegativeAxes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowPlanes" class="set">
+<header><h3>DraggerShowPlanes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowTargetSnap" class="set">
+<header><h3>DraggerShowTargetSnap</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowTrackball" class="set">
+<header><h3>DraggerShowTrackball</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerShowWhileDragging" class="set">
+<header><h3>DraggerShowWhileDragging</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerSoftSnapMarginFactor" class="set">
+<header><h3>DraggerSoftSnapMarginFactor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerSummonMarginFactor" class="set">
+<header><h3>DraggerSummonMarginFactor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DraggerTiltRotateDuration" class="set">
+<header><h3>DraggerTiltRotateDuration</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Autocomplete" class="set">
+<header><h3>Enable Autocomplete</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Autocomplete Doc View" class="set">
+<header><h3>Enable Autocomplete Doc View</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Client/Server MDI" class="set">
+<header><h3>Enable Client/Server MDI</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable CoreScript Debugger" class="set">
+<header><h3>Enable CoreScript Debugger</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Http Sandboxing" class="set">
+<header><h3>Enable Http Sandboxing</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Internal Beta Features" class="set">
+<header><h3>Enable Internal Beta Features</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Internal Features" class="set">
+<header><h3>Enable Internal Features</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Script Analysis" class="set">
+<header><h3>Enable Script Analysis</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Scrollbar Markers" class="set">
+<header><h3>Enable Scrollbar Markers</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Signature Help" class="set">
+<header><h3>Enable Signature Help</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Signature Help Doc View" class="set">
+<header><h3>Enable Signature Help Doc View</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Temporary Tabs" class="set">
+<header><h3>Enable Temporary Tabs</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Temporary Tabs In Explorer" class="set">
+<header><h3>Enable Temporary Tabs In Explorer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enable Type Hover" class="set">
+<header><h3>Enable Type Hover</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EnableCodeAssist" class="set">
+<header><h3>EnableCodeAssist</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EnableFindOnType" class="set">
+<header><h3>EnableFindOnType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EnableIndentationRulers" class="set">
+<header><h3>EnableIndentationRulers</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EnableOvertypeMode" class="set">
+<header><h3>EnableOvertypeMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EnableSelectionTooltips" class="set">
+<header><h3>EnableSelectionTooltips</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EnableStudioStreaming" class="set">
+<header><h3>EnableStudioStreaming</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Error Color" class="set">
+<header><h3>Error Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ExternalEditorMode" class="set">
+<header><h3>ExternalEditorMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ExternalEditorMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ExternalEditorSelection" class="set">
+<header><h3>ExternalEditorSelection</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QDir</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Find Selection Background Color" class="set">
+<header><h3>Find Selection Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Font" class="set">
+<header><h3>Font</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QFont</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Format On Paste" class="set">
+<header><h3>Format On Paste</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Format On Type" class="set">
+<header><h3>Format On Type</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Function Name Color" class="set">
+<header><h3>Function Name Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Highlight Current Line" class="set">
+<header><h3>Highlight Current Line</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Highlight Occurances" class="set">
+<header><h3>Highlight Occurances</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-HintColor" class="set">
+<header><h3>HintColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Hover Animate Speed" class="set">
+<header><h3>Hover Animate Speed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>HoverAnimateSpeed</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Hover Box Thickness" class="set">
+<header><h3>Hover Box Thickness</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Hover Line Thickness" class="set">
+<header><h3>Hover Line Thickness</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Hover Over Color" class="set">
+<header><h3>Hover Over Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-IconOverrideDir" class="set">
+<header><h3>IconOverrideDir</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QDir</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Indent Using Spaces" class="set">
+<header><h3>Indent Using Spaces</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-IndentationRulerColor" class="set">
+<header><h3>IndentationRulerColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-InformationColor" class="set">
+<header><h3>InformationColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-IsInSandbox" class="set">
+<header><h3>IsInSandbox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Keyword Color" class="set">
+<header><h3>Keyword Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LargeFileLineCountThreshold" class="set">
+<header><h3>LargeFileLineCountThreshold</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LargeFileThreshold" class="set">
+<header><h3>LargeFileThreshold</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Line Thickness" class="set">
+<header><h3>Line Thickness</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LoadAllBuiltinPluginsInRunModes" class="set">
+<header><h3>LoadAllBuiltinPluginsInRunModes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-LoadInternalPlugins" class="set">
+<header><h3>LoadInternalPlugins</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-LoadUserPluginsInRunModes" class="set">
+<header><h3>LoadUserPluginsInRunModes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-LocalAssetsFolder" class="set">
+<header><h3>LocalAssetsFolder</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QDir</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-LuaDebuggerEnabled" class="set">
+<header><h3>LuaDebuggerEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Luau Keyword Color" class="set">
+<header><h3>Luau Keyword Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Main Volume" class="set">
+<header><h3>Main Volume</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Matching Word Background Color" class="set">
+<header><h3>Matching Word Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-MaxFindReplaceAllResults" class="set">
+<header><h3>MaxFindReplaceAllResults</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Maximum Output Lines" class="set">
+<header><h3>Maximum Output Lines</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Menu Item Background Color" class="set">
+<header><h3>Menu Item Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Method Color" class="set">
+<header><h3>Method Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Name" class="set">
+<header><h3>Name</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Number Color" class="set">
+<header><h3>Number Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Only Play Audio from Window in Focus" class="set">
+<header><h3>Only Play Audio from Window in Focus</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Operator Color" class="set">
+<header><h3>Operator Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Output Font" class="set">
+<header><h3>Output Font</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QFont</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Output Layout Mode" class="set">
+<header><h3>Output Layout Mode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>OutputLayoutMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Parent" class="set">
+<header><h3>Parent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PermissionLevelShown" class="set">
+<header><h3>PermissionLevelShown</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PermissionLevelShown</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Physical Draggers Select Scope By Default" class="set">
+<header><h3>Physical Draggers Select Scope By Default</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Pivot Snap To Geometry Color" class="set">
+<header><h3>Pivot Snap To Geometry Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PluginDebuggingEnabled" class="set">
+<header><h3>PluginDebuggingEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-PluginsDir" class="set">
+<header><h3>PluginsDir</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>QDir</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PredictionMode" class="set">
+<header><h3>PredictionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PredictionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PreferredTextSize" class="set">
+<header><h3>PreferredTextSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PreferredTextSize</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Primary Text Color" class="set">
+<header><h3>Primary Text Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Property Color" class="set">
+<header><h3>Property Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ReloadBuiltinPluginsOnChange" class="set">
+<header><h3>ReloadBuiltinPluginsOnChange</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-ReloadLocalPluginsOnChange" class="set">
+<header><h3>ReloadLocalPluginsOnChange</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Respect Studio shortcuts when game has focus" class="set">
+<header><h3>Respect Studio shortcuts when game has focus</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Ruler Color" class="set">
+<header><h3>Ruler Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Rulers" class="set">
+<header><h3>Rulers</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-RuntimeUndoBehavior" class="set">
+<header><h3>RuntimeUndoBehavior</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>RuntimeUndoBehavior</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sandboxed" class="set">
+<header><h3>Sandboxed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Script Editor Color Preset" class="set">
+<header><h3>Script Editor Color Preset</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>StudioScriptEditorColorPresets</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Script Editor Scrollbar Background Color" class="set">
+<header><h3>Script Editor Scrollbar Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Script Editor Scrollbar Handle Color" class="set">
+<header><h3>Script Editor Scrollbar Handle Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ScriptTimeoutLength" class="set">
+<header><h3>ScriptTimeoutLength</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Scroll Past Last Line" class="set">
+<header><h3>Scroll Past Last Line</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Secondary Text Color" class="set">
+<header><h3>Secondary Text Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Select Color" class="set">
+<header><h3>Select Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Select/Hover Color" class="set">
+<header><h3>Select/Hover Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Selected Menu Item Background Color" class="set">
+<header><h3>Selected Menu Item Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Selected Text Color" class="set">
+<header><h3>Selected Text Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Selection Background Color" class="set">
+<header><h3>Selection Background Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Selection Box Thickness" class="set">
+<header><h3>Selection Box Thickness</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Selection Color" class="set">
+<header><h3>Selection Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Selection Line Thickness" class="set">
+<header><h3>Selection Line Thickness</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Set Pivot of Imported Parts" class="set">
+<header><h3>Set Pivot of Imported Parts</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Animation Skeleton" class="set">
+<header><h3>Show Animation Skeleton</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Animation Skeleton Attachments" class="set">
+<header><h3>Show Animation Skeleton Attachments</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Animation Skeleton Axes" class="set">
+<header><h3>Show Animation Skeleton Axes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Animation Skeleton Rotations" class="set">
+<header><h3>Show Animation Skeleton Rotations</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Animation Skeleton Text" class="set">
+<header><h3>Show Animation Skeleton Text</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Core GUI in Explorer while Playing" class="set">
+<header><h3>Show Core GUI in Explorer while Playing</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Diagnostics Bar" class="set">
+<header><h3>Show Diagnostics Bar</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show FileSyncService" class="set">
+<header><h3>Show FileSyncService</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Hidden Objects in Explorer" class="set">
+<header><h3>Show Hidden Objects in Explorer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Hover Over" class="set">
+<header><h3>Show Hover Over</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Light Guides" class="set">
+<header><h3>Show Light Guides</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Navigation Labels" class="set">
+<header><h3>Show Navigation Labels</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Navigation Mesh" class="set">
+<header><h3>Show Navigation Mesh</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Pathfinding Links" class="set">
+<header><h3>Show Pathfinding Links</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Plugin GUI Service in Explorer" class="set">
+<header><h3>Show Plugin GUI Service in Explorer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Singly Selected Attachment Parent Frame" class="set">
+<header><h3>Show Singly Selected Attachment Parent Frame</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show Whitespace" class="set">
+<header><h3>Show Whitespace</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Show plus button on hover in Explorer" class="set">
+<header><h3>Show plus button on hover in Explorer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-ShowCorePackagesInExplorer" class="set">
+<header><h3>ShowCorePackagesInExplorer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Skip Closing Brackets and Quotes" class="set">
+<header><h3>Skip Closing Brackets and Quotes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-String Color" class="set">
+<header><h3>String Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Tab Width" class="set">
+<header><h3>Tab Width</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Text Color" class="set">
+<header><h3>Text Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Text Wrapping" class="set">
+<header><h3>Text Wrapping</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Theme" class="set">
+<header><h3>Theme</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-TypeColor" class="set">
+<header><h3>TypeColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UniqueId" class="set">
+<header><h3>UniqueId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>UniqueId</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Use Bounding Box Move Handles" class="set">
+<header><h3>Use Bounding Box Move Handles</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-UseDefaultExternalEditor" class="set">
+<header><h3>UseDefaultExternalEditor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-VAxisColor" class="set">
+<header><h3>VAxisColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Warning Color" class="set">
+<header><h3>Warning Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Whitespace Color" class="set">
+<header><h3>Whitespace Color</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-XAxisColor" class="set">
+<header><h3>XAxisColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-YAxisColor" class="set">
+<header><h3>YAxisColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ZAxisColor" class="set">
+<header><h3>ZAxisColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Color3</code></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (34)</h3>
-<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ClearAllChildren()</code>: <code>null</code></li>
-<li><code>Clone()</code>: <code>Instance</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetActor()</code>: <code>Actor</code></li>
-<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
-<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
-<li><code>GetAvailableThemes()</code>: <code>Array</code></li>
-<li><code>GetChildren()</code>: <code>Instances</code></li>
-<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetDescendants()</code>: <code>Instances</code></li>
-<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
-<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetTags()</code>: <code>Array</code></li>
-<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
-<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
-<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>Clone()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAvailableThemes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
+<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
 <h3>Events (10)</h3>
-<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Destroying()</code>: <code>Signal</code></li>
-<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
-<li><code>ThemeChanged()</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
+<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
+<h3 style='font-size: 1.4em;'>ThemeChanged()</code></h3>
 </body>
 </html>

@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -43,65 +119,209 @@ p { overflow-wrap: anywhere; }
 <p>Tags: [
 ]</p>
 <h3>Properties (16)</h3>
-<li><code>Archivable</code>: <code>bool</code></li>
-<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>DecayTime</code>: <code>float</code></li>
-<li><code>Density</code>: <code>float</code></li>
-<li><code>Diffusion</code>: <code>float</code></li>
-<li><code>DryLevel</code>: <code>float</code></li>
-<li><code>Enabled</code>: <code>bool</code></li>
-<li><code>IsInSandbox</code>: <code>bool</code></li>
-<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>Parent</code>: <code>Instance</code></li>
-<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
-<li><code>Priority</code>: <code>int</code></li>
-<li><code>Sandboxed</code>: <code>bool</code></li>
-<li><code>UniqueId</code>: <code>UniqueId</code></li>
-<li><code>WetLevel</code>: <code>float</code></li>
+<section id="member-Archivable" class="set">
+<header><h3>Archivable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Capabilities" class="set">
+<header><h3>Capabilities</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SecurityCapabilities</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DecayTime" class="set">
+<header><h3>DecayTime</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Density" class="set">
+<header><h3>Density</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Diffusion" class="set">
+<header><h3>Diffusion</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DryLevel" class="set">
+<header><h3>DryLevel</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Enabled" class="set">
+<header><h3>Enabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-IsInSandbox" class="set">
+<header><h3>IsInSandbox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Name" class="set">
+<header><h3>Name</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Parent" class="set">
+<header><h3>Parent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PredictionMode" class="set">
+<header><h3>PredictionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PredictionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Priority" class="set">
+<header><h3>Priority</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sandboxed" class="set">
+<header><h3>Sandboxed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-UniqueId" class="set">
+<header><h3>UniqueId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>UniqueId</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WetLevel" class="set">
+<header><h3>WetLevel</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (33)</h3>
-<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ClearAllChildren()</code>: <code>null</code></li>
-<li><code>Clone()</code>: <code>Instance</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetActor()</code>: <code>Actor</code></li>
-<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
-<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
-<li><code>GetChildren()</code>: <code>Instances</code></li>
-<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetDescendants()</code>: <code>Instances</code></li>
-<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
-<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetTags()</code>: <code>Array</code></li>
-<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
-<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
-<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>Clone()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
+<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
 <h3>Events (9)</h3>
-<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Destroying()</code>: <code>Signal</code></li>
-<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
+<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
 </body>
 </html>

@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -46,110 +122,533 @@ NotCreatable
 , NotReplicated
 ]</p>
 <h3>Properties (47)</h3>
-<li><code>AllTutorialsDisabled</code>: <code>bool</code></li>
-<li><code>Archivable</code>: <code>bool</code></li>
-<li><code>BadgeVisible</code>: <code>bool</code></li>
-<li><code>CameraMode</code>: <code>CustomCameraMode</code></li>
-<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
-<li><code>ChatVisible</code>: <code>bool</code></li>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>ComputerCameraMovementMode</code>: <code>ComputerCameraMovementMode</code></li>
-<li><code>ComputerMovementMode</code>: <code>ComputerMovementMode</code></li>
-<li><code>ControlMode</code>: <code>ControlMode</code></li>
-<li><code>Fullscreen</code>: <code>bool</code></li>
-<li><code>GamepadCameraSensitivity</code>: <code>float</code></li>
-<li><code>GraphicsOptimizationMode</code>: <code>GraphicsOptimizationMode</code></li>
-<li><code>GraphicsQualityLevel</code>: <code>int</code></li>
-<li><code>HasEverUsedVR</code>: <code>bool</code></li>
-<li><code>IsInSandbox</code>: <code>bool</code></li>
-<li><code>MasterVolume</code>: <code>float</code></li>
-<li><code>MasterVolumeStudio</code>: <code>float</code></li>
-<li><code>MaxQualityEnabled</code>: <code>bool</code></li>
-<li><code>MouseSensitivity</code>: <code>float</code></li>
-<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>OnboardingsCompleted</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>Parent</code>: <code>Instance</code></li>
-<li><code>PartyVoiceVolume</code>: <code>float</code></li>
-<li><code>PeoplePageLayout</code>: <code>PeoplePageLayout</code></li>
-<li><code>PlayerListVisible</code>: <code>bool</code></li>
-<li><code>PlayerNamesEnabled</code>: <code>bool</code></li>
-<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
-<li><code>RCCProfilerRecordFrameRate</code>: <code>int</code></li>
-<li><code>RCCProfilerRecordTimeFrame</code>: <code>int</code></li>
-<li><code>RotationType</code>: <code>RotationType</code></li>
-<li><code>Sandboxed</code>: <code>bool</code></li>
-<li><code>SavedQualityLevel</code>: <code>SavedQualitySetting</code></li>
-<li><code>StartMaximized</code>: <code>bool</code></li>
-<li><code>StartScreenPosition</code>: <code>Vector2</code></li>
-<li><code>StartScreenSize</code>: <code>Vector2</code></li>
-<li><code>TouchCameraMovementMode</code>: <code>TouchCameraMovementMode</code></li>
-<li><code>TouchMovementMode</code>: <code>TouchMovementMode</code></li>
-<li><code>UniqueId</code>: <code>UniqueId</code></li>
-<li><code>UsedCoreGuiIsVisibleToggle</code>: <code>bool</code></li>
-<li><code>UsedCustomGuiIsVisibleToggle</code>: <code>bool</code></li>
-<li><code>UsedHideHudShortcut</code>: <code>bool</code></li>
-<li><code>VREnabled</code>: <code>bool</code></li>
-<li><code>VRRotationIntensity</code>: <code>int</code></li>
-<li><code>VRSmoothRotationEnabled</code>: <code>bool</code></li>
-<li><code>VignetteEnabled</code>: <code>bool</code></li>
-<li><code>VoiceChatVolume</code>: <code>float</code></li>
+<section id="member-AllTutorialsDisabled" class="set">
+<header><h3>AllTutorialsDisabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Archivable" class="set">
+<header><h3>Archivable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-BadgeVisible" class="set">
+<header><h3>BadgeVisible</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraMode" class="set">
+<header><h3>CameraMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CustomCameraMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Capabilities" class="set">
+<header><h3>Capabilities</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SecurityCapabilities</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ChatVisible" class="set">
+<header><h3>ChatVisible</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-ComputerCameraMovementMode" class="set">
+<header><h3>ComputerCameraMovementMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ComputerCameraMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ComputerMovementMode" class="set">
+<header><h3>ComputerMovementMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ComputerMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ControlMode" class="set">
+<header><h3>ControlMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ControlMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Fullscreen" class="set">
+<header><h3>Fullscreen</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-GamepadCameraSensitivity" class="set">
+<header><h3>GamepadCameraSensitivity</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-GraphicsOptimizationMode" class="set">
+<header><h3>GraphicsOptimizationMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>GraphicsOptimizationMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-GraphicsQualityLevel" class="set">
+<header><h3>GraphicsQualityLevel</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HasEverUsedVR" class="set">
+<header><h3>HasEverUsedVR</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-IsInSandbox" class="set">
+<header><h3>IsInSandbox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-MasterVolume" class="set">
+<header><h3>MasterVolume</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-MasterVolumeStudio" class="set">
+<header><h3>MasterVolumeStudio</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-MaxQualityEnabled" class="set">
+<header><h3>MaxQualityEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-MouseSensitivity" class="set">
+<header><h3>MouseSensitivity</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Name" class="set">
+<header><h3>Name</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-OnboardingsCompleted" class="set">
+<header><h3>OnboardingsCompleted</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Parent" class="set">
+<header><h3>Parent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PartyVoiceVolume" class="set">
+<header><h3>PartyVoiceVolume</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PeoplePageLayout" class="set">
+<header><h3>PeoplePageLayout</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PeoplePageLayout</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PlayerListVisible" class="set">
+<header><h3>PlayerListVisible</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-PlayerNamesEnabled" class="set">
+<header><h3>PlayerNamesEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-PredictionMode" class="set">
+<header><h3>PredictionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PredictionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RCCProfilerRecordFrameRate" class="set">
+<header><h3>RCCProfilerRecordFrameRate</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RCCProfilerRecordTimeFrame" class="set">
+<header><h3>RCCProfilerRecordTimeFrame</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RotationType" class="set">
+<header><h3>RotationType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>RotationType</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sandboxed" class="set">
+<header><h3>Sandboxed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-SavedQualityLevel" class="set">
+<header><h3>SavedQualityLevel</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SavedQualitySetting</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-StartMaximized" class="set">
+<header><h3>StartMaximized</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-StartScreenPosition" class="set">
+<header><h3>StartScreenPosition</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector2</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-StartScreenSize" class="set">
+<header><h3>StartScreenSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector2</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-TouchCameraMovementMode" class="set">
+<header><h3>TouchCameraMovementMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>TouchCameraMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-TouchMovementMode" class="set">
+<header><h3>TouchMovementMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>TouchMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UniqueId" class="set">
+<header><h3>UniqueId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>UniqueId</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UsedCoreGuiIsVisibleToggle" class="set">
+<header><h3>UsedCoreGuiIsVisibleToggle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-UsedCustomGuiIsVisibleToggle" class="set">
+<header><h3>UsedCustomGuiIsVisibleToggle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-UsedHideHudShortcut" class="set">
+<header><h3>UsedHideHudShortcut</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-VREnabled" class="set">
+<header><h3>VREnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-VRRotationIntensity" class="set">
+<header><h3>VRRotationIntensity</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-VRSmoothRotationEnabled" class="set">
+<header><h3>VRSmoothRotationEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-VignetteEnabled" class="set">
+<header><h3>VignetteEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-VoiceChatVolume" class="set">
+<header><h3>VoiceChatVolume</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (44)</h3>
-<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ClearAllChildren()</code>: <code>null</code></li>
-<li><code>Clone()</code>: <code>Instance</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetActor()</code>: <code>Actor</code></li>
-<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
-<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
-<li><code>GetCameraYInvertValue()</code>: <code>int</code></li>
-<li><code>GetChildren()</code>: <code>Instances</code></li>
-<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetDefaultFramerateCap()</code>: <code>int</code></li>
-<li><code>GetDescendants()</code>: <code>Instances</code></li>
-<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetOnboardingCompleted(<code>onboardingId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
-<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetTags()</code>: <code>Array</code></li>
-<li><code>GetTutorialState(<code>tutorialId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>InFullScreen()</code>: <code>bool</code></li>
-<li><code>InStudioMode()</code>: <code>bool</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
-<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ResetOnboardingCompleted(<code>onboardingId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
-<li><code>SetCameraYInvertVisible()</code>: <code>null</code></li>
-<li><code>SetGamepadCameraSensitivityVisible()</code>: <code>null</code></li>
-<li><code>SetOnboardingCompleted(<code>onboardingId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetTutorialState(<code>tutorialId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>Clone()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetCameraYInvertValue()</code></h3>
+<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDefaultFramerateCap()</code></h3>
+<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
+<h3 style='font-size: 1.4em;'>GetOnboardingCompleted(<code>onboardingId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
+<h3 style='font-size: 1.4em;'>GetTutorialState(<code>tutorialId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>InFullScreen()</code></h3>
+<h3 style='font-size: 1.4em;'>InStudioMode()</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetOnboardingCompleted(<code>onboardingId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetCameraYInvertVisible()</code></h3>
+<h3 style='font-size: 1.4em;'>SetGamepadCameraSensitivityVisible()</code></h3>
+<h3 style='font-size: 1.4em;'>SetOnboardingCompleted(<code>onboardingId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetTutorialState(<code>tutorialId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
 <h3>Events (12)</h3>
-<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Destroying()</code>: <code>Signal</code></li>
-<li><code>FullscreenChanged(<code>isFullscreen</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>PerformanceStatsVisibleChanged(<code>isPerformanceStatsVisible</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>StudioModeChanged(<code>isStudioMode</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
+<h3 style='font-size: 1.4em;'>FullscreenChanged(<code>isFullscreen</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>PerformanceStatsVisibleChanged(<code>isPerformanceStatsVisible</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>StudioModeChanged(<code>isStudioMode</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
 </body>
 </html>

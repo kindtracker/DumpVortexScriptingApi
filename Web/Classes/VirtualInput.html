@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -45,17 +121,26 @@ NotCreatable
 , NotReplicated
 ]</p>
 <h3>Properties (1)</h3>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (8)</h3>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>SendKey(<code>isPressed</code>: <code>bool</code>, <code>keyCode</code>: <code>KeyCode</code>, <code>isRepeatedKey</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>SendMouseButton(<code>position</code>: <code>Vector2</code>, <code>button</code>: <code>UserInputType</code>, <code>isDown</code>: <code>bool</code>, <code>repeatCount</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>SendMouseDelta(<code>positionDelta</code>: <code>Vector2</code>)</code>: <code>null</code></li>
-<li><code>SendMousePosition(<code>position</code>: <code>Vector2</code>)</code>: <code>null</code></li>
-<li><code>SendPointerAction(<code>position</code>: <code>Vector2</code>, <code>pointerAction</code>: <code>Dictionary</code>)</code>: <code>null</code></li>
-<li><code>SendTextInput(<code>text</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SendKey(<code>isPressed</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>keyCode</code>: <code>KeyCode</code>, <code>isRepeatedKey</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SendMouseButton(<code>position</code>: <code>Vector2</code>, <code>button</code>: <code>UserInputType</code>, <code>isDown</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>repeatCount</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SendMouseDelta(<code>positionDelta</code>: <code>Vector2</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SendMousePosition(<code>position</code>: <code>Vector2</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SendPointerAction(<code>position</code>: <code>Vector2</code>, <code>pointerAction</code>: <code>Dictionary</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SendTextInput(<code>text</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
 <h3>Events (1)</h3>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
 </body>
 </html>

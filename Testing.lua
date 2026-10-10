@@ -221,7 +221,13 @@ local function GetTypeName(Type)
 
 	if type(Type) == "table" then
 		if Type.Name then
-			return Type.Name
+			local Name = Type.Name
+			if Name == "bool" then
+				Name = "boolean"
+			elseif Name == "null" then
+				Name = "nil"
+			end
+			return Name
 		end
 
 		if Type.Category then
@@ -335,8 +341,8 @@ local Styles = [[
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -359,6 +365,82 @@ code {
 }
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
+
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
 ]]
 
 local function HtmlPage(Title, Body)
@@ -404,6 +486,25 @@ local function AddTags(Html, Tags)
 	Html[#Html + 1] = "]</p>"
 end
 
+local function AddPropertySection(Html, Member)
+	local Name = EscapeHtml(Member.Name)
+	local Type = GetHtmlType(Member.ValueType)
+
+	Html[#Html + 1] = '<section id="member-' .. Name .. '" class="set">'
+	Html[#Html + 1] = "<header><h3>" .. Name .. "</h3></header>"
+
+	Html[#Html + 1] = '<table class="index-card params">'
+	Html[#Html + 1] = "<thead><tr>"
+	Html[#Html + 1] = '<th colspan="1">Type</th>'
+	Html[#Html + 1] = "</tr></thead>"
+
+	Html[#Html + 1] = "<tbody><tr>"
+	Html[#Html + 1] = '<td colspan="1">' .. Type .. "</td>"
+	Html[#Html + 1] = "</tr></tbody></table>"
+
+	Html[#Html + 1] = "</section>"
+end
+
 local function AddMemberSection(Html, Title, Members, ClassName)
 	Html[#Html + 1] = "<h3>" .. EscapeHtml(Title) .. " (" .. #Members .. ")" .. "</h3>"
 
@@ -412,24 +513,30 @@ local function AddMemberSection(Html, Title, Members, ClassName)
 		local Line
 
 		if Member.MemberType == "Property" then
-			Line = "<code>" .. EscapeHtml(Member.Name) .. "</code>: " .. GetHtmlType(Member.ValueType)
+			--Line = EscapeHtml(Member.Name) .. ": " .. GetHtmlType(Member.ValueType)
+			Line = EscapeHtml(Member.Name)
 		else
-			Line = "<code>" .. EscapeHtml(Member.Name) .. "(" .. GetParameters(Member.Parameters) .. ")</code>"
+			Line = EscapeHtml(Member.Name) .. "(" .. GetParameters(Member.Parameters) .. ")</code>"
 
-			local Returns = GetReturns(Member)
+			--[[
+      local Returns = GetReturns(Member)
 
 			if Returns then
 				Line = Line .. ": " .. Returns
 			elseif Member.MemberType == "Event" then
-				Line = Line .. ": <code>Signal</code>"
-			end
+				Line = Line .. ": Signal"
+			end]]
 		end
 
 		if Entry.Owner and Entry.Owner ~= ClassName then
 			Line = Line .. ' <span class="muted">(inherited from ' .. EscapeHtml(Entry.Owner) .. ")</span>"
 		end
 
-		Html[#Html + 1] = "<li>" .. Line .. "</li>"
+		if Member.MemberType == "Property" then
+			AddPropertySection(Html, Member)
+		else
+			Html[#Html + 1] = "<h3 style='font-size: 1.4em;'>" .. Line .. "</h3>"
+		end
 	end
 end
 

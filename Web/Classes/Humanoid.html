@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -43,139 +119,508 @@ p { overflow-wrap: anywhere; }
 <p>Tags: [
 ]</p>
 <h3>Properties (41)</h3>
-<li><code>Archivable</code>: <code>bool</code></li>
-<li><code>AutoJumpEnabled</code>: <code>bool</code></li>
-<li><code>AutoRotate</code>: <code>bool</code></li>
-<li><code>AutomaticScalingEnabled</code>: <code>bool</code></li>
-<li><code>BreakJointsOnDeath</code>: <code>bool</code></li>
-<li><code>CameraOffset</code>: <code>Vector3</code></li>
-<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>DisplayDistanceType</code>: <code>HumanoidDisplayDistanceType</code></li>
-<li><code>DisplayName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>EvaluateStateMachine</code>: <code>bool</code></li>
-<li><code>FloorMaterial</code>: <code>Material</code></li>
-<li><code>Health</code>: <code>float</code></li>
-<li><code>HealthDisplayDistance</code>: <code>float</code></li>
-<li><code>HealthDisplayType</code>: <code>HumanoidHealthDisplayType</code></li>
-<li><code>HipHeight</code>: <code>float</code></li>
-<li><code>IsInSandbox</code>: <code>bool</code></li>
-<li><code>Jump</code>: <code>bool</code></li>
-<li><code>JumpHeight</code>: <code>float</code></li>
-<li><code>JumpPower</code>: <code>float</code></li>
-<li><code>MaxHealth</code>: <code>float</code></li>
-<li><code>MaxSlopeAngle</code>: <code>float</code></li>
-<li><code>MoveDirection</code>: <code>Vector3</code></li>
-<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>NameDisplayDistance</code>: <code>float</code></li>
-<li><code>NameOcclusion</code>: <code>NameOcclusion</code></li>
-<li><code>Parent</code>: <code>Instance</code></li>
-<li><code>PlatformStand</code>: <code>bool</code></li>
-<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
-<li><code>RequiresNeck</code>: <code>bool</code></li>
-<li><code>RigType</code>: <code>HumanoidRigType</code></li>
-<li><code>RootPart</code>: <code>BasePart</code></li>
-<li><code>Sandboxed</code>: <code>bool</code></li>
-<li><code>SeatPart</code>: <code>BasePart</code></li>
-<li><code>Sit</code>: <code>bool</code></li>
-<li><code>TargetPoint</code>: <code>Vector3</code></li>
-<li><code>UniqueId</code>: <code>UniqueId</code></li>
-<li><code>UseJumpPower</code>: <code>bool</code></li>
-<li><code>WalkSpeed</code>: <code>float</code></li>
-<li><code>WalkToPart</code>: <code>BasePart</code></li>
-<li><code>WalkToPoint</code>: <code>Vector3</code></li>
+<section id="member-Archivable" class="set">
+<header><h3>Archivable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutoJumpEnabled" class="set">
+<header><h3>AutoJumpEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutoRotate" class="set">
+<header><h3>AutoRotate</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutomaticScalingEnabled" class="set">
+<header><h3>AutomaticScalingEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-BreakJointsOnDeath" class="set">
+<header><h3>BreakJointsOnDeath</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraOffset" class="set">
+<header><h3>CameraOffset</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Capabilities" class="set">
+<header><h3>Capabilities</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SecurityCapabilities</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DisplayDistanceType" class="set">
+<header><h3>DisplayDistanceType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>HumanoidDisplayDistanceType</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DisplayName" class="set">
+<header><h3>DisplayName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-EvaluateStateMachine" class="set">
+<header><h3>EvaluateStateMachine</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-FloorMaterial" class="set">
+<header><h3>FloorMaterial</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Material</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Health" class="set">
+<header><h3>Health</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HealthDisplayDistance" class="set">
+<header><h3>HealthDisplayDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HealthDisplayType" class="set">
+<header><h3>HealthDisplayType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>HumanoidHealthDisplayType</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HipHeight" class="set">
+<header><h3>HipHeight</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-IsInSandbox" class="set">
+<header><h3>IsInSandbox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Jump" class="set">
+<header><h3>Jump</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-JumpHeight" class="set">
+<header><h3>JumpHeight</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-JumpPower" class="set">
+<header><h3>JumpPower</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-MaxHealth" class="set">
+<header><h3>MaxHealth</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-MaxSlopeAngle" class="set">
+<header><h3>MaxSlopeAngle</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-MoveDirection" class="set">
+<header><h3>MoveDirection</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Name" class="set">
+<header><h3>Name</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-NameDisplayDistance" class="set">
+<header><h3>NameDisplayDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-NameOcclusion" class="set">
+<header><h3>NameOcclusion</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>NameOcclusion</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Parent" class="set">
+<header><h3>Parent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PlatformStand" class="set">
+<header><h3>PlatformStand</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-PredictionMode" class="set">
+<header><h3>PredictionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PredictionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RequiresNeck" class="set">
+<header><h3>RequiresNeck</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-RigType" class="set">
+<header><h3>RigType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>HumanoidRigType</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RootPart" class="set">
+<header><h3>RootPart</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>BasePart</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sandboxed" class="set">
+<header><h3>Sandboxed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-SeatPart" class="set">
+<header><h3>SeatPart</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>BasePart</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sit" class="set">
+<header><h3>Sit</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-TargetPoint" class="set">
+<header><h3>TargetPoint</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UniqueId" class="set">
+<header><h3>UniqueId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>UniqueId</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UseJumpPower" class="set">
+<header><h3>UseJumpPower</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-WalkSpeed" class="set">
+<header><h3>WalkSpeed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WalkToPart" class="set">
+<header><h3>WalkToPart</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>BasePart</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-WalkToPoint" class="set">
+<header><h3>WalkToPoint</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Vector3</code></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (62)</h3>
-<li><code>AddAccessory(<code>accessory</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ApplyAvatarRules(<code>avatarRules</code>: <code>AvatarRules</code>)</code>: <code>null</code></li>
-<li><code>ApplyDescriptionAsync(<code>humanoidDescription</code>: <code>HumanoidDescription</code>, <code>assetTypeVerification</code>: <code>AssetTypeVerification</code>)</code>: <code>null</code></li>
-<li><code>ApplyDescriptionResetAsync(<code>humanoidDescription</code>: <code>HumanoidDescription</code>, <code>assetTypeVerification</code>: <code>AssetTypeVerification</code>)</code>: <code>null</code></li>
-<li><code>BuildRigFromAttachments()</code>: <code>null</code></li>
-<li><code>CacheDefaults()</code>: <code>null</code></li>
-<li><code>ChangeState(<code>state</code>: <code>HumanoidStateType</code>)</code>: <code>null</code></li>
-<li><code>ClearAllChildren()</code>: <code>null</code></li>
-<li><code>Clone()</code>: <code>Instance</code></li>
-<li><code>ComputeOriginalSizeForPart(<code>part</code>: <code>Instance</code>)</code>: <code>Vector3?</code></li>
-<li><code>ComputeR15BodyBoundingBox()</code>: <code>Unknown</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>EquipTool(<code>tool</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetAccessories()</code>: <code>Array</code></li>
-<li><code>GetAccessoryHandleScale(<code>instance</code>: <code>Instance</code>, <code>partType</code>: <code>BodyPartR15</code>)</code>: <code>Vector3</code></li>
-<li><code>GetActor()</code>: <code>Actor</code></li>
-<li><code>GetAppliedDescription()</code>: <code>HumanoidDescription</code></li>
-<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
-<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
-<li><code>GetBodyPartR15(<code>part</code>: <code>Instance</code>)</code>: <code>BodyPartR15</code></li>
-<li><code>GetChildren()</code>: <code>Instances</code></li>
-<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetDescendants()</code>: <code>Instances</code></li>
-<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetLimb(<code>part</code>: <code>Instance</code>)</code>: <code>Limb</code></li>
-<li><code>GetMoveVelocity()</code>: <code>Vector3</code></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetRelativeVelocityAtFloor()</code>: <code>Vector3</code></li>
-<li><code>GetState()</code>: <code>HumanoidStateType</code></li>
-<li><code>GetStateEnabled(<code>state</code>: <code>HumanoidStateType</code>)</code>: <code>bool</code></li>
-<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
-<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetTags()</code>: <code>Array</code></li>
-<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>Move(<code>moveDirection</code>: <code>Vector3</code>, <code>relativeToCamera</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>MoveTo(<code>location</code>: <code>Vector3</code>, <code>part</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>PlayEmoteAndGetAnimTrackById(<code>emoteId</code>: <code>int64</code>)</code>: <code>Tuple</code></li>
-<li><code>PlayEmoteAsync(<code>emoteName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
-<li><code>RemoveAccessories()</code>: <code>null</code></li>
-<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>ReplaceBodyPartR15(<code>bodyPart</code>: <code>BodyPartR15</code>, <code>part</code>: <code>BasePart</code>)</code>: <code>bool</code></li>
-<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
-<li><code>SetClickToWalkEnabled(<code>enabled</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>SetStateEnabled(<code>state</code>: <code>HumanoidStateType</code>, <code>enabled</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>TakeDamage(<code>amount</code>: <code>float</code>)</code>: <code>null</code></li>
-<li><code>UnequipTools()</code>: <code>null</code></li>
-<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<h3 style='font-size: 1.4em;'>AddAccessory(<code>accessory</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ApplyAvatarRules(<code>avatarRules</code>: <code>AvatarRules</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ApplyDescriptionAsync(<code>humanoidDescription</code>: <code>HumanoidDescription</code>, <code>assetTypeVerification</code>: <code>AssetTypeVerification</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ApplyDescriptionResetAsync(<code>humanoidDescription</code>: <code>HumanoidDescription</code>, <code>assetTypeVerification</code>: <code>AssetTypeVerification</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BuildRigFromAttachments()</code></h3>
+<h3 style='font-size: 1.4em;'>CacheDefaults()</code></h3>
+<h3 style='font-size: 1.4em;'>ChangeState(<code>state</code>: <code>HumanoidStateType</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>Clone()</code></h3>
+<h3 style='font-size: 1.4em;'>ComputeOriginalSizeForPart(<code>part</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ComputeR15BodyBoundingBox()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>EquipTool(<code>tool</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAccessories()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAccessoryHandleScale(<code>instance</code>: <code>Instance</code>, <code>partType</code>: <code>BodyPartR15</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAppliedDescription()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetBodyPartR15(<code>part</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
+<h3 style='font-size: 1.4em;'>GetLimb(<code>part</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetMoveVelocity()</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetRelativeVelocityAtFloor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetState()</code></h3>
+<h3 style='font-size: 1.4em;'>GetStateEnabled(<code>state</code>: <code>HumanoidStateType</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
+<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Move(<code>moveDirection</code>: <code>Vector3</code>, <code>relativeToCamera</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>MoveTo(<code>location</code>: <code>Vector3</code>, <code>part</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>PlayEmoteAndGetAnimTrackById(<code>emoteId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>PlayEmoteAsync(<code>emoteName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveAccessories()</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ReplaceBodyPartR15(<code>bodyPart</code>: <code>BodyPartR15</code>, <code>part</code>: <code>BasePart</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetClickToWalkEnabled(<code>enabled</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetStateEnabled(<code>state</code>: <code>HumanoidStateType</code>, <code>enabled</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>TakeDamage(<code>amount</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>UnequipTools()</code></h3>
+<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
 <h3>Events (29)</h3>
-<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ApplyDescriptionFinished(<code>description</code>: <code>HumanoidDescription</code>)</code>: <code>Signal</code></li>
-<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Climbing(<code>speed</code>: <code>float</code>)</code>: <code>Signal</code></li>
-<li><code>ClusterCompositionFinished()</code>: <code>Signal</code></li>
-<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Destroying()</code>: <code>Signal</code></li>
-<li><code>Died()</code>: <code>Signal</code></li>
-<li><code>EmoteTriggered(<code>success</code>: <code>bool</code>, <code>animationTrack</code>: <code>AnimationTrack</code>)</code>: <code>Signal</code></li>
-<li><code>FallingDown(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>FreeFalling(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>GettingUp(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>HealthChanged(<code>health</code>: <code>float</code>)</code>: <code>Signal</code></li>
-<li><code>Jumping(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>MoveToFinished(<code>reached</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>PlatformStanding(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>Ragdoll(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>Running(<code>speed</code>: <code>float</code>)</code>: <code>Signal</code></li>
-<li><code>Seated(<code>active</code>: <code>bool</code>, <code>currentSeatPart</code>: <code>BasePart</code>)</code>: <code>Signal</code></li>
-<li><code>StateChanged(<code>old</code>: <code>HumanoidStateType</code>, <code>new</code>: <code>HumanoidStateType</code>)</code>: <code>Signal</code></li>
-<li><code>StateEnabledChanged(<code>state</code>: <code>HumanoidStateType</code>, <code>isEnabled</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>Strafing(<code>active</code>: <code>bool</code>)</code>: <code>Signal</code></li>
-<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
-<li><code>Swimming(<code>speed</code>: <code>float</code>)</code>: <code>Signal</code></li>
-<li><code>Touched(<code>touchingPart</code>: <code>BasePart</code>, <code>humanoidPart</code>: <code>BasePart</code>)</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ApplyDescriptionFinished(<code>description</code>: <code>HumanoidDescription</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Climbing(<code>speed</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClusterCompositionFinished()</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
+<h3 style='font-size: 1.4em;'>Died()</code></h3>
+<h3 style='font-size: 1.4em;'>EmoteTriggered(<code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>animationTrack</code>: <code>AnimationTrack</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>FallingDown(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FreeFalling(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GettingUp(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>HealthChanged(<code>health</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Jumping(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>MoveToFinished(<code>reached</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>PlatformStanding(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Ragdoll(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Running(<code>speed</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Seated(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>currentSeatPart</code>: <code>BasePart</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>StateChanged(<code>old</code>: <code>HumanoidStateType</code>, <code>new</code>: <code>HumanoidStateType</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>StateEnabledChanged(<code>state</code>: <code>HumanoidStateType</code>, <code>isEnabled</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>Strafing(<code>active</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
+<h3 style='font-size: 1.4em;'>Swimming(<code>speed</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Touched(<code>touchingPart</code>: <code>BasePart</code>, <code>humanoidPart</code>: <code>BasePart</code>)</code></h3>
 </body>
 </html>

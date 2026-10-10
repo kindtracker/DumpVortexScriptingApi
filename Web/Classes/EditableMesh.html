@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -44,105 +120,123 @@ p { overflow-wrap: anywhere; }
 NotCreatable
 ]</p>
 <h3>Properties (2)</h3>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>FixedSize</code>: <code>bool</code></li>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-FixedSize" class="set">
+<header><h3>FixedSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (95)</h3>
-<li><code>AddBone(<code>boneProperties</code>: <code>Dictionary</code>)</code>: <code>int64</code></li>
-<li><code>AddColor(<code>color</code>: <code>Color3</code>, <code>alpha</code>: <code>float</code>)</code>: <code>int64</code></li>
-<li><code>AddFace(<code>vertexIds</code>: <code>Array</code>)</code>: <code>int64</code></li>
-<li><code>AddNormal(<code>normal</code>: <code>Vector3?</code>)</code>: <code>int64</code></li>
-<li><code>AddTriangle(<code>vertexId0</code>: <code>int64</code>, <code>vertexId1</code>: <code>int64</code>, <code>vertexId2</code>: <code>int64</code>)</code>: <code>int64</code></li>
-<li><code>AddUV(<code>uv</code>: <code>Vector2</code>)</code>: <code>int64</code></li>
-<li><code>AddVertex(<code>p</code>: <code>Vector3</code>)</code>: <code>int64</code></li>
-<li><code>BatchAdd(<code>attr</code>: <code>MeshAttribute</code>, <code>data</code>: <code>Array</code>)</code>: <code>Array</code></li>
-<li><code>BatchGetFaceAttributes(<code>attr</code>: <code>MeshAttribute</code>, <code>faceIds</code>: <code>Array</code>)</code>: <code>Array</code></li>
-<li><code>BatchGetValues(<code>ids</code>: <code>Array</code>)</code>: <code>Tuple</code></li>
-<li><code>BatchGetVertexAttributes(<code>attr</code>: <code>MeshAttribute</code>, <code>vertexIds</code>: <code>Array</code>)</code>: <code>Array</code></li>
-<li><code>BatchGetVertexFaceAttributes(<code>attr</code>: <code>MeshAttribute</code>, <code>vertexIds</code>: <code>Array</code>, <code>faceIds</code>: <code>Array</code>)</code>: <code>Array</code></li>
-<li><code>BatchRemove(<code>ids</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>BatchSetFaceAttributes(<code>faceIds</code>: <code>Array</code>, <code>attrIdArrays</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>BatchSetValues(<code>ids</code>: <code>Array</code>, <code>values</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>BatchSetVertexFaceAttributes(<code>vertexIds</code>: <code>Array</code>, <code>faceIds</code>: <code>Array</code>, <code>attrIds</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>Clear()</code>: <code>null</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>FindClosestPointOnSurface(<code>point</code>: <code>Vector3</code>)</code>: <code>Tuple</code></li>
-<li><code>FindClosestVertex(<code>toThisPoint</code>: <code>Vector3</code>)</code>: <code>int64</code></li>
-<li><code>FindVerticesWithinSphere(<code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>)</code>: <code>Array</code></li>
-<li><code>GetAdjacentFaces(<code>faceId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetAdjacentVertices(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetBoneByName(<code>boneName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>int64</code></li>
-<li><code>GetBoneCFrame(<code>boneId</code>: <code>int64</code>)</code>: <code>CFrame</code></li>
-<li><code>GetBoneIsVirtual(<code>boneId</code>: <code>int64</code>)</code>: <code>bool</code></li>
-<li><code>GetBoneName(<code>boneId</code>: <code>int64</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetBoneParent(<code>boneId</code>: <code>int64</code>)</code>: <code>int64</code></li>
-<li><code>GetBones()</code>: <code>Array</code></li>
-<li><code>GetCenter()</code>: <code>Vector3</code></li>
-<li><code>GetColor(<code>colorId</code>: <code>int64</code>)</code>: <code>Color3?</code></li>
-<li><code>GetColorAlpha(<code>colorId</code>: <code>int64</code>)</code>: <code>float?</code></li>
-<li><code>GetColors()</code>: <code>Array</code></li>
-<li><code>GetFaceColors(<code>faceId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFaceNormals(<code>faceId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFaceUVs(<code>faceId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFaceVertices(<code>faceId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFaces()</code>: <code>Array</code></li>
-<li><code>GetFacesWithColor(<code>colorId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFacesWithNormal(<code>normalId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFacesWithUV(<code>uvId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetFacsCorrectivePose(<code>actions</code>: <code>Array</code>)</code>: <code>Tuple</code></li>
-<li><code>GetFacsCorrectivePoses()</code>: <code>Array</code></li>
-<li><code>GetFacsPose(<code>action</code>: <code>FacsActionUnit</code>)</code>: <code>Tuple</code></li>
-<li><code>GetFacsPoses()</code>: <code>Array</code></li>
-<li><code>GetNormal(<code>normalId</code>: <code>int64</code>)</code>: <code>Vector3?</code></li>
-<li><code>GetNormals()</code>: <code>Array</code></li>
-<li><code>GetPosition(<code>vertexId</code>: <code>int64</code>)</code>: <code>Vector3</code></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetSize()</code>: <code>Vector3</code></li>
-<li><code>GetUV(<code>uvId</code>: <code>int64</code>)</code>: <code>Vector2?</code></li>
-<li><code>GetUVs()</code>: <code>Array</code></li>
-<li><code>GetVertexBoneWeights(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVertexBones(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVertexColors(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVertexFaceColor(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>)</code>: <code>int64</code></li>
-<li><code>GetVertexFaceNormal(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>)</code>: <code>int64</code></li>
-<li><code>GetVertexFaceUV(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>)</code>: <code>int64</code></li>
-<li><code>GetVertexFaces(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVertexNormals(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVertexUVs(<code>vertexId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVertices()</code>: <code>Array</code></li>
-<li><code>GetVerticesWithColor(<code>colorId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVerticesWithNormal(<code>normalId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>GetVerticesWithUV(<code>uvId</code>: <code>int64</code>)</code>: <code>Array</code></li>
-<li><code>IdDebugString(<code>id</code>: <code>int64</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>MergeVertices(<code>mergeTolerance</code>: <code>float</code>)</code>: <code>Map</code></li>
-<li><code>RaycastLocal(<code>origin</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>)</code>: <code>Tuple</code></li>
-<li><code>RemoveBone(<code>boneId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>RemoveFace(<code>faceId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>RemoveUnused()</code>: <code>Array</code></li>
-<li><code>ResetNormal(<code>normalId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>SetBoneCFrame(<code>boneId</code>: <code>int64</code>, <code>cframe</code>: <code>CFrame</code>)</code>: <code>null</code></li>
-<li><code>SetBoneIsVirtual(<code>boneId</code>: <code>int64</code>, <code>virtual</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>SetBoneName(<code>boneId</code>: <code>int64</code>, <code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetBoneParent(<code>boneId</code>: <code>int64</code>, <code>parentBoneId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>SetColor(<code>colorId</code>: <code>int64</code>, <code>color</code>: <code>Color3</code>)</code>: <code>null</code></li>
-<li><code>SetColorAlpha(<code>colorId</code>: <code>int64</code>, <code>alpha</code>: <code>float</code>)</code>: <code>null</code></li>
-<li><code>SetFaceColors(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetFaceNormals(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetFaceUVs(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetFaceVertices(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetFacsBonePose(<code>action</code>: <code>FacsActionUnit</code>, <code>boneId</code>: <code>int64</code>, <code>cframe</code>: <code>CFrame</code>)</code>: <code>null</code></li>
-<li><code>SetFacsCorrectivePose(<code>actions</code>: <code>Array</code>, <code>boneIds</code>: <code>Array</code>, <code>cframes</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetFacsPose(<code>action</code>: <code>FacsActionUnit</code>, <code>boneIds</code>: <code>Array</code>, <code>cframes</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetNormal(<code>normalId</code>: <code>int64</code>, <code>normal</code>: <code>Vector3</code>)</code>: <code>null</code></li>
-<li><code>SetPosition(<code>vertexId</code>: <code>int64</code>, <code>p</code>: <code>Vector3</code>)</code>: <code>null</code></li>
-<li><code>SetUV(<code>uvId</code>: <code>int64</code>, <code>uv</code>: <code>Vector2</code>)</code>: <code>null</code></li>
-<li><code>SetVertexBoneWeights(<code>vertexId</code>: <code>int64</code>, <code>boneWeights</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetVertexBones(<code>vertexId</code>: <code>int64</code>, <code>boneIDs</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>SetVertexFaceColor(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>, <code>colorId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>SetVertexFaceNormal(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>, <code>normalId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>SetVertexFaceUV(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>, <code>uvId</code>: <code>int64</code>)</code>: <code>null</code></li>
-<li><code>Triangulate()</code>: <code>null</code></li>
+<h3 style='font-size: 1.4em;'>AddBone(<code>boneProperties</code>: <code>Dictionary</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddColor(<code>color</code>: <code>Color3</code>, <code>alpha</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddFace(<code>vertexIds</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddNormal(<code>normal</code>: <code>Vector3?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddTriangle(<code>vertexId0</code>: <code>int64</code>, <code>vertexId1</code>: <code>int64</code>, <code>vertexId2</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddUV(<code>uv</code>: <code>Vector2</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddVertex(<code>p</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchAdd(<code>attr</code>: <code>MeshAttribute</code>, <code>data</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchGetFaceAttributes(<code>attr</code>: <code>MeshAttribute</code>, <code>faceIds</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchGetValues(<code>ids</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchGetVertexAttributes(<code>attr</code>: <code>MeshAttribute</code>, <code>vertexIds</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchGetVertexFaceAttributes(<code>attr</code>: <code>MeshAttribute</code>, <code>vertexIds</code>: <code>Array</code>, <code>faceIds</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchRemove(<code>ids</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchSetFaceAttributes(<code>faceIds</code>: <code>Array</code>, <code>attrIdArrays</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchSetValues(<code>ids</code>: <code>Array</code>, <code>values</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>BatchSetVertexFaceAttributes(<code>vertexIds</code>: <code>Array</code>, <code>faceIds</code>: <code>Array</code>, <code>attrIds</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Clear()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>FindClosestPointOnSurface(<code>point</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindClosestVertex(<code>toThisPoint</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindVerticesWithinSphere(<code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAdjacentFaces(<code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAdjacentVertices(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetBoneByName(<code>boneName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetBoneCFrame(<code>boneId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetBoneIsVirtual(<code>boneId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetBoneName(<code>boneId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetBoneParent(<code>boneId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetBones()</code></h3>
+<h3 style='font-size: 1.4em;'>GetCenter()</code></h3>
+<h3 style='font-size: 1.4em;'>GetColor(<code>colorId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetColorAlpha(<code>colorId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetColors()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFaceColors(<code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFaceNormals(<code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFaceUVs(<code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFaceVertices(<code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFaces()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacesWithColor(<code>colorId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacesWithNormal(<code>normalId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacesWithUV(<code>uvId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacsCorrectivePose(<code>actions</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacsCorrectivePoses()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacsPose(<code>action</code>: <code>FacsActionUnit</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFacsPoses()</code></h3>
+<h3 style='font-size: 1.4em;'>GetNormal(<code>normalId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetNormals()</code></h3>
+<h3 style='font-size: 1.4em;'>GetPosition(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetSize()</code></h3>
+<h3 style='font-size: 1.4em;'>GetUV(<code>uvId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetUVs()</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexBoneWeights(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexBones(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexColors(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexFaceColor(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexFaceNormal(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexFaceUV(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexFaces(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexNormals(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertexUVs(<code>vertexId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVertices()</code></h3>
+<h3 style='font-size: 1.4em;'>GetVerticesWithColor(<code>colorId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVerticesWithNormal(<code>normalId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetVerticesWithUV(<code>uvId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IdDebugString(<code>id</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>MergeVertices(<code>mergeTolerance</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RaycastLocal(<code>origin</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveBone(<code>boneId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveFace(<code>faceId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveUnused()</code></h3>
+<h3 style='font-size: 1.4em;'>ResetNormal(<code>normalId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetBoneCFrame(<code>boneId</code>: <code>int64</code>, <code>cframe</code>: <code>CFrame</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetBoneIsVirtual(<code>boneId</code>: <code>int64</code>, <code>virtual</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetBoneName(<code>boneId</code>: <code>int64</code>, <code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetBoneParent(<code>boneId</code>: <code>int64</code>, <code>parentBoneId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetColor(<code>colorId</code>: <code>int64</code>, <code>color</code>: <code>Color3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetColorAlpha(<code>colorId</code>: <code>int64</code>, <code>alpha</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFaceColors(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFaceNormals(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFaceUVs(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFaceVertices(<code>faceId</code>: <code>int64</code>, <code>ids</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFacsBonePose(<code>action</code>: <code>FacsActionUnit</code>, <code>boneId</code>: <code>int64</code>, <code>cframe</code>: <code>CFrame</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFacsCorrectivePose(<code>actions</code>: <code>Array</code>, <code>boneIds</code>: <code>Array</code>, <code>cframes</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetFacsPose(<code>action</code>: <code>FacsActionUnit</code>, <code>boneIds</code>: <code>Array</code>, <code>cframes</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetNormal(<code>normalId</code>: <code>int64</code>, <code>normal</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetPosition(<code>vertexId</code>: <code>int64</code>, <code>p</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetUV(<code>uvId</code>: <code>int64</code>, <code>uv</code>: <code>Vector2</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetVertexBoneWeights(<code>vertexId</code>: <code>int64</code>, <code>boneWeights</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetVertexBones(<code>vertexId</code>: <code>int64</code>, <code>boneIDs</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetVertexFaceColor(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>, <code>colorId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetVertexFaceNormal(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>, <code>normalId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetVertexFaceUV(<code>vertexId</code>: <code>int64</code>, <code>faceId</code>: <code>int64</code>, <code>uvId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Triangulate()</code></h3>
 <h3>Events (1)</h3>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
 </body>
 </html>

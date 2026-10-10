@@ -10,8 +10,8 @@
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
-	--surface: #f6f8fa;
-	--link: #0969da;
+	--surface: #313244;
+	--link: rgb(0, 198, 255);
 }
 * { box-sizing: border-box; }
 body {
@@ -35,6 +35,82 @@ code {
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
 
+.set {
+  margin: 28px 0;
+  border-bottom: 1px solid #3b3b4f;
+  padding-bottom: 24px;
+}
+
+.set > header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.95rem;
+}
+
+.index-card th,
+.index-card td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.index-card th {
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.index-card td {
+  background: #252538;
+}
+
+.docs {
+  margin: 16px 0;
+}
+
+.docs p {
+  margin: 12px 0;
+}
+
+.metadata-pairs {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.metadata-pairs th,
+.metadata-pairs td {
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 1px solid #3b3b4f;
+}
+
+.metadata-pairs th {
+  width: 180px;
+  color: #a5a5b5;
+  font-weight: 500;
+}
+
+.muted {
+  font-size: 0.85em;
+}
+
+th {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--fg) !important;
+  font-weight: 700 !important;
+  background-color: var(--surface) !important;
+}
+
 </style>
 </head>
 <body>
@@ -43,163 +119,541 @@ p { overflow-wrap: anywhere; }
 <p>Tags: [
 ]</p>
 <h3>Properties (42)</h3>
-<li><code>AccountAge</code>: <code>int</code></li>
-<li><code>AgeChecked</code>: <code>AgeCheckStatus</code></li>
-<li><code>Archivable</code>: <code>bool</code></li>
-<li><code>AutoJumpEnabled</code>: <code>bool</code></li>
-<li><code>CameraMaxZoomDistance</code>: <code>float</code></li>
-<li><code>CameraMinZoomDistance</code>: <code>float</code></li>
-<li><code>CameraMode</code>: <code>CameraMode</code></li>
-<li><code>CanLoadCharacterAppearance</code>: <code>bool</code></li>
-<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
-<li><code>Character</code>: <code>Model</code></li>
-<li><code>CharacterAppearanceId</code>: <code>int64</code></li>
-<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>DevCameraOcclusionMode</code>: <code>DevCameraOcclusionMode</code></li>
-<li><code>DevComputerCameraMode</code>: <code>DevComputerCameraMovementMode</code></li>
-<li><code>DevComputerMovementMode</code>: <code>DevComputerMovementMode</code></li>
-<li><code>DevEnableMouseLock</code>: <code>bool</code></li>
-<li><code>DevTouchCameraMode</code>: <code>DevTouchCameraMovementMode</code></li>
-<li><code>DevTouchMovementMode</code>: <code>DevTouchMovementMode</code></li>
-<li><code>DisplayName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>FollowUserId</code>: <code>int64</code></li>
-<li><code>FrustumStreaming</code>: <code>FrustumStreamingMode</code></li>
-<li><code>HasRobloxSubscription</code>: <code>bool</code></li>
-<li><code>HasVerifiedBadge</code>: <code>bool</code></li>
-<li><code>HealthDisplayDistance</code>: <code>float</code></li>
-<li><code>InputLatency</code>: <code>int</code></li>
-<li><code>IsInSandbox</code>: <code>bool</code></li>
-<li><code>MembershipType</code>: <code>MembershipType</code></li>
-<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>NameDisplayDistance</code>: <code>float</code></li>
-<li><code>Neutral</code>: <code>bool</code></li>
-<li><code>Parent</code>: <code>Instance</code></li>
-<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
-<li><code>ReplicationFocus</code>: <code>Instance</code></li>
-<li><code>RespawnLocation</code>: <code>SpawnLocation</code></li>
-<li><code>Sandboxed</code>: <code>bool</code></li>
-<li><code>StepIdOffset</code>: <code>int</code></li>
-<li><code>Team</code>: <code>Team</code></li>
-<li><code>TeamColor</code>: <code>BrickColor</code></li>
-<li><code>ThirdPartyTextChatRestrictionStatus</code>: <code>ChatRestrictionStatus</code></li>
-<li><code>UniqueId</code>: <code>UniqueId</code></li>
-<li><code>User</code>: <code>User</code></li>
-<li><code>UserId</code>: <code>int64</code></li>
+<section id="member-AccountAge" class="set">
+<header><h3>AccountAge</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-AgeChecked" class="set">
+<header><h3>AgeChecked</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>AgeCheckStatus</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Archivable" class="set">
+<header><h3>Archivable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-AutoJumpEnabled" class="set">
+<header><h3>AutoJumpEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraMaxZoomDistance" class="set">
+<header><h3>CameraMaxZoomDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraMinZoomDistance" class="set">
+<header><h3>CameraMinZoomDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CameraMode" class="set">
+<header><h3>CameraMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>CameraMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CanLoadCharacterAppearance" class="set">
+<header><h3>CanLoadCharacterAppearance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Capabilities" class="set">
+<header><h3>Capabilities</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SecurityCapabilities</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Character" class="set">
+<header><h3>Character</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Model</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-CharacterAppearanceId" class="set">
+<header><h3>CharacterAppearanceId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int64</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ClassName" class="set">
+<header><h3>ClassName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DevCameraOcclusionMode" class="set">
+<header><h3>DevCameraOcclusionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>DevCameraOcclusionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DevComputerCameraMode" class="set">
+<header><h3>DevComputerCameraMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>DevComputerCameraMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DevComputerMovementMode" class="set">
+<header><h3>DevComputerMovementMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>DevComputerMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DevEnableMouseLock" class="set">
+<header><h3>DevEnableMouseLock</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-DevTouchCameraMode" class="set">
+<header><h3>DevTouchCameraMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>DevTouchCameraMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DevTouchMovementMode" class="set">
+<header><h3>DevTouchMovementMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>DevTouchMovementMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-DisplayName" class="set">
+<header><h3>DisplayName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-FollowUserId" class="set">
+<header><h3>FollowUserId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int64</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-FrustumStreaming" class="set">
+<header><h3>FrustumStreaming</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>FrustumStreamingMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-HasRobloxSubscription" class="set">
+<header><h3>HasRobloxSubscription</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-HasVerifiedBadge" class="set">
+<header><h3>HasVerifiedBadge</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-HealthDisplayDistance" class="set">
+<header><h3>HealthDisplayDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-InputLatency" class="set">
+<header><h3>InputLatency</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-IsInSandbox" class="set">
+<header><h3>IsInSandbox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-MembershipType" class="set">
+<header><h3>MembershipType</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>MembershipType</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Name" class="set">
+<header><h3>Name</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-NameDisplayDistance" class="set">
+<header><h3>NameDisplayDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>float</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Neutral" class="set">
+<header><h3>Neutral</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-Parent" class="set">
+<header><h3>Parent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-PredictionMode" class="set">
+<header><h3>PredictionMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>PredictionMode</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ReplicationFocus" class="set">
+<header><h3>ReplicationFocus</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Instance</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-RespawnLocation" class="set">
+<header><h3>RespawnLocation</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>SpawnLocation</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Sandboxed" class="set">
+<header><h3>Sandboxed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+</tr></tbody></table>
+</section>
+<section id="member-StepIdOffset" class="set">
+<header><h3>StepIdOffset</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-Team" class="set">
+<header><h3>Team</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>Team</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-TeamColor" class="set">
+<header><h3>TeamColor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>BrickColor</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-ThirdPartyTextChatRestrictionStatus" class="set">
+<header><h3>ThirdPartyTextChatRestrictionStatus</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>ChatRestrictionStatus</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UniqueId" class="set">
+<header><h3>UniqueId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>UniqueId</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-User" class="set">
+<header><h3>User</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>User</code></td>
+</tr></tbody></table>
+</section>
+<section id="member-UserId" class="set">
+<header><h3>UserId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Type</th>
+</tr></thead>
+<tbody><tr>
+<td colspan="1"><code>int64</code></td>
+</tr></tbody></table>
+</section>
 <h3>Methods (92)</h3>
-<li><code>AddReplicationFocus(<code>part</code>: <code>BasePart</code>)</code>: <code>null</code></li>
-<li><code>AddReplicationFocusPosition(<code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>AddToBlockList(<code>userIds</code>: <code>Array</code>)</code>: <code>null</code></li>
-<li><code>ClearAllChildren()</code>: <code>null</code></li>
-<li><code>ClearCachedAvatarAppearance()</code>: <code>null</code></li>
-<li><code>ClearCharacterAppearance()</code>: <code>null</code></li>
-<li><code>Clone()</code>: <code>Instance</code></li>
-<li><code>Destroy()</code>: <code>null</code></li>
-<li><code>DistanceFromCharacter(<code>point</code>: <code>Vector3</code>)</code>: <code>float</code></li>
-<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
-<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
-<li><code>GetActor()</code>: <code>Actor</code></li>
-<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
-<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
-<li><code>GetBlockListInitialized()</code>: <code>bool</code></li>
-<li><code>GetCameraState()</code>: <code>Dictionary</code></li>
-<li><code>GetCanManageAsync()</code>: <code>bool</code></li>
-<li><code>GetChildren()</code>: <code>Instances</code></li>
-<li><code>GetData()</code>: <code>PlayerData</code></li>
-<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetDescendants()</code>: <code>Instances</code></li>
-<li><code>GetFriendStatus(<code>player</code>: <code>Player</code>)</code>: <code>FriendStatus</code></li>
-<li><code>GetFriendsInServerAsync()</code>: <code>Array</code></li>
-<li><code>GetFriendsInUniverseAsync()</code>: <code>Array</code></li>
-<li><code>GetFriendsOnlineAsync(<code>maxFriends</code>: <code>int</code>)</code>: <code>Array</code></li>
-<li><code>GetFriendsWhoPlayedAsync()</code>: <code>Array</code></li>
-<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetGameSessionID()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
-<li><code>GetGlobalUserId()</code>: <code>int64</code></li>
-<li><code>GetJoinData()</code>: <code>Dictionary</code></li>
-<li><code>GetMouse()</code>: <code>Mouse</code></li>
-<li><code>GetNetworkPing()</code>: <code>float</code></li>
-<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetSeatRequested()</code>: <code>Instance</code></li>
-<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
-<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
-<li><code>GetTags()</code>: <code>Array</code></li>
-<li><code>GetToolRequested()</code>: <code>Instance</code></li>
-<li><code>GetUnder13()</code>: <code>bool</code></li>
-<li><code>HasAppearanceLoaded()</code>: <code>bool</code></li>
-<li><code>HasBlockedPlayer(<code>fromPlayer</code>: <code>int64</code>)</code>: <code>bool</code></li>
-<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
-<li><code>IsFriendsWithAsync(<code>userId</code>: <code>User</code>)</code>: <code>bool</code></li>
-<li><code>IsInGroupAsync(<code>groupId</code>: <code>int64</code>)</code>: <code>bool</code></li>
-<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
-<li><code>IsVerified(<code>level</code>: <code>VerifiedLevel</code>)</code>: <code>bool</code></li>
-<li><code>Kick(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>LoadCharacterAsync()</code>: <code>null</code></li>
-<li><code>LoadCharacterBlocking()</code>: <code>null</code></li>
-<li><code>LoadCharacterWithAvatarRules(<code>avatarRules</code>: <code>AvatarRules</code>)</code>: <code>null</code></li>
-<li><code>LoadCharacterWithHumanoidDescriptionAsync(<code>humanoidDescription</code>: <code>HumanoidDescription</code>, <code>assetTypeVerification</code>: <code>AssetTypeVerification</code>)</code>: <code>null</code></li>
-<li><code>Move(<code>walkDirection</code>: <code>Vector3</code>, <code>relativeToCamera</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>NotifyAgeCheckPassed()</code>: <code>null</code></li>
-<li><code>OverrideStreamingRadii(<code>minRadius</code>: <code>int</code>, <code>targetRadius</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>PinStreamingForInstance(<code>instance</code>: <code>Instance</code>, <code>depth</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>PinStreamingForInstanceByUniqueId(<code>uniqueIdString</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>depth</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>PromptAgeCheck()</code>: <code>null</code></li>
-<li><code>PromptSecurityChallengeAsync()</code>: <code>bool</code></li>
-<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
-<li><code>RemoveCharacter()</code>: <code>null</code></li>
-<li><code>RemoveReplicationFocus(<code>part</code>: <code>BasePart</code>)</code>: <code>null</code></li>
-<li><code>RemoveReplicationFocusPosition(<code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>RequestFriendship(<code>player</code>: <code>Player</code>)</code>: <code>null</code></li>
-<li><code>RequestSeat(<code>instance</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>RequestStreamAroundAsync(<code>position</code>: <code>Vector3</code>, <code>timeOut</code>: <code>double</code>)</code>: <code>null</code></li>
-<li><code>RequestTool(<code>instance</code>: <code>Instance</code>)</code>: <code>null</code></li>
-<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>RevokeFriendship(<code>player</code>: <code>Player</code>)</code>: <code>null</code></li>
-<li><code>SetAccountAge(<code>accountAge</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
-<li><code>SetBlockListInitialized()</code>: <code>null</code></li>
-<li><code>SetCharacterAppearanceJson(<code>jsonBlob</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetChatTranslationSettingsLocaleId(<code>locale</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetExperienceSettingsLocaleId(<code>locale</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetHasRobloxSubscription(<code>hasRobloxSubscription</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>SetMembershipType(<code>membershipType</code>: <code>MembershipType</code>)</code>: <code>null</code></li>
-<li><code>SetModerationAccessKey(<code>moderationAccessKey</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
-<li><code>SetSuperSafeChat(<code>value</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>UnpinStreamingForInstance(<code>instance</code>: <code>Instance</code>, <code>depth</code>: <code>int</code>)</code>: <code>null</code></li>
-<li><code>UpdatePlayerBlocked(<code>userId</code>: <code>int64</code>, <code>blocked</code>: <code>bool</code>)</code>: <code>null</code></li>
-<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<h3 style='font-size: 1.4em;'>AddReplicationFocus(<code>part</code>: <code>BasePart</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddReplicationFocusPosition(<code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>AddToBlockList(<code>userIds</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>ClearCachedAvatarAppearance()</code></h3>
+<h3 style='font-size: 1.4em;'>ClearCharacterAppearance()</code></h3>
+<h3 style='font-size: 1.4em;'>Clone()</code></h3>
+<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
+<h3 style='font-size: 1.4em;'>DistanceFromCharacter(<code>point</code>: <code>Vector3</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
+<h3 style='font-size: 1.4em;'>GetBlockListInitialized()</code></h3>
+<h3 style='font-size: 1.4em;'>GetCameraState()</code></h3>
+<h3 style='font-size: 1.4em;'>GetCanManageAsync()</code></h3>
+<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
+<h3 style='font-size: 1.4em;'>GetData()</code></h3>
+<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFriendStatus(<code>player</code>: <code>Player</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFriendsInServerAsync()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFriendsInUniverseAsync()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFriendsOnlineAsync(<code>maxFriends</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetFriendsWhoPlayedAsync()</code></h3>
+<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
+<h3 style='font-size: 1.4em;'>GetGameSessionID()</code></h3>
+<h3 style='font-size: 1.4em;'>GetGlobalUserId()</code></h3>
+<h3 style='font-size: 1.4em;'>GetJoinData()</code></h3>
+<h3 style='font-size: 1.4em;'>GetMouse()</code></h3>
+<h3 style='font-size: 1.4em;'>GetNetworkPing()</code></h3>
+<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetSeatRequested()</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
+<h3 style='font-size: 1.4em;'>GetToolRequested()</code></h3>
+<h3 style='font-size: 1.4em;'>GetUnder13()</code></h3>
+<h3 style='font-size: 1.4em;'>HasAppearanceLoaded()</code></h3>
+<h3 style='font-size: 1.4em;'>HasBlockedPlayer(<code>fromPlayer</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsFriendsWithAsync(<code>userId</code>: <code>User</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsInGroupAsync(<code>groupId</code>: <code>int64</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>IsVerified(<code>level</code>: <code>VerifiedLevel</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Kick(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>LoadCharacterAsync()</code></h3>
+<h3 style='font-size: 1.4em;'>LoadCharacterBlocking()</code></h3>
+<h3 style='font-size: 1.4em;'>LoadCharacterWithAvatarRules(<code>avatarRules</code>: <code>AvatarRules</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>LoadCharacterWithHumanoidDescriptionAsync(<code>humanoidDescription</code>: <code>HumanoidDescription</code>, <code>assetTypeVerification</code>: <code>AssetTypeVerification</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Move(<code>walkDirection</code>: <code>Vector3</code>, <code>relativeToCamera</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>NotifyAgeCheckPassed()</code></h3>
+<h3 style='font-size: 1.4em;'>OverrideStreamingRadii(<code>minRadius</code>: <code>int</code>, <code>targetRadius</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>PinStreamingForInstance(<code>instance</code>: <code>Instance</code>, <code>depth</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>PinStreamingForInstanceByUniqueId(<code>uniqueIdString</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>depth</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>PromptAgeCheck()</code></h3>
+<h3 style='font-size: 1.4em;'>PromptSecurityChallengeAsync()</code></h3>
+<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveCharacter()</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveReplicationFocus(<code>part</code>: <code>BasePart</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveReplicationFocusPosition(<code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RequestFriendship(<code>player</code>: <code>Player</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RequestSeat(<code>instance</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RequestStreamAroundAsync(<code>position</code>: <code>Vector3</code>, <code>timeOut</code>: <code>double</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>RequestTool(<code>instance</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>RevokeFriendship(<code>player</code>: <code>Player</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAccountAge(<code>accountAge</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetBlockListInitialized()</code></h3>
+<h3 style='font-size: 1.4em;'>SetCharacterAppearanceJson(<code>jsonBlob</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetChatTranslationSettingsLocaleId(<code>locale</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetExperienceSettingsLocaleId(<code>locale</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetHasRobloxSubscription(<code>hasRobloxSubscription</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetMembershipType(<code>membershipType</code>: <code>MembershipType</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetModerationAccessKey(<code>moderationAccessKey</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SetSuperSafeChat(<code>value</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>UnpinStreamingForInstance(<code>instance</code>: <code>Instance</code>, <code>depth</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>UpdatePlayerBlocked(<code>userId</code>: <code>int64</code>, <code>blocked</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
 <h3>Events (22)</h3>
-<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>BlockListChanged()</code>: <code>Signal</code></li>
-<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>CharacterAdded(<code>character</code>: <code>Model</code>)</code>: <code>Signal</code></li>
-<li><code>CharacterAppearanceLoaded(<code>character</code>: <code>Model</code>)</code>: <code>Signal</code></li>
-<li><code>CharacterRemoving(<code>character</code>: <code>Model</code>)</code>: <code>Signal</code></li>
-<li><code>Chatted(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recipient</code>: <code>Player</code>)</code>: <code>Signal</code></li>
-<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>CloudEditSelectionChanged(<code>newSelection</code>: <code>Array</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>Destroying()</code>: <code>Signal</code></li>
-<li><code>FriendStatusChanged(<code>player</code>: <code>Player</code>, <code>friendStatus</code>: <code>FriendStatus</code>)</code>: <code>Signal</code></li>
-<li><code>Idled(<code>time</code>: <code>double</code>)</code>: <code>Signal</code></li>
-<li><code>InstancePinned(<code>uniqueIdString</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>depth</code>: <code>int</code>)</code>: <code>Signal</code></li>
-<li><code>InstanceUnpinned(<code>uniqueIdString</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>depth</code>: <code>int</code>)</code>: <code>Signal</code></li>
-<li><code>OnTeleport(<code>teleportState</code>: <code>TeleportState</code>, <code>placeId</code>: <code>int64</code>, <code>spawnName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
-<li><code>SimulationRadiusChanged(<code>radius</code>: <code>float</code>)</code>: <code>Signal</code></li>
-<li><code>StreamingPinComplete(<code>instance</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
-<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>BlockListChanged()</code></h3>
+<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>CharacterAdded(<code>character</code>: <code>Model</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>CharacterAppearanceLoaded(<code>character</code>: <code>Model</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>CharacterRemoving(<code>character</code>: <code>Model</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Chatted(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recipient</code>: <code>Player</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>CloudEditSelectionChanged(<code>newSelection</code>: <code>Array</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
+<h3 style='font-size: 1.4em;'>FriendStatusChanged(<code>player</code>: <code>Player</code>, <code>friendStatus</code>: <code>FriendStatus</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>Idled(<code>time</code>: <code>double</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>InstancePinned(<code>uniqueIdString</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>depth</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>InstanceUnpinned(<code>uniqueIdString</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>depth</code>: <code>int</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>OnTeleport(<code>teleportState</code>: <code>TeleportState</code>, <code>placeId</code>: <code>int64</code>, <code>spawnName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<h3 style='font-size: 1.4em;'>SimulationRadiusChanged(<code>radius</code>: <code>float</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>StreamingPinComplete(<code>instance</code>: <code>Instance</code>)</code></h3>
+<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
 </body>
 </html>
