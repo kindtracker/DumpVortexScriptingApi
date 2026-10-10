@@ -5,110 +5,249 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MarketplaceService - Roblox API</title>
 <style>
+@layer pages, primitives;
+
 :root {
-	--bg: #1e1e2e;
-	--fg: #e5e5ea;
-	--muted: #656d76;
-	--border: #d1d9e0;
-	--surface: #313244;
-	--link: rgb(0, 198, 255);
+  --palette-white: #ffffff;
+  --palette-black: #000000;
+  --palette-purple: #a855f7;
+  --palette-purple-hover: #9333ea;
+  --palette-purple-soft: #a78bfa;
+  --palette-purple-focus: #c084fc;
+  --palette-purple-pale: #c4b5fd;
+
+  --palette-canvas: #171020;
+  --palette-shell: #120b1b;
+  --palette-content: #08050e;
+  --palette-surface: #0b0b12;
+  --palette-control: #26263a;
+  --palette-border: #24242f;
+  --palette-border-strong: #33334a;
+  --palette-muted: #9a9aab;
+  --palette-text: #e5e5ea;
+  --palette-text-soft: #d0d0da;
+  --palette-text-dim: #b4b4c4;
+  --palette-surface-raised: #15151f;
+  --palette-surface-hover: #1e1e29;
+  --palette-border-soft: #2c2c3a;
+  --palette-border-hover: #3d3d52;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-heading-sm: 1.375rem;
+  --text-2xl: 1.5rem;
+  --text-4xl: 2rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --color-canvas: var(--palette-canvas);
+  --color-shell: var(--palette-shell);
+  --color-content: var(--palette-content);
+  --color-surface: var(--palette-surface-raised);
+  --color-control: var(--palette-control);
+  --color-text: var(--palette-white);
+  --color-text-subtle: var(--palette-text);
+  --color-muted: var(--palette-muted);
+  --color-border: var(--palette-border);
+  --color-border-strong: var(--palette-border-strong);
+  --color-primary: var(--palette-purple);
+  --color-primary-hover: var(--palette-purple-hover);
+  --color-link: var(--palette-purple-soft);
+
+  --th-color: #191225;
+  --td-color: #1e182d;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 32px 24px 64px;
-	line-height: 1.65;
-	background: var(--bg);
-	color: var(--fg);
+  font-family: var(--font-body);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-32) 24px 64px;
+  line-height: 1.65;
+  background: var(--color-canvas);
+  color: var(--color-text-subtle);
 }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 2rem; overflow-wrap: anywhere; }
-h2 { margin-top: 32px; }
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--palette-purple-focus);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin-top: var(--space-32);
+  color: var(--color-text);
+}
+
+h3 {
+  color: var(--color-text);
+}
+
 code {
-	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-	font-size: 0.92em;
-	overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  color: var(--palette-purple-pale);
+  background: var(--palette-violet-surface, #1f1729);
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
 }
-li { padding: 4px 0; overflow-wrap: anywhere; }
-p { overflow-wrap: anywhere; }
+
+li {
+  padding: var(--space-4) 0;
+  overflow-wrap: anywhere;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
 
 .set {
   margin: 28px 0;
-  border-bottom: 1px solid #3b3b4f;
-  padding-bottom: 24px;
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
 .set > header h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #3b3b4f;
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-semibold);
+  margin: 0 0 var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border-strong);
+  overflow-wrap: anywhere;
 }
 
 .index-card {
   width: 100%;
   border-collapse: collapse;
-  margin: 12px 0 20px;
-  font-size: 0.95rem;
+  margin: var(--space-12) 0 var(--space-24);
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .index-card th,
 .index-card td {
   padding: 10px 14px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .index-card th {
-  color: #a5a5b5;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--palette-text);
+  background: var(--th-color);
 }
 
 .index-card td {
-  background: #252538;
+  background: var(--td-color);
+  color: var(--color-text-subtle);
+}
+
+.index-card tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .docs {
-  margin: 16px 0;
+  margin: var(--space-16) 0;
 }
 
 .docs p {
-  margin: 12px 0;
+  margin: var(--space-12) 0;
 }
 
 .metadata-pairs {
   width: 100%;
   border-collapse: collapse;
   margin-top: 18px;
+  font-size: var(--text-sm);
 }
 
 .metadata-pairs th,
 .metadata-pairs td {
   padding: 7px 12px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .metadata-pairs th {
   width: 180px;
-  color: #a5a5b5;
-  font-weight: 500;
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
+}
+
+.metadata-pairs td {
+  color: var(--color-text-subtle);
 }
 
 .muted {
+  color: var(--color-muted);
   font-size: 0.85em;
 }
 
 th {
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: var(--fg) !important;
-  font-weight: 700 !important;
-  background-color: var(--surface) !important;
+  color: var(--palette-text);
+  font-weight: var(--weight-semibold);
+}
+
+::selection {
+  color: var(--palette-white);
+  background: var(--palette-purple);
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: var(--space-16) var(--space-12) 48px;
+  }
+
+  h1 {
+      font-size: var(--text-2xl);
+  }
+
+  .index-card th,
+  .index-card td {
+      padding: var(--space-8);
+  }
 }
 
 </style>
@@ -128,7 +267,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Capabilities" class="set">
@@ -138,7 +277,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>SecurityCapabilities</code></td>
+<td colspan="1">SecurityCapabilities</td>
 </tr></tbody></table>
 </section>
 <section id="member-ClassName" class="set">
@@ -148,7 +287,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+<td colspan="1"><a href="https://luau.org/library/#string-library">string</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-IsInSandbox" class="set">
@@ -158,7 +297,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Name" class="set">
@@ -168,7 +307,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+<td colspan="1"><a href="https://luau.org/library/#string-library">string</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Parent" class="set">
@@ -178,7 +317,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Instance</code></td>
+<td colspan="1">Instance</td>
 </tr></tbody></table>
 </section>
 <section id="member-PredictionMode" class="set">
@@ -188,7 +327,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PredictionMode</code></td>
+<td colspan="1">PredictionMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Sandboxed" class="set">
@@ -198,7 +337,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-UniqueId" class="set">
@@ -208,160 +347,3346 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>UniqueId</code></td>
+<td colspan="1">UniqueId</td>
 </tr></tbody></table>
 </section>
 <h3>Methods (101)</h3>
-<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>BindReceiptHandler(<code>transactionType</code>: <code>ReceiptType</code>, <code>handler</code>: <a href="https://www.lua.org/pil/2.6.html"><code>Function</code></a>, <code>filter</code>: <code>Array?</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>CanUsersTransferRobuxAsync(<code>sender</code>: <code>Player</code>, <code>receiverUser</code>: <code>User</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
-<h3 style='font-size: 1.4em;'>ClearProductInfoCaches()</code></h3>
-<h3 style='font-size: 1.4em;'>Clone()</code></h3>
-<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAvailableSubscriptionProductsAsync(<code>productType</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
-<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
-<h3 style='font-size: 1.4em;'>GetDeveloperProductsAsync()</code></h3>
-<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
-<h3 style='font-size: 1.4em;'>GetProductInfoAsync(<code>assetId</code>: <code>int64</code>, <code>infoType</code>: <code>InfoType</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetRobloxSubscriptionDetailsAsync(<code>user</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetRobuxBalance()</code></h3>
-<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetSubscriptionProductInfoAsync(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetSubscriptionPurchaseInfoAsync(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
-<h3 style='font-size: 1.4em;'>GetUserSubscriptionDetailsAsync(<code>user</code>: <code>Player</code>, <code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetUserSubscriptionDetailsInternalAsync(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetUserSubscriptionPaymentHistoryAsync(<code>user</code>: <code>Player</code>, <code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetUserSubscriptionStatusAsync(<code>user</code>: <code>Player</code>, <code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetUsersPriceLevelsAsync(<code>userIds</code>: <code>Array</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsPurchaseSimulated()</code></h3>
-<h3 style='font-size: 1.4em;'>OpenShop(<code>player</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformBulkPurchase(<code>orderRequest</code>: <code>Dictionary</code>, <code>options</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformCancelSubscription(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformPurchase(<code>infoType</code>: <code>InfoType</code>, <code>productId</code>: <code>int64</code>, <code>expectedPrice</code>: <code>int</code>, <code>requestId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>isRobloxPurchase</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>collectibleItemId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleProductId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>idempotencyKey</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>purchaseAuthToken</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timedOptionsDays</code>: <code>int64</code>, <code>purchasePayload</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>purchaseOptions</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformPurchaseV2(<code>infoType</code>: <code>InfoType</code>, <code>productId</code>: <code>int64</code>, <code>expectedPrice</code>: <code>int</code>, <code>requestId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>isRobloxPurchase</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>collectiblesProductDetails</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformSubscriptionPurchase(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformSubscriptionPurchaseV2(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>paymentProvider</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformSubscriptionPurchaseV3Async(<code>productType</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>paymentProvider</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>paymentSessionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>referrerId</code>: <code>int64?</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PerformSubscriptionPurchaseWithRobuxAsync(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>priceInRobux</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PlayerCanMakePurchases(<code>player</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PlayerOwnsAssetAsync(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PlayerOwnsBundleAsync(<code>player</code>: <code>Player</code>, <code>bundleId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PrepareCollectiblesPurchase(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>collectibleItemId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleItemInstanceId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleProductId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>expectedPrice</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBulkPurchase(<code>player</code>: <code>Player</code>, <code>lineItems</code>: <code>Array</code>, <code>options</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBundlePurchase(<code>player</code>: <code>Instance</code>, <code>bundleId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptCancelSubscription(<code>user</code>: <code>Player</code>, <code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptCollectiblesPurchase(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>collectibleItemId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleItemInstanceId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleProductId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>expectedPrice</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptGamePassPurchase(<code>player</code>: <code>Instance</code>, <code>gamePassId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptNativePurchase(<code>player</code>: <code>Instance</code>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptNativePurchaseWithLocalPlayer(<code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptNativePurchaseWithLocalPlayerWithPaymentSessionId(<code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>paymentSessionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptNativePurchaseWithPaymentSessionId(<code>player</code>: <code>Instance</code>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>paymentSessionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptProductPurchase(<code>player</code>: <code>Instance</code>, <code>productId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>currencyType</code>: <code>CurrencyType</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptPurchase(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>currencyType</code>: <code>CurrencyType</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobloxPurchase(<code>assetId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobloxSubscriptionPurchase(<code>user</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobuxTransferAsync(<code>sender</code>: <code>Player</code>, <code>receiverUserId</code>: <code>int64</code>, <code>amount</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptSubscriptionPurchase(<code>user</code>: <code>Player</code>, <code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptThirdPartyPurchase(<code>player</code>: <code>Instance</code>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptVIPServerPurchase(<code>player</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>RankProductsAsync(<code>productIdentifiers</code>: <code>Array</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>RecommendTopProductsAsync(<code>infoTypes</code>: <code>Array</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>RefreshBulkPurchase(<code>batchPurchaseAuthToken</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>options</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ReportAssetSale(<code>assetId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>robuxAmount</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ReportRobuxUpsellStarted()</code></h3>
-<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalAssetTypePurchased(<code>player</code>: <code>Instance</code>, <code>assetType</code>: <code>AssetType</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalCheckPlayerHasRobloxSubscription()</code></h3>
-<h3 style='font-size: 1.4em;'>SignalClientPurchaseSuccess(<code>ticket</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>playerId</code>: <code>int64</code>, <code>productId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalMockPurchasePremium()</code></h3>
-<h3 style='font-size: 1.4em;'>SignalMockPurchaseRobloxSubscription()</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptBulkPurchaseFinished(<code>status</code>: <code>MarketplaceBulkPurchasePromptStatus</code>, <code>results</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptBundlePurchaseFinished(<code>player</code>: <code>Instance</code>, <code>bundleId</code>: <code>int64</code>, <code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptGamePassPurchaseFinished(<code>player</code>: <code>Instance</code>, <code>gamePassId</code>: <code>int64</code>, <code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptPremiumPurchaseFinished(<code>didTryPurchasing</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptProductPurchaseFinished(<code>userId</code>: <code>int64</code>, <code>productId</code>: <code>int64</code>, <code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptPurchaseFinished(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptRobloxSubscriptionPurchaseFinished(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>didTryPurchasing</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalPromptSubscriptionPurchaseFinished(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>didTryPurchasing</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalRobuxTransferCompleted(<code>userId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalServerLuaDialogClosed(<code>value</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalUserSubscriptionStatusChanged(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>UserOwnsGamePassAsync(<code>userId</code>: <code>User</code>, <code>gamePassId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
+<section id="member-AddTag" class="set">
+<header><h3>AddTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-BindReceiptHandler" class="set">
+<header><h3>BindReceiptHandler</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>transactionType ReceiptType</td>
+</tr>
+<tr>
+<td>handler <a href="https://www.lua.org/pil/2.6.html">Function</a></td>
+</tr>
+<tr>
+<td>filter Array?</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptConnection</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CanUsersTransferRobuxAsync" class="set">
+<header><h3>CanUsersTransferRobuxAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>sender Player</td>
+</tr>
+<tr>
+<td>receiverUser User</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RobuxTransferEligibility</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClearAllChildren" class="set">
+<header><h3>ClearAllChildren</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClearProductInfoCaches" class="set">
+<header><h3>ClearProductInfoCaches</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Clone" class="set">
+<header><h3>Clone</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Destroy" class="set">
+<header><h3>Destroy</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestor" class="set">
+<header><h3>FindFirstAncestor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestorOfClass" class="set">
+<header><h3>FindFirstAncestorOfClass</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestorWhichIsA" class="set">
+<header><h3>FindFirstAncestorWhichIsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChild" class="set">
+<header><h3>FindFirstChild</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>recursive <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChildOfClass" class="set">
+<header><h3>FindFirstChildOfClass</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChildWhichIsA" class="set">
+<header><h3>FindFirstChildWhichIsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>recursive <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstDescendant" class="set">
+<header><h3>FindFirstDescendant</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetActor" class="set">
+<header><h3>GetActor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Actor</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttribute" class="set">
+<header><h3>GetAttribute</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Variant</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttributeChangedSignal" class="set">
+<header><h3>GetAttributeChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttributes" class="set">
+<header><h3>GetAttributes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAvailableSubscriptionProductsAsync" class="set">
+<header><h3>GetAvailableSubscriptionProductsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productType <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetChildren" class="set">
+<header><h3>GetChildren</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDebugId" class="set">
+<header><h3>GetDebugId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>scopeLength int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDescendants" class="set">
+<header><h3>GetDescendants</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDeveloperProductsAsync" class="set">
+<header><h3>GetDeveloperProductsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetFullName" class="set">
+<header><h3>GetFullName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetProductInfoAsync" class="set">
+<header><h3>GetProductInfoAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>infoType InfoType</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPropertyChangedSignal" class="set">
+<header><h3>GetPropertyChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetRobloxSubscriptionDetailsAsync" class="set">
+<header><h3>GetRobloxSubscriptionDetailsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetRobuxBalance" class="set">
+<header><h3>GetRobuxBalance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>int</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetStyled" class="set">
+<header><h3>GetStyled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>selector string?</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Variant</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetStyledPropertyChangedSignal" class="set">
+<header><h3>GetStyledPropertyChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetSubscriptionProductInfoAsync" class="set">
+<header><h3>GetSubscriptionProductInfoAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetSubscriptionPurchaseInfoAsync" class="set">
+<header><h3>GetSubscriptionPurchaseInfoAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetTags" class="set">
+<header><h3>GetTags</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetUserSubscriptionDetailsAsync" class="set">
+<header><h3>GetUserSubscriptionDetailsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetUserSubscriptionDetailsInternalAsync" class="set">
+<header><h3>GetUserSubscriptionDetailsInternalAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetUserSubscriptionPaymentHistoryAsync" class="set">
+<header><h3>GetUserSubscriptionPaymentHistoryAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetUserSubscriptionStatusAsync" class="set">
+<header><h3>GetUserSubscriptionStatusAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetUsersPriceLevelsAsync" class="set">
+<header><h3>GetUsersPriceLevelsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>userIds Array</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-HasTag" class="set">
+<header><h3>HasTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsA" class="set">
+<header><h3>IsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsAncestorOf" class="set">
+<header><h3>IsAncestorOf</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsDescendantOf" class="set">
+<header><h3>IsDescendantOf</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>ancestor Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsPropertyModified" class="set">
+<header><h3>IsPropertyModified</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsPurchaseSimulated" class="set">
+<header><h3>IsPurchaseSimulated</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-OpenShop" class="set">
+<header><h3>OpenShop</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformBulkPurchase" class="set">
+<header><h3>PerformBulkPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>orderRequest Dictionary</td>
+</tr>
+<tr>
+<td>options Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformCancelSubscription" class="set">
+<header><h3>PerformCancelSubscription</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformPurchase" class="set">
+<header><h3>PerformPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (12)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>infoType InfoType</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+<tr>
+<td>requestId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>isRobloxPurchase <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>collectibleItemId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleProductId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>idempotencyKey <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>purchaseAuthToken <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>timedOptionsDays int64</td>
+</tr>
+<tr>
+<td>purchasePayload <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>purchaseOptions Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformPurchaseV2" class="set">
+<header><h3>PerformPurchaseV2</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (6)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>infoType InfoType</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+<tr>
+<td>requestId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>isRobloxPurchase <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>collectiblesProductDetails Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformSubscriptionPurchase" class="set">
+<header><h3>PerformSubscriptionPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformSubscriptionPurchaseV2" class="set">
+<header><h3>PerformSubscriptionPurchaseV2</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>paymentProvider <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformSubscriptionPurchaseV3Async" class="set">
+<header><h3>PerformSubscriptionPurchaseV3Async</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (5)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productType <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>paymentProvider <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>paymentSessionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>referrerId int64?</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PerformSubscriptionPurchaseWithRobuxAsync" class="set">
+<header><h3>PerformSubscriptionPurchaseWithRobuxAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>priceInRobux int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PlayerCanMakePurchases" class="set">
+<header><h3>PlayerCanMakePurchases</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PlayerOwnsAssetAsync" class="set">
+<header><h3>PlayerOwnsAssetAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PlayerOwnsBundleAsync" class="set">
+<header><h3>PlayerOwnsBundleAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Player</td>
+</tr>
+<tr>
+<td>bundleId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PrepareCollectiblesPurchase" class="set">
+<header><h3>PrepareCollectiblesPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (6)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>collectibleItemId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleItemInstanceId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleProductId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBulkPurchase" class="set">
+<header><h3>PromptBulkPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Player</td>
+</tr>
+<tr>
+<td>lineItems Array</td>
+</tr>
+<tr>
+<td>options Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBundlePurchase" class="set">
+<header><h3>PromptBundlePurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>bundleId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptCancelSubscription" class="set">
+<header><h3>PromptCancelSubscription</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptCollectiblesPurchase" class="set">
+<header><h3>PromptCollectiblesPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (6)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>collectibleItemId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleItemInstanceId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleProductId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptGamePassPurchase" class="set">
+<header><h3>PromptGamePassPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>gamePassId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptNativePurchase" class="set">
+<header><h3>PromptNativePurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptNativePurchaseWithLocalPlayer" class="set">
+<header><h3>PromptNativePurchaseWithLocalPlayer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptNativePurchaseWithLocalPlayerWithPaymentSessionId" class="set">
+<header><h3>PromptNativePurchaseWithLocalPlayerWithPaymentSessionId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>paymentSessionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptNativePurchaseWithPaymentSessionId" class="set">
+<header><h3>PromptNativePurchaseWithPaymentSessionId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>paymentSessionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptProductPurchase" class="set">
+<header><h3>PromptProductPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>currencyType CurrencyType</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptPurchase" class="set">
+<header><h3>PromptPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>currencyType CurrencyType</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobloxPurchase" class="set">
+<header><h3>PromptRobloxPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobloxSubscriptionPurchase" class="set">
+<header><h3>PromptRobloxSubscriptionPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobuxTransferAsync" class="set">
+<header><h3>PromptRobuxTransferAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>sender Player</td>
+</tr>
+<tr>
+<td>receiverUserId int64</td>
+</tr>
+<tr>
+<td>amount int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptSubscriptionPurchase" class="set">
+<header><h3>PromptSubscriptionPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptThirdPartyPurchase" class="set">
+<header><h3>PromptThirdPartyPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptVIPServerPurchase" class="set">
+<header><h3>PromptVIPServerPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-QueryDescendants" class="set">
+<header><h3>QueryDescendants</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>selector <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RankProductsAsync" class="set">
+<header><h3>RankProductsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productIdentifiers Array</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RecommendTopProductsAsync" class="set">
+<header><h3>RecommendTopProductsAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>infoTypes Array</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RefreshBulkPurchase" class="set">
+<header><h3>RefreshBulkPurchase</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>batchPurchaseAuthToken <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>options Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RemoveTag" class="set">
+<header><h3>RemoveTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ReportAssetSale" class="set">
+<header><h3>ReportAssetSale</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>assetId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>robuxAmount int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ReportRobuxUpsellStarted" class="set">
+<header><h3>ReportRobuxUpsellStarted</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ResetPropertyToDefault" class="set">
+<header><h3>ResetPropertyToDefault</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetAttribute" class="set">
+<header><h3>SetAttribute</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>value Variant</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalAssetTypePurchased" class="set">
+<header><h3>SignalAssetTypePurchased</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetType AssetType</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalCheckPlayerHasRobloxSubscription" class="set">
+<header><h3>SignalCheckPlayerHasRobloxSubscription</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalClientPurchaseSuccess" class="set">
+<header><h3>SignalClientPurchaseSuccess</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>ticket <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>playerId int64</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalMockPurchasePremium" class="set">
+<header><h3>SignalMockPurchasePremium</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalMockPurchaseRobloxSubscription" class="set">
+<header><h3>SignalMockPurchaseRobloxSubscription</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptBulkPurchaseFinished" class="set">
+<header><h3>SignalPromptBulkPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>status MarketplaceBulkPurchasePromptStatus</td>
+</tr>
+<tr>
+<td>results Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptBundlePurchaseFinished" class="set">
+<header><h3>SignalPromptBundlePurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>bundleId int64</td>
+</tr>
+<tr>
+<td>success <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptGamePassPurchaseFinished" class="set">
+<header><h3>SignalPromptGamePassPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>gamePassId int64</td>
+</tr>
+<tr>
+<td>success <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptPremiumPurchaseFinished" class="set">
+<header><h3>SignalPromptPremiumPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>didTryPurchasing <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptProductPurchaseFinished" class="set">
+<header><h3>SignalPromptProductPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>userId int64</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+<tr>
+<td>success <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptPurchaseFinished" class="set">
+<header><h3>SignalPromptPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>success <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptRobloxSubscriptionPurchaseFinished" class="set">
+<header><h3>SignalPromptRobloxSubscriptionPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>didTryPurchasing <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalPromptSubscriptionPurchaseFinished" class="set">
+<header><h3>SignalPromptSubscriptionPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>didTryPurchasing <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalRobuxTransferCompleted" class="set">
+<header><h3>SignalRobuxTransferCompleted</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>userId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalServerLuaDialogClosed" class="set">
+<header><h3>SignalServerLuaDialogClosed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>value <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalUserSubscriptionStatusChanged" class="set">
+<header><h3>SignalUserSubscriptionStatusChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-UserOwnsGamePassAsync" class="set">
+<header><h3>UserOwnsGamePassAsync</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>userId User</td>
+</tr>
+<tr>
+<td>gamePassId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-WaitForChild" class="set">
+<header><h3>WaitForChild</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>childName <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>timeOut double</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
 <h3>Events (49)</h3>
-<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ClientLuaDialogRequested(<code>arguments</code>: <code>Tuple</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ClientPurchaseSuccess(<code>ticket</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>playerId</code>: <code>int64</code>, <code>productId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
-<h3 style='font-size: 1.4em;'>NativePurchaseFinished(<code>player</code>: <code>Instance</code>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>NativePurchaseFinishedV2(<code>player</code>: <code>Instance</code>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>checkoutSessionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>NativePurchaseFinishedWithLocalPlayer(<code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>NativePurchaseFinishedWithLocalPlayerV2(<code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>checkoutSessionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>OpenShopRequested(<code>player</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PrepareCollectiblesPurchaseRequested(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>collectibleItemId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleItemInstanceId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleProductId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>expectedPrice</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBulkPurchaseFinished(<code>player</code>: <code>Instance</code>, <code>status</code>: <code>MarketplaceBulkPurchasePromptStatus</code>, <code>results</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBulkPurchaseRefreshed(<code>player</code>: <code>Instance</code>, <code>status</code>: <code>MarketplaceBulkPurchasePromptStatus</code>, <code>response</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBulkPurchaseRequested(<code>player</code>: <code>Instance</code>, <code>displayData</code>: <code>Array</code>, <code>orderRequest</code>: <code>Dictionary</code>, <code>purchaserRobuxBalance</code>: <code>int64</code>, <code>orderTotalRobux</code>: <code>int64</code>, <code>options</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBulkPurchaseRequestedV2(<code>player</code>: <code>Instance</code>, <code>displayData</code>: <code>Array</code>, <code>orderRequest</code>: <code>Dictionary</code>, <code>purchaserRobuxBalance</code>: <code>int64</code>, <code>orderTotalRobux</code>: <code>int64</code>, <code>options</code>: <code>Dictionary</code>, <code>discountInformation</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBulkPurchaseRequestedV3(<code>player</code>: <code>Instance</code>, <code>status</code>: <code>MarketplaceBulkPurchasePromptStatus</code>, <code>response</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBundlePurchaseFinished(<code>player</code>: <code>Instance</code>, <code>bundleId</code>: <code>int64</code>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptBundlePurchaseRequested(<code>player</code>: <code>Instance</code>, <code>bundleId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptCancelSubscriptionRequested(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptCollectibleBundlePurchaseRequested(<code>player</code>: <code>Instance</code>, <code>bundleId</code>: <code>int64</code>, <code>collectibleItemId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleItemInstanceId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleProductId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>expectedPrice</code>: <code>int</code>, <code>idempotencyKey</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>purchaseAuthToken</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptCollectiblesPurchaseRequested(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>collectibleItemId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleItemInstanceId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collectibleProductId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>expectedPrice</code>: <code>int</code>, <code>idempotencyKey</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>purchaseAuthToken</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptGamePassPurchaseFinished(<code>player</code>: <code>Instance</code>, <code>gamePassId</code>: <code>int64</code>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptGamePassPurchaseRequested(<code>player</code>: <code>Instance</code>, <code>gamePassId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptPremiumPurchaseFinished()</code></h3>
-<h3 style='font-size: 1.4em;'>PromptPremiumPurchaseRequested(<code>player</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptProductPurchaseFinished(<code>userId</code>: <code>int64</code>, <code>productId</code>: <code>int64</code>, <code>isPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptProductPurchaseRequested(<code>player</code>: <code>Instance</code>, <code>productId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>currencyType</code>: <code>CurrencyType</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptPurchaseFinished(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>isPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptPurchaseRequested(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>currencyType</code>: <code>CurrencyType</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptPurchaseRequestedV2(<code>player</code>: <code>Instance</code>, <code>assetId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>, <code>currencyType</code>: <code>CurrencyType</code>, <code>idempotencyKey</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>purchaseAuthToken</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobloxPurchaseRequested(<code>assetId</code>: <code>int64</code>, <code>equipIfPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobloxSubscriptionPurchaseFinished(<code>user</code>: <code>Player</code>, <code>didTryPurchasing</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobloxSubscriptionPurchaseRequested()</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobuxTransferRequested(<code>player</code>: <code>Instance</code>, <code>jsonResponse</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptRobuxTransferSubscriptionUpsellRequested()</code></h3>
-<h3 style='font-size: 1.4em;'>PromptSubscriptionPurchaseFinished(<code>user</code>: <code>Player</code>, <code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>didTryPurchasing</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptSubscriptionPurchaseRequested(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>PromptVIPServerPurchaseRequested()</code></h3>
-<h3 style='font-size: 1.4em;'>RefreshBulkPurchaseRequested(<code>playerId</code>: <code>int64</code>, <code>batchPurchaseAuthToken</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>options</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>RobuxTransferCompleted(<code>userId</code>: <code>int64</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ServerPurchaseVerification(<code>serverResponseTable</code>: <code>Dictionary</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
-<h3 style='font-size: 1.4em;'>ThirdPartyPurchaseFinished(<code>player</code>: <code>Instance</code>, <code>productId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>receipt</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>wasPurchased</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>UserSubscriptionStatusChanged(<code>subscriptionId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
+<section id="member-AncestryChanged" class="set">
+<header><h3>AncestryChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+<tr>
+<td>parent Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-AttributeChanged" class="set">
+<header><h3>AttributeChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Changed" class="set">
+<header><h3>Changed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChildAdded" class="set">
+<header><h3>ChildAdded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChildRemoved" class="set">
+<header><h3>ChildRemoved</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClientLuaDialogRequested" class="set">
+<header><h3>ClientLuaDialogRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>arguments Tuple</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClientPurchaseSuccess" class="set">
+<header><h3>ClientPurchaseSuccess</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>ticket <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>playerId int64</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-DescendantAdded" class="set">
+<header><h3>DescendantAdded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-DescendantRemoving" class="set">
+<header><h3>DescendantRemoving</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Destroying" class="set">
+<header><h3>Destroying</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-NativePurchaseFinished" class="set">
+<header><h3>NativePurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-NativePurchaseFinishedV2" class="set">
+<header><h3>NativePurchaseFinishedV2</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>checkoutSessionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-NativePurchaseFinishedWithLocalPlayer" class="set">
+<header><h3>NativePurchaseFinishedWithLocalPlayer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-NativePurchaseFinishedWithLocalPlayerV2" class="set">
+<header><h3>NativePurchaseFinishedWithLocalPlayerV2</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>checkoutSessionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-OpenShopRequested" class="set">
+<header><h3>OpenShopRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PrepareCollectiblesPurchaseRequested" class="set">
+<header><h3>PrepareCollectiblesPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (6)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>collectibleItemId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleItemInstanceId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleProductId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBulkPurchaseFinished" class="set">
+<header><h3>PromptBulkPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>status MarketplaceBulkPurchasePromptStatus</td>
+</tr>
+<tr>
+<td>results Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBulkPurchaseRefreshed" class="set">
+<header><h3>PromptBulkPurchaseRefreshed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>status MarketplaceBulkPurchasePromptStatus</td>
+</tr>
+<tr>
+<td>response Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBulkPurchaseRequested" class="set">
+<header><h3>PromptBulkPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (6)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>displayData Array</td>
+</tr>
+<tr>
+<td>orderRequest Dictionary</td>
+</tr>
+<tr>
+<td>purchaserRobuxBalance int64</td>
+</tr>
+<tr>
+<td>orderTotalRobux int64</td>
+</tr>
+<tr>
+<td>options Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBulkPurchaseRequestedV2" class="set">
+<header><h3>PromptBulkPurchaseRequestedV2</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (7)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>displayData Array</td>
+</tr>
+<tr>
+<td>orderRequest Dictionary</td>
+</tr>
+<tr>
+<td>purchaserRobuxBalance int64</td>
+</tr>
+<tr>
+<td>orderTotalRobux int64</td>
+</tr>
+<tr>
+<td>options Dictionary</td>
+</tr>
+<tr>
+<td>discountInformation Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBulkPurchaseRequestedV3" class="set">
+<header><h3>PromptBulkPurchaseRequestedV3</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>status MarketplaceBulkPurchasePromptStatus</td>
+</tr>
+<tr>
+<td>response Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBundlePurchaseFinished" class="set">
+<header><h3>PromptBundlePurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>bundleId int64</td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptBundlePurchaseRequested" class="set">
+<header><h3>PromptBundlePurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>bundleId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptCancelSubscriptionRequested" class="set">
+<header><h3>PromptCancelSubscriptionRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptCollectibleBundlePurchaseRequested" class="set">
+<header><h3>PromptCollectibleBundlePurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (8)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>bundleId int64</td>
+</tr>
+<tr>
+<td>collectibleItemId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleItemInstanceId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleProductId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+<tr>
+<td>idempotencyKey <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>purchaseAuthToken <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptCollectiblesPurchaseRequested" class="set">
+<header><h3>PromptCollectiblesPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (8)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>collectibleItemId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleItemInstanceId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collectibleProductId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>expectedPrice int</td>
+</tr>
+<tr>
+<td>idempotencyKey <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>purchaseAuthToken <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptGamePassPurchaseFinished" class="set">
+<header><h3>PromptGamePassPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>gamePassId int64</td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptGamePassPurchaseRequested" class="set">
+<header><h3>PromptGamePassPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>gamePassId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptPremiumPurchaseFinished" class="set">
+<header><h3>PromptPremiumPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptPremiumPurchaseRequested" class="set">
+<header><h3>PromptPremiumPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptProductPurchaseFinished" class="set">
+<header><h3>PromptProductPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>userId int64</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+<tr>
+<td>isPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptProductPurchaseRequested" class="set">
+<header><h3>PromptProductPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>currencyType CurrencyType</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptPurchaseFinished" class="set">
+<header><h3>PromptPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>isPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptPurchaseRequested" class="set">
+<header><h3>PromptPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>currencyType CurrencyType</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptPurchaseRequestedV2" class="set">
+<header><h3>PromptPurchaseRequestedV2</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (6)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+<tr>
+<td>currencyType CurrencyType</td>
+</tr>
+<tr>
+<td>idempotencyKey <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>purchaseAuthToken <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobloxPurchaseRequested" class="set">
+<header><h3>PromptRobloxPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>assetId int64</td>
+</tr>
+<tr>
+<td>equipIfPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobloxSubscriptionPurchaseFinished" class="set">
+<header><h3>PromptRobloxSubscriptionPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>didTryPurchasing <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobloxSubscriptionPurchaseRequested" class="set">
+<header><h3>PromptRobloxSubscriptionPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobuxTransferRequested" class="set">
+<header><h3>PromptRobuxTransferRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>jsonResponse <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptRobuxTransferSubscriptionUpsellRequested" class="set">
+<header><h3>PromptRobuxTransferSubscriptionUpsellRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptSubscriptionPurchaseFinished" class="set">
+<header><h3>PromptSubscriptionPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>user Player</td>
+</tr>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>didTryPurchasing <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptSubscriptionPurchaseRequested" class="set">
+<header><h3>PromptSubscriptionPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PromptVIPServerPurchaseRequested" class="set">
+<header><h3>PromptVIPServerPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RefreshBulkPurchaseRequested" class="set">
+<header><h3>RefreshBulkPurchaseRequested</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>playerId int64</td>
+</tr>
+<tr>
+<td>batchPurchaseAuthToken <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>options Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RobuxTransferCompleted" class="set">
+<header><h3>RobuxTransferCompleted</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>userId int64</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ServerPurchaseVerification" class="set">
+<header><h3>ServerPurchaseVerification</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>serverResponseTable Dictionary</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-StyledPropertiesChanged" class="set">
+<header><h3>StyledPropertiesChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ThirdPartyPurchaseFinished" class="set">
+<header><h3>ThirdPartyPurchaseFinished</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Instance</td>
+</tr>
+<tr>
+<td>productId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>receipt <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>wasPurchased <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-UserSubscriptionStatusChanged" class="set">
+<header><h3>UserSubscriptionStatusChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>subscriptionId <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
 </body>
 </html>

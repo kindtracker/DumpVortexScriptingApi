@@ -5,110 +5,249 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GenericChallengeService - Roblox API</title>
 <style>
+@layer pages, primitives;
+
 :root {
-	--bg: #1e1e2e;
-	--fg: #e5e5ea;
-	--muted: #656d76;
-	--border: #d1d9e0;
-	--surface: #313244;
-	--link: rgb(0, 198, 255);
+  --palette-white: #ffffff;
+  --palette-black: #000000;
+  --palette-purple: #a855f7;
+  --palette-purple-hover: #9333ea;
+  --palette-purple-soft: #a78bfa;
+  --palette-purple-focus: #c084fc;
+  --palette-purple-pale: #c4b5fd;
+
+  --palette-canvas: #171020;
+  --palette-shell: #120b1b;
+  --palette-content: #08050e;
+  --palette-surface: #0b0b12;
+  --palette-control: #26263a;
+  --palette-border: #24242f;
+  --palette-border-strong: #33334a;
+  --palette-muted: #9a9aab;
+  --palette-text: #e5e5ea;
+  --palette-text-soft: #d0d0da;
+  --palette-text-dim: #b4b4c4;
+  --palette-surface-raised: #15151f;
+  --palette-surface-hover: #1e1e29;
+  --palette-border-soft: #2c2c3a;
+  --palette-border-hover: #3d3d52;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-heading-sm: 1.375rem;
+  --text-2xl: 1.5rem;
+  --text-4xl: 2rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --color-canvas: var(--palette-canvas);
+  --color-shell: var(--palette-shell);
+  --color-content: var(--palette-content);
+  --color-surface: var(--palette-surface-raised);
+  --color-control: var(--palette-control);
+  --color-text: var(--palette-white);
+  --color-text-subtle: var(--palette-text);
+  --color-muted: var(--palette-muted);
+  --color-border: var(--palette-border);
+  --color-border-strong: var(--palette-border-strong);
+  --color-primary: var(--palette-purple);
+  --color-primary-hover: var(--palette-purple-hover);
+  --color-link: var(--palette-purple-soft);
+
+  --th-color: #191225;
+  --td-color: #1e182d;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 32px 24px 64px;
-	line-height: 1.65;
-	background: var(--bg);
-	color: var(--fg);
+  font-family: var(--font-body);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-32) 24px 64px;
+  line-height: 1.65;
+  background: var(--color-canvas);
+  color: var(--color-text-subtle);
 }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 2rem; overflow-wrap: anywhere; }
-h2 { margin-top: 32px; }
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--palette-purple-focus);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin-top: var(--space-32);
+  color: var(--color-text);
+}
+
+h3 {
+  color: var(--color-text);
+}
+
 code {
-	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-	font-size: 0.92em;
-	overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  color: var(--palette-purple-pale);
+  background: var(--palette-violet-surface, #1f1729);
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
 }
-li { padding: 4px 0; overflow-wrap: anywhere; }
-p { overflow-wrap: anywhere; }
+
+li {
+  padding: var(--space-4) 0;
+  overflow-wrap: anywhere;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
 
 .set {
   margin: 28px 0;
-  border-bottom: 1px solid #3b3b4f;
-  padding-bottom: 24px;
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
 .set > header h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #3b3b4f;
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-semibold);
+  margin: 0 0 var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border-strong);
+  overflow-wrap: anywhere;
 }
 
 .index-card {
   width: 100%;
   border-collapse: collapse;
-  margin: 12px 0 20px;
-  font-size: 0.95rem;
+  margin: var(--space-12) 0 var(--space-24);
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .index-card th,
 .index-card td {
   padding: 10px 14px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .index-card th {
-  color: #a5a5b5;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--palette-text);
+  background: var(--th-color);
 }
 
 .index-card td {
-  background: #252538;
+  background: var(--td-color);
+  color: var(--color-text-subtle);
+}
+
+.index-card tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .docs {
-  margin: 16px 0;
+  margin: var(--space-16) 0;
 }
 
 .docs p {
-  margin: 12px 0;
+  margin: var(--space-12) 0;
 }
 
 .metadata-pairs {
   width: 100%;
   border-collapse: collapse;
   margin-top: 18px;
+  font-size: var(--text-sm);
 }
 
 .metadata-pairs th,
 .metadata-pairs td {
   padding: 7px 12px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .metadata-pairs th {
   width: 180px;
-  color: #a5a5b5;
-  font-weight: 500;
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
+}
+
+.metadata-pairs td {
+  color: var(--color-text-subtle);
 }
 
 .muted {
+  color: var(--color-muted);
   font-size: 0.85em;
 }
 
 th {
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: var(--fg) !important;
-  font-weight: 700 !important;
-  background-color: var(--surface) !important;
+  color: var(--palette-text);
+  font-weight: var(--weight-semibold);
+}
+
+::selection {
+  color: var(--palette-white);
+  background: var(--palette-purple);
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: var(--space-16) var(--space-12) 48px;
+  }
+
+  h1 {
+      font-size: var(--text-2xl);
+  }
+
+  .index-card th,
+  .index-card td {
+      padding: var(--space-8);
+  }
 }
 
 </style>
@@ -128,7 +267,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Capabilities" class="set">
@@ -138,7 +277,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>SecurityCapabilities</code></td>
+<td colspan="1">SecurityCapabilities</td>
 </tr></tbody></table>
 </section>
 <section id="member-ClassName" class="set">
@@ -148,7 +287,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+<td colspan="1"><a href="https://luau.org/library/#string-library">string</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-IsInSandbox" class="set">
@@ -158,7 +297,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Name" class="set">
@@ -168,7 +307,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+<td colspan="1"><a href="https://luau.org/library/#string-library">string</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Parent" class="set">
@@ -178,7 +317,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Instance</code></td>
+<td colspan="1">Instance</td>
 </tr></tbody></table>
 </section>
 <section id="member-PredictionMode" class="set">
@@ -188,7 +327,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PredictionMode</code></td>
+<td colspan="1">PredictionMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Sandboxed" class="set">
@@ -198,7 +337,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-UniqueId" class="set">
@@ -208,62 +347,1046 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>UniqueId</code></td>
+<td colspan="1">UniqueId</td>
 </tr></tbody></table>
 </section>
 <h3>Methods (38)</h3>
-<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
-<h3 style='font-size: 1.4em;'>Clone()</code></h3>
-<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
-<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
-<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
-<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
-<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
-<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalChallengeAbandoned(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalChallengeCompleted(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeType</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeMetadata</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalChallengeInvalidated(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalChallengeLoaded(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>SignalChallengeRequired(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeType</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeMetadata</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
+<section id="member-AddTag" class="set">
+<header><h3>AddTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClearAllChildren" class="set">
+<header><h3>ClearAllChildren</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Clone" class="set">
+<header><h3>Clone</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Destroy" class="set">
+<header><h3>Destroy</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestor" class="set">
+<header><h3>FindFirstAncestor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestorOfClass" class="set">
+<header><h3>FindFirstAncestorOfClass</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestorWhichIsA" class="set">
+<header><h3>FindFirstAncestorWhichIsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChild" class="set">
+<header><h3>FindFirstChild</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>recursive <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChildOfClass" class="set">
+<header><h3>FindFirstChildOfClass</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChildWhichIsA" class="set">
+<header><h3>FindFirstChildWhichIsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>recursive <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstDescendant" class="set">
+<header><h3>FindFirstDescendant</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetActor" class="set">
+<header><h3>GetActor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Actor</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttribute" class="set">
+<header><h3>GetAttribute</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Variant</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttributeChangedSignal" class="set">
+<header><h3>GetAttributeChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttributes" class="set">
+<header><h3>GetAttributes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetChildren" class="set">
+<header><h3>GetChildren</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDebugId" class="set">
+<header><h3>GetDebugId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>scopeLength int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDescendants" class="set">
+<header><h3>GetDescendants</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetFullName" class="set">
+<header><h3>GetFullName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPropertyChangedSignal" class="set">
+<header><h3>GetPropertyChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetStyled" class="set">
+<header><h3>GetStyled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>selector string?</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Variant</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetStyledPropertyChangedSignal" class="set">
+<header><h3>GetStyledPropertyChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetTags" class="set">
+<header><h3>GetTags</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-HasTag" class="set">
+<header><h3>HasTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsA" class="set">
+<header><h3>IsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsAncestorOf" class="set">
+<header><h3>IsAncestorOf</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsDescendantOf" class="set">
+<header><h3>IsDescendantOf</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>ancestor Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsPropertyModified" class="set">
+<header><h3>IsPropertyModified</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-QueryDescendants" class="set">
+<header><h3>QueryDescendants</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>selector <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RemoveTag" class="set">
+<header><h3>RemoveTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ResetPropertyToDefault" class="set">
+<header><h3>ResetPropertyToDefault</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetAttribute" class="set">
+<header><h3>SetAttribute</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>value Variant</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalChallengeAbandoned" class="set">
+<header><h3>SignalChallengeAbandoned</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalChallengeCompleted" class="set">
+<header><h3>SignalChallengeCompleted</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeType <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeMetadata <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalChallengeInvalidated" class="set">
+<header><h3>SignalChallengeInvalidated</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalChallengeLoaded" class="set">
+<header><h3>SignalChallengeLoaded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>success <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SignalChallengeRequired" class="set">
+<header><h3>SignalChallengeRequired</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeType <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeMetadata <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-WaitForChild" class="set">
+<header><h3>WaitForChild</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>childName <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>timeOut double</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
 <h3>Events (14)</h3>
-<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChallengeAbandonedEvent(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChallengeCompletedEvent(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeType</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeMetadata</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChallengeInvalidatedEvent(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChallengeLoadedEvent(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>success</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChallengeRequiredEvent(<code>challengeID</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeType</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>challengeMetadata</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
-<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
+<section id="member-AncestryChanged" class="set">
+<header><h3>AncestryChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+<tr>
+<td>parent Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-AttributeChanged" class="set">
+<header><h3>AttributeChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChallengeAbandonedEvent" class="set">
+<header><h3>ChallengeAbandonedEvent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChallengeCompletedEvent" class="set">
+<header><h3>ChallengeCompletedEvent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeType <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeMetadata <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChallengeInvalidatedEvent" class="set">
+<header><h3>ChallengeInvalidatedEvent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChallengeLoadedEvent" class="set">
+<header><h3>ChallengeLoadedEvent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>success <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChallengeRequiredEvent" class="set">
+<header><h3>ChallengeRequiredEvent</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>challengeID <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeType <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>challengeMetadata <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Changed" class="set">
+<header><h3>Changed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChildAdded" class="set">
+<header><h3>ChildAdded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChildRemoved" class="set">
+<header><h3>ChildRemoved</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-DescendantAdded" class="set">
+<header><h3>DescendantAdded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-DescendantRemoving" class="set">
+<header><h3>DescendantRemoving</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Destroying" class="set">
+<header><h3>Destroying</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-StyledPropertiesChanged" class="set">
+<header><h3>StyledPropertiesChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
 </body>
 </html>

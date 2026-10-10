@@ -5,110 +5,249 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Workspace - Roblox API</title>
 <style>
+@layer pages, primitives;
+
 :root {
-	--bg: #1e1e2e;
-	--fg: #e5e5ea;
-	--muted: #656d76;
-	--border: #d1d9e0;
-	--surface: #313244;
-	--link: rgb(0, 198, 255);
+  --palette-white: #ffffff;
+  --palette-black: #000000;
+  --palette-purple: #a855f7;
+  --palette-purple-hover: #9333ea;
+  --palette-purple-soft: #a78bfa;
+  --palette-purple-focus: #c084fc;
+  --palette-purple-pale: #c4b5fd;
+
+  --palette-canvas: #171020;
+  --palette-shell: #120b1b;
+  --palette-content: #08050e;
+  --palette-surface: #0b0b12;
+  --palette-control: #26263a;
+  --palette-border: #24242f;
+  --palette-border-strong: #33334a;
+  --palette-muted: #9a9aab;
+  --palette-text: #e5e5ea;
+  --palette-text-soft: #d0d0da;
+  --palette-text-dim: #b4b4c4;
+  --palette-surface-raised: #15151f;
+  --palette-surface-hover: #1e1e29;
+  --palette-border-soft: #2c2c3a;
+  --palette-border-hover: #3d3d52;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-heading-sm: 1.375rem;
+  --text-2xl: 1.5rem;
+  --text-4xl: 2rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --color-canvas: var(--palette-canvas);
+  --color-shell: var(--palette-shell);
+  --color-content: var(--palette-content);
+  --color-surface: var(--palette-surface-raised);
+  --color-control: var(--palette-control);
+  --color-text: var(--palette-white);
+  --color-text-subtle: var(--palette-text);
+  --color-muted: var(--palette-muted);
+  --color-border: var(--palette-border);
+  --color-border-strong: var(--palette-border-strong);
+  --color-primary: var(--palette-purple);
+  --color-primary-hover: var(--palette-purple-hover);
+  --color-link: var(--palette-purple-soft);
+
+  --th-color: #191225;
+  --td-color: #1e182d;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 32px 24px 64px;
-	line-height: 1.65;
-	background: var(--bg);
-	color: var(--fg);
+  font-family: var(--font-body);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-32) 24px 64px;
+  line-height: 1.65;
+  background: var(--color-canvas);
+  color: var(--color-text-subtle);
 }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 2rem; overflow-wrap: anywhere; }
-h2 { margin-top: 32px; }
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--palette-purple-focus);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin-top: var(--space-32);
+  color: var(--color-text);
+}
+
+h3 {
+  color: var(--color-text);
+}
+
 code {
-	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-	font-size: 0.92em;
-	overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  color: var(--palette-purple-pale);
+  background: var(--palette-violet-surface, #1f1729);
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
 }
-li { padding: 4px 0; overflow-wrap: anywhere; }
-p { overflow-wrap: anywhere; }
+
+li {
+  padding: var(--space-4) 0;
+  overflow-wrap: anywhere;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
 
 .set {
   margin: 28px 0;
-  border-bottom: 1px solid #3b3b4f;
-  padding-bottom: 24px;
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
 .set > header h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #3b3b4f;
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-semibold);
+  margin: 0 0 var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border-strong);
+  overflow-wrap: anywhere;
 }
 
 .index-card {
   width: 100%;
   border-collapse: collapse;
-  margin: 12px 0 20px;
-  font-size: 0.95rem;
+  margin: var(--space-12) 0 var(--space-24);
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .index-card th,
 .index-card td {
   padding: 10px 14px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .index-card th {
-  color: #a5a5b5;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--palette-text);
+  background: var(--th-color);
 }
 
 .index-card td {
-  background: #252538;
+  background: var(--td-color);
+  color: var(--color-text-subtle);
+}
+
+.index-card tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .docs {
-  margin: 16px 0;
+  margin: var(--space-16) 0;
 }
 
 .docs p {
-  margin: 12px 0;
+  margin: var(--space-12) 0;
 }
 
 .metadata-pairs {
   width: 100%;
   border-collapse: collapse;
   margin-top: 18px;
+  font-size: var(--text-sm);
 }
 
 .metadata-pairs th,
 .metadata-pairs td {
   padding: 7px 12px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .metadata-pairs th {
   width: 180px;
-  color: #a5a5b5;
-  font-weight: 500;
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
+}
+
+.metadata-pairs td {
+  color: var(--color-text-subtle);
 }
 
 .muted {
+  color: var(--color-muted);
   font-size: 0.85em;
 }
 
 th {
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: var(--fg) !important;
-  font-weight: 700 !important;
-  background-color: var(--surface) !important;
+  color: var(--palette-text);
+  font-weight: var(--weight-semibold);
+}
+
+::selection {
+  color: var(--palette-white);
+  background: var(--palette-purple);
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: var(--space-16) var(--space-12) 48px;
+  }
+
+  h1 {
+      font-size: var(--text-2xl);
+  }
+
+  .index-card th,
+  .index-card td {
+      padding: var(--space-8);
+  }
 }
 
 </style>
@@ -128,7 +267,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>float</code></td>
+<td colspan="1">float</td>
 </tr></tbody></table>
 </section>
 <section id="member-AirTurbulenceIntensity" class="set">
@@ -138,7 +277,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>float</code></td>
+<td colspan="1">float</td>
 </tr></tbody></table>
 </section>
 <section id="member-AllowThirdPartySales" class="set">
@@ -148,7 +287,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-Archivable" class="set">
@@ -158,7 +297,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-AuthorityMode" class="set">
@@ -168,7 +307,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>AuthorityMode</code></td>
+<td colspan="1">AuthorityMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-AvatarUnificationMode" class="set">
@@ -178,7 +317,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>AvatarUnificationMode</code></td>
+<td colspan="1">AvatarUnificationMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Capabilities" class="set">
@@ -188,7 +327,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>SecurityCapabilities</code></td>
+<td colspan="1">SecurityCapabilities</td>
 </tr></tbody></table>
 </section>
 <section id="member-ClassName" class="set">
@@ -198,7 +337,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+<td colspan="1"><a href="https://luau.org/library/#string-library">string</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-ClientAnimatorThrottling" class="set">
@@ -208,7 +347,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ClientAnimatorThrottlingMode</code></td>
+<td colspan="1">ClientAnimatorThrottlingMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-CurrentCamera" class="set">
@@ -218,7 +357,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Camera</code></td>
+<td colspan="1">Camera</td>
 </tr></tbody></table>
 </section>
 <section id="member-DistributedGameTime" class="set">
@@ -228,7 +367,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>double</code></td>
+<td colspan="1">double</td>
 </tr></tbody></table>
 </section>
 <section id="member-EnableSLIMAvatars" class="set">
@@ -238,7 +377,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-ExpandedTerrain" class="set">
@@ -248,7 +387,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-FallHeightEnabled" class="set">
@@ -258,7 +397,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-FallenPartsDestroyHeight" class="set">
@@ -268,7 +407,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>float</code></td>
+<td colspan="1">float</td>
 </tr></tbody></table>
 </section>
 <section id="member-FluidForces" class="set">
@@ -278,7 +417,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>FluidForces</code></td>
+<td colspan="1">FluidForces</td>
 </tr></tbody></table>
 </section>
 <section id="member-GlobalWind" class="set">
@@ -288,7 +427,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Vector3</code></td>
+<td colspan="1">Vector3</td>
 </tr></tbody></table>
 </section>
 <section id="member-Gravity" class="set">
@@ -298,7 +437,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>float</code></td>
+<td colspan="1">float</td>
 </tr></tbody></table>
 </section>
 <section id="member-IKControlConstraintSupport" class="set">
@@ -308,7 +447,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>IKControlConstraintSupport</code></td>
+<td colspan="1">IKControlConstraintSupport</td>
 </tr></tbody></table>
 </section>
 <section id="member-ImprovedAnimationConstraint" class="set">
@@ -318,7 +457,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-ImprovedPhysicsReplication" class="set">
@@ -328,7 +467,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-InsertPoint" class="set">
@@ -338,7 +477,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Vector3</code></td>
+<td colspan="1">Vector3</td>
 </tr></tbody></table>
 </section>
 <section id="member-IsInSandbox" class="set">
@@ -348,7 +487,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-LayeredClothingCacheOptimizations" class="set">
@@ -358,7 +497,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-LevelOfDetail" class="set">
@@ -368,7 +507,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ModelLevelOfDetail</code></td>
+<td colspan="1">ModelLevelOfDetail</td>
 </tr></tbody></table>
 </section>
 <section id="member-LuauTypeCheckMode" class="set">
@@ -378,7 +517,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>LuauTypeCheckMode</code></td>
+<td colspan="1">LuauTypeCheckMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-MapTVRemoteToGamepadKeycodes" class="set">
@@ -388,7 +527,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-MeshPartHeadsAndAccessories" class="set">
@@ -398,7 +537,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>MeshPartHeadsAndAccessories</code></td>
+<td colspan="1">MeshPartHeadsAndAccessories</td>
 </tr></tbody></table>
 </section>
 <section id="member-MeshStreamingAndImprovedLods" class="set">
@@ -408,7 +547,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-ModelStreamingBehavior" class="set">
@@ -418,7 +557,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ModelStreamingBehavior</code></td>
+<td colspan="1">ModelStreamingBehavior</td>
 </tr></tbody></table>
 </section>
 <section id="member-ModelStreamingMode" class="set">
@@ -428,7 +567,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ModelStreamingMode</code></td>
+<td colspan="1">ModelStreamingMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Name" class="set">
@@ -438,7 +577,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://luau.org/library/#string-library"><code>string</code></a></td>
+<td colspan="1"><a href="https://luau.org/library/#string-library">string</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-NextGenerationReplication" class="set">
@@ -448,7 +587,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-NextGenerationReplicationAlias" class="set">
@@ -458,7 +597,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-Origin" class="set">
@@ -468,7 +607,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>CFrame</code></td>
+<td colspan="1">CFrame</td>
 </tr></tbody></table>
 </section>
 <section id="member-Parent" class="set">
@@ -478,7 +617,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Instance</code></td>
+<td colspan="1">Instance</td>
 </tr></tbody></table>
 </section>
 <section id="member-PathfindingUseImprovedSearch" class="set">
@@ -488,7 +627,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PathfindingUseImprovedSearch</code></td>
+<td colspan="1">PathfindingUseImprovedSearch</td>
 </tr></tbody></table>
 </section>
 <section id="member-PhysicsSteppingMethod" class="set">
@@ -498,7 +637,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PhysicsSteppingMethod</code></td>
+<td colspan="1">PhysicsSteppingMethod</td>
 </tr></tbody></table>
 </section>
 <section id="member-Pivot Offset" class="set">
@@ -508,7 +647,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>CFrame</code></td>
+<td colspan="1">CFrame</td>
 </tr></tbody></table>
 </section>
 <section id="member-PlayerCharacterDestroyBehavior" class="set">
@@ -518,7 +657,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PlayerCharacterDestroyBehavior</code></td>
+<td colspan="1">PlayerCharacterDestroyBehavior</td>
 </tr></tbody></table>
 </section>
 <section id="member-PlayerScriptsUseInputActionSystem" class="set">
@@ -528,7 +667,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-PlayerScriptsUseInputActionSystemAlias" class="set">
@@ -538,7 +677,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-PredictionMode" class="set">
@@ -548,7 +687,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PredictionMode</code></td>
+<td colspan="1">PredictionMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-PredictiveStreamingMode" class="set">
@@ -558,7 +697,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PredictiveStreamingMode</code></td>
+<td colspan="1">PredictiveStreamingMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-PrimalPhysicsSolver" class="set">
@@ -568,7 +707,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>PrimalPhysicsSolver</code></td>
+<td colspan="1">PrimalPhysicsSolver</td>
 </tr></tbody></table>
 </section>
 <section id="member-PrimaryPart" class="set">
@@ -578,7 +717,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>BasePart</code></td>
+<td colspan="1">BasePart</td>
 </tr></tbody></table>
 </section>
 <section id="member-RejectCharacterDeletions" class="set">
@@ -588,7 +727,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RejectCharacterDeletions</code></td>
+<td colspan="1">RejectCharacterDeletions</td>
 </tr></tbody></table>
 </section>
 <section id="member-RenderingCacheOptimizations" class="set">
@@ -598,7 +737,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RenderingCacheOptimizationMode</code></td>
+<td colspan="1">RenderingCacheOptimizationMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-ReplicateInstanceDestroySetting" class="set">
@@ -608,7 +747,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ReplicateInstanceDestroySetting</code></td>
+<td colspan="1">ReplicateInstanceDestroySetting</td>
 </tr></tbody></table>
 </section>
 <section id="member-ReplicationFrequency" class="set">
@@ -618,7 +757,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ReplicationMode</code></td>
+<td colspan="1">ReplicationMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-ReplicationThroughput" class="set">
@@ -628,7 +767,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>ReplicationMode</code></td>
+<td colspan="1">ReplicationMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Retargeting" class="set">
@@ -638,7 +777,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>AnimatorRetargetingMode</code></td>
+<td colspan="1">AnimatorRetargetingMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Sandboxed" class="set">
@@ -648,7 +787,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-SandboxedInstanceMode" class="set">
@@ -658,7 +797,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>SandboxedInstanceMode</code></td>
+<td colspan="1">SandboxedInstanceMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-Scale" class="set">
@@ -668,7 +807,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>float</code></td>
+<td colspan="1">float</td>
 </tr></tbody></table>
 </section>
 <section id="member-SignalBehavior" class="set">
@@ -678,7 +817,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>SignalBehavior</code></td>
+<td colspan="1">SignalBehavior</td>
 </tr></tbody></table>
 </section>
 <section id="member-SignalBehaviorAlias" class="set">
@@ -688,7 +827,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>SignalBehavior</code></td>
+<td colspan="1">SignalBehavior</td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamOutBehavior" class="set">
@@ -698,7 +837,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>StreamOutBehavior</code></td>
+<td colspan="1">StreamOutBehavior</td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamingAdaptiveRadius" class="set">
@@ -708,7 +847,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamingEnabled" class="set">
@@ -718,7 +857,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamingEnabledAlias" class="set">
@@ -728,7 +867,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamingIntegrityMode" class="set">
@@ -738,7 +877,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>StreamingIntegrityMode</code></td>
+<td colspan="1">StreamingIntegrityMode</td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamingMinRadius" class="set">
@@ -748,7 +887,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>int</code></td>
+<td colspan="1">int</td>
 </tr></tbody></table>
 </section>
 <section id="member-StreamingTargetRadius" class="set">
@@ -758,7 +897,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>int</code></td>
+<td colspan="1">int</td>
 </tr></tbody></table>
 </section>
 <section id="member-Terrain" class="set">
@@ -768,7 +907,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>Terrain</code></td>
+<td colspan="1">Terrain</td>
 </tr></tbody></table>
 </section>
 <section id="member-TouchEventsUseCollisionGroups" class="set">
@@ -778,7 +917,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-TouchesUseCollisionGroups" class="set">
@@ -788,7 +927,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a></td>
+<td colspan="1"><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
 </tr></tbody></table>
 </section>
 <section id="member-UniqueId" class="set">
@@ -798,7 +937,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>UniqueId</code></td>
+<td colspan="1">UniqueId</td>
 </tr></tbody></table>
 </section>
 <section id="member-UseFixedSimulation" class="set">
@@ -808,7 +947,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-UseFixedSimulationAlias" class="set">
@@ -818,7 +957,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-UseInputSink" class="set">
@@ -828,7 +967,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-UseNewLuauTypeSolver" class="set">
@@ -838,7 +977,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-ValidateEnabledProximityPrompt" class="set">
@@ -848,7 +987,7 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>RolloutState</code></td>
+<td colspan="1">RolloutState</td>
 </tr></tbody></table>
 </section>
 <section id="member-WorldPivot" class="set">
@@ -858,108 +997,2001 @@ NotCreatable
 <th colspan="1">Type</th>
 </tr></thead>
 <tbody><tr>
-<td colspan="1"><code>CFrame</code></td>
+<td colspan="1">CFrame</td>
 </tr></tbody></table>
 </section>
 <h3>Methods (88)</h3>
-<h3 style='font-size: 1.4em;'>AddPersistentPlayer(<code>playerInstance</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ApplyRecommendedStreamingSettings()</code></h3>
-<h3 style='font-size: 1.4em;'>ArePartsTouchingOthers(<code>partList</code>: <code>Instances</code>, <code>overlapIgnored</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>Blockcast(<code>cframe</code>: <code>CFrame</code>, <code>size</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>, <code>params</code>: <code>RaycastParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>BulkMoveTo(<code>partList</code>: <code>Instances</code>, <code>cframeList</code>: <code>Array</code>, <code>eventMode</code>: <code>BulkMoveMode</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>CacheCurrentTerrain(<code>id</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>CalculateJumpDistance(<code>gravity</code>: <code>float</code>, <code>jumpPower</code>: <code>float</code>, <code>walkSpeed</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>CalculateJumpHeight(<code>gravity</code>: <code>float</code>, <code>jumpPower</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>CalculateJumpPower(<code>gravity</code>: <code>float</code>, <code>jumpHeight</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ClearAllChildren()</code></h3>
-<h3 style='font-size: 1.4em;'>ClearCachedTerrain(<code>id</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Clone()</code></h3>
-<h3 style='font-size: 1.4em;'>CollisionGroupSetCollidable(<code>name1</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>name2</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collidable</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>CollisionGroupsAreCollidable(<code>name1</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>name2</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Destroy()</code></h3>
-<h3 style='font-size: 1.4em;'>ExperimentalSolverIsEnabled()</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetActor()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetAttributes()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAwakeContactNormals()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAwakeContactParts()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAwakeContactPositions()</code></h3>
-<h3 style='font-size: 1.4em;'>GetAwakeRootParts()</code></h3>
-<h3 style='font-size: 1.4em;'>GetBoundingBox()</code></h3>
-<h3 style='font-size: 1.4em;'>GetChildren()</code></h3>
-<h3 style='font-size: 1.4em;'>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetDescendants()</code></h3>
-<h3 style='font-size: 1.4em;'>GetExtentsSize()</code></h3>
-<h3 style='font-size: 1.4em;'>GetFullName()</code></h3>
-<h3 style='font-size: 1.4em;'>GetMaxCollisionGroups()</code></h3>
-<h3 style='font-size: 1.4em;'>GetNumAwakeParts()</code></h3>
-<h3 style='font-size: 1.4em;'>GetPartBoundsInBox(<code>cframe</code>: <code>CFrame</code>, <code>size</code>: <code>Vector3</code>, <code>overlapParams</code>: <code>OverlapParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetPartBoundsInRadius(<code>position</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>, <code>overlapParams</code>: <code>OverlapParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetPartsInPart(<code>part</code>: <code>BasePart</code>, <code>overlapParams</code>: <code>OverlapParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetPersistentPlayers()</code></h3>
-<h3 style='font-size: 1.4em;'>GetPhysicsThrottling()</code></h3>
-<h3 style='font-size: 1.4em;'>GetPivot()</code></h3>
-<h3 style='font-size: 1.4em;'>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetRealPhysicsFPS()</code></h3>
-<h3 style='font-size: 1.4em;'>GetRegisteredCollisionGroups()</code></h3>
-<h3 style='font-size: 1.4em;'>GetScale()</code></h3>
-<h3 style='font-size: 1.4em;'>GetServerTimeNow()</code></h3>
-<h3 style='font-size: 1.4em;'>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>GetTags()</code></h3>
-<h3 style='font-size: 1.4em;'>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IKMoveTo(<code>part</code>: <code>BasePart</code>, <code>target</code>: <code>CFrame</code>, <code>translateStiffness</code>: <code>float</code>, <code>rotateStiffness</code>: <code>float</code>, <code>collisionsMode</code>: <code>IKCollisionsMode</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsCollisionGroupRegistered(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>JoinToOutsiders(<code>objects</code>: <code>Instances</code>, <code>jointType</code>: <code>JointCreationMode</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>MoveTo(<code>position</code>: <code>Vector3</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>PGSIsEnabled()</code></h3>
-<h3 style='font-size: 1.4em;'>PivotTo(<code>targetCFrame</code>: <code>CFrame</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Raycast(<code>origin</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>, <code>raycastParams</code>: <code>RaycastParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>RaycastCachedTerrain(<code>id</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>origin</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>, <code>ignoreWater</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>RegisterCollisionGroup(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>RemovePersistentPlayer(<code>playerInstance</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>RenameCollisionGroup(<code>from</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>to</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ScaleTo(<code>newScaleFactor</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetAvatarUnificationMode(<code>value</code>: <code>AvatarUnificationMode</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetInsertPoint(<code>point</code>: <code>Vector3</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetMeshPartHeadsAndAccessories(<code>value</code>: <code>MeshPartHeadsAndAccessories</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>SetPhysicsThrottleEnabled(<code>value</code>: <a href="https://www.lua.org/pil/2.2.html"><code>boolean</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Shapecast(<code>part</code>: <code>BasePart</code>, <code>direction</code>: <code>Vector3</code>, <code>params</code>: <code>RaycastParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>Simulate(<code>dt</code>: <code>float</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>Spherecast(<code>position</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>, <code>direction</code>: <code>Vector3</code>, <code>params</code>: <code>RaycastParams</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>StepPhysics(<code>dt</code>: <code>float</code>, <code>parts</code>: <code>Instances</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>TranslateBy(<code>delta</code>: <code>Vector3</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>UnjoinFromOutsiders(<code>objects</code>: <code>Instances</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>UnregisterCollisionGroup(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ZoomToExtents()</code></h3>
+<section id="member-AddPersistentPlayer" class="set">
+<header><h3>AddPersistentPlayer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>playerInstance Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-AddTag" class="set">
+<header><h3>AddTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ApplyRecommendedStreamingSettings" class="set">
+<header><h3>ApplyRecommendedStreamingSettings</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ArePartsTouchingOthers" class="set">
+<header><h3>ArePartsTouchingOthers</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>partList Instances</td>
+</tr>
+<tr>
+<td>overlapIgnored float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Blockcast" class="set">
+<header><h3>Blockcast</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>cframe CFrame</td>
+</tr>
+<tr>
+<td>size Vector3</td>
+</tr>
+<tr>
+<td>direction Vector3</td>
+</tr>
+<tr>
+<td>params RaycastParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RaycastResult?</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-BulkMoveTo" class="set">
+<header><h3>BulkMoveTo</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>partList Instances</td>
+</tr>
+<tr>
+<td>cframeList Array</td>
+</tr>
+<tr>
+<td>eventMode BulkMoveMode</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CacheCurrentTerrain" class="set">
+<header><h3>CacheCurrentTerrain</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>center Vector3</td>
+</tr>
+<tr>
+<td>radius float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CalculateJumpDistance" class="set">
+<header><h3>CalculateJumpDistance</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>gravity float</td>
+</tr>
+<tr>
+<td>jumpPower float</td>
+</tr>
+<tr>
+<td>walkSpeed float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>float</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CalculateJumpHeight" class="set">
+<header><h3>CalculateJumpHeight</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>gravity float</td>
+</tr>
+<tr>
+<td>jumpPower float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>float</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CalculateJumpPower" class="set">
+<header><h3>CalculateJumpPower</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>gravity float</td>
+</tr>
+<tr>
+<td>jumpHeight float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>float</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClearAllChildren" class="set">
+<header><h3>ClearAllChildren</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ClearCachedTerrain" class="set">
+<header><h3>ClearCachedTerrain</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Clone" class="set">
+<header><h3>Clone</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CollisionGroupSetCollidable" class="set">
+<header><h3>CollisionGroupSetCollidable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name1 <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>name2 <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>collidable <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-CollisionGroupsAreCollidable" class="set">
+<header><h3>CollisionGroupsAreCollidable</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name1 <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>name2 <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Destroy" class="set">
+<header><h3>Destroy</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ExperimentalSolverIsEnabled" class="set">
+<header><h3>ExperimentalSolverIsEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestor" class="set">
+<header><h3>FindFirstAncestor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestorOfClass" class="set">
+<header><h3>FindFirstAncestorOfClass</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstAncestorWhichIsA" class="set">
+<header><h3>FindFirstAncestorWhichIsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChild" class="set">
+<header><h3>FindFirstChild</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>recursive <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChildOfClass" class="set">
+<header><h3>FindFirstChildOfClass</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstChildWhichIsA" class="set">
+<header><h3>FindFirstChildWhichIsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>recursive <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-FindFirstDescendant" class="set">
+<header><h3>FindFirstDescendant</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetActor" class="set">
+<header><h3>GetActor</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Actor</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttribute" class="set">
+<header><h3>GetAttribute</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Variant</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttributeChangedSignal" class="set">
+<header><h3>GetAttributeChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAttributes" class="set">
+<header><h3>GetAttributes</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Dictionary</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAwakeContactNormals" class="set">
+<header><h3>GetAwakeContactNormals</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAwakeContactParts" class="set">
+<header><h3>GetAwakeContactParts</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAwakeContactPositions" class="set">
+<header><h3>GetAwakeContactPositions</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetAwakeRootParts" class="set">
+<header><h3>GetAwakeRootParts</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetBoundingBox" class="set">
+<header><h3>GetBoundingBox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Unknown</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetChildren" class="set">
+<header><h3>GetChildren</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDebugId" class="set">
+<header><h3>GetDebugId</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>scopeLength int</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetDescendants" class="set">
+<header><h3>GetDescendants</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetExtentsSize" class="set">
+<header><h3>GetExtentsSize</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Vector3</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetFullName" class="set">
+<header><h3>GetFullName</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://luau.org/library/#string-library">string</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetMaxCollisionGroups" class="set">
+<header><h3>GetMaxCollisionGroups</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>int</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetNumAwakeParts" class="set">
+<header><h3>GetNumAwakeParts</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>int</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPartBoundsInBox" class="set">
+<header><h3>GetPartBoundsInBox</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>cframe CFrame</td>
+</tr>
+<tr>
+<td>size Vector3</td>
+</tr>
+<tr>
+<td>overlapParams OverlapParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPartBoundsInRadius" class="set">
+<header><h3>GetPartBoundsInRadius</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>position Vector3</td>
+</tr>
+<tr>
+<td>radius float</td>
+</tr>
+<tr>
+<td>overlapParams OverlapParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPartsInPart" class="set">
+<header><h3>GetPartsInPart</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>part BasePart</td>
+</tr>
+<tr>
+<td>overlapParams OverlapParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPersistentPlayers" class="set">
+<header><h3>GetPersistentPlayers</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPhysicsThrottling" class="set">
+<header><h3>GetPhysicsThrottling</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>int</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPivot" class="set">
+<header><h3>GetPivot</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>CFrame</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetPropertyChangedSignal" class="set">
+<header><h3>GetPropertyChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetRealPhysicsFPS" class="set">
+<header><h3>GetRealPhysicsFPS</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>double</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetRegisteredCollisionGroups" class="set">
+<header><h3>GetRegisteredCollisionGroups</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetScale" class="set">
+<header><h3>GetScale</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>float</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetServerTimeNow" class="set">
+<header><h3>GetServerTimeNow</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>double</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetStyled" class="set">
+<header><h3>GetStyled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>selector string?</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Variant</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetStyledPropertyChangedSignal" class="set">
+<header><h3>GetStyledPropertyChangedSignal</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RBXScriptSignal</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-GetTags" class="set">
+<header><h3>GetTags</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Array</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-HasTag" class="set">
+<header><h3>HasTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IKMoveTo" class="set">
+<header><h3>IKMoveTo</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (5)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>part BasePart</td>
+</tr>
+<tr>
+<td>target CFrame</td>
+</tr>
+<tr>
+<td>translateStiffness float</td>
+</tr>
+<tr>
+<td>rotateStiffness float</td>
+</tr>
+<tr>
+<td>collisionsMode IKCollisionsMode</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsA" class="set">
+<header><h3>IsA</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>className <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsAncestorOf" class="set">
+<header><h3>IsAncestorOf</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsCollisionGroupRegistered" class="set">
+<header><h3>IsCollisionGroupRegistered</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsDescendantOf" class="set">
+<header><h3>IsDescendantOf</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>ancestor Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-IsPropertyModified" class="set">
+<header><h3>IsPropertyModified</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-JoinToOutsiders" class="set">
+<header><h3>JoinToOutsiders</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>objects Instances</td>
+</tr>
+<tr>
+<td>jointType JointCreationMode</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-MoveTo" class="set">
+<header><h3>MoveTo</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>position Vector3</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PGSIsEnabled" class="set">
+<header><h3>PGSIsEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PivotTo" class="set">
+<header><h3>PivotTo</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>targetCFrame CFrame</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-QueryDescendants" class="set">
+<header><h3>QueryDescendants</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>selector <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instances</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Raycast" class="set">
+<header><h3>Raycast</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>origin Vector3</td>
+</tr>
+<tr>
+<td>direction Vector3</td>
+</tr>
+<tr>
+<td>raycastParams RaycastParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RaycastResult?</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RaycastCachedTerrain" class="set">
+<header><h3>RaycastCachedTerrain</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>id <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>origin Vector3</td>
+</tr>
+<tr>
+<td>direction Vector3</td>
+</tr>
+<tr>
+<td>ignoreWater <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RaycastResult?</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RegisterCollisionGroup" class="set">
+<header><h3>RegisterCollisionGroup</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RemovePersistentPlayer" class="set">
+<header><h3>RemovePersistentPlayer</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>playerInstance Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RemoveTag" class="set">
+<header><h3>RemoveTag</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>tag <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-RenameCollisionGroup" class="set">
+<header><h3>RenameCollisionGroup</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>from <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>to <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ResetPropertyToDefault" class="set">
+<header><h3>ResetPropertyToDefault</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ScaleTo" class="set">
+<header><h3>ScaleTo</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>newScaleFactor float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetAttribute" class="set">
+<header><h3>SetAttribute</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>value Variant</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetAvatarUnificationMode" class="set">
+<header><h3>SetAvatarUnificationMode</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>value AvatarUnificationMode</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetInsertPoint" class="set">
+<header><h3>SetInsertPoint</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>point Vector3</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetMeshPartHeadsAndAccessories" class="set">
+<header><h3>SetMeshPartHeadsAndAccessories</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>value MeshPartHeadsAndAccessories</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-SetPhysicsThrottleEnabled" class="set">
+<header><h3>SetPhysicsThrottleEnabled</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>value <a href="https://www.lua.org/pil/2.2.html">boolean</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Shapecast" class="set">
+<header><h3>Shapecast</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (3)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>part BasePart</td>
+</tr>
+<tr>
+<td>direction Vector3</td>
+</tr>
+<tr>
+<td>params RaycastParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RaycastResult?</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Simulate" class="set">
+<header><h3>Simulate</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>dt float</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Spherecast" class="set">
+<header><h3>Spherecast</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (4)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>position Vector3</td>
+</tr>
+<tr>
+<td>radius float</td>
+</tr>
+<tr>
+<td>direction Vector3</td>
+</tr>
+<tr>
+<td>params RaycastParams</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>RaycastResult?</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-StepPhysics" class="set">
+<header><h3>StepPhysics</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>dt float</td>
+</tr>
+<tr>
+<td>parts Instances</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-TranslateBy" class="set">
+<header><h3>TranslateBy</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>delta Vector3</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-UnjoinFromOutsiders" class="set">
+<header><h3>UnjoinFromOutsiders</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>objects Instances</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-UnregisterCollisionGroup" class="set">
+<header><h3>UnregisterCollisionGroup</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>name <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-WaitForChild" class="set">
+<header><h3>WaitForChild</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>childName <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+<tr>
+<td>timeOut double</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>Instance</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ZoomToExtents" class="set">
+<header><h3>ZoomToExtents</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="https://www.lua.org/pil/2.1.html">nil</a></td>
+</tr></tbody>
+</table>
+</section>
 <h3>Events (10)</h3>
-<h3 style='font-size: 1.4em;'>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChildAdded(<code>child</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>ChildRemoved(<code>child</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>Destroying()</code></h3>
-<h3 style='font-size: 1.4em;'>PersistentLoaded(<code>player</code>: <code>Player</code>)</code></h3>
-<h3 style='font-size: 1.4em;'>StyledPropertiesChanged()</code></h3>
+<section id="member-AncestryChanged" class="set">
+<header><h3>AncestryChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (2)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+<tr>
+<td>parent Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-AttributeChanged" class="set">
+<header><h3>AttributeChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>attribute <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Changed" class="set">
+<header><h3>Changed</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>property <a href="https://luau.org/library/#string-library">string</a></td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChildAdded" class="set">
+<header><h3>ChildAdded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-ChildRemoved" class="set">
+<header><h3>ChildRemoved</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>child Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-DescendantAdded" class="set">
+<header><h3>DescendantAdded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-DescendantRemoving" class="set">
+<header><h3>DescendantRemoving</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>descendant Instance</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-Destroying" class="set">
+<header><h3>Destroying</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-PersistentLoaded" class="set">
+<header><h3>PersistentLoaded</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (1)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>player Player</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
+<section id="member-StyledPropertiesChanged" class="set">
+<header><h3>StyledPropertiesChanged</h3></header>
+<table class="index-card params">
+<thead><tr>
+<th colspan="1">Parameters (0)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>No parameters.</td>
+</tr>
+</tbody>
+<thead><tr>
+<th colspan="1">Returns</th>
+</tr></thead>
+<tbody><tr>
+<td>https://www.lua.org/pil/2.1.html</td>
+</tr></tbody>
+</table>
+</section>
 </body>
 </html>

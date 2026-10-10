@@ -175,6 +175,15 @@ local Constructors = {
 	},
 }
 
+local TypeLinks = {
+	string = "https://luau.org/library/#string-library",
+	number = "https://luau.org/library/#math-library",
+	table = "https://luau.org/library/#table-library",
+	boolean = "https://www.lua.org/pil/2.2.html",
+	["nil"] = "https://www.lua.org/pil/2.1.html",
+	["function"] = "https://www.lua.org/pil/2.6.html",
+}
+
 local function EnsureDirectory(Path)
 	local Separator = package.config:sub(1, 1)
 
@@ -242,22 +251,13 @@ local function GetHtmlType(Type)
 	local Name = GetTypeName(Type)
 	local EscapedName = EscapeHtml(Name)
 
-	local Links = {
-		string = "https://luau.org/library/#string-library",
-		number = "https://luau.org/library/#math-library",
-		table = "https://luau.org/library/#table-library",
-		boolean = "https://www.lua.org/pil/2.2.html",
-		["nil"] = "https://www.lua.org/pil/2.1.html",
-		["function"] = "https://www.lua.org/pil/2.6.html",
-	}
-
-	local Link = Links[string.lower(Name)]
+	local Link = TypeLinks[string.lower(Name)]
 
 	if Link then
-		return '<a href="' .. Link .. '"><code>' .. EscapedName .. "</code></a>"
+		return '<a href="' .. Link .. '">' .. EscapedName .. "</a>"
 	end
 
-	return "<code>" .. EscapedName .. "</code>"
+	return EscapedName
 end
 
 local function GetParameters(Parameters)
@@ -336,110 +336,249 @@ local function GetInheritedMembers(Class, MemberType)
 end
 
 local Styles = [[
+@layer pages, primitives;
+
 :root {
-	--bg: #1e1e2e;
-	--fg: #e5e5ea;
-	--muted: #656d76;
-	--border: #d1d9e0;
-	--surface: #313244;
-	--link: rgb(0, 198, 255);
+  --palette-white: #ffffff;
+  --palette-black: #000000;
+  --palette-purple: #a855f7;
+  --palette-purple-hover: #9333ea;
+  --palette-purple-soft: #a78bfa;
+  --palette-purple-focus: #c084fc;
+  --palette-purple-pale: #c4b5fd;
+
+  --palette-canvas: #171020;
+  --palette-shell: #120b1b;
+  --palette-content: #08050e;
+  --palette-surface: #0b0b12;
+  --palette-control: #26263a;
+  --palette-border: #24242f;
+  --palette-border-strong: #33334a;
+  --palette-muted: #9a9aab;
+  --palette-text: #e5e5ea;
+  --palette-text-soft: #d0d0da;
+  --palette-text-dim: #b4b4c4;
+  --palette-surface-raised: #15151f;
+  --palette-surface-hover: #1e1e29;
+  --palette-border-soft: #2c2c3a;
+  --palette-border-hover: #3d3d52;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-heading-sm: 1.375rem;
+  --text-2xl: 1.5rem;
+  --text-4xl: 2rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --color-canvas: var(--palette-canvas);
+  --color-shell: var(--palette-shell);
+  --color-content: var(--palette-content);
+  --color-surface: var(--palette-surface-raised);
+  --color-control: var(--palette-control);
+  --color-text: var(--palette-white);
+  --color-text-subtle: var(--palette-text);
+  --color-muted: var(--palette-muted);
+  --color-border: var(--palette-border);
+  --color-border-strong: var(--palette-border-strong);
+  --color-primary: var(--palette-purple);
+  --color-primary-hover: var(--palette-purple-hover);
+  --color-link: var(--palette-purple-soft);
+
+  --th-color: #191225;
+  --td-color: #1e182d;
 }
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 32px 24px 64px;
-	line-height: 1.65;
-	background: var(--bg);
-	color: var(--fg);
+  font-family: var(--font-body);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-32) 24px 64px;
+  line-height: 1.65;
+  background: var(--color-canvas);
+  color: var(--color-text-subtle);
 }
-a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 2rem; overflow-wrap: anywhere; }
-h2 { margin-top: 32px; }
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--palette-purple-focus);
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin-top: var(--space-32);
+  color: var(--color-text);
+}
+
+h3 {
+  color: var(--color-text);
+}
+
 code {
-	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-	font-size: 0.92em;
-	overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  color: var(--palette-purple-pale);
+  background: var(--palette-violet-surface, #1f1729);
+  padding: 2px 5px;
+  border-radius: var(--radius-sm);
 }
-li { padding: 4px 0; overflow-wrap: anywhere; }
-p { overflow-wrap: anywhere; }
+
+li {
+  padding: var(--space-4) 0;
+  overflow-wrap: anywhere;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
 
 .set {
   margin: 28px 0;
-  border-bottom: 1px solid #3b3b4f;
-  padding-bottom: 24px;
+  padding-bottom: var(--space-24);
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
 .set > header h3 {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #3b3b4f;
+  font-size: var(--text-heading-sm);
+  font-weight: var(--weight-semibold);
+  margin: 0 0 var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border-strong);
+  overflow-wrap: anywhere;
 }
 
 .index-card {
   width: 100%;
   border-collapse: collapse;
-  margin: 12px 0 20px;
-  font-size: 0.95rem;
+  margin: var(--space-12) 0 var(--space-24);
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .index-card th,
 .index-card td {
   padding: 10px 14px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .index-card th {
-  color: #a5a5b5;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--palette-text);
+  background: var(--th-color);
 }
 
 .index-card td {
-  background: #252538;
+  background: var(--td-color);
+  color: var(--color-text-subtle);
+}
+
+.index-card tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .docs {
-  margin: 16px 0;
+  margin: var(--space-16) 0;
 }
 
 .docs p {
-  margin: 12px 0;
+  margin: var(--space-12) 0;
 }
 
 .metadata-pairs {
   width: 100%;
   border-collapse: collapse;
   margin-top: 18px;
+  font-size: var(--text-sm);
 }
 
 .metadata-pairs th,
 .metadata-pairs td {
   padding: 7px 12px;
   text-align: left;
-  border-bottom: 1px solid #3b3b4f;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .metadata-pairs th {
   width: 180px;
-  color: #a5a5b5;
-  font-weight: 500;
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
+}
+
+.metadata-pairs td {
+  color: var(--color-text-subtle);
 }
 
 .muted {
+  color: var(--color-muted);
   font-size: 0.85em;
 }
 
 th {
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: var(--fg) !important;
-  font-weight: 700 !important;
-  background-color: var(--surface) !important;
+  color: var(--palette-text);
+  font-weight: var(--weight-semibold);
+}
+
+::selection {
+  color: var(--palette-white);
+  background: var(--palette-purple);
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: var(--space-16) var(--space-12) 48px;
+  }
+
+  h1 {
+      font-size: var(--text-2xl);
+  }
+
+  .index-card th,
+  .index-card td {
+      padding: var(--space-8);
+  }
 }
 ]]
 
@@ -505,6 +644,53 @@ local function AddPropertySection(Html, Member)
 	Html[#Html + 1] = "</section>"
 end
 
+local function AddFunctionSection(Html, Member)
+	local Name = EscapeHtml(Member.Name)
+
+	Html[#Html + 1] = '<section id="member-' .. Name .. '" class="set">'
+	Html[#Html + 1] = "<header><h3>" .. Name .. "</h3></header>"
+
+	Html[#Html + 1] = '<table class="index-card params">'
+
+	Html[#Html + 1] = "<thead><tr>"
+	Html[#Html + 1] = '<th colspan="1">Parameters (' .. #Member.Parameters .. ")</th>"
+	Html[#Html + 1] = "</tr></thead>"
+
+	Html[#Html + 1] = "<tbody>"
+
+	for _, Parameter in ipairs(Member.Parameters or {}) do
+		local ParamName = EscapeHtml(Parameter.Name or "?")
+		local ParamType = GetHtmlType(Parameter.Type)
+
+		Html[#Html + 1] = "<tr>"
+		Html[#Html + 1] = "<td>" .. ParamName .. " " .. ParamType .. "</td>"
+		Html[#Html + 1] = "</tr>"
+	end
+
+	if #Member.Parameters == 0 then
+		Html[#Html + 1] = "<tr>"
+		Html[#Html + 1] = "<td>No parameters.</td>"
+		Html[#Html + 1] = "</tr>"
+	end
+
+	Html[#Html + 1] = "</tbody>"
+
+	Html[#Html + 1] = "<thead><tr>"
+	Html[#Html + 1] = '<th colspan="1">Returns</th>'
+	Html[#Html + 1] = "</tr></thead>"
+
+	Html[#Html + 1] = "<tbody><tr>"
+
+	local ReturnType = GetReturns(Member)
+
+	Html[#Html + 1] = "<td>" .. (ReturnType or TypeLinks["nil"]) .. "</td>"
+
+	Html[#Html + 1] = "</tr></tbody>"
+
+	Html[#Html + 1] = "</table>"
+	Html[#Html + 1] = "</section>"
+end
+
 local function AddMemberSection(Html, Title, Members, ClassName)
 	Html[#Html + 1] = "<h3>" .. EscapeHtml(Title) .. " (" .. #Members .. ")" .. "</h3>"
 
@@ -515,11 +701,13 @@ local function AddMemberSection(Html, Title, Members, ClassName)
 		if Member.MemberType == "Property" then
 			--Line = EscapeHtml(Member.Name) .. ": " .. GetHtmlType(Member.ValueType)
 			Line = EscapeHtml(Member.Name)
+			AddPropertySection(Html, Member)
 		else
 			Line = EscapeHtml(Member.Name) .. "(" .. GetParameters(Member.Parameters) .. ")</code>"
+			AddFunctionSection(Html, Member)
 
 			--[[
-      local Returns = GetReturns(Member)
+    local Returns = GetReturns(Member)
 
 			if Returns then
 				Line = Line .. ": " .. Returns
@@ -530,12 +718,6 @@ local function AddMemberSection(Html, Title, Members, ClassName)
 
 		if Entry.Owner and Entry.Owner ~= ClassName then
 			Line = Line .. ' <span class="muted">(inherited from ' .. EscapeHtml(Entry.Owner) .. ")</span>"
-		end
-
-		if Member.MemberType == "Property" then
-			AddPropertySection(Html, Member)
-		else
-			Html[#Html + 1] = "<h3 style='font-size: 1.4em;'>" .. Line .. "</h3>"
 		end
 	end
 end
