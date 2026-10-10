@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workspace - Roblox API</title>
+<style>
+:root {
+	--bg: #120b1b;
+	--fg: #e5e5ea;
+	--muted: #656d76;
+	--border: #d1d9e0;
+	--surface: #f6f8fa;
+	--link: #0969da;
+}
+* { box-sizing: border-box; }
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px 64px;
+	line-height: 1.65;
+	background: var(--bg);
+	color: var(--fg);
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 2rem; overflow-wrap: anywhere; }
+h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+h2 { margin-top: 32px; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	font-size: 0.92em;
+	overflow-wrap: anywhere;
+}
+details {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	margin: 14px 0;
+	overflow: hidden;
+}
+summary {
+	cursor: pointer;
+	font-weight: 650;
+	padding: 12px 16px;
+	background: var(--surface);
+}
+details > ul { padding: 4px 20px 12px 40px; }
+li { padding: 4px 0; overflow-wrap: anywhere; }
+p { overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.tag {
+	display: inline-block;
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	padding: 1px 7px;
+	margin: 2px;
+	font-size: 0.85em;
+}
+
+</style>
+</head>
+<body>
+<h1>Workspace</h1>
+<p><strong>Superclass:</strong> <a href="WorldRoot.html">WorldRoot</a></p>
+<p><strong>Tags:</strong>
+ <span class="tag">NotCreatable</span>
+ <span class="tag">Service</span>
+</p>
+<details>
+<summary>Properties (74)</summary>
+<ul>
+<li><code>AirDensity</code>: <code>float</code></li>
+<li><code>AirTurbulenceIntensity</code>: <code>float</code></li>
+<li><code>AllowThirdPartySales</code>: <code>bool</code></li>
+<li><code>Archivable</code>: <code>bool</code></li>
+<li><code>AuthorityMode</code>: <code>AuthorityMode</code></li>
+<li><code>AvatarUnificationMode</code>: <code>AvatarUnificationMode</code></li>
+<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
+<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>ClientAnimatorThrottling</code>: <code>ClientAnimatorThrottlingMode</code></li>
+<li><code>CurrentCamera</code>: <code>Camera</code></li>
+<li><code>DistributedGameTime</code>: <code>double</code></li>
+<li><code>EnableSLIMAvatars</code>: <code>RolloutState</code></li>
+<li><code>ExpandedTerrain</code>: <code>RolloutState</code></li>
+<li><code>FallHeightEnabled</code>: <code>bool</code></li>
+<li><code>FallenPartsDestroyHeight</code>: <code>float</code></li>
+<li><code>FluidForces</code>: <code>FluidForces</code></li>
+<li><code>GlobalWind</code>: <code>Vector3</code></li>
+<li><code>Gravity</code>: <code>float</code></li>
+<li><code>IKControlConstraintSupport</code>: <code>IKControlConstraintSupport</code></li>
+<li><code>ImprovedAnimationConstraint</code>: <code>RolloutState</code></li>
+<li><code>ImprovedPhysicsReplication</code>: <code>RolloutState</code></li>
+<li><code>InsertPoint</code>: <code>Vector3</code></li>
+<li><code>IsInSandbox</code>: <code>bool</code></li>
+<li><code>LayeredClothingCacheOptimizations</code>: <code>RolloutState</code></li>
+<li><code>LevelOfDetail</code>: <code>ModelLevelOfDetail</code></li>
+<li><code>LuauTypeCheckMode</code>: <code>LuauTypeCheckMode</code></li>
+<li><code>MapTVRemoteToGamepadKeycodes</code>: <code>RolloutState</code></li>
+<li><code>MeshPartHeadsAndAccessories</code>: <code>MeshPartHeadsAndAccessories</code></li>
+<li><code>MeshStreamingAndImprovedLods</code>: <code>RolloutState</code></li>
+<li><code>ModelStreamingBehavior</code>: <code>ModelStreamingBehavior</code></li>
+<li><code>ModelStreamingMode</code>: <code>ModelStreamingMode</code></li>
+<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>NextGenerationReplication</code>: <code>RolloutState</code></li>
+<li><code>NextGenerationReplicationAlias</code>: <code>RolloutState</code></li>
+<li><code>Origin</code>: <code>CFrame</code></li>
+<li><code>Parent</code>: <code>Instance</code></li>
+<li><code>PathfindingUseImprovedSearch</code>: <code>PathfindingUseImprovedSearch</code></li>
+<li><code>PhysicsSteppingMethod</code>: <code>PhysicsSteppingMethod</code></li>
+<li><code>Pivot Offset</code>: <code>CFrame</code></li>
+<li><code>PlayerCharacterDestroyBehavior</code>: <code>PlayerCharacterDestroyBehavior</code></li>
+<li><code>PlayerScriptsUseInputActionSystem</code>: <code>RolloutState</code></li>
+<li><code>PlayerScriptsUseInputActionSystemAlias</code>: <code>RolloutState</code></li>
+<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
+<li><code>PredictiveStreamingMode</code>: <code>PredictiveStreamingMode</code></li>
+<li><code>PrimalPhysicsSolver</code>: <code>PrimalPhysicsSolver</code></li>
+<li><code>PrimaryPart</code>: <code>BasePart</code></li>
+<li><code>RejectCharacterDeletions</code>: <code>RejectCharacterDeletions</code></li>
+<li><code>RenderingCacheOptimizations</code>: <code>RenderingCacheOptimizationMode</code></li>
+<li><code>ReplicateInstanceDestroySetting</code>: <code>ReplicateInstanceDestroySetting</code></li>
+<li><code>ReplicationFrequency</code>: <code>ReplicationMode</code></li>
+<li><code>ReplicationThroughput</code>: <code>ReplicationMode</code></li>
+<li><code>Retargeting</code>: <code>AnimatorRetargetingMode</code></li>
+<li><code>Sandboxed</code>: <code>bool</code></li>
+<li><code>SandboxedInstanceMode</code>: <code>SandboxedInstanceMode</code></li>
+<li><code>Scale</code>: <code>float</code></li>
+<li><code>SignalBehavior</code>: <code>SignalBehavior</code></li>
+<li><code>SignalBehaviorAlias</code>: <code>SignalBehavior</code></li>
+<li><code>StreamOutBehavior</code>: <code>StreamOutBehavior</code></li>
+<li><code>StreamingAdaptiveRadius</code>: <code>bool</code></li>
+<li><code>StreamingEnabled</code>: <code>bool</code></li>
+<li><code>StreamingEnabledAlias</code>: <code>bool</code></li>
+<li><code>StreamingIntegrityMode</code>: <code>StreamingIntegrityMode</code></li>
+<li><code>StreamingMinRadius</code>: <code>int</code></li>
+<li><code>StreamingTargetRadius</code>: <code>int</code></li>
+<li><code>Terrain</code>: <code>Terrain</code></li>
+<li><code>TouchEventsUseCollisionGroups</code>: <code>RolloutState</code></li>
+<li><code>TouchesUseCollisionGroups</code>: <code>bool</code></li>
+<li><code>UniqueId</code>: <code>UniqueId</code></li>
+<li><code>UseFixedSimulation</code>: <code>RolloutState</code></li>
+<li><code>UseFixedSimulationAlias</code>: <code>RolloutState</code></li>
+<li><code>UseInputSink</code>: <code>RolloutState</code></li>
+<li><code>UseNewLuauTypeSolver</code>: <code>RolloutState</code></li>
+<li><code>ValidateEnabledProximityPrompt</code>: <code>RolloutState</code></li>
+<li><code>WorldPivot</code>: <code>CFrame</code></li>
+</ul>
+</details>
+<details>
+<summary>Methods (88)</summary>
+<ul>
+<li><code>AddPersistentPlayer(<code>playerInstance</code>: <code>Player</code>)</code>: <code>null</code></li>
+<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ApplyRecommendedStreamingSettings()</code>: <code>bool</code></li>
+<li><code>ArePartsTouchingOthers(<code>partList</code>: <code>Instances</code>, <code>overlapIgnored</code>: <code>float</code>)</code>: <code>bool</code></li>
+<li><code>Blockcast(<code>cframe</code>: <code>CFrame</code>, <code>size</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>, <code>params</code>: <code>RaycastParams</code>)</code>: <code>RaycastResult?</code></li>
+<li><code>BulkMoveTo(<code>partList</code>: <code>Instances</code>, <code>cframeList</code>: <code>Array</code>, <code>eventMode</code>: <code>BulkMoveMode</code>)</code>: <code>null</code></li>
+<li><code>CacheCurrentTerrain(<code>id</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>center</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>CalculateJumpDistance(<code>gravity</code>: <code>float</code>, <code>jumpPower</code>: <code>float</code>, <code>walkSpeed</code>: <code>float</code>)</code>: <code>float</code></li>
+<li><code>CalculateJumpHeight(<code>gravity</code>: <code>float</code>, <code>jumpPower</code>: <code>float</code>)</code>: <code>float</code></li>
+<li><code>CalculateJumpPower(<code>gravity</code>: <code>float</code>, <code>jumpHeight</code>: <code>float</code>)</code>: <code>float</code></li>
+<li><code>ClearAllChildren()</code>: <code>null</code></li>
+<li><code>ClearCachedTerrain(<code>id</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>Clone()</code>: <code>Instance</code></li>
+<li><code>CollisionGroupSetCollidable(<code>name1</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>name2</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>collidable</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>CollisionGroupsAreCollidable(<code>name1</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>name2</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>Destroy()</code>: <code>null</code></li>
+<li><code>ExperimentalSolverIsEnabled()</code>: <code>bool</code></li>
+<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>GetActor()</code>: <code>Actor</code></li>
+<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
+<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
+<li><code>GetAwakeContactNormals()</code>: <code>Array</code></li>
+<li><code>GetAwakeContactParts()</code>: <code>Array</code></li>
+<li><code>GetAwakeContactPositions()</code>: <code>Array</code></li>
+<li><code>GetAwakeRootParts()</code>: <code>Instances</code></li>
+<li><code>GetBoundingBox()</code>: <code>Unknown</code></li>
+<li><code>GetChildren()</code>: <code>Instances</code></li>
+<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetDescendants()</code>: <code>Instances</code></li>
+<li><code>GetExtentsSize()</code>: <code>Vector3</code></li>
+<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetMaxCollisionGroups()</code>: <code>int</code></li>
+<li><code>GetNumAwakeParts()</code>: <code>int</code></li>
+<li><code>GetPartBoundsInBox(<code>cframe</code>: <code>CFrame</code>, <code>size</code>: <code>Vector3</code>, <code>overlapParams</code>: <code>OverlapParams</code>)</code>: <code>Instances</code></li>
+<li><code>GetPartBoundsInRadius(<code>position</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>, <code>overlapParams</code>: <code>OverlapParams</code>)</code>: <code>Instances</code></li>
+<li><code>GetPartsInPart(<code>part</code>: <code>BasePart</code>, <code>overlapParams</code>: <code>OverlapParams</code>)</code>: <code>Instances</code></li>
+<li><code>GetPersistentPlayers()</code>: <code>Instances</code></li>
+<li><code>GetPhysicsThrottling()</code>: <code>int</code></li>
+<li><code>GetPivot()</code>: <code>CFrame</code></li>
+<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetRealPhysicsFPS()</code>: <code>double</code></li>
+<li><code>GetRegisteredCollisionGroups()</code>: <code>Array</code></li>
+<li><code>GetScale()</code>: <code>float</code></li>
+<li><code>GetServerTimeNow()</code>: <code>double</code></li>
+<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
+<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetTags()</code>: <code>Array</code></li>
+<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IKMoveTo(<code>part</code>: <code>BasePart</code>, <code>target</code>: <code>CFrame</code>, <code>translateStiffness</code>: <code>float</code>, <code>rotateStiffness</code>: <code>float</code>, <code>collisionsMode</code>: <code>IKCollisionsMode</code>)</code>: <code>null</code></li>
+<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsCollisionGroupRegistered(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>JoinToOutsiders(<code>objects</code>: <code>Instances</code>, <code>jointType</code>: <code>JointCreationMode</code>)</code>: <code>null</code></li>
+<li><code>MoveTo(<code>position</code>: <code>Vector3</code>)</code>: <code>null</code></li>
+<li><code>PGSIsEnabled()</code>: <code>bool</code></li>
+<li><code>PivotTo(<code>targetCFrame</code>: <code>CFrame</code>)</code>: <code>null</code></li>
+<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
+<li><code>Raycast(<code>origin</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>, <code>raycastParams</code>: <code>RaycastParams</code>)</code>: <code>RaycastResult?</code></li>
+<li><code>RaycastCachedTerrain(<code>id</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>origin</code>: <code>Vector3</code>, <code>direction</code>: <code>Vector3</code>, <code>ignoreWater</code>: <code>bool</code>)</code>: <code>RaycastResult?</code></li>
+<li><code>RegisterCollisionGroup(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>RemovePersistentPlayer(<code>playerInstance</code>: <code>Player</code>)</code>: <code>null</code></li>
+<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>RenameCollisionGroup(<code>from</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>to</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ScaleTo(<code>newScaleFactor</code>: <code>float</code>)</code>: <code>null</code></li>
+<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
+<li><code>SetAvatarUnificationMode(<code>value</code>: <code>AvatarUnificationMode</code>)</code>: <code>null</code></li>
+<li><code>SetInsertPoint(<code>point</code>: <code>Vector3</code>)</code>: <code>null</code></li>
+<li><code>SetMeshPartHeadsAndAccessories(<code>value</code>: <code>MeshPartHeadsAndAccessories</code>)</code>: <code>null</code></li>
+<li><code>SetPhysicsThrottleEnabled(<code>value</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>Shapecast(<code>part</code>: <code>BasePart</code>, <code>direction</code>: <code>Vector3</code>, <code>params</code>: <code>RaycastParams</code>)</code>: <code>RaycastResult?</code></li>
+<li><code>Simulate(<code>dt</code>: <code>float</code>)</code>: <code>null</code></li>
+<li><code>Spherecast(<code>position</code>: <code>Vector3</code>, <code>radius</code>: <code>float</code>, <code>direction</code>: <code>Vector3</code>, <code>params</code>: <code>RaycastParams</code>)</code>: <code>RaycastResult?</code></li>
+<li><code>StepPhysics(<code>dt</code>: <code>float</code>, <code>parts</code>: <code>Instances</code>)</code>: <code>null</code></li>
+<li><code>TranslateBy(<code>delta</code>: <code>Vector3</code>)</code>: <code>null</code></li>
+<li><code>UnjoinFromOutsiders(<code>objects</code>: <code>Instances</code>)</code>: <code>null</code></li>
+<li><code>UnregisterCollisionGroup(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<li><code>ZoomToExtents()</code>: <code>null</code></li>
+</ul>
+</details>
+<details>
+<summary>Events (10)</summary>
+<ul>
+<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>Destroying()</code>: <code>Signal</code></li>
+<li><code>PersistentLoaded(<code>player</code>: <code>Player</code>)</code>: <code>Signal</code></li>
+<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+</ul>
+</details>
+</body>
+</html>

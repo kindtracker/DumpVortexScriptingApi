@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AdGui - Roblox API</title>
+<style>
+:root {
+	--bg: #120b1b;
+	--fg: #e5e5ea;
+	--muted: #656d76;
+	--border: #d1d9e0;
+	--surface: #f6f8fa;
+	--link: #0969da;
+}
+* { box-sizing: border-box; }
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px 64px;
+	line-height: 1.65;
+	background: var(--bg);
+	color: var(--fg);
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 2rem; overflow-wrap: anywhere; }
+h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+h2 { margin-top: 32px; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	font-size: 0.92em;
+	overflow-wrap: anywhere;
+}
+details {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	margin: 14px 0;
+	overflow: hidden;
+}
+summary {
+	cursor: pointer;
+	font-weight: 650;
+	padding: 12px 16px;
+	background: var(--surface);
+}
+details > ul { padding: 4px 20px 12px 40px; }
+li { padding: 4px 0; overflow-wrap: anywhere; }
+p { overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.tag {
+	display: inline-block;
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	padding: 1px 7px;
+	margin: 2px;
+	font-size: 0.85em;
+}
+
+</style>
+</head>
+<body>
+<h1>AdGui</h1>
+<p><strong>Superclass:</strong> <a href="SurfaceGuiBase.html">SurfaceGuiBase</a></p>
+<p><strong>Tags:</strong>
+ <span class="muted">None</span>
+</p>
+<details>
+<summary>Properties (30)</summary>
+<ul>
+<li><code>AbsolutePosition</code>: <code>Vector2</code></li>
+<li><code>AbsoluteRotation</code>: <code>float</code></li>
+<li><code>AbsoluteSize</code>: <code>Vector2</code></li>
+<li><code>Active</code>: <code>bool</code></li>
+<li><code>AdShape</code>: <code>AdShape</code></li>
+<li><code>Adornee</code>: <code>Instance</code></li>
+<li><code>Archivable</code>: <code>bool</code></li>
+<li><code>AutoLocalize</code>: <code>bool</code></li>
+<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
+<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>EnableVideoAds</code>: <code>bool</code></li>
+<li><code>Enabled</code>: <code>bool</code></li>
+<li><code>Face</code>: <code>NormalId</code></li>
+<li><code>FallbackImage</code>: <code>ContentId</code></li>
+<li><code>FallbackImageContent</code>: <code>Content</code></li>
+<li><code>IsInSandbox</code>: <code>bool</code></li>
+<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>Parent</code>: <code>Instance</code></li>
+<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
+<li><code>ResetOnSpawn</code>: <code>bool</code></li>
+<li><code>RootLocalizationTable</code>: <code>LocalizationTable</code></li>
+<li><code>Sandboxed</code>: <code>bool</code></li>
+<li><code>SelectionBehaviorDown</code>: <code>SelectionBehavior</code></li>
+<li><code>SelectionBehaviorLeft</code>: <code>SelectionBehavior</code></li>
+<li><code>SelectionBehaviorRight</code>: <code>SelectionBehavior</code></li>
+<li><code>SelectionBehaviorUp</code>: <code>SelectionBehavior</code></li>
+<li><code>SelectionGroup</code>: <code>bool</code></li>
+<li><code>Status</code>: <code>AdUnitStatus</code></li>
+<li><code>UniqueId</code>: <code>UniqueId</code></li>
+<li><code>ZIndexBehavior</code>: <code>ZIndexBehavior</code></li>
+</ul>
+</details>
+<details>
+<summary>Methods (37)</summary>
+<ul>
+<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ClearAllChildren()</code>: <code>null</code></li>
+<li><code>Clone()</code>: <code>Instance</code></li>
+<li><code>Destroy()</code>: <code>null</code></li>
+<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>GetActor()</code>: <code>Actor</code></li>
+<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
+<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
+<li><code>GetChildren()</code>: <code>Instances</code></li>
+<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetDescendants()</code>: <code>Instances</code></li>
+<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetGuiObjectsAtPosition(<code>x</code>: <code>int</code>, <code>y</code>: <code>int</code>)</code>: <code>Instances</code></li>
+<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetSingleReportAdInfo()</code>: <code>Map</code></li>
+<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
+<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetTags()</code>: <code>Array</code></li>
+<li><code>HandleLuaUIEvent(<code>eventType</code>: <code>AdUIEventType</code>)</code>: <code>null</code></li>
+<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
+<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
+<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+<li><code>forwardStateToLuaUI()</code>: <code>null</code></li>
+</ul>
+</details>
+<details>
+<summary>Events (11)</summary>
+<ul>
+<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>Destroying()</code>: <code>Signal</code></li>
+<li><code>SelectionChanged(<code>amISelected</code>: <code>bool</code>, <code>previousSelection</code>: <code>GuiObject</code>, <code>newSelection</code>: <code>GuiObject</code>)</code>: <code>Signal</code></li>
+<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<li><code>adGuiStateChanged(<code>adUIState</code>: <code>Variant</code>)</code>: <code>Signal</code></li>
+</ul>
+</details>
+</body>
+</html>

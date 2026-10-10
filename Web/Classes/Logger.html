@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logger - Roblox API</title>
+<style>
+:root {
+	--bg: #120b1b;
+	--fg: #e5e5ea;
+	--muted: #656d76;
+	--border: #d1d9e0;
+	--surface: #f6f8fa;
+	--link: #0969da;
+}
+* { box-sizing: border-box; }
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px 64px;
+	line-height: 1.65;
+	background: var(--bg);
+	color: var(--fg);
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 2rem; overflow-wrap: anywhere; }
+h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+h2 { margin-top: 32px; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	font-size: 0.92em;
+	overflow-wrap: anywhere;
+}
+details {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	margin: 14px 0;
+	overflow: hidden;
+}
+summary {
+	cursor: pointer;
+	font-weight: 650;
+	padding: 12px 16px;
+	background: var(--surface);
+}
+details > ul { padding: 4px 20px 12px 40px; }
+li { padding: 4px 0; overflow-wrap: anywhere; }
+p { overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.tag {
+	display: inline-block;
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	padding: 1px 7px;
+	margin: 2px;
+	font-size: 0.85em;
+}
+
+</style>
+</head>
+<body>
+<h1>Logger</h1>
+<p><strong>Superclass:</strong> <a href="Object.html">Object</a></p>
+<p><strong>Tags:</strong>
+ <span class="tag">NotCreatable</span>
+ <span class="tag">NotReplicated</span>
+</p>
+<details>
+<summary>Properties (3)</summary>
+<ul>
+<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>FullPath</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+</ul>
+</details>
+<details>
+<summary>Methods (8)</summary>
+<ul>
+<li><code>Error(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>context</code>: <code>Dictionary</code>)</code>: <code>null</code></li>
+<li><code>GetLogger(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Logger</code></li>
+<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>Info(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>context</code>: <code>Dictionary</code>)</code>: <code>null</code></li>
+<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>Log(<code>messageType</code>: <code>MessageType</code>, <code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>context</code>: <code>Dictionary</code>)</code>: <code>null</code></li>
+<li><code>Output(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>context</code>: <code>Dictionary</code>)</code>: <code>null</code></li>
+<li><code>Warn(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>context</code>: <code>Dictionary</code>)</code>: <code>null</code></li>
+</ul>
+</details>
+<details>
+<summary>Events (2)</summary>
+<ul>
+<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>MessageOut(<code>message</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>messageType</code>: <code>MessageType</code>, <code>context</code>: <code>Dictionary</code>)</code>: <code>Signal</code></li>
+</ul>
+</details>
+</body>
+</html>

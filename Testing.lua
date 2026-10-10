@@ -1,44 +1,34 @@
 local RobloxApiDump = require("ReplicatedStorage.RobloxApiDump")
 
-local OutputFile = "RobloxCheatsheet.md"
+local OutputDirectory = "Web"
+local ClassesDirectory = OutputDirectory .. "/Classes"
+local DataTypesDirectory = OutputDirectory .. "/DataTypes"
+
+local Classes = RobloxApiDump.Classes
+local DataTypes = RobloxApiDump.DataTypes.Constructors or {}
 
 local IgnoredProperties = {
 	shap = true,
 	shape = true,
 }
 
-local Output = {
-	"# Roblox Cheatsheet",
-	"",
-	"This cheatsheet is generated from https://github.com/kindtracker/DumpVortexScriptingApi",
-	"",
-}
-
-local Classes = RobloxApiDump.Classes
-local DataTypes = RobloxApiDump.DataTypes.Constructors
-
 local Constructors = {
 	Instance = {
 		new = true,
 		fromExisting = true,
 	},
-
 	InstanceHandle = {
 		new = true,
 	},
-
 	Ray = {
 		new = true,
 	},
-
 	Axes = {
 		new = true,
 	},
-
 	Faces = {
 		new = true,
 	},
-
 	BrickColor = {
 		new = true,
 		Red = true,
@@ -53,32 +43,26 @@ local Constructors = {
 		random = true,
 		palette = true,
 	},
-
 	Vector2 = {
 		new = true,
 	},
-
 	Vector2int16 = {
 		new = true,
 	},
-
 	Vector3 = {
 		new = true,
 		fromNormalId = true,
 		fromAxis = true,
 	},
-
 	Vector3int16 = {
 		new = true,
 	},
-
 	Color3 = {
 		new = true,
 		fromRGB = true,
 		fromHSV = true,
 		fromHex = true,
 	},
-
 	CFrame = {
 		new = true,
 		Angles = true,
@@ -92,106 +76,82 @@ local Constructors = {
 		lookAt = true,
 		lookAlong = true,
 	},
-
 	UDim = {
 		new = true,
 	},
-
 	UDim2 = {
 		new = true,
 		fromScale = true,
 		fromOffset = true,
 	},
-
 	NumberRange = {
 		new = true,
 	},
-
 	NumberSequence = {
 		new = true,
 	},
-
 	NumberSequenceKeypoint = {
 		new = true,
 	},
-
 	ColorSequence = {
 		new = true,
 	},
-
 	ColorSequenceKeypoint = {
 		new = true,
 	},
-
 	PhysicalProperties = {
 		new = true,
 	},
-
 	Region3 = {
 		new = true,
 	},
-
 	Region3int16 = {
 		new = true,
 	},
-
 	Rect = {
 		new = true,
 	},
-
 	PathWaypoint = {
 		new = true,
 	},
-
 	Path2DControlPoint = {
 		new = true,
 	},
-
 	FloatCurveKey = {
 		new = true,
 	},
-
 	RotationCurveKey = {
 		new = true,
 	},
-
 	TweenInfo = {
 		new = true,
 	},
-
 	Random = {
 		new = true,
 	},
-
 	RaycastParams = {
 		new = true,
 	},
-
 	OverlapParams = {
 		new = true,
 	},
-
 	CatalogSearchParams = {
 		new = true,
 	},
-
 	DockWidgetPluginGuiInfo = {
 		new = true,
 	},
-
 	Content = {
 		fromUri = true,
 		fromObject = true,
 		fromAssetId = true,
 	},
-
 	Font = {
 		new = true,
 		fromName = true,
 		fromId = true,
 		fromEnum = true,
 	},
-
 	DateTime = {
 		now = true,
 		fromIsoDate = true,
@@ -200,17 +160,14 @@ local Constructors = {
 		fromUnixTimestamp = true,
 		fromUnixTimestampMillis = true,
 	},
-
 	SecurityCapabilities = {
 		new = true,
 		fromCurrent = true,
 	},
-
 	User = {
 		fromId = true,
 		fromString = true,
 	},
-
 	SharedTable = {
 		new = true,
 		clone = true,
@@ -218,10 +175,29 @@ local Constructors = {
 	},
 }
 
-local function CheckConstructor(DataType, Member)
-	local DataTypeConstructors = Constructors[DataType.Name]
+local function EnsureDirectory(Path)
+	local Separator = package.config:sub(1, 1)
 
-	return DataTypeConstructors ~= nil and DataTypeConstructors[Member.Name] == true
+	if Separator == "\\" then
+		os.execute('if not exist "' .. Path .. '" mkdir "' .. Path .. '"')
+	else
+		os.execute('mkdir -p "' .. Path .. '"')
+	end
+end
+
+EnsureDirectory(OutputDirectory)
+EnsureDirectory(ClassesDirectory)
+EnsureDirectory(DataTypesDirectory)
+
+local function EscapeHtml(Value)
+	Value = tostring(Value or "")
+	Value = Value:gsub("&", "&amp;")
+	Value = Value:gsub("<", "&lt;")
+	Value = Value:gsub(">", "&gt;")
+	Value = Value:gsub('"', "&quot;")
+	Value = Value:gsub("'", "&#39;")
+
+	return Value
 end
 
 local function HasTag(Tags, Target)
@@ -238,34 +214,44 @@ local function IsIgnored(Property)
 	return IgnoredProperties[string.lower(Property)] == true
 end
 
-local function GetHyprType(Type)
-	local Name = "Unknown"
-
-	if Type.Name == "bool" then
-		Type.Name = "boolean"
-	elseif Type.Name == "null" then
-		Type.Name = "nil"
+local function GetTypeName(Type)
+	if type(Type) == "string" then
+		return Type
 	end
-	Name = Type.Name or "Unknown"
 
-	local Link = "#" .. Name:lower()
+	if type(Type) == "table" then
+		if Type.Name then
+			return Type.Name
+		end
 
-	local TypeLinks = {
+		if Type.Category then
+			return Type.Category
+		end
+	end
+
+	return "Unknown"
+end
+
+local function GetHtmlType(Type)
+	local Name = GetTypeName(Type)
+	local EscapedName = EscapeHtml(Name)
+
+	local Links = {
 		string = "https://luau.org/library/#string-library",
 		number = "https://luau.org/library/#math-library",
 		table = "https://luau.org/library/#table-library",
 		boolean = "https://www.lua.org/pil/2.2.html",
-		array = "https://luau.org/library/#table-library",
-		variant = "https://luau.org/types/basic-types/#any-type",
-		dictionary = "https://luau.org/library/#table-library",
 		["nil"] = "https://www.lua.org/pil/2.1.html",
-		number = "https://www.lua.org/pil/2.3.html",
 		["function"] = "https://www.lua.org/pil/2.6.html",
 	}
 
-	Link = TypeLinks[Name:lower()] or Link
+	local Link = Links[string.lower(Name)]
 
-	return string.format("[%s](%s)", Name, Link)
+	if Link then
+		return '<a href="' .. Link .. '"><code>' .. EscapedName .. "</code></a>"
+	end
+
+	return "<code>" .. EscapedName .. "</code>"
 end
 
 local function GetParameters(Parameters)
@@ -273,16 +259,42 @@ local function GetParameters(Parameters)
 
 	for _, Parameter in ipairs(Parameters or {}) do
 		local Name = Parameter.Name or "?"
-		local Type = GetHyprType(Parameter.Type)
+		local Type = GetHtmlType(Parameter.Type)
+
+		local Text = "<code>" .. EscapeHtml(Name) .. "</code>: " .. Type
 
 		if Parameter.Default ~= nil then
-			Name = Name .. " = " .. tostring(Parameter.Default)
+			Text = Text .. " = <code>" .. EscapeHtml(Parameter.Default) .. "</code>"
 		end
 
-		Result[#Result + 1] = Name .. ": " .. Type
+		Result[#Result + 1] = Text
 	end
 
 	return table.concat(Result, ", ")
+end
+
+local function GetReturns(Member)
+	local Returns = {}
+
+	if Member.ReturnType then
+		return GetHtmlType(Member.ReturnType)
+	end
+
+	for _, ReturnType in ipairs(Member.TupleReturns or {}) do
+		Returns[#Returns + 1] = GetHtmlType(ReturnType)
+	end
+
+	if #Returns > 0 then
+		return "(" .. table.concat(Returns, ", ") .. ")"
+	end
+
+	return nil
+end
+
+local function CheckConstructor(DataType, Member)
+	local DataTypeConstructors = Constructors[DataType.Name]
+
+	return DataTypeConstructors ~= nil and DataTypeConstructors[Member.Name] == true
 end
 
 local function GetInheritedMembers(Class, MemberType)
@@ -317,29 +329,159 @@ local function GetInheritedMembers(Class, MemberType)
 	return Results
 end
 
-local function GenerateClass(ClassName, Class)
-	Output[#Output + 1] = "### " .. ClassName
-	Output[#Output + 1] = ""
+local Styles = [[
+:root {
+	--bg: #120b1b;
+	--fg: #e5e5ea;
+	--muted: #656d76;
+	--border: #d1d9e0;
+	--surface: #f6f8fa;
+	--link: #0969da;
+}
+* { box-sizing: border-box; }
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px 64px;
+	line-height: 1.65;
+	background: var(--bg);
+	color: var(--fg);
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 2rem; overflow-wrap: anywhere; }
+h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+h2 { margin-top: 32px; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	font-size: 0.92em;
+	overflow-wrap: anywhere;
+}
+details {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	margin: 14px 0;
+	overflow: hidden;
+}
+summary {
+	cursor: pointer;
+	font-weight: 650;
+	padding: 12px 16px;
+	background: var(--surface);
+}
+details > ul { padding: 4px 20px 12px 40px; }
+li { padding: 4px 0; overflow-wrap: anywhere; }
+p { overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.tag {
+	display: inline-block;
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	padding: 1px 7px;
+	margin: 2px;
+	font-size: 0.85em;
+}
+]]
+
+local function HtmlPage(Title, Body)
+	return table.concat({
+		"<!DOCTYPE html>",
+		'<html lang="en">',
+		"<head>",
+		'<meta charset="UTF-8">',
+		'<meta name="viewport" content="width=device-width, initial-scale=1">',
+		"<title>" .. EscapeHtml(Title) .. "</title>",
+		"<style>",
+		Styles,
+		"</style>",
+		"</head>",
+		"<body>",
+		Body,
+		"</body>",
+		"</html>",
+		"",
+	}, "\n")
+end
+
+local function WritePage(Path, Title, Body)
+	local File = assert(io.open(Path, "w"))
+
+	File:write(HtmlPage(Title, table.concat(Body, "\n")))
+	File:close()
+end
+
+local function AddTags(Html, Tags)
+	Html[#Html + 1] = "<p><strong>Tags:</strong>"
+
+	if #(Tags or {}) == 0 then
+		Html[#Html + 1] = ' <span class="muted">None</span>'
+	else
+		for _, Tag in ipairs(Tags) do
+			Html[#Html + 1] = ' <span class="tag">' .. EscapeHtml(Tag) .. "</span>"
+		end
+	end
+
+	Html[#Html + 1] = "</p>"
+end
+
+local function AddMemberSection(Html, Title, Members, ClassName)
+	Html[#Html + 1] = "<details>"
+	Html[#Html + 1] = "<summary>" .. EscapeHtml(Title) .. " (" .. #Members .. ")</summary>"
+	Html[#Html + 1] = "<ul>"
+
+	if #Members == 0 then
+		Html[#Html + 1] = '<li class="muted">None.</li>'
+	else
+		for _, Entry in ipairs(Members) do
+			local Member = Entry.Member
+			local Line
+
+			if Member.MemberType == "Property" then
+				Line = "<code>" .. EscapeHtml(Member.Name) .. "</code>: " .. GetHtmlType(Member.ValueType)
+			else
+				Line = "<code>" .. EscapeHtml(Member.Name) .. "(" .. GetParameters(Member.Parameters) .. ")</code>"
+
+				local Returns = GetReturns(Member)
+
+				if Returns then
+					Line = Line .. ": " .. Returns
+				elseif Member.MemberType == "Event" then
+					Line = Line .. ": <code>Signal</code>"
+				end
+			end
+
+			if Entry.Owner and Entry.Owner ~= ClassName then
+				Line = Line .. ' <span class="muted">(inherited from ' .. EscapeHtml(Entry.Owner) .. ")</span>"
+			end
+
+			Html[#Html + 1] = "<li>" .. Line .. "</li>"
+		end
+	end
+
+	Html[#Html + 1] = "</ul>"
+	Html[#Html + 1] = "</details>"
+end
+
+local function GenerateClassHtml(ClassName, Class)
+	local Html = {
+		"<h1>" .. EscapeHtml(ClassName) .. "</h1>",
+	}
 
 	if Class.Superclass and Class.Superclass ~= "<ROOT>" then
-		Output[#Output + 1] = "**Superclass:** " .. string.format("[%s](#%s)", Class.Superclass, Class.Superclass)
-		Output[#Output + 1] = ""
+		local Parent = EscapeHtml(Class.Superclass)
+
+		Html[#Html + 1] = '<p><strong>Superclass:</strong> <a href="' .. Parent .. '.html">' .. Parent .. "</a></p>"
 	end
 
-	if #(Class.Tags or {}) > 0 then
-		Output[#Output + 1] = "**Tags:** " .. table.concat(Class.Tags, ", ")
-		Output[#Output + 1] = ""
-	else
-		Output[#Output + 1] = "**Tags:** None"
-		Output[#Output + 1] = ""
-	end
+	AddTags(Html, Class.Tags)
 
 	local Properties = {}
 	local SeenProperties = {}
 	local Current = Class
 
 	while Current do
-		for _, Member in ipairs(Current.Members) do
+		for _, Member in ipairs(Current.Members or {}) do
 			if
 				Member.MemberType == "Property"
 				and not IsIgnored(Member.Name)
@@ -350,8 +492,7 @@ local function GenerateClass(ClassName, Class)
 				SeenProperties[Member.Name] = true
 
 				Properties[#Properties + 1] = {
-					Name = Member.Name,
-					Type = Member.ValueType,
+					Member = Member,
 					Owner = Current.Name,
 				}
 			end
@@ -361,72 +502,22 @@ local function GenerateClass(ClassName, Class)
 	end
 
 	table.sort(Properties, function(A, B)
-		return A.Name < B.Name
+		return A.Member.Name < B.Member.Name
 	end)
 
-	Output[#Output + 1] = "<details>"
-	Output[#Output + 1] = "<summary>Properties</summary>"
+	AddMemberSection(Html, "Properties", Properties, ClassName)
+	AddMemberSection(Html, "Methods", GetInheritedMembers(Class, "Function"), ClassName)
+	AddMemberSection(Html, "Events", GetInheritedMembers(Class, "Event"), ClassName)
 
-	if #Properties == 0 then
-		Output[#Output + 1] = "None."
-	else
-		for _, Property in ipairs(Properties) do
-			local Line = string.format("- `%s`: %s", Property.Name, GetHyprType(Property.Type))
+	WritePage(ClassesDirectory .. "/" .. ClassName .. ".html", ClassName .. " - Roblox API", Html)
 
-			if Property.Owner ~= ClassName and Property.Owner ~= nil then
-				Line = Line .. " *(inherited from " .. Property.Owner .. ")*"
-			end
-
-			Output[#Output + 1] = Line
-		end
-	end
-
-	Output[#Output + 1] = "</details>"
-	Output[#Output + 1] = ""
-
-	for _, Section in ipairs({
-		{ Name = "Methods", Type = "Function" },
-		{ Name = "Events", Type = "Event" },
-	}) do
-		Output[#Output + 1] = "<details>"
-		Output[#Output + 1] = "<summary>" .. Section.Name .. "</summary>"
-
-		local Members = GetInheritedMembers(Class, Section.Type)
-
-		if #Members == 0 then
-			Output[#Output + 1] = "None."
-		else
-			for _, Entry in ipairs(Members) do
-				local Member = Entry.Member
-
-				local Line = string.format("- `%s(%s)`", Member.Name, GetParameters(Member.Parameters))
-
-				if Section.Type == "Function" and Member.ReturnType then
-					Line = Line .. ": " .. GetHyprType(Member.ReturnType)
-				end
-
-				if Section.Type == "Event" then
-					Line = Line .. ": [Signal](#signal)"
-				end
-
-				if Entry.Owner ~= ClassName and Entry.Owner ~= nil then
-					Line = Line .. " *(inherited from " .. Entry.Owner .. ")*"
-				end
-
-				Output[#Output + 1] = Line
-			end
-
-			Output[#Output + 1] = "</details>"
-			Output[#Output + 1] = ""
-		end
-	end
-
-	Output[#Output + 1] = ""
+	print("Generated class: " .. ClassName)
 end
 
-local function GenerateDataType(DataType)
-	Output[#Output + 1] = "### " .. DataType.Name
-	Output[#Output + 1] = ""
+local function GenerateDataTypeHtml(DataType)
+	local Html = {
+		"<h1>" .. EscapeHtml(DataType.Name) .. "</h1>",
+	}
 
 	local Members = {}
 
@@ -444,74 +535,36 @@ local function GenerateDataType(DataType)
 		return A.Name < B.Name
 	end)
 
-	if #Members == 0 then
-		Output[#Output + 1] = "None."
-		Output[#Output + 1] = ""
-		return
-	end
-
-	for _, Section in ipairs({
-		{ Name = "Constructors", Predicate = IsConstructor },
-		{
-			Name = "Methods",
-			Predicate = function()
-				return false
-			end,
-		},
-	}) do
-		Output[#Output + 1] = "<details>"
-		Output[#Output + 1] = "<summary>" .. Section.Name .. "</summary>"
-
-		for _, Member in ipairs(Members) do
-			if Member.MemberType == "Function" then
-				local IsConstructor = CheckConstructor(DataType, Member)
-
-				if
-					(Section.Name == "Constructors" and IsConstructor)
-					or (Section.Name == "Methods" and not IsConstructor)
-				then
-					local Line = string.format("- `%s(%s)`", Member.Name, GetParameters(Member.Parameters))
-
-					if Member.ReturnType then
-						Line = Line .. ": " .. GetHyprType(Member.ReturnType)
-					elseif Member.TupleReturns then
-						local Returns = {}
-
-						for _, ReturnType in ipairs(Member.TupleReturns) do
-							Returns[#Returns + 1] = GetHyprType(ReturnType)
-						end
-
-						if #Returns > 0 then
-							Line = Line .. ": (" .. table.concat(Returns, ", ") .. ")"
-						end
-					end
-
-					Output[#Output + 1] = Line
-				end
-			end
-		end
-
-		Output[#Output + 1] = "</details>"
-		Output[#Output + 1] = ""
-	end
-
-	Output[#Output + 1] = "</details>"
-	Output[#Output + 1] = ""
-	Output[#Output + 1] = "<details>"
-	Output[#Output + 1] = "<summary>Properties</summary>"
+	local ConstructorsList = {}
+	local Methods = {}
+	local Properties = {}
 
 	for _, Member in ipairs(Members) do
 		if Member.MemberType == "Property" then
-			Output[#Output + 1] = string.format("- `%s`: %s", Member.Name, GetHyprType(Member.ValueType))
+			Properties[#Properties + 1] = {
+				Member = Member,
+			}
+		elseif Member.MemberType == "Function" then
+			if CheckConstructor(DataType, Member) then
+				ConstructorsList[#ConstructorsList + 1] = {
+					Member = Member,
+				}
+			else
+				Methods[#Methods + 1] = {
+					Member = Member,
+				}
+			end
 		end
 	end
 
-	Output[#Output + 1] = "</details>"
-	Output[#Output + 1] = ""
-end
+	AddMemberSection(Html, "Constructors", ConstructorsList)
+	AddMemberSection(Html, "Methods", Methods)
+	AddMemberSection(Html, "Properties", Properties)
 
-Output[#Output + 1] = "## Classes"
-Output[#Output + 1] = ""
+	WritePage(DataTypesDirectory .. "/" .. DataType.Name .. ".html", DataType.Name .. " - Roblox API", Html)
+
+	print("Generated datatype: " .. DataType.Name)
+end
 
 local ClassNames = {}
 
@@ -522,16 +575,12 @@ end
 table.sort(ClassNames)
 
 for _, ClassName in ipairs(ClassNames) do
-	GenerateClass(ClassName, Classes[ClassName])
-	print("Generated class: " .. ClassName)
+	GenerateClassHtml(ClassName, Classes[ClassName])
 end
-
-Output[#Output + 1] = "## DataTypes"
-Output[#Output + 1] = ""
 
 local DataTypeNames = {}
 
-for _, DataType in ipairs(DataTypes or {}) do
+for _, DataType in ipairs(DataTypes) do
 	DataTypeNames[#DataTypeNames + 1] = DataType
 end
 
@@ -540,13 +589,7 @@ table.sort(DataTypeNames, function(A, B)
 end)
 
 for _, DataType in ipairs(DataTypeNames) do
-	GenerateDataType(DataType)
-	print("Generated datatype: " .. DataType.Name)
+	GenerateDataTypeHtml(DataType)
 end
 
-local File = assert(io.open(OutputFile, "w"))
-File:write(table.concat(Output, "\n"))
-File:write("\n")
-File:close()
-
-print("Cheatsheet written to " .. OutputFile)
+print("Generated Web")

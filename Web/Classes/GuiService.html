@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GuiService - Roblox API</title>
+<style>
+:root {
+	--bg: #120b1b;
+	--fg: #e5e5ea;
+	--muted: #656d76;
+	--border: #d1d9e0;
+	--surface: #f6f8fa;
+	--link: #0969da;
+}
+* { box-sizing: border-box; }
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px 64px;
+	line-height: 1.65;
+	background: var(--bg);
+	color: var(--fg);
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 2rem; overflow-wrap: anywhere; }
+h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+h2 { margin-top: 32px; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	font-size: 0.92em;
+	overflow-wrap: anywhere;
+}
+details {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	margin: 14px 0;
+	overflow: hidden;
+}
+summary {
+	cursor: pointer;
+	font-weight: 650;
+	padding: 12px 16px;
+	background: var(--surface);
+}
+details > ul { padding: 4px 20px 12px 40px; }
+li { padding: 4px 0; overflow-wrap: anywhere; }
+p { overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.tag {
+	display: inline-block;
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	padding: 1px 7px;
+	margin: 2px;
+	font-size: 0.85em;
+}
+
+</style>
+</head>
+<body>
+<h1>GuiService</h1>
+<p><strong>Superclass:</strong> <a href="Instance.html">Instance</a></p>
+<p><strong>Tags:</strong>
+ <span class="tag">NotCreatable</span>
+ <span class="tag">Service</span>
+ <span class="tag">NotReplicated</span>
+</p>
+<details>
+<summary>Properties (18)</summary>
+<ul>
+<li><code>Archivable</code>: <code>bool</code></li>
+<li><code>AutoSelectGuiEnabled</code>: <code>bool</code></li>
+<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
+<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GuiNavigationEnabled</code>: <code>bool</code></li>
+<li><code>IsInSandbox</code>: <code>bool</code></li>
+<li><code>MenuIsOpen</code>: <code>bool</code></li>
+<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>Parent</code>: <code>Instance</code></li>
+<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
+<li><code>PreferredTextSize</code>: <code>PreferredTextSize</code></li>
+<li><code>Sandboxed</code>: <code>bool</code></li>
+<li><code>SelectedObject</code>: <code>GuiObject</code></li>
+<li><code>TopbarInset</code>: <code>Rect</code></li>
+<li><code>TouchControlsEnabled</code>: <code>bool</code></li>
+<li><code>UniqueId</code>: <code>UniqueId</code></li>
+<li><code>ViewportDisplaySize</code>: <code>DisplaySize</code></li>
+<li><code>ViewportSizeInMM</code>: <code>Vector2</code></li>
+</ul>
+</details>
+<details>
+<summary>Methods (91)</summary>
+<ul>
+<li><code>AddCenterDialog(<code>dialog</code>: <code>Instance</code>, <code>centerDialogType</code>: <code>CenterDialogType</code>, <code>showFunction</code>: <a href="https://www.lua.org/pil/2.6.html"><code>Function</code></a>, <code>hideFunction</code>: <a href="https://www.lua.org/pil/2.6.html"><code>Function</code></a>)</code>: <code>null</code></li>
+<li><code>AddKey(<code>key</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>AddSpecialKey(<code>key</code>: <code>SpecialKey</code>)</code>: <code>null</code></li>
+<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>BroadcastNotification(<code>data</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>notificationType</code>: <code>int</code>)</code>: <code>null</code></li>
+<li><code>ClearAllChildren()</code>: <code>null</code></li>
+<li><code>ClearError()</code>: <code>null</code></li>
+<li><code>Clone()</code>: <code>Instance</code></li>
+<li><code>CloseInspectMenu()</code>: <code>null</code></li>
+<li><code>CloseStatsBasedOnInputString(<code>input</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>Destroy()</code>: <code>null</code></li>
+<li><code>DismissNotification(<code>notificationId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>ForceTenFootInterface(<code>isForced</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>GetActor()</code>: <code>Actor</code></li>
+<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
+<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
+<li><code>GetAutoUIScaleHundredths()</code>: <code>int</code></li>
+<li><code>GetBrickCount()</code>: <code>int</code></li>
+<li><code>GetChildren()</code>: <code>Instances</code></li>
+<li><code>GetClosestDialogToPosition(<code>position</code>: <code>Vector3</code>)</code>: <code>Instance</code></li>
+<li><code>GetClosestVisibleDialogToPosition(<code>position</code>: <code>Vector3</code>)</code>: <code>Dialog</code></li>
+<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetDescendants()</code>: <code>Instances</code></li>
+<li><code>GetEffectiveUIScaleHundredths()</code>: <code>int</code></li>
+<li><code>GetEmotesMenuOpen()</code>: <code>bool</code></li>
+<li><code>GetErrorCode()</code>: <code>ConnectionError</code></li>
+<li><code>GetErrorDetails()</code>: <code>Dictionary</code></li>
+<li><code>GetErrorType()</code>: <code>ConnectionError</code></li>
+<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetGameplayPausedNotificationEnabled()</code>: <code>bool</code></li>
+<li><code>GetGuiInset()</code>: <code>Tuple</code></li>
+<li><code>GetGuiIsVisible(<code>guiType</code>: <code>GuiType</code>)</code>: <code>bool</code></li>
+<li><code>GetHardwareSafeViewport()</code>: <code>Vector2</code></li>
+<li><code>GetInsetArea(<code>screenInsets</code>: <code>ScreenInsets</code>)</code>: <code>Rect</code></li>
+<li><code>GetInspectMenuEnabled()</code>: <code>bool</code></li>
+<li><code>GetNotificationTypeList()</code>: <code>Dictionary</code></li>
+<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetRawScreenScale()</code>: <code>float</code></li>
+<li><code>GetResolutionScale()</code>: <code>int</code></li>
+<li><code>GetSafeZoneOffsets()</code>: <code>Dictionary</code></li>
+<li><code>GetScreenResolution()</code>: <code>Vector2</code></li>
+<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
+<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetTags()</code>: <code>Array</code></li>
+<li><code>GetUiMessage()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>InspectPlayerFromHumanoidDescription(<code>humanoidDescription</code>: <code>Instance</code>, <code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>InspectPlayerFromUserId(<code>userId</code>: <code>User</code>)</code>: <code>null</code></li>
+<li><code>InspectPlayerFromUserIdWithCtx(<code>userId</code>: <code>User</code>, <code>ctx</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsMemoryTrackerEnabled()</code>: <code>bool</code></li>
+<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsTenFootInterface()</code>: <code>bool</code></li>
+<li><code>OnNotificationDisplayed(<code>notificationId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>OnNotificationInteraction(<code>notificationId</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>buttonIndex</code>: <code>int</code>)</code>: <code>null</code></li>
+<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
+<li><code>RemoveCenterDialog(<code>dialog</code>: <code>Instance</code>)</code>: <code>null</code></li>
+<li><code>RemoveKey(<code>key</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>RemoveSpecialKey(<code>key</code>: <code>SpecialKey</code>)</code>: <code>null</code></li>
+<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>Select(<code>selectionParent</code>: <code>Instance</code>)</code>: <code>null</code></li>
+<li><code>SendNotification(<code>notificationInfo</code>: <code>Dictionary</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>SendUIOcclusionMetricsForQueryRegion(<code>position</code>: <code>UDim2</code>, <code>size</code>: <code>UDim2</code>, <code>regionName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
+<li><code>SetEmotesMenuOpen(<code>isOpen</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>SetGameplayPausedNotificationEnabled(<code>enabled</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>SetGlobalGuiInset(<code>x1</code>: <code>int</code>, <code>y1</code>: <code>int</code>, <code>x2</code>: <code>int</code>, <code>y2</code>: <code>int</code>)</code>: <code>null</code></li>
+<li><code>SetHardwareSafeAreaInsets(<code>left</code>: <code>float</code>, <code>top</code>: <code>float</code>, <code>right</code>: <code>float</code>, <code>bottom</code>: <code>float</code>)</code>: <code>null</code></li>
+<li><code>SetInspectMenuEnabled(<code>enabled</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>SetMenuIsOpen(<code>open</code>: <code>bool</code>, <code>menuName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>SetPurchasePromptIsShown(<code>isShown</code>: <code>bool</code>)</code>: <code>null</code></li>
+<li><code>SetSafeZoneOffsets(<code>top</code>: <code>float</code>, <code>bottom</code>: <code>float</code>, <code>left</code>: <code>float</code>, <code>right</code>: <code>float</code>)</code>: <code>null</code></li>
+<li><code>SetTopbarInset(<code>topbarInset</code>: <code>Rect</code>)</code>: <code>null</code></li>
+<li><code>SetUIScaleMultiplier(<code>multiplierHundredths</code>: <code>int</code>)</code>: <code>null</code></li>
+<li><code>SetUiMessage(<code>msgType</code>: <code>UiMessageType</code>, <code>uiMessage</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ShowStatsBasedOnInputString(<code>input</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>ToggleFullscreen()</code>: <code>null</code></li>
+<li><code>ToggleGuiIsVisibleForCaptures(<code>guiType</code>: <code>GuiType</code>)</code>: <code>null</code></li>
+<li><code>ToggleGuiIsVisibleIfAllowed(<code>guiType</code>: <code>GuiType</code>)</code>: <code>null</code></li>
+<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+</ul>
+</details>
+<details>
+<summary>Events (29)</summary>
+<ul>
+<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>CloseInspectMenuRequest()</code>: <code>Signal</code></li>
+<li><code>CoreGuiRenderOverflowed()</code>: <code>Signal</code></li>
+<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>Destroying()</code>: <code>Signal</code></li>
+<li><code>EmotesMenuOpenChanged(<code>isOpen</code>: <code>bool</code>)</code>: <code>Signal</code></li>
+<li><code>GuiVisibilityChangedSignal(<code>guiType</code>: <code>GuiType</code>, <code>visible</code>: <code>bool</code>)</code>: <code>Signal</code></li>
+<li><code>InspectMenuEnabledChangedSignal(<code>enabled</code>: <code>bool</code>)</code>: <code>Signal</code></li>
+<li><code>InspectPlayerFromHumanoidDescriptionRequest(<code>humanoidDescription</code>: <code>Instance</code>, <code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>InspectPlayerFromUserIdWithCtxRequest(<code>userId</code>: <code>int64</code>, <code>ctx</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>KeyPressed(<code>key</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>modifiers</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>MenuClosed()</code>: <code>Signal</code></li>
+<li><code>MenuOpened()</code>: <code>Signal</code></li>
+<li><code>NativeClose()</code>: <code>Signal</code></li>
+<li><code>NetworkPausedEnabledChanged(<code>enabled</code>: <code>bool</code>)</code>: <code>Signal</code></li>
+<li><code>Open9SliceEditor(<code>selectedImageObject</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>OpenStyleEditor(<code>styleBase</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>PurchasePromptShown()</code>: <code>Signal</code></li>
+<li><code>SafeZoneOffsetsChanged()</code>: <code>Signal</code></li>
+<li><code>ScrollStateChanged(<code>scrollingFrame</code>: <code>Instance</code>, <code>newState</code>: <code>ScrollState</code>)</code>: <code>Signal</code></li>
+<li><code>ShowLeaveConfirmation()</code>: <code>Signal</code></li>
+<li><code>SpecialKeyPressed(<code>key</code>: <code>SpecialKey</code>, <code>modifiers</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<li><code>UiMessageChanged(<code>msgType</code>: <code>UiMessageType</code>, <code>newUiMessage</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+</ul>
+</details>
+</body>
+</html>

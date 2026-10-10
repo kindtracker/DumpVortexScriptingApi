@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio - Roblox API</title>
+<style>
+:root {
+	--bg: #120b1b;
+	--fg: #e5e5ea;
+	--muted: #656d76;
+	--border: #d1d9e0;
+	--surface: #f6f8fa;
+	--link: #0969da;
+}
+* { box-sizing: border-box; }
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 32px 24px 64px;
+	line-height: 1.65;
+	background: var(--bg);
+	color: var(--fg);
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 2rem; overflow-wrap: anywhere; }
+h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+h2 { margin-top: 32px; }
+code {
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	font-size: 0.92em;
+	overflow-wrap: anywhere;
+}
+details {
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	margin: 14px 0;
+	overflow: hidden;
+}
+summary {
+	cursor: pointer;
+	font-weight: 650;
+	padding: 12px 16px;
+	background: var(--surface);
+}
+details > ul { padding: 4px 20px 12px 40px; }
+li { padding: 4px 0; overflow-wrap: anywhere; }
+p { overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.tag {
+	display: inline-block;
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	padding: 1px 7px;
+	margin: 2px;
+	font-size: 0.85em;
+}
+
+</style>
+</head>
+<body>
+<h1>Studio</h1>
+<p><strong>Superclass:</strong> <a href="Instance.html">Instance</a></p>
+<p><strong>Tags:</strong>
+ <span class="tag">NotCreatable</span>
+ <span class="tag">Service</span>
+ <span class="tag">NotReplicated</span>
+</p>
+<details>
+<summary>Properties (206)</summary>
+<ul>
+<li><code>&quot;TODO&quot; Color</code>: <code>Color3</code></li>
+<li><code>&quot;function&quot; Color</code>: <code>Color3</code></li>
+<li><code>&quot;local&quot; Color</code>: <code>Color3</code></li>
+<li><code>&quot;nil&quot; Color</code>: <code>Color3</code></li>
+<li><code>&quot;self&quot; Color</code>: <code>Color3</code></li>
+<li><code>ActionOnAutoResumeSync</code>: <code>ActionOnAutoResumeSync</code></li>
+<li><code>ActionOnStopSync</code>: <code>ActionOnStopSync</code></li>
+<li><code>Active Color</code>: <code>Color3</code></li>
+<li><code>Active Hover Over Color</code>: <code>Color3</code></li>
+<li><code>Always Save Script Changes</code>: <code>bool</code></li>
+<li><code>Animate Hover Over</code>: <code>bool</code></li>
+<li><code>Animation Skeleton Scale</code>: <code>float</code></li>
+<li><code>Animation Skeleton Transparency</code>: <code>float</code></li>
+<li><code>Archivable</code>: <code>bool</code></li>
+<li><code>Auto Clean Empty Line</code>: <code>bool</code></li>
+<li><code>Auto Closing Brackets</code>: <code>bool</code></li>
+<li><code>Auto Closing Quotes</code>: <code>bool</code></li>
+<li><code>Auto Delete Closing Brackets and Quotes</code>: <code>bool</code></li>
+<li><code>Auto Indent Rule</code>: <code>AutoIndentRule</code></li>
+<li><code>Auto-Recovery Enabled</code>: <code>bool</code></li>
+<li><code>Auto-Recovery Interval (Minutes)</code>: <code>int</code></li>
+<li><code>AutoResumeSyncOnPlaceOpen</code>: <code>bool</code></li>
+<li><code>AutoUpdateEnabled</code>: <code>bool</code></li>
+<li><code>AutocompleteAcceptanceBehavior</code>: <code>CompletionAcceptanceBehavior</code></li>
+<li><code>Automatically trigger AI Code Completion</code>: <code>bool</code></li>
+<li><code>Background Color</code>: <code>Color3</code></li>
+<li><code>Basic Objects Display Mode</code>: <code>ListDisplayMode</code></li>
+<li><code>Bool Color</code>: <code>Color3</code></li>
+<li><code>Bracket Color</code>: <code>Color3</code></li>
+<li><code>Built-in Function Color</code>: <code>Color3</code></li>
+<li><code>Camera Mouse Wheel Speed</code>: <code>float</code></li>
+<li><code>Camera Pan Speed</code>: <code>float</code></li>
+<li><code>Camera Shift Speed</code>: <code>float</code></li>
+<li><code>Camera Speed</code>: <code>float</code></li>
+<li><code>Camera Speed Adjust Binding</code>: <code>CameraSpeedAdjustBinding</code></li>
+<li><code>Camera Zoom to Mouse Position</code>: <code>bool</code></li>
+<li><code>CameraAltLeftMouseToRotate</code>: <code>bool</code></li>
+<li><code>CameraKeyMoveSmoothing</code>: <code>bool</code></li>
+<li><code>CameraMouseMultiplier</code>: <code>float</code></li>
+<li><code>CameraNavigationModel</code>: <code>CameraNavigationModel</code></li>
+<li><code>CameraRotateShiftFactor</code>: <code>float</code></li>
+<li><code>CameraShiftFactor</code>: <code>float</code></li>
+<li><code>CameraTweenFocus</code>: <code>bool</code></li>
+<li><code>CameraZoomToMousePosition</code>: <code>bool</code></li>
+<li><code>Capabilities</code>: <code>SecurityCapabilities</code></li>
+<li><code>ClassName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>Clear Output On Start</code>: <code>bool</code></li>
+<li><code>CommandBarEnterExec</code>: <code>bool</code></li>
+<li><code>CommandBarFont</code>: <code>QFont</code></li>
+<li><code>CommandBarHistoryLen</code>: <code>int</code></li>
+<li><code>CommandBarLocalState</code>: <code>bool</code></li>
+<li><code>Comment Color</code>: <code>Color3</code></li>
+<li><code>Current Line Highlight Color</code>: <code>Color3</code></li>
+<li><code>Debugger Current Line Color</code>: <code>Color3</code></li>
+<li><code>Debugger Error Line Color</code>: <code>Color3</code></li>
+<li><code>DefaultInstancesDir</code>: <code>QDir</code></li>
+<li><code>DefaultScriptSyncFileType</code>: <code>DefaultScriptSyncFileType</code></li>
+<li><code>DeprecatedObjectsShown</code>: <code>bool</code></li>
+<li><code>DisplayLanguage</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>DraggerActiveColor</code>: <code>Color3</code></li>
+<li><code>DraggerLengthFactor</code>: <code>float</code></li>
+<li><code>DraggerMajorGridIncrement</code>: <code>int</code></li>
+<li><code>DraggerMaxSoftSnaps</code>: <code>int</code></li>
+<li><code>DraggerPassiveColor</code>: <code>Color3</code></li>
+<li><code>DraggerScaleFactor</code>: <code>float</code></li>
+<li><code>DraggerShowAxisTicks</code>: <code>bool</code></li>
+<li><code>DraggerShowDraggedPoint</code>: <code>bool</code></li>
+<li><code>DraggerShowHoverRuler</code>: <code>bool</code></li>
+<li><code>DraggerShowMeasurement</code>: <code>bool</code></li>
+<li><code>DraggerShowNegativeAxes</code>: <code>bool</code></li>
+<li><code>DraggerShowPlanes</code>: <code>bool</code></li>
+<li><code>DraggerShowTargetSnap</code>: <code>bool</code></li>
+<li><code>DraggerShowTrackball</code>: <code>bool</code></li>
+<li><code>DraggerShowWhileDragging</code>: <code>bool</code></li>
+<li><code>DraggerSoftSnapMarginFactor</code>: <code>float</code></li>
+<li><code>DraggerSummonMarginFactor</code>: <code>float</code></li>
+<li><code>DraggerTiltRotateDuration</code>: <code>float</code></li>
+<li><code>Enable Autocomplete</code>: <code>bool</code></li>
+<li><code>Enable Autocomplete Doc View</code>: <code>bool</code></li>
+<li><code>Enable Client/Server MDI</code>: <code>bool</code></li>
+<li><code>Enable CoreScript Debugger</code>: <code>bool</code></li>
+<li><code>Enable Http Sandboxing</code>: <code>bool</code></li>
+<li><code>Enable Internal Beta Features</code>: <code>bool</code></li>
+<li><code>Enable Internal Features</code>: <code>bool</code></li>
+<li><code>Enable Script Analysis</code>: <code>bool</code></li>
+<li><code>Enable Scrollbar Markers</code>: <code>bool</code></li>
+<li><code>Enable Signature Help</code>: <code>bool</code></li>
+<li><code>Enable Signature Help Doc View</code>: <code>bool</code></li>
+<li><code>Enable Temporary Tabs</code>: <code>bool</code></li>
+<li><code>Enable Temporary Tabs In Explorer</code>: <code>bool</code></li>
+<li><code>Enable Type Hover</code>: <code>bool</code></li>
+<li><code>EnableCodeAssist</code>: <code>bool</code></li>
+<li><code>EnableFindOnType</code>: <code>bool</code></li>
+<li><code>EnableIndentationRulers</code>: <code>bool</code></li>
+<li><code>EnableOvertypeMode</code>: <code>bool</code></li>
+<li><code>EnableSelectionTooltips</code>: <code>bool</code></li>
+<li><code>EnableStudioStreaming</code>: <code>bool</code></li>
+<li><code>Error Color</code>: <code>Color3</code></li>
+<li><code>ExternalEditorMode</code>: <code>ExternalEditorMode</code></li>
+<li><code>ExternalEditorSelection</code>: <code>QDir</code></li>
+<li><code>Find Selection Background Color</code>: <code>Color3</code></li>
+<li><code>Font</code>: <code>QFont</code></li>
+<li><code>Format On Paste</code>: <code>bool</code></li>
+<li><code>Format On Type</code>: <code>bool</code></li>
+<li><code>Function Name Color</code>: <code>Color3</code></li>
+<li><code>Highlight Current Line</code>: <code>bool</code></li>
+<li><code>Highlight Occurances</code>: <code>bool</code></li>
+<li><code>HintColor</code>: <code>Color3</code></li>
+<li><code>Hover Animate Speed</code>: <code>HoverAnimateSpeed</code></li>
+<li><code>Hover Box Thickness</code>: <code>float</code></li>
+<li><code>Hover Line Thickness</code>: <code>int</code></li>
+<li><code>Hover Over Color</code>: <code>Color3</code></li>
+<li><code>IconOverrideDir</code>: <code>QDir</code></li>
+<li><code>Indent Using Spaces</code>: <code>bool</code></li>
+<li><code>IndentationRulerColor</code>: <code>Color3</code></li>
+<li><code>InformationColor</code>: <code>Color3</code></li>
+<li><code>IsInSandbox</code>: <code>bool</code></li>
+<li><code>Keyword Color</code>: <code>Color3</code></li>
+<li><code>LargeFileLineCountThreshold</code>: <code>int</code></li>
+<li><code>LargeFileThreshold</code>: <code>int</code></li>
+<li><code>Line Thickness</code>: <code>float</code></li>
+<li><code>LoadAllBuiltinPluginsInRunModes</code>: <code>bool</code></li>
+<li><code>LoadInternalPlugins</code>: <code>bool</code></li>
+<li><code>LoadUserPluginsInRunModes</code>: <code>bool</code></li>
+<li><code>LocalAssetsFolder</code>: <code>QDir</code></li>
+<li><code>LuaDebuggerEnabled</code>: <code>bool</code></li>
+<li><code>Luau Keyword Color</code>: <code>Color3</code></li>
+<li><code>Main Volume</code>: <code>float</code></li>
+<li><code>Matching Word Background Color</code>: <code>Color3</code></li>
+<li><code>MaxFindReplaceAllResults</code>: <code>int</code></li>
+<li><code>Maximum Output Lines</code>: <code>int</code></li>
+<li><code>Menu Item Background Color</code>: <code>Color3</code></li>
+<li><code>Method Color</code>: <code>Color3</code></li>
+<li><code>Name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>Number Color</code>: <code>Color3</code></li>
+<li><code>Only Play Audio from Window in Focus</code>: <code>bool</code></li>
+<li><code>Operator Color</code>: <code>Color3</code></li>
+<li><code>Output Font</code>: <code>QFont</code></li>
+<li><code>Output Layout Mode</code>: <code>OutputLayoutMode</code></li>
+<li><code>Parent</code>: <code>Instance</code></li>
+<li><code>PermissionLevelShown</code>: <code>PermissionLevelShown</code></li>
+<li><code>Physical Draggers Select Scope By Default</code>: <code>bool</code></li>
+<li><code>Pivot Snap To Geometry Color</code>: <code>Color3</code></li>
+<li><code>PluginDebuggingEnabled</code>: <code>bool</code></li>
+<li><code>PluginsDir</code>: <code>QDir</code></li>
+<li><code>PredictionMode</code>: <code>PredictionMode</code></li>
+<li><code>PreferredTextSize</code>: <code>PreferredTextSize</code></li>
+<li><code>Primary Text Color</code>: <code>Color3</code></li>
+<li><code>Property Color</code>: <code>Color3</code></li>
+<li><code>ReloadBuiltinPluginsOnChange</code>: <code>bool</code></li>
+<li><code>ReloadLocalPluginsOnChange</code>: <code>bool</code></li>
+<li><code>Respect Studio shortcuts when game has focus</code>: <code>bool</code></li>
+<li><code>Ruler Color</code>: <code>Color3</code></li>
+<li><code>Rulers</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>RuntimeUndoBehavior</code>: <code>RuntimeUndoBehavior</code></li>
+<li><code>Sandboxed</code>: <code>bool</code></li>
+<li><code>Script Editor Color Preset</code>: <code>StudioScriptEditorColorPresets</code></li>
+<li><code>Script Editor Scrollbar Background Color</code>: <code>Color3</code></li>
+<li><code>Script Editor Scrollbar Handle Color</code>: <code>Color3</code></li>
+<li><code>ScriptTimeoutLength</code>: <code>int</code></li>
+<li><code>Scroll Past Last Line</code>: <code>bool</code></li>
+<li><code>Secondary Text Color</code>: <code>Color3</code></li>
+<li><code>Select Color</code>: <code>Color3</code></li>
+<li><code>Select/Hover Color</code>: <code>Color3</code></li>
+<li><code>Selected Menu Item Background Color</code>: <code>Color3</code></li>
+<li><code>Selected Text Color</code>: <code>Color3</code></li>
+<li><code>Selection Background Color</code>: <code>Color3</code></li>
+<li><code>Selection Box Thickness</code>: <code>float</code></li>
+<li><code>Selection Color</code>: <code>Color3</code></li>
+<li><code>Selection Line Thickness</code>: <code>int</code></li>
+<li><code>Set Pivot of Imported Parts</code>: <code>bool</code></li>
+<li><code>Show Animation Skeleton</code>: <code>bool</code></li>
+<li><code>Show Animation Skeleton Attachments</code>: <code>bool</code></li>
+<li><code>Show Animation Skeleton Axes</code>: <code>bool</code></li>
+<li><code>Show Animation Skeleton Rotations</code>: <code>bool</code></li>
+<li><code>Show Animation Skeleton Text</code>: <code>bool</code></li>
+<li><code>Show Core GUI in Explorer while Playing</code>: <code>bool</code></li>
+<li><code>Show Diagnostics Bar</code>: <code>bool</code></li>
+<li><code>Show FileSyncService</code>: <code>bool</code></li>
+<li><code>Show Hidden Objects in Explorer</code>: <code>bool</code></li>
+<li><code>Show Hover Over</code>: <code>bool</code></li>
+<li><code>Show Light Guides</code>: <code>bool</code></li>
+<li><code>Show Navigation Labels</code>: <code>bool</code></li>
+<li><code>Show Navigation Mesh</code>: <code>bool</code></li>
+<li><code>Show Pathfinding Links</code>: <code>bool</code></li>
+<li><code>Show Plugin GUI Service in Explorer</code>: <code>bool</code></li>
+<li><code>Show Singly Selected Attachment Parent Frame</code>: <code>bool</code></li>
+<li><code>Show Whitespace</code>: <code>bool</code></li>
+<li><code>Show plus button on hover in Explorer</code>: <code>bool</code></li>
+<li><code>ShowCorePackagesInExplorer</code>: <code>bool</code></li>
+<li><code>Skip Closing Brackets and Quotes</code>: <code>bool</code></li>
+<li><code>String Color</code>: <code>Color3</code></li>
+<li><code>Tab Width</code>: <code>int</code></li>
+<li><code>Text Color</code>: <code>Color3</code></li>
+<li><code>Text Wrapping</code>: <code>bool</code></li>
+<li><code>Theme</code>: <code>Instance</code></li>
+<li><code>TypeColor</code>: <code>Color3</code></li>
+<li><code>UniqueId</code>: <code>UniqueId</code></li>
+<li><code>Use Bounding Box Move Handles</code>: <code>bool</code></li>
+<li><code>UseDefaultExternalEditor</code>: <code>bool</code></li>
+<li><code>VAxisColor</code>: <code>Color3</code></li>
+<li><code>Warning Color</code>: <code>Color3</code></li>
+<li><code>Whitespace Color</code>: <code>Color3</code></li>
+<li><code>XAxisColor</code>: <code>Color3</code></li>
+<li><code>YAxisColor</code>: <code>Color3</code></li>
+<li><code>ZAxisColor</code>: <code>Color3</code></li>
+</ul>
+</details>
+<details>
+<summary>Methods (34)</summary>
+<ul>
+<li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ClearAllChildren()</code>: <code>null</code></li>
+<li><code>Clone()</code>: <code>Instance</code></li>
+<li><code>Destroy()</code>: <code>null</code></li>
+<li><code>FindFirstAncestor(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstAncestorWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChild(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildOfClass(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>FindFirstChildWhichIsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>recursive</code>: <code>bool</code>)</code>: <code>Instance</code></li>
+<li><code>FindFirstDescendant(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instance</code></li>
+<li><code>GetActor()</code>: <code>Actor</code></li>
+<li><code>GetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Variant</code></li>
+<li><code>GetAttributeChangedSignal(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetAttributes()</code>: <code>Dictionary</code></li>
+<li><code>GetAvailableThemes()</code>: <code>Array</code></li>
+<li><code>GetChildren()</code>: <code>Instances</code></li>
+<li><code>GetDebugId(<code>scopeLength</code>: <code>int</code>)</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetDescendants()</code>: <code>Instances</code></li>
+<li><code>GetFullName()</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a></li>
+<li><code>GetPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetStyled(<code>name</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>selector</code>: <code>string?</code>)</code>: <code>Variant</code></li>
+<li><code>GetStyledPropertyChangedSignal(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>RBXScriptSignal</code></li>
+<li><code>GetTags()</code>: <code>Array</code></li>
+<li><code>HasTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsA(<code>className</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>IsAncestorOf(<code>descendant</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsDescendantOf(<code>ancestor</code>: <code>Instance</code>)</code>: <code>bool</code></li>
+<li><code>IsPropertyModified(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>bool</code></li>
+<li><code>QueryDescendants(<code>selector</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Instances</code></li>
+<li><code>RemoveTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>ResetPropertyToDefault(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
+<li><code>SetAttribute(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>value</code>: <code>Variant</code>)</code>: <code>null</code></li>
+<li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
+</ul>
+</details>
+<details>
+<summary>Events (10)</summary>
+<ul>
+<li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
+<li><code>ChildAdded(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>ChildRemoved(<code>child</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantAdded(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>DescendantRemoving(<code>descendant</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
+<li><code>Destroying()</code>: <code>Signal</code></li>
+<li><code>StyledPropertiesChanged()</code>: <code>Signal</code></li>
+<li><code>ThemeChanged()</code>: <code>Signal</code></li>
+</ul>
+</details>
+</body>
+</html>
