@@ -6,7 +6,7 @@
 <title>ImageLabel - Roblox API</title>
 <style>
 :root {
-	--bg: #120b1b;
+	--bg: #1e1e2e;
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
@@ -26,49 +26,23 @@ body {
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1 { font-size: 2rem; overflow-wrap: anywhere; }
-h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 h2 { margin-top: 32px; }
 code {
 	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
 	font-size: 0.92em;
 	overflow-wrap: anywhere;
 }
-details {
-	border: 1px solid var(--border);
-	border-radius: 8px;
-	margin: 14px 0;
-	overflow: hidden;
-}
-summary {
-	cursor: pointer;
-	font-weight: 650;
-	padding: 12px 16px;
-	background: var(--surface);
-}
-details > ul { padding: 4px 20px 12px 40px; }
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
-.muted { color: var(--muted); }
-.tag {
-	display: inline-block;
-	border: 1px solid var(--border);
-	border-radius: 5px;
-	padding: 1px 7px;
-	margin: 2px;
-	font-size: 0.85em;
-}
 
 </style>
 </head>
 <body>
 <h1>ImageLabel</h1>
-<p><strong>Superclass:</strong> <a href="GuiLabel.html">GuiLabel</a></p>
-<p><strong>Tags:</strong>
- <span class="muted">None</span>
-</p>
-<details>
-<summary>Properties (58)</summary>
-<ul>
+<p>Superclass: <a href="GuiLabel.html">GuiLabel</a></p>
+<p>Tags: [
+]</p>
+<h3>Properties (58)</h3>
 <li><code>AbsolutePosition</code>: <code>Vector2</code></li>
 <li><code>AbsoluteRotation</code>: <code>float</code></li>
 <li><code>AbsoluteSize</code>: <code>Vector2</code></li>
@@ -127,11 +101,7 @@ p { overflow-wrap: anywhere; }
 <li><code>UniqueId</code>: <code>UniqueId</code></li>
 <li><code>Visible</code>: <code>bool</code></li>
 <li><code>ZIndex</code>: <code>int</code></li>
-</ul>
-</details>
-<details>
-<summary>Methods (37)</summary>
-<ul>
+<h3>Methods (37)</h3>
 <li><code>AddTag(<code>tag</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>null</code></li>
 <li><code>ClearAllChildren()</code>: <code>null</code></li>
 <li><code>Clone()</code>: <code>Instance</code></li>
@@ -169,11 +139,7 @@ p { overflow-wrap: anywhere; }
 <li><code>TweenSizeAndPositionInternal(<code>endSize</code>: <code>UDim2</code>, <code>endPosition</code>: <code>UDim2</code>, <code>easingDirection</code>: <code>EasingDirection</code>, <code>easingStyle</code>: <code>EasingStyle</code>, <code>time</code>: <code>float</code>, <code>override</code>: <code>bool</code>, <code>callback</code>: <a href="https://www.lua.org/pil/2.6.html"><code>Function</code></a>)</code>: <code>bool</code></li>
 <li><code>TweenSizeInternal(<code>endSize</code>: <code>UDim2</code>, <code>easingDirection</code>: <code>EasingDirection</code>, <code>easingStyle</code>: <code>EasingStyle</code>, <code>time</code>: <code>float</code>, <code>override</code>: <code>bool</code>, <code>callback</code>: <a href="https://www.lua.org/pil/2.6.html"><code>Function</code></a>)</code>: <code>bool</code></li>
 <li><code>WaitForChild(<code>childName</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>, <code>timeOut</code>: <code>double</code>)</code>: <code>Instance</code></li>
-</ul>
-</details>
-<details>
-<summary>Events (26)</summary>
-<ul>
+<h3>Events (26)</h3>
 <li><code>AncestryChanged(<code>child</code>: <code>Instance</code>, <code>parent</code>: <code>Instance</code>)</code>: <code>Signal</code></li>
 <li><code>AttributeChanged(<code>attribute</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
 <li><code>Changed(<code>property</code>: <a href="https://luau.org/library/#string-library"><code>string</code></a>)</code>: <code>Signal</code></li>
@@ -200,7 +166,5 @@ p { overflow-wrap: anywhere; }
 <li><code>TouchRotate(<code>touchPositions</code>: <code>Array</code>, <code>rotation</code>: <code>float</code>, <code>velocity</code>: <code>float</code>, <code>state</code>: <code>UserInputState</code>)</code>: <code>Signal</code></li>
 <li><code>TouchSwipe(<code>swipeDirection</code>: <code>SwipeDirection</code>, <code>numberOfTouches</code>: <code>int</code>)</code>: <code>Signal</code></li>
 <li><code>TouchTap(<code>touchPositions</code>: <code>Array</code>)</code>: <code>Signal</code></li>
-</ul>
-</details>
 </body>
 </html>

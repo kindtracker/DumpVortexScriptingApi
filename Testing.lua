@@ -331,7 +331,7 @@ end
 
 local Styles = [[
 :root {
-	--bg: #120b1b;
+	--bg: #1e1e2e;
 	--fg: #e5e5ea;
 	--muted: #656d76;
 	--border: #d1d9e0;
@@ -351,37 +351,14 @@ body {
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1 { font-size: 2rem; overflow-wrap: anywhere; }
-h1, h2 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 h2 { margin-top: 32px; }
 code {
 	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
 	font-size: 0.92em;
 	overflow-wrap: anywhere;
 }
-details {
-	border: 1px solid var(--border);
-	border-radius: 8px;
-	margin: 14px 0;
-	overflow: hidden;
-}
-summary {
-	cursor: pointer;
-	font-weight: 650;
-	padding: 12px 16px;
-	background: var(--surface);
-}
-details > ul { padding: 4px 20px 12px 40px; }
 li { padding: 4px 0; overflow-wrap: anywhere; }
 p { overflow-wrap: anywhere; }
-.muted { color: var(--muted); }
-.tag {
-	display: inline-block;
-	border: 1px solid var(--border);
-	border-radius: 5px;
-	padding: 1px 7px;
-	margin: 2px;
-	font-size: 0.85em;
-}
 ]]
 
 local function HtmlPage(Title, Body)
@@ -412,55 +389,48 @@ local function WritePage(Path, Title, Body)
 end
 
 local function AddTags(Html, Tags)
-	Html[#Html + 1] = "<p><strong>Tags:</strong>"
+	Html[#Html + 1] = "<p>Tags: ["
 
-	if #(Tags or {}) == 0 then
-		Html[#Html + 1] = ' <span class="muted">None</span>'
-	else
-		for _, Tag in ipairs(Tags) do
-			Html[#Html + 1] = ' <span class="tag">' .. EscapeHtml(Tag) .. "</span>"
+	local First = true
+	for _, Tag in ipairs(Tags or {}) do
+		if First then
+			First = false
+			Html[#Html + 1] = EscapeHtml(Tag)
+		else
+			Html[#Html + 1] = ", " .. EscapeHtml(Tag)
 		end
 	end
 
-	Html[#Html + 1] = "</p>"
+	Html[#Html + 1] = "]</p>"
 end
 
 local function AddMemberSection(Html, Title, Members, ClassName)
-	Html[#Html + 1] = "<details>"
-	Html[#Html + 1] = "<summary>" .. EscapeHtml(Title) .. " (" .. #Members .. ")</summary>"
-	Html[#Html + 1] = "<ul>"
+	Html[#Html + 1] = "<h3>" .. EscapeHtml(Title) .. " (" .. #Members .. ")" .. "</h3>"
 
-	if #Members == 0 then
-		Html[#Html + 1] = '<li class="muted">None.</li>'
-	else
-		for _, Entry in ipairs(Members) do
-			local Member = Entry.Member
-			local Line
+	for _, Entry in ipairs(Members or {}) do
+		local Member = Entry.Member
+		local Line
 
-			if Member.MemberType == "Property" then
-				Line = "<code>" .. EscapeHtml(Member.Name) .. "</code>: " .. GetHtmlType(Member.ValueType)
-			else
-				Line = "<code>" .. EscapeHtml(Member.Name) .. "(" .. GetParameters(Member.Parameters) .. ")</code>"
+		if Member.MemberType == "Property" then
+			Line = "<code>" .. EscapeHtml(Member.Name) .. "</code>: " .. GetHtmlType(Member.ValueType)
+		else
+			Line = "<code>" .. EscapeHtml(Member.Name) .. "(" .. GetParameters(Member.Parameters) .. ")</code>"
 
-				local Returns = GetReturns(Member)
+			local Returns = GetReturns(Member)
 
-				if Returns then
-					Line = Line .. ": " .. Returns
-				elseif Member.MemberType == "Event" then
-					Line = Line .. ": <code>Signal</code>"
-				end
+			if Returns then
+				Line = Line .. ": " .. Returns
+			elseif Member.MemberType == "Event" then
+				Line = Line .. ": <code>Signal</code>"
 			end
-
-			if Entry.Owner and Entry.Owner ~= ClassName then
-				Line = Line .. ' <span class="muted">(inherited from ' .. EscapeHtml(Entry.Owner) .. ")</span>"
-			end
-
-			Html[#Html + 1] = "<li>" .. Line .. "</li>"
 		end
-	end
 
-	Html[#Html + 1] = "</ul>"
-	Html[#Html + 1] = "</details>"
+		if Entry.Owner and Entry.Owner ~= ClassName then
+			Line = Line .. ' <span class="muted">(inherited from ' .. EscapeHtml(Entry.Owner) .. ")</span>"
+		end
+
+		Html[#Html + 1] = "<li>" .. Line .. "</li>"
+	end
 end
 
 local function GenerateClassHtml(ClassName, Class)
@@ -471,7 +441,7 @@ local function GenerateClassHtml(ClassName, Class)
 	if Class.Superclass and Class.Superclass ~= "<ROOT>" then
 		local Parent = EscapeHtml(Class.Superclass)
 
-		Html[#Html + 1] = '<p><strong>Superclass:</strong> <a href="' .. Parent .. '.html">' .. Parent .. "</a></p>"
+		Html[#Html + 1] = '<p>Superclass: <a href="' .. Parent .. '.html">' .. Parent .. "</a></p>"
 	end
 
 	AddTags(Html, Class.Tags)
